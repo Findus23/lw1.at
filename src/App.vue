@@ -1,19 +1,14 @@
 <template>
 	<div id="app">
-		<div id="app-6">
-			<p>{{ message }}</p>
-			<input v-model="message">
-			<br>
-			<input type="checkbox" id="checkbox" v-model="checked">
-			<label for="checkbox">{{ checked }}</label>
-		</div>
-		<ul v-if="checked">
-			<li v-for="l in liste"><span v-bind:id="l">{{l}}</span></li>
-		</ul>
-		<button class="button-outline" id="check1" @click="sort('name')">Sortieren</button>
-		<button class="button-outline" id="check2" @click="sort('id')">Sortieren</button>
-		<button v-for="element in tags" class="button-outline" @click="tagfilter(element)">{{element}}</button>
-		<button class="button-outline" @click="filt=[];filter('show all')">Reset</button>
+		<button class="button-outline" id="check1" @click="sort('name')">Sort by name</button>
+		<button class="button-outline" id="check2" @click="sort('id')">Sort by id</button>
+		<br>
+		<button v-for="element in tags"
+				:class="['button-outline ',filters.includes(element)?'active':'']"
+				@click="tagfilter(element)">
+			{{element}}
+		</button>
+		<button class="button-outline" @click="filters=[];filter('show all')">Reset</button>
 		<p>{{selected.name}} ({{selected.id}})</p>
 		<isotope ref="cpt" :list="data" id="root_isotope" class="isoDefault" :options='getOptions()'
 				 @filter="filterOption=arguments[0]">
@@ -30,21 +25,15 @@
 
 <script>
     import isotope from "vueisotope"
-    import data from './data.json';
+    import data from 'json-loader!yaml-loader!./data.yaml';
     export default {
         name: 'app',
         data () {
             return {
-                id: "id",
-                name: "name",
-                msg: 'Welcome to Your Vue.js App',
-                message: 'Das ist ein Test!',
-                liste: [1, 2, 3, 4],
                 tags: ['a', 'b', 'c', 'g'],
-                checked: true,
                 data: data,
                 selected: data[0],
-                filt: [],
+                filters: [],
             }
         },
         methods: {
@@ -55,10 +44,10 @@
                 this.$refs.cpt.filter(key);
             },
             tagfilter: function(element) {
-                if (this.filt.includes(element)) {
-                    this.filt = this.filt.filter(item => item !== element)
+                if (this.filters.includes(element)) {
+                    this.filters = this.filters.filter(item => item !== element)
                 } else {
-                    this.filt.push(element)
+                    this.filters.push(element)
                 }
                 this.filter('contains')
             },
@@ -81,15 +70,15 @@
                             return el.id > 30;
                         },
                         "test": (el) => {
-                            console.log(el.tags.includes(this.filt[0]));
+                            console.log(el.tags.includes(this.filters[0]));
                             return true
                         },
                         "contains": (element) => {
-                            if (this.filt.length === 0) {
+                            if (this.filters.length === 0) {
                                 return true;
                             }
                             let missing = false;
-                            this.filt.forEach(function(selectedtag) {
+                            this.filters.forEach(function(selectedtag) {
                                 if (!element.tags.includes(selectedtag)) {
                                     missing = true;
                                 }
@@ -100,7 +89,6 @@
                     }
                 };
             }
-
         },
         components: {
             isotope,
@@ -117,7 +105,7 @@
 		/*-moz-osx-font-smoothing: grayscale;*/
 		text-align: center;
 		/*color: #2c3e50;*/
-		/*margin-top: 60px;*/
+		margin-top: 20px;
 	}
 
 	h1, h2 {
@@ -139,5 +127,12 @@
 		padding: 10px;
 		/*width: 50px;*/
 		/*height: 50px;*/
+	}
+
+	button.active {
+		color: darken($color-secondary, 10%);
+		border-color: darken($color-secondary, 10%);
+		background-color: darken(white, 10%) !important;
+
 	}
 </style>
