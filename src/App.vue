@@ -1,24 +1,28 @@
 <template>
 	<div id="app">
-		<button class="button-outline" id="check1" @click="sort('name')">Sort by name</button>
-		<button class="button-outline" id="check2" @click="sort('id')">Sort by id</button>
-		<br>
-		<button v-for="element in tags"
-				:class="['button-outline ',filters.includes(element)?'active':'']"
-				@click="tagfilter(element)">
-			{{element}}
-		</button>
-		<button class="button-outline" @click="filters=[];filter('show all')">Reset</button>
+		<div id="buttonwrapper">
+			<button class="button-outline" id="check1" @click="sort('name')">Sort by name</button>
+			<button class="button-outline" id="check2" @click="sort('id')">Sort by id</button>
+			<br>
+			<button v-for="element in tags"
+					:class="['button-outline ',filters.includes(element)?'active':'']"
+					@click="tagfilter(element)">
+				{{element}}
+			</button>
+			<button class="button-outline" @click="filters=[];filter('show all')">Reset</button>
+		</div>
 		<p>{{selected.name}} ({{selected.id}})</p>
-		<isotope ref="cpt" :list="data" id="root_isotope" class="isoDefault" :options='getOptions()'
-				 @filter="filterOption=arguments[0]">
-			<div v-for="element in data" @click="selected=element" :key="element.id" class="block">
-				{{element.name}}
-				<br> {{element.id}}
-				<br>
-				<span>{{element.tags.join(",")}}</span>
-			</div>
-		</isotope>
+		<div id="blockwrapper">
+			<isotope ref="cpt" :list="data" id="root_isotope" class="isoDefault" :options='getOptions()'
+					 @filter="filterOption=arguments[0]">
+				<div v-for="element in data" @click="selected=element" :key="element.id" class="block">
+					{{element.name}}
+					<br> {{element.id}}
+					<br>
+					<span>{{element.tags.join(",")}}</span>
+				</div>
+			</isotope>
+		</div>
 
 	</div>
 </template>
@@ -60,7 +64,7 @@
                     sortBy: "name",
                     masonry: {
                         columnWidth: 70,
-                        gutter: 5
+                        gutter: 10
                     },
                     getFilterData: {
                         "show all": function() {
@@ -99,40 +103,44 @@
 <style lang="scss">
 	@import "../node_modules/milligram/src/milligram";
 
+	body {
+		background-color: #90CAF9;
+	}
+
 	#app {
-		/*font-family: 'Avenir', Helvetica, Arial, sans-serif;*/
-		/*-webkit-font-smoothing: antialiased;*/
-		/*-moz-osx-font-smoothing: grayscale;*/
 		text-align: center;
-		/*color: #2c3e50;*/
 		margin-top: 20px;
 	}
 
-	h1, h2 {
-		font-weight: normal;
-	}
-
-	ul {
-		list-style-type: none;
-		padding: 0;
-	}
-
-	li {
-		display: inline-block;
-		margin: 0 10px;
+	#blockwrapper {
+		margin: 20px;
 	}
 
 	.block {
-		background-color: lightgray;
+		background-color: white;
 		padding: 10px;
+		border-radius: 3px;
+		z-index: 3;
+		position: relative;
+		margin-bottom: 20px;
 		/*width: 50px;*/
 		/*height: 50px;*/
+		&:before {
+			border-radius: 3px;
+			content: "";
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: 0;
+			box-shadow: 5px 5px 17px 0 rgba(0, 0, 0, 0.2);
+		}
 	}
 
 	button.active {
 		color: darken($color-secondary, 10%);
 		border-color: darken($color-secondary, 10%);
 		background-color: darken(white, 10%) !important;
-
 	}
 </style>
