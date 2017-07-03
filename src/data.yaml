@@ -1,77 +1,87 @@
 ---
-- name: John
+- title: pyLanguagetool
+  tags:
+  - python
+  date: 2017-01-15
+  niceDate: Jänner 2017
+- title: nonsense
+  tags:
+  - python
+  date: 2016-11-08
+  niceDate: November 2016
+- title: John
   id: 25
   tags:
   - a
   - b
   - c
-- name: Joao
+- title: Joao
   id: 7
   tags:
   - a
   - c
-- name: Albert
+- title: Albert
   id: 12
   tags:
   - c
-- name: Jean
+- title: Jean
   id: 100
   tags:
   - d
-- name: Test
+- title: Test
   id: 34
   tags:
   - a
   - c
-- name: Hi
+- title: Hi
   id: 15
   tags:
   - a
   - b
   - g
-- name: Hallo
+- title: Hallo
   id: 75
   tags:
   - a
   - b
   - c
-- name: Ein ganz langer Name
+- title: Ein ganz langer title
   id: 25
   tags:
   - a
   - b
   - c
-- name: Joao
+- title: Joao
   id: 7
   tags:
   - a
   - b
   - c
-- name: Albert
+- title: Albert
   id: 12
   tags:
   - a
   - b
   - c
-- name: Jean
+- title: Jean
   id: 100
   tags:
   - a
   - b
   - c
-- name: Test
+- title: Test
   id: 34
   tags:
   - a
   - b
   - c
-- name: Hi
+- title: Hi
   id: 15
   tags:
   - a
   - b
   - c
-- name: Hallo
+- title: Hallo
   id: 75
   tags:
   - a
