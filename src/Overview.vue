@@ -1,5 +1,5 @@
 <template>
-	<div id="app">
+	<div id="overview">
 		<div id="buttonwrapper">
 			<button class="button-outline" id="check1" @click="sort('title')">Sort by title</button>
 			<button class="button-outline" id="check2" @click="sort('id')">Sort by id</button>
@@ -13,9 +13,9 @@
 			</button>
 			<button class="button-outline" @click="filters=[];filter('show all')">Reset</button>
 		</div>
-			<router-view>
-				<!-- here the ItemModal component will be rendered -->
-			</router-view>
+		<router-view>
+			<!-- here the ItemModal component will be rendered -->
+		</router-view>
 		<div id="blockwrapper">
 			<isotope ref="cpt" :list="data" id="root_isotope" class="isoDefault" :options='getOptions()'
 					 @filter="filterOption=arguments[0]">
@@ -28,7 +28,9 @@
 						{{element.title}}
 						<br> {{element.niceDate}}
 						<br>
-						<router-link :to="{name: 'itemModal', params: {id: element.title}}" style="display: none;">{{element.title}}</router-link>
+						<router-link :to="{name: 'itemModal', params: {id: element.title}}" style="display: none;">
+							{{element.title}}
+						</router-link>
 						<div class="tagwrapper">
 							<div class="tag"
 								 v-for="tag in element.tags"
@@ -49,7 +51,7 @@
     import * as colors from 'material-colors';
     import data from 'json-loader!yaml-loader!./data.yaml';
     export default {
-        name: 'hello',
+        name: 'overview',
         data () {
             return {
                 tags: ['a', 'b', 'c', 'python'],
@@ -105,8 +107,9 @@
                     sortAscending: this.ascending,
                     sortBy: "date",
                     masonry: {
-                        columnWidth: 70,
-                        gutter: 10
+                        columnWidth: ".card",
+                        gutter: 10,
+                        isFitWidth: true
                     },
                     getFilterData: {
                         "show all": function() {
@@ -142,6 +145,13 @@
 
 	body {
 		/*background-color: #90CAF9;*/
+		background-color: #ffffff;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23009688' fill-opacity='0.2'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+		background-attachment: fixed;
+	}
+
+	.container {
+		background-color: white;
 	}
 
 	#app {
@@ -151,6 +161,10 @@
 
 	#blockwrapper {
 		margin: 20px;
+	}
+
+	#root_isotope {
+		margin: 0 auto;
 	}
 
 	.card {
