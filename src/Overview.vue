@@ -13,16 +13,13 @@
 			</button>
 			<button class="button-outline" @click="filters=[];filter('show all')">Reset</button>
 		</div>
-		<router-view>
-			<!-- here the ItemModal component will be rendered -->
-		</router-view>
 		<div id="blockwrapper">
 			<isotope ref="cpt" :list="data" id="root_isotope" class="isoDefault" :options='getOptions()'
 					 @filter="filterOption=arguments[0]">
 				<div v-for="element in data" :key="element.title" class="card"
 					 @click="$router.push({ name: 'itemModal',params:{id:element.title} })">
 					<div class="imagewrapper">
-						<img :src="element.image?require('./assets/'+element.image):'https://unsplash.it/1000/300/'">
+						<img :src="element.image?require('./assets/'+element.image):'https://unsplash.it/1000/302/'">
 					</div>
 					<div class="textwrapper">
 						{{element.title}}
@@ -42,6 +39,9 @@
 				</div>
 			</isotope>
 		</div>
+		<router-view :data="data">
+			<!-- here the ItemModal component will be rendered -->
+		</router-view>
 
 	</div>
 </template>

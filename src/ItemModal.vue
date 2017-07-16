@@ -1,32 +1,94 @@
 <template>
 	<!-- some generic modal component, wrapping a CSS modal -->
-	<modal name="hello-world" @closed="closed">
-		<div v-if="this.element">
-			<a @click="$router.push('/')" class="closeButton">❌</a>
-			<h1>{{title}} Fette Überschrift<span>{{element.niceDate}}</span></h1>
-			<button @click="$router.push('/')">close</button>
+	<transition name="modal" @keyup.esc="$router.push('/')">
+		<div class="modal-mask" @click="$router.push('/')">
+			<div class="modal-container" @click.stop>
+				<div class="modal-header">
+					<slot name="header">
+						<h1>{{title}}</h1>
+					</slot>
+				</div>
+
+				<div class="modal-body">
+					<slot name="body">
+						<div>
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aperiam aut beatae consequatur cupiditate deleniti doloremque eius eos facilis hic illum iusto nemo nihil perferendis quod tenetur, voluptas? Explicabo, illo.
+						</div>
+						<div>
+							Ab asperiores corporis, delectus eius enim eos, esse necessitatibus numquam perferendis possimus quam quod ratione recusandae voluptate voluptatum! Et facilis fugiat magnam maxime nihil, perferendis quas tempora temporibus velit! Porro.
+						</div>
+						<div>
+							Delectus eos harum modi sint vel. Ab, aperiam cum doloribus ea eligendi eos et explicabo hic id inventore mollitia nam nemo quam quas quia, quo totam unde vitae voluptatibus voluptatum!
+						</div>
+						<div>
+							Ad consequatur cum dignissimos dolorem ea eaque expedita facilis molestiae mollitia, natus nisi praesentium ratione repellat rerum tempora tenetur vel, voluptate. Consequatur dicta earum id magni repellat sed sunt suscipit.
+						</div>
+						<div>
+							Accusamus accusantium ad aliquam aliquid, animi dicta eos inventore iusto maiores molestiae officia ratione rerum sit? Aliquam dignissimos fuga harum libero rerum! Autem dicta esse minus, possimus quibusdam veritatis voluptate?
+						</div>
+						<div>
+							Atque culpa ea, earum laboriosam non ratione suscipit! Aliquid animi beatae ducimus itaque labore. A amet dignissimos dolores eveniet explicabo incidunt minus molestiae nostrum omnis repellendus sit tempore, veritatis vitae?
+						</div>
+						<div>
+							Aut culpa dignissimos eaque eligendi enim exercitationem fugit illum in laudantium minima mollitia, nemo nihil nulla odit quod repellendus ullam unde vero! Amet aut dolores, eius inventore molestiae quam tempore!
+						</div>
+						<div>
+							Et fuga illo molestiae quaerat quibusdam unde vel! Assumenda atque dolore et facere ipsa itaque nobis obcaecati quisquam voluptates? Aperiam beatae blanditiis exercitationem ipsum nemo, pariatur quod sit tenetur vitae?
+						</div>
+						<div>
+							Alias aliquid commodi cum cumque debitis, deserunt dignissimos dolore ea fuga itaque magnam magni nam nesciunt nobis, placeat possimus quam quia quidem sapiente sequi, soluta tempore vel. Consectetur incidunt, veritatis!
+						</div>
+						<div>
+							Delectus dicta explicabo laboriosam, necessitatibus nulla odio quibusdam totam veniam. Accusamus autem ducimus excepturi id molestiae, perspiciatis porro ratione soluta vel! Animi aperiam error eveniet facilis minima similique tenetur voluptatibus?
+						</div>
+						<div>
+							Doloribus esse itaque maxime obcaecati omnis optio quas quibusdam. Aut consectetur cupiditate, debitis dicta explicabo, harum impedit incidunt ipsam, laudantium maxime nam quibusdam ratione saepe sapiente sunt temporibus totam ut.
+						</div>
+						<div>
+							Amet, architecto consequuntur deleniti dolores doloribus dolorum enim esse ex expedita nisi, non officiis optio quas, quia saepe voluptate voluptatibus! Ab autem consectetur corporis debitis dolor eveniet quae. Odio, provident.
+						</div>
+						<div>
+							Ad alias aliquam commodi corporis ea, explicabo id laborum magni maiores minima natus provident repellendus reprehenderit sunt ullam? Amet animi aspernatur consectetur cum est nulla porro sequi. Ad, ipsam quibusdam.
+						</div>
+						<div>
+							Aspernatur assumenda blanditiis, dolores dolorum excepturi fugiat harum natus nulla numquam perspiciatis placeat quasi reiciendis repellat temporibus, vel velit voluptates voluptatum. Beatae commodi consequatur corporis dignissimos incidunt ipsa natus porro.
+						</div>
+						<div>
+							Ad adipisci animi architecto aspernatur culpa delectus doloribus dolorum exercitationem explicabo, facilis fugit, id, ipsam maiores modi necessitatibus nulla quae quasi saepe tempora veritatis? Asperiores delectus nihil officiis repellendus sed.
+						</div>
+					</slot>
+				</div>
+
+				<div class="modal-footer">
+					<slot name="footer">
+						default footer
+						<button class="modal-default-button" @click="$router.push('/')">
+							OK
+						</button>
+					</slot>
+				</div>
+			</div>
 		</div>
-	</modal>
+	</transition>
 </template>
 
 <script>
-    import data from 'json-loader!yaml-loader!./data.yaml';
     export default {
         data() {
             return {
                 title: null,
-                element: null
+                element: null,
             }
         },
+        props: ['data'],
         mounted() {
-            // use $route.params.id to get the item for that ID from whereever you have stored all the items.
+            document.body.style.overflow = "hidden";
             this.title = this.$route.params.id;
-            this.element = data.find(elem => elem.title === this.title);
-            this.$modal.show("hello-world")
+            this.element = this.data.find(elem => elem.title === this.title);
+            document.title = this.title + " - lw1.at";
         },
         methods: {
             closed(event) {
-                console.log(event);
                 this.$router.push('/')
             }
         }
@@ -41,4 +103,85 @@
 		right: 10px;
 		cursor: pointer;
 	}
+
+	/*.modal {*/
+	/*padding: 20px;*/
+	/*}*/
+
+	.modal-mask {
+		background-color: rgba(0, 0, 0, 0.5);
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		padding: 0 20px;
+		z-index: 1000;
+		transition: opacity .3s ease;
+	}
+
+	/*.modal-mask {*/
+	/*position: fixed;*/
+	/*z-index: 9998;*/
+	/*top: 0;*/
+	/*left: 0;*/
+	/*width: 100%;*/
+	/*height: 100%;*/
+	/*background-color: rgba(0, 0, 0, .5);*/
+	/*display: table;*/
+	/*transition: opacity .3s ease;*/
+	/*}*/
+
+	.modal-wrapper {
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	.modal-container {
+		width: 80%;
+		margin: 0px auto;
+		padding: 20px 30px;
+		background-color: #fff;
+		border-radius: 2px;
+		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+		transition: all .3s ease;
+		font-family: Helvetica, Arial, sans-serif;
+	}
+
+	.modal-header h3 {
+		margin-top: 0;
+		color: #42b983;
+	}
+
+	.modal-body {
+		margin: 20px 0;
+	}
+
+	.modal-default-button {
+		float: right;
+	}
+
+	/*
+	 * The following styles are auto-applied to elements with
+	 * transition="modal" when their visibility is toggled
+	 * by Vue.js.
+	 *
+	 * You can easily play with the modal transition by editing
+	 * these styles.
+	 */
+
+	.modal-enter {
+		opacity: 0;
+	}
+
+	.modal-leave-active {
+		opacity: 0;
+	}
+
+	/*.modal-enter .modal-container,*/
+	/*.modal-leave-active .modal-container {*/
+	/*-webkit-transform: scale(1.1);*/
+	/*transform: scale(1.1);*/
+	/*}*/
 </style>

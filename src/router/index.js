@@ -4,7 +4,7 @@ import Overview from '../Overview.vue'
 import ItemModal from '../ItemModal.vue'
 Vue.use(Router);
 
-export default new Router({
+let router = new Router({
     mode: 'history',
     routes: [
         {
@@ -16,4 +16,11 @@ export default new Router({
             ]
         }
     ]
-})
+});
+router.afterEach((to, from) => {
+    if (from.name === "itemModal" && to.name === "Overview") {
+        document.body.style.overflow="";
+        document.title = "lw1.at";
+    }
+});
+export default router;

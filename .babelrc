@@ -1,5 +1,15 @@
 {
   "presets": [
-    ["env", { "modules": false }]
+    [
+      "env",
+      {
+        "modules": false,
+        "targets": {
+          "browsers": [
+            ">1% in AT"
+          ]
+        }
+      }
+    ]
   ]
 }
