@@ -6,7 +6,7 @@
 				<div class="modal-header">
 					<h1>{{title}}</h1>
 					<div class="imagewrapper">
-						<img :src="element.image?require('./assets/'+element.image):'https://unsplash.it/1000/302/'">
+						<img :src="element.image?require('./assets/'+element.image):require('./assets/placeholder.png')">
 					</div>
 					<a href="#" class="closeButton" @click="$router.push('/')">✖</a>
 				</div>
@@ -96,7 +96,7 @@
 		font-size: 22px;
 		top: 10px;
 		right: 10px;
-		padding:10px;
+		padding: 10px;
 		cursor: pointer;
 		&:hover {
 			color: darkgrey;
@@ -116,6 +116,9 @@
 		height: 100%;
 		overflow: auto;
 		padding: 0 20px;
+		@media (max-width: 40.0rem) {
+			padding: 0 10px;
+		}
 		z-index: 1000;
 		transition: opacity .3s ease;
 	}
@@ -140,8 +143,11 @@
 	.modal-container {
 		position: relative;
 		width: 80%;
-		margin: 0 auto;
 		padding: 20px 30px;
+		@media (max-width: 40.0rem) {
+			width: 100%;
+		}
+		margin: 0 auto;
 		background-color: #fff;
 		border-radius: 2px;
 		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);

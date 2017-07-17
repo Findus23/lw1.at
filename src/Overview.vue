@@ -19,7 +19,7 @@
 				<div v-for="element in data" :key="element.title" class="card"
 					 @click="$router.push({ name: 'itemModal',params:{id:element.title} })">
 					<div class="imagewrapper">
-						<img :src="element.image?require('./assets/'+element.image):'https://unsplash.it/1000/302/'">
+						<img :src="element.image?require('./assets/'+element.image):require('./assets/placeholder.png')">
 					</div>
 					<div class="textwrapper">
 						{{element.title}}
