@@ -5,7 +5,7 @@
   "author": "Lukas Winkler <l.winkler23@mailbox.org>",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --content-base dist/ --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "json": "cross-env NODE_ENV=production webpack --profile --json > stats.json"
   },
@@ -27,6 +27,8 @@
     "eslint-loader": "^1.9.0",
     "eslint-plugin-html": "^3.1.0",
     "file-loader": "^0.11.2",
+    "html-webpack-harddisk-plugin": "^0.1.0",
+    "html-webpack-plugin": "^2.29.0",
     "node-sass": "^4.5.0",
     "sass-loader": "^6.0.6",
     "vue-loader": "^12.2.2",

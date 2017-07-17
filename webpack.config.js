@@ -1,12 +1,14 @@
 let path = require('path');
 let webpack = require('webpack');
+let HtmlWebpackPlugin = require('html-webpack-plugin');
+let HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 
 module.exports = {
     entry: './src/main.js',
     output: {
         path: path.resolve(__dirname, './dist'),
-        publicPath: '/dist/',
-        filename: 'build.js'
+        publicPath: '/',
+        filename: 'build.js?hash=[hash]'
     },
     module: {
         rules: [
@@ -53,7 +55,14 @@ module.exports = {
     performance: {
         hints: false
     },
-    devtool: '#eval-source-map'
+    devtool: '#eval-source-map',
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'My App',
+            template: 'my-index.ejs',
+            devServer: process.env.NODE_ENV === 'production' ? '' : 'http://localhost:8081',
+        })
+    ]
 };
 
 if (process.env.NODE_ENV === 'production') {
@@ -73,6 +82,7 @@ if (process.env.NODE_ENV === 'production') {
         }),
         new webpack.LoaderOptionsPlugin({
             minimize: true
-        })
+        }),
+
     ])
 }

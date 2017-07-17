@@ -2,70 +2,65 @@
 	<!-- some generic modal component, wrapping a CSS modal -->
 	<transition name="modal" @keyup.esc="$router.push('/')">
 		<div class="modal-mask" @click="$router.push('/')">
-			<div class="modal-container" @click.stop>
+			<div class="modal-container" @click.stop v-if="element">
 				<div class="modal-header">
-					<slot name="header">
-						<h1>{{title}}</h1>
-					</slot>
+					<h1>{{title}}</h1>
+					<div class="imagewrapper">
+						<img :src="element.image?require('./assets/'+element.image):'https://unsplash.it/1000/302/'">
+					</div>
+					<a href="#" class="closeButton" @click="$router.push('/')">✖</a>
 				</div>
 
 				<div class="modal-body">
-					<slot name="body">
-						<div>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aperiam aut beatae consequatur cupiditate deleniti doloremque eius eos facilis hic illum iusto nemo nihil perferendis quod tenetur, voluptas? Explicabo, illo.
-						</div>
-						<div>
-							Ab asperiores corporis, delectus eius enim eos, esse necessitatibus numquam perferendis possimus quam quod ratione recusandae voluptate voluptatum! Et facilis fugiat magnam maxime nihil, perferendis quas tempora temporibus velit! Porro.
-						</div>
-						<div>
-							Delectus eos harum modi sint vel. Ab, aperiam cum doloribus ea eligendi eos et explicabo hic id inventore mollitia nam nemo quam quas quia, quo totam unde vitae voluptatibus voluptatum!
-						</div>
-						<div>
-							Ad consequatur cum dignissimos dolorem ea eaque expedita facilis molestiae mollitia, natus nisi praesentium ratione repellat rerum tempora tenetur vel, voluptate. Consequatur dicta earum id magni repellat sed sunt suscipit.
-						</div>
-						<div>
-							Accusamus accusantium ad aliquam aliquid, animi dicta eos inventore iusto maiores molestiae officia ratione rerum sit? Aliquam dignissimos fuga harum libero rerum! Autem dicta esse minus, possimus quibusdam veritatis voluptate?
-						</div>
-						<div>
-							Atque culpa ea, earum laboriosam non ratione suscipit! Aliquid animi beatae ducimus itaque labore. A amet dignissimos dolores eveniet explicabo incidunt minus molestiae nostrum omnis repellendus sit tempore, veritatis vitae?
-						</div>
-						<div>
-							Aut culpa dignissimos eaque eligendi enim exercitationem fugit illum in laudantium minima mollitia, nemo nihil nulla odit quod repellendus ullam unde vero! Amet aut dolores, eius inventore molestiae quam tempore!
-						</div>
-						<div>
-							Et fuga illo molestiae quaerat quibusdam unde vel! Assumenda atque dolore et facere ipsa itaque nobis obcaecati quisquam voluptates? Aperiam beatae blanditiis exercitationem ipsum nemo, pariatur quod sit tenetur vitae?
-						</div>
-						<div>
-							Alias aliquid commodi cum cumque debitis, deserunt dignissimos dolore ea fuga itaque magnam magni nam nesciunt nobis, placeat possimus quam quia quidem sapiente sequi, soluta tempore vel. Consectetur incidunt, veritatis!
-						</div>
-						<div>
-							Delectus dicta explicabo laboriosam, necessitatibus nulla odio quibusdam totam veniam. Accusamus autem ducimus excepturi id molestiae, perspiciatis porro ratione soluta vel! Animi aperiam error eveniet facilis minima similique tenetur voluptatibus?
-						</div>
-						<div>
-							Doloribus esse itaque maxime obcaecati omnis optio quas quibusdam. Aut consectetur cupiditate, debitis dicta explicabo, harum impedit incidunt ipsam, laudantium maxime nam quibusdam ratione saepe sapiente sunt temporibus totam ut.
-						</div>
-						<div>
-							Amet, architecto consequuntur deleniti dolores doloribus dolorum enim esse ex expedita nisi, non officiis optio quas, quia saepe voluptate voluptatibus! Ab autem consectetur corporis debitis dolor eveniet quae. Odio, provident.
-						</div>
-						<div>
-							Ad alias aliquam commodi corporis ea, explicabo id laborum magni maiores minima natus provident repellendus reprehenderit sunt ullam? Amet animi aspernatur consectetur cum est nulla porro sequi. Ad, ipsam quibusdam.
-						</div>
-						<div>
-							Aspernatur assumenda blanditiis, dolores dolorum excepturi fugiat harum natus nulla numquam perspiciatis placeat quasi reiciendis repellat temporibus, vel velit voluptates voluptatum. Beatae commodi consequatur corporis dignissimos incidunt ipsa natus porro.
-						</div>
-						<div>
-							Ad adipisci animi architecto aspernatur culpa delectus doloribus dolorum exercitationem explicabo, facilis fugit, id, ipsam maiores modi necessitatibus nulla quae quasi saepe tempora veritatis? Asperiores delectus nihil officiis repellendus sed.
-						</div>
-					</slot>
+					<div>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aperiam aut beatae consequatur cupiditate deleniti doloremque eius eos facilis hic illum iusto nemo nihil perferendis quod tenetur, voluptas? Explicabo, illo.
+					</div>
+					<div>
+						Ab asperiores corporis, delectus eius enim eos, esse necessitatibus numquam perferendis possimus quam quod ratione recusandae voluptate voluptatum! Et facilis fugiat magnam maxime nihil, perferendis quas tempora temporibus velit! Porro.
+					</div>
+					<div>
+						Delectus eos harum modi sint vel. Ab, aperiam cum doloribus ea eligendi eos et explicabo hic id inventore mollitia nam nemo quam quas quia, quo totam unde vitae voluptatibus voluptatum!
+					</div>
+					<div>
+						Ad consequatur cum dignissimos dolorem ea eaque expedita facilis molestiae mollitia, natus nisi praesentium ratione repellat rerum tempora tenetur vel, voluptate. Consequatur dicta earum id magni repellat sed sunt suscipit.
+					</div>
+					<div>
+						Accusamus accusantium ad aliquam aliquid, animi dicta eos inventore iusto maiores molestiae officia ratione rerum sit? Aliquam dignissimos fuga harum libero rerum! Autem dicta esse minus, possimus quibusdam veritatis voluptate?
+					</div>
+					<div>
+						Atque culpa ea, earum laboriosam non ratione suscipit! Aliquid animi beatae ducimus itaque labore. A amet dignissimos dolores eveniet explicabo incidunt minus molestiae nostrum omnis repellendus sit tempore, veritatis vitae?
+					</div>
+					<div>
+						Aut culpa dignissimos eaque eligendi enim exercitationem fugit illum in laudantium minima mollitia, nemo nihil nulla odit quod repellendus ullam unde vero! Amet aut dolores, eius inventore molestiae quam tempore!
+					</div>
+					<div>
+						Et fuga illo molestiae quaerat quibusdam unde vel! Assumenda atque dolore et facere ipsa itaque nobis obcaecati quisquam voluptates? Aperiam beatae blanditiis exercitationem ipsum nemo, pariatur quod sit tenetur vitae?
+					</div>
+					<div>
+						Alias aliquid commodi cum cumque debitis, deserunt dignissimos dolore ea fuga itaque magnam magni nam nesciunt nobis, placeat possimus quam quia quidem sapiente sequi, soluta tempore vel. Consectetur incidunt, veritatis!
+					</div>
+					<div>
+						Delectus dicta explicabo laboriosam, necessitatibus nulla odio quibusdam totam veniam. Accusamus autem ducimus excepturi id molestiae, perspiciatis porro ratione soluta vel! Animi aperiam error eveniet facilis minima similique tenetur voluptatibus?
+					</div>
+					<div>
+						Doloribus esse itaque maxime obcaecati omnis optio quas quibusdam. Aut consectetur cupiditate, debitis dicta explicabo, harum impedit incidunt ipsam, laudantium maxime nam quibusdam ratione saepe sapiente sunt temporibus totam ut.
+					</div>
+					<div>
+						Amet, architecto consequuntur deleniti dolores doloribus dolorum enim esse ex expedita nisi, non officiis optio quas, quia saepe voluptate voluptatibus! Ab autem consectetur corporis debitis dolor eveniet quae. Odio, provident.
+					</div>
+					<div>
+						Ad alias aliquam commodi corporis ea, explicabo id laborum magni maiores minima natus provident repellendus reprehenderit sunt ullam? Amet animi aspernatur consectetur cum est nulla porro sequi. Ad, ipsam quibusdam.
+					</div>
+					<div>
+						Aspernatur assumenda blanditiis, dolores dolorum excepturi fugiat harum natus nulla numquam perspiciatis placeat quasi reiciendis repellat temporibus, vel velit voluptates voluptatum. Beatae commodi consequatur corporis dignissimos incidunt ipsa natus porro.
+					</div>
+					<div>
+						Ad adipisci animi architecto aspernatur culpa delectus doloribus dolorum exercitationem explicabo, facilis fugit, id, ipsam maiores modi necessitatibus nulla quae quasi saepe tempora veritatis? Asperiores delectus nihil officiis repellendus sed.
+					</div>
 				</div>
 
 				<div class="modal-footer">
-					<slot name="footer">
-						default footer
-						<button class="modal-default-button" @click="$router.push('/')">
-							OK
-						</button>
-					</slot>
+					default footer
 				</div>
 			</div>
 		</div>
@@ -99,9 +94,13 @@
 	.closeButton {
 		position: absolute;
 		font-size: 22px;
-		top: 3px;
+		top: 10px;
 		right: 10px;
+		padding:10px;
 		cursor: pointer;
+		&:hover {
+			color: darkgrey;
+		}
 	}
 
 	/*.modal {*/
@@ -139,8 +138,9 @@
 	}
 
 	.modal-container {
+		position: relative;
 		width: 80%;
-		margin: 0px auto;
+		margin: 0 auto;
 		padding: 20px 30px;
 		background-color: #fff;
 		border-radius: 2px;
