@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Overview from '../Overview.vue'
 import ItemModal from '../ItemModal.vue'
+
 Vue.use(Router);
 
 let router = new Router({
@@ -19,8 +20,10 @@ let router = new Router({
 });
 router.afterEach((to, from) => {
     if (from.name === "itemModal" && to.name === "Overview") {
-        document.body.style.overflow="";
-        document.title = "lw1.at";
+        setTimeout(function() { // delay before making background scrollable again
+            document.body.style.overflow = "";
+            document.title = "lw1.at";
+        }, 300);
     }
 });
 export default router;

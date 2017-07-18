@@ -103,10 +103,6 @@
 		}
 	}
 
-	/*.modal {*/
-	/*padding: 20px;*/
-	/*}*/
-
 	.modal-mask {
 		background-color: rgba(0, 0, 0, 0.5);
 		position: fixed;
@@ -114,7 +110,8 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		overflow: auto;
+		overflow: scroll;
+		-webkit-overflow-scrolling: touch;
 		padding: 0 20px;
 		@media (max-width: 40.0rem) {
 			padding: 0 10px;
@@ -135,10 +132,6 @@
 	/*transition: opacity .3s ease;*/
 	/*}*/
 
-	.modal-wrapper {
-		display: table-cell;
-		vertical-align: middle;
-	}
 
 	.modal-container {
 		position: relative;
@@ -146,13 +139,13 @@
 		padding: 20px 30px;
 		@media (max-width: 40.0rem) {
 			width: 100%;
+			padding: 20px;
 		}
 		margin: 0 auto;
 		background-color: #fff;
 		border-radius: 2px;
 		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 		transition: all .3s ease;
-		font-family: Helvetica, Arial, sans-serif;
 	}
 
 	.modal-header h3 {

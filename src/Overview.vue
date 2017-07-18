@@ -50,9 +50,10 @@
     import isotope from "vueisotope"
     import * as colors from 'material-colors';
     import data from 'json-loader!yaml-loader!./data.yaml';
+
     export default {
         name: 'overview',
-        data () {
+        data() {
             return {
                 tags: ['a', 'b', 'c', 'python'],
                 tagColors: {
@@ -234,4 +235,10 @@
 		border-color: darken($color-secondary, 10%);
 		background-color: darken(white, 10%) !important;
 	}
+
+	html { // https://aykevl.nl/2014/09/fix-jumping-scrollbar
+		margin-left: calc(100vw - 100%);
+		margin-right: 0;
+	}
+
 </style>
