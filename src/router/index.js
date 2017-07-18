@@ -15,9 +15,14 @@ let router = new Router({
             children: [
                 {path: ':id', component: ItemModal, name: 'itemModal'}
             ]
+        },
+        {
+            path: '*',
+            redirect: '/'
         }
     ]
 });
+
 router.afterEach((to, from) => {
     if (from.name === "itemModal" && to.name === "Overview") {
         setTimeout(function() { // delay before making background scrollable again

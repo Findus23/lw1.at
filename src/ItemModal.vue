@@ -120,19 +120,6 @@
 		transition: opacity .3s ease;
 	}
 
-	/*.modal-mask {*/
-	/*position: fixed;*/
-	/*z-index: 9998;*/
-	/*top: 0;*/
-	/*left: 0;*/
-	/*width: 100%;*/
-	/*height: 100%;*/
-	/*background-color: rgba(0, 0, 0, .5);*/
-	/*display: table;*/
-	/*transition: opacity .3s ease;*/
-	/*}*/
-
-
 	.modal-container {
 		position: relative;
 		width: 80%;
@@ -180,7 +167,6 @@
 
 	/*.modal-enter .modal-container,*/
 	/*.modal-leave-active .modal-container {*/
-	/*-webkit-transform: scale(1.1);*/
-	/*transform: scale(1.1);*/
+		/*transform: scale(0.8);*/
 	/*}*/
 </style>
