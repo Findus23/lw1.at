@@ -140,6 +140,7 @@
 </script>
 
 <style lang="scss">
+	$color-primary: #F57C00;
 	@import "../node_modules/milligram/src/milligram";
 
 	$imageheight: 150px;

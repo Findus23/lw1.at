@@ -10,6 +10,7 @@
     "json": "cross-env NODE_ENV=production webpack --profile --json > stats.json"
   },
   "dependencies": {
+    "markdown-it": "^8.3.1",
     "material-colors": "^1.2.5",
     "milligram": "git+https://github.com/Findus23/milligram.git",
     "vue": "^2.4.1",
@@ -25,9 +26,8 @@
     "css-loader": "^0.28.4",
     "eslint": "^4.2.0",
     "eslint-loader": "^1.9.0",
-    "eslint-plugin-html": "^3.1.0",
+    "eslint-plugin-html": "^3.1.1",
     "file-loader": "^0.11.2",
-    "html-webpack-harddisk-plugin": "^0.1.0",
     "html-webpack-plugin": "^2.29.0",
     "node-sass": "^4.5.0",
     "sass-loader": "^6.0.6",
