@@ -8,10 +8,11 @@
 			<br>
 			<button v-for="element in tags"
 					:class="['button-outline ',filters.includes(element)?'active':'']"
-					@click="tagfilter(element)">
+					@click="search='';tagfilter(element)">
 				{{element}}
 			</button>
 			<button class="button-outline" @click="filters=[];filter('show all')">Reset</button>
+			<input type="text" title="test" v-model="search"/>
 		</div>
 		<div id="blockwrapper">
 			<isotope ref="cpt" :list="data" id="root_isotope" class="isoDefault" :options='getOptions()'
@@ -48,6 +49,7 @@
 
 <script>
     import isotope from "vueisotope"
+    import debounce from 'lodash.debounce';
     import * as colors from 'material-colors';
     import data from 'json-loader!yaml-loader!./data.yaml';
 
@@ -65,6 +67,7 @@
                 data: data,
                 ascending: true,
                 filters: [],
+                search: ""
             }
         },
         methods: {
@@ -128,6 +131,14 @@
                             });
                             return !missing;
 
+                        },
+                        "search": (element) => {
+                            if (this.search === "") {
+                                return true;
+                            }
+                            console.info("running filter function");
+
+                            return element.title.toLowerCase().includes(this.search.toLowerCase());
                         }
                     }
                 };
@@ -135,15 +146,22 @@
         },
         components: {
             isotope,
+        },
+        watch: {
+            search: function() {
+                console.warn("filtering");
+                this.filters = [];
+                if (this.search !== "") {
+                    this.filter('search');
+                }
+            }
         }
     }
 </script>
 
 <style lang="scss">
-	$color-primary: #F57C00;
+	@import "variables";
 	@import "../node_modules/milligram/src/milligram";
-
-	$imageheight: 150px;
 
 	body {
 		/*background-color: #90CAF9;*/
@@ -172,16 +190,16 @@
 	.card {
 		background-color: #009688;
 		color: white;
-		border-radius: 3px;
+		border-radius: $borderRadius;
 		z-index: 3;
 		position: relative;
 		margin-bottom: 20px;
 		width: 100%;
 		max-width: 300px;
 		height: 300px;
-		/*cursor: pointer;*/
+		cursor: pointer;
 		&:before {
-			border-radius: 3px;
+			border-radius: $borderRadius;
 			content: "";
 			position: absolute;
 			top: 0;
@@ -190,8 +208,16 @@
 			right: 0;
 			z-index: -3;
 			@include shadow(2);
+			transition: box-shadow 0.2s;
+		}
+		&:hover {
+			&:before {
+				@include shadow(3);
+			}
 		}
 		.imagewrapper {
+			border-top-left-radius: $borderRadius;
+			border-top-right-radius: $borderRadius;
 			width: 100%;
 			height: $imageheight;
 			overflow: hidden;
