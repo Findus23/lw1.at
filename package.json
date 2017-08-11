@@ -15,6 +15,7 @@
     "material-colors": "^1.2.5",
     "milligram": "git+https://github.com/Findus23/milligram.git",
     "vue": "^2.4.2",
+    "vue-awesome": "^2.3.1",
     "vue-router": "^2.7.0",
     "vueisotope": "^3.1.0"
   },
@@ -32,9 +33,9 @@
     "html-webpack-plugin": "^2.29.0",
     "node-sass": "^4.5.0",
     "sass-loader": "^6.0.6",
-    "vue-loader": "^12.2.2",
+    "vue-loader": "^13.0.2",
     "vue-template-compiler": "^2.4.2",
-    "webpack": "^3.3.0",
+    "webpack": "^3.4.1",
     "webpack-dev-server": "^2.6.1",
     "yaml-loader": "^0.5.0"
   },

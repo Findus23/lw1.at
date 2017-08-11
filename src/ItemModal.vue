@@ -1,14 +1,15 @@
 <template>
 	<!-- some generic modal component, wrapping a CSS modal -->
-	<transition name="modal" @keyup.esc="$router.push('/')">
-		<div class="modal-mask" @click="$router.push('/')">
+	<transition name="modal">
+		<div class="modal-mask" @click="$router.push({ name: 'Overview', params: { language: language }})">
 			<div class="modal-container" @click.stop v-if="element">
 				<div class="modal-header">
 					<div class="imagewrapper">
 						<img :src="element.image?require('./assets/'+element.image):require('./assets/placeholder.png')">
 					</div>
-					<h1>{{title}}</h1>
-					<a href="#" class="closeButton" @click="$router.push('/')">✖</a>
+					<h1>{{ translate(element.title) }}</h1>
+					<a href="#" class="closeButton"
+					   @click="$router.push({ name: 'Overview', params: { language: language }})">✖</a>
 				</div>
 
 				<div class="modal-body" v-if="element.description">
@@ -54,21 +55,27 @@
                 element: null,
             }
         },
-        props: ['data'],
+        props: ['language', 'data'],
         mounted() {
             document.body.style.overflow = "hidden";
-            this.title = this.$route.params.id;
-            this.element = this.data.find(elem => elem.title === this.title);
-            document.title = this.title + " - lw1.at";
+            this.id = this.$route.params.id;
+            this.element = this.data.find(elem => elem.id === this.id);
+            document.title = this.translate(this.element.title) + " - lw1.at";
         },
         methods: {
             closed(event) {
-                this.$router.push('/')
+                this.$router.push({ name: 'Overview', params: { language: language }})
             },
             marked: function(input) {
                 return md.render(input);
+            },
+            translate: function(value) {
+                if (typeof value === "object") {
+                    return value[this.language];
+                } else {
+                    return value;
+                }
             }
-
         }
     }
 </script>

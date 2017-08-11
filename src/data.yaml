@@ -1,5 +1,8 @@
 ---
-- title: pyLanguagetool
+- id: pyLanguagetool
+  title:
+    de: pyLanguagetool (Deutsch)
+    en: pyLanguagetool (Englisch)
   tags:
   - python
   date: 2017-01-15
@@ -11,7 +14,8 @@
     - eine
 
     fsfds
-- title: nonsense
+- id: nonsense
+  title: nonsense
   tags:
   - python
   date: 2016-11-08

@@ -10,10 +10,22 @@ let router = new Router({
     routes: [
         {
             path: '/',
+            redirect: function() {
+                if (navigator.language.toLowerCase().includes("de")) {
+                    return "de"
+                } else if (navigator.language.toLowerCase().includes("en")) {
+                    return "en"
+                }
+                return "en";
+            }
+        },
+        {
+            path: '/:language/',
             name: 'Overview',
             component: Overview,
+            props: true,
             children: [
-                {path: ':id', component: ItemModal, name: 'itemModal'}
+                {path: '/:language/:id', component: ItemModal, name: 'itemModal'}
             ]
         },
         {

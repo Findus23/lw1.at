@@ -1,8 +1,14 @@
 import Vue from 'vue'
 import router from './router'
 import App from './App.vue'
-// import vmodal from 'vue-js-modal'
-// Vue.use(vmodal);
+
+import Icon from 'vue-awesome/components/Icon.vue'
+import 'vue-awesome/icons/refresh'
+import 'vue-awesome/icons/random'
+
+
+Vue.component('icon', Icon);
+
 
 let app = new Vue({
     el: '#app',
@@ -11,7 +17,7 @@ let app = new Vue({
     components: {App},
     methods: {
         gotoOverview(e) {
-            this.$router.push('/')
+            this.$router.back()
 
         }
     }
