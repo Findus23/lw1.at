@@ -127,14 +127,14 @@
                 return "black";
             },
             getOptions: function() {
+                let vm = this;
                 return {
                     getSortData: {
                         id: "id",
                         title: function(element) {
                             let value = element.title;
-                            return "test";
                             if (typeof value === "object") {
-                                return value.en; //TODO: Get language?
+                                return value[vm.language];
                             } else {
                                 return value;
                             }
@@ -175,7 +175,7 @@
                             if (this.search === "") {
                                 return true;
                             }
-                            return translate(element.title).toLowerCase().includes(this.search.toLowerCase());
+                            return vm.translate(element.title).toLowerCase().includes(this.search.toLowerCase());
                         }
                     }
                 };

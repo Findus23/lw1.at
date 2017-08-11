@@ -1,8 +1,8 @@
 ---
 - id: pyLanguagetool
   title:
-    de: pyLanguagetool (Deutsch)
-    en: pyLanguagetool (Englisch)
+    de: Deutsch pyLanguagetool
+    en: Englisch pyLanguagetool
   tags:
   - python
   date: 2017-01-15
