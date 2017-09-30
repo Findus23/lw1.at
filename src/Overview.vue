@@ -1,46 +1,49 @@
 <template>
 	<div id="overview">
-		<div id="buttonwrapper">
-			<div class="languageSelector">
-				<router-link :to="{ name: 'Overview', params: { language: 'en' }}">
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480">
-						<g transform="translate(80) scale(.94)">
-							<path fill="#006" d="M-256 0H768.02v512.01H-256z"></path>
-							<path d="M-256 0v57.244l909.535 454.768H768.02V454.77L-141.515 0H-256zM768.02 0v57.243L-141.515 512.01H-256v-57.243L653.535 0H768.02z"
-							      fill="#fff"></path>
-							<path d="M170.675 0v512.01h170.67V0h-170.67zM-256 170.67v170.67H768.02V170.67H-256z"
-							      fill="#fff"></path>
-							<path d="M-256 204.804v102.402H768.02V204.804H-256zM204.81 0v512.01h102.4V0h-102.4zM-256 512.01L85.34 341.34h76.324l-341.34 170.67H-256zM-256 0L85.34 170.67H9.016L-256 38.164V0zm606.356 170.67L691.696 0h76.324L426.68 170.67h-76.324zM768.02 512.01L426.68 341.34h76.324L768.02 473.848v38.162z"
-							      fill="#c00"></path>
-						</g>
-					</svg>
-				</router-link>
-				<router-link :to="{ name: 'Overview', params: { language: 'de' }}">
-					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480">
-						<path fill="#fff" d="M640 480H0V0h640z"></path>
-						<path fill="#df0000" d="M640 480H0V319.997h640zm0-319.875H0V.122h640z"></path>
-					</svg>
-				</router-link>
+		<div class="languageSelector">
+			<router-link :to="{ name: 'Overview', params: { language: 'en' }}">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480">
+					<g transform="translate(80) scale(.94)">
+						<path fill="#006" d="M-256 0H768.02v512.01H-256z"></path>
+						<path d="M-256 0v57.244l909.535 454.768H768.02V454.77L-141.515 0H-256zM768.02 0v57.243L-141.515 512.01H-256v-57.243L653.535 0H768.02z"
+						      fill="#fff"></path>
+						<path d="M170.675 0v512.01h170.67V0h-170.67zM-256 170.67v170.67H768.02V170.67H-256z"
+						      fill="#fff"></path>
+						<path d="M-256 204.804v102.402H768.02V204.804H-256zM204.81 0v512.01h102.4V0h-102.4zM-256 512.01L85.34 341.34h76.324l-341.34 170.67H-256zM-256 0L85.34 170.67H9.016L-256 38.164V0zm606.356 170.67L691.696 0h76.324L426.68 170.67h-76.324zM768.02 512.01L426.68 341.34h76.324L768.02 473.848v38.162z"
+						      fill="#c00"></path>
+					</g>
+				</svg>
+			</router-link>
+			<router-link :to="{ name: 'Overview', params: { language: 'de' }}">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480">
+					<path fill="#fff" d="M640 480H0V0h640z"></path>
+					<path fill="#df0000" d="M640 480H0V319.997h640zm0-319.875H0V.122h640z"></path>
+				</svg>
+			</router-link>
+		</div>
+		<div class="row">
+			<div class="col" id="sortwrapper">
+				<a id="check1" @click="sort('title')">Sort by title</a>
+				<a id="check2" @click="sort('id')">Sort by id</a>
+				<a id="check3" @click="sort('date')">Sort by Date</a>
+				<!--<button id="shuffle" @click="shuffle()">-->
+					<!--<icon name="random"></icon>-->
+					<!--Shuffle-->
+				<!--</button>-->
 			</div>
-			<button id="check1" @click="sort('title')">Sort by title</button>
-			<button id="check2" @click="sort('id')">Sort by id</button>
-			<button id="check3" @click="sort('date')">Sort by Date</button>
-			<button id="shuffle" @click="shuffle()">
-				<icon name="random"></icon>
-				Shuffle
-			</button>
-			<br>
-			<button v-for="element in tags"
-			        :class="['button-outline',filters.includes(element)?'active':'','colored']"
-			        @click="search='';tagfilter(element)"
-			        :style="{backgroundColor: getColorByTag(element),borderColor:getColorByTag(element)}">
-				{{element}}
-			</button>
-			<button class="button-outline" @click="filters=[];filter('show all')">
-				<icon name="refresh"></icon>
-				Reset
-			</button>
-			<input title="test" v-model="search"/>
+			<div class="col" id="filterwrapper">
+				<button v-for="element in tags"
+				        :class="['button-outline',filters.includes(element)?'active':'','colored']"
+				        @click="search='';tagfilter(element)"
+				        :style="{backgroundColor: getColorByTag(element),borderColor:getColorByTag(element)}">
+					{{element}}
+				</button>
+				<button class="button-outline" @click="filters=[];filter('show all')">
+					<icon name="refresh"></icon>
+					Reset
+				</button>
+				<input title="test" v-model="search"/>
+			</div>
 		</div>
 		<div id="blockwrapper">
 			<isotope ref="cpt" :list="data" id="root_isotope" class="isoDefault" :options='getOptions()'

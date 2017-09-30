@@ -1,16 +1,15 @@
-
 @import "variables";
 @import "../node_modules/milligram/src/milligram";
 
-
 #introduction {
   text-align: left;
-}
-h1 {
-  font-weight:300;
-  color: black;
+  margin-bottom: 2rem;
 }
 
+h1 {
+  font-weight: 300;
+  color: black;
+}
 
 body {
   background-color: #ffffff;
@@ -120,7 +119,22 @@ button {
     margin-right: 4px;
   }
 
-  margin: 2px 10px;
+}
+
+#sortwrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0 5rem 0 3rem;
+  a {
+    color: $color-secondary;
+    &:active, &:hover, &:focus {
+      color: black;
+    }
+  }
+}
+
+#filterwrapper {
+
 }
 
 .languageSelector {
