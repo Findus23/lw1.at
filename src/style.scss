@@ -28,6 +28,8 @@ body {
 
 #blockwrapper {
   margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #root_isotope {

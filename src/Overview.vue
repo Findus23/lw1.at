@@ -27,18 +27,18 @@
 				<a id="check2" @click="sort('id')">Sort by id</a>
 				<a id="check3" @click="sort('date')">Sort by Date</a>
 				<!--<button id="shuffle" @click="shuffle()">-->
-					<!--<icon name="random"></icon>-->
-					<!--Shuffle-->
+				<!--<icon name="random"></icon>-->
+				<!--Shuffle-->
 				<!--</button>-->
 			</div>
 			<div class="col" id="filterwrapper">
 				<button v-for="element in tags"
 				        :class="['button-outline',filters.includes(element)?'active':'','colored']"
-				        @click="search='';tagfilter(element)"
+				        @click="tagfilter(element)"
 				        :style="{backgroundColor: getColorByTag(element),borderColor:getColorByTag(element)}">
 					{{element}}
 				</button>
-				<button class="button-outline" @click="filters=[];filter('show all')">
+				<button class="button-outline" @click="filters=[];search=''">
 					<icon name="refresh"></icon>
 					Reset
 				</button>
@@ -46,34 +46,31 @@
 			</div>
 		</div>
 		<div id="blockwrapper">
-			<isotope ref="cpt" :list="data" id="root_isotope" class="isoDefault" :options='getOptions()'
-			         @filter="filterOption=arguments[0]">
-				<div v-for="element in data" :key="element.id" class="card"
-				     @click="$router.push({ name: 'itemModal',params:{id:element.id} })">
-					<div class="imagewrapper">
-						<img :src="element.image?require('./assets/'+element.image):require('./assets/placeholder.png')">
-					</div>
-					<div class="textwrapper">
-						{{ translate(element.title) }}
-						<br>
-						<div v-if="element.date">
-							{{ formatDate(element.date) }}
-						</div>
-						<br>
-						<router-link :to="{name: 'itemModal', params: {id: translate(element.title)}}"
-						             style="display: none;">
-							{{translate(element.title)}}
-						</router-link>
-						<div class="tagwrapper">
-							<div class="tag"
-							     v-for="tag in element.tags"
-							     :style="{backgroundColor: getColorByTag(tag)}">{{tag}}
-							</div>
-						</div>
-
-					</div>
+			<router-link v-for="element in elements" :key="element.id" class="card"
+			             :to="{ name: 'itemModal',params:{id:element.id} }">
+				<div class="imagewrapper">
+					<img :src="element.image?require('./assets/'+element.image):require('./assets/placeholder.png')">
 				</div>
-			</isotope>
+				<div class="textwrapper">
+					{{ translate(element.title) }}
+					<br>
+					<div v-if="element.date">
+						{{ formatDate(element.date) }}
+					</div>
+					<br>
+					<router-link :to="{name: 'itemModal', params: {id: translate(element.title)}}"
+					             style="display: none;">
+						{{translate(element.title)}}
+					</router-link>
+					<div class="tagwrapper">
+						<div class="tag"
+						     v-for="tag in element.tags"
+						     :style="{backgroundColor: getColorByTag(tag)}">{{tag}}
+						</div>
+					</div>
+
+				</div>
+			</router-link>
 		</div>
 		<router-view :language="language" :data="data">
 			<!-- here the ItemModal component will be rendered -->
@@ -83,8 +80,6 @@
 </template>
 
 <script>
-    import isotope from "vueisotope"
-    import debounce from 'lodash.debounce';
     import * as colors from 'material-colors';
     import data from 'json-loader!yaml-loader!./data.yaml';
 
@@ -103,27 +98,44 @@
                 ascending: true,
                 filters: [],
                 search: "",
-//                language: "de"
-            }
+            };
         },
         props: ["language"],
+        computed: {
+            elements() {
+                let vm = this;
+                return this.data.filter(item => {
+                    return vm.filterContains(item) && vm.filterSearch(item);
+                });
+            }
+        },
         methods: {
-            sort: function(key) {
-                this.$refs.cpt.sort(key);
+            filterContains: function(element) {
+                if (this.filters.length === 0) {
+                    return true;
+                }
+                let missing = false;
+                this.filters.forEach(function(selectedtag) {
+                    if (!element.tags.includes(selectedtag)) {
+                        missing = true;
+                    }
+                });
+                return !missing;
+
             },
-            filter: function(key) {
-                this.$refs.cpt.filter(key);
-            },
-            shuffle: function(key) {
-                this.$refs.cpt.shuffle(key);
+            filterSearch: function(element) {
+                if (this.search === "") {
+                    return true;
+                }
+                return this.translate(element.title).toLowerCase().includes(this.search.toLowerCase());
             },
             tagfilter: function(element) {
                 if (this.filters.includes(element)) {
-                    this.filters = this.filters.filter(item => item !== element)
+                    this.filters = this.filters.filter(item => item !== element);
                 } else {
-                    this.filters.push(element)
+                    this.filters.push(element);
                 }
-                this.filter('contains')
+                console.log(this.filters);
             },
             getColorByTag(tag) {
                 let colorname = this.tagColors[tag];
@@ -155,35 +167,6 @@
                     },
                     sortAscending: this.ascending,
                     sortBy: "date",
-                    masonry: {
-                        columnWidth: ".card",
-                        gutter: 10,
-                        isFitWidth: true
-                    },
-                    getFilterData: {
-                        "show all": function() {
-                            return true;
-                        },
-                        "contains": (element) => {
-                            if (this.filters.length === 0) {
-                                return true;
-                            }
-                            let missing = false;
-                            this.filters.forEach(function(selectedtag) {
-                                if (!element.tags.includes(selectedtag)) {
-                                    missing = true;
-                                }
-                            });
-                            return !missing;
-
-                        },
-                        "search": (element) => {
-                            if (this.search === "") {
-                                return true;
-                            }
-                            return vm.translate(element.title).toLowerCase().includes(this.search.toLowerCase());
-                        }
-                    }
                 };
             },
             translate: function(value) {
@@ -198,19 +181,8 @@
                 if (isNaN(date.getFullYear())) {
                     return "";
                 }
-                return date.toLocaleString(this.language, {month: "long"}) + " " + date.getFullYear()
+                return date.toLocaleString(this.language, {month: "long"}) + " " + date.getFullYear();
             }
         },
-        components: {
-            isotope,
-        },
-        watch: {
-            search: function() {
-                this.filters = [];
-                if (this.search !== "") {
-                    this.filter('search');
-                }
-            }
-        }
-    }
+    };
 </script>

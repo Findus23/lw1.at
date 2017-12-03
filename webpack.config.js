@@ -44,9 +44,6 @@ module.exports = {
     resolve: {
         alias: {
             'vue$': 'vue/dist/vue.esm.js',
-            'masonry': 'masonry-layout',
-            'isotope': 'isotope-layout'
-
         }
     },
     devServer: {
@@ -57,7 +54,7 @@ module.exports = {
     performance: {
         hints: false
     },
-    devtool: '#eval-source-map',
+    devtool: 'source-map',
     plugins: [
         new HtmlWebpackPlugin({
             title: 'My App',
