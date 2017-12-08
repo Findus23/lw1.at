@@ -23,13 +23,12 @@
 		</div>
 		<div class="row">
 			<div class="col" id="sortwrapper">
-				<a id="check1" @click="sort('title')">Sort by title</a>
-				<a id="check2" @click="sort('id')">Sort by id</a>
-				<a id="check3" @click="sort('date')">Sort by Date</a>
-				<!--<button id="shuffle" @click="shuffle()">-->
-				<!--<icon name="random"></icon>-->
-				<!--Shuffle-->
-				<!--</button>-->
+				<a @click="sort='date'" v-bind:class="sort==='date'?'active':''">
+					Date
+				</a>
+				<a @click="sort='title'" v-bind:class="sort==='title'?'active':''">
+					Title
+				</a>
 			</div>
 			<div class="col" id="filterwrapper">
 				<button v-for="element in tags"
@@ -98,14 +97,22 @@
                 ascending: true,
                 filters: [],
                 search: "",
+                sort: "hi"
             };
         },
         props: ["language"],
         computed: {
             elements() {
                 let vm = this;
-                return this.data.filter(item => {
+                let filtered = this.data.filter(item => {
                     return vm.filterContains(item) && vm.filterSearch(item);
+                });
+                return filtered.sort(function(a, b) {
+                    if (vm.sort === "title") {
+                        return vm.translate(a.title).localeCompare(vm.translate(b.title));
+                    } else {
+                        return new Date(a.date) - new Date(b.date);
+                    }
                 });
             }
         },
@@ -143,31 +150,6 @@
                     return colors[colorname]["500"];
                 }
                 return "black";
-            },
-            getOptions: function() {
-                let vm = this;
-                return {
-                    getSortData: {
-                        id: "id",
-                        title: function(element) {
-                            let value = element.title;
-                            if (typeof value === "object") {
-                                return value[vm.language];
-                            } else {
-                                return value;
-                            }
-                        },
-                        date: function(elem) {
-                            if (elem.date) {
-                                return Date.parse(elem.date);
-                            }
-                            return Infinity;
-                        }
-
-                    },
-                    sortAscending: this.ascending,
-                    sortBy: "date",
-                };
             },
             translate: function(value) {
                 if (typeof value === "object") {

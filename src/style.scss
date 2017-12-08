@@ -30,6 +30,7 @@ body {
   margin: 20px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 #root_isotope {
@@ -128,8 +129,8 @@ button {
   flex-direction: column;
   padding: 0 5rem 0 3rem;
   a {
-    color: $color-secondary;
-    &:active, &:hover, &:focus {
+    color: red;
+    &:active, &:hover, &:focus,&.active {
       color: black;
     }
   }

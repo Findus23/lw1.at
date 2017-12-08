@@ -34,8 +34,8 @@
     "sass-loader": "^6.0.6",
     "vue-loader": "^13.5.0",
     "vue-template-compiler": "^2.5.9",
-    "webpack": "^3.9.1",
-    "webpack-dev-server": "^2.9.5",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7",
     "yaml-loader": "^0.5.0"
   },
   "eslintConfig": {
