@@ -1,5 +1,6 @@
 <template>
 	<div id="overview">
+		<intro :language="language"></intro>
 		<div class="languageSelector">
 			<router-link :to="{ name: 'Overview', params: { language: 'en' }}">
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480">
@@ -81,8 +82,10 @@
 <script>
     import * as colors from 'material-colors';
     import data from 'json-loader!yaml-loader!./data.yaml';
+    import Intro from "./intro.vue";
 
     export default {
+        components: {Intro},
         name: 'overview',
         data() {
             return {

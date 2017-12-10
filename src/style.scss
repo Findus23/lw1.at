@@ -64,6 +64,7 @@ body {
     &:before {
       @include shadow(3);
     }
+    color: white;
   }
   .imagewrapper {
     border-top-left-radius: $borderRadius;
@@ -130,7 +131,7 @@ button {
   padding: 0 5rem 0 3rem;
   a {
     color: red;
-    &:active, &:hover, &:focus,&.active {
+    &:active, &:hover, &:focus, &.active {
       color: black;
     }
   }

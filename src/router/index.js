@@ -1,7 +1,7 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Overview from '../Overview.vue'
-import ItemModal from '../ItemModal.vue'
+import Vue from 'vue';
+import Router from 'vue-router';
+import Overview from '../Overview.vue';
+import ItemModal from '../ItemModal.vue';
 
 Vue.use(Router);
 
@@ -12,9 +12,9 @@ let router = new Router({
             path: '/',
             redirect: function() {
                 if (navigator.language.toLowerCase().includes("de")) {
-                    return "de"
+                    return "de";
                 } else if (navigator.language.toLowerCase().includes("en")) {
-                    return "en"
+                    return "en";
                 }
                 return "en";
             }

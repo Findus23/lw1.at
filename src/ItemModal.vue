@@ -17,7 +17,8 @@
 					<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, odit?</div>
 					<div>Aliquam ea eum exercitationem, laborum pariatur placeat quisquam reiciendis suscipit.</div>
 					<div>
-						Beatae debitis, esse exercitationem impedit maxime necessitatibus officia repellendus voluptatum.
+						Beatae debitis, esse exercitationem impedit maxime necessitatibus officia repellendus
+						voluptatum.
 					</div>
 					<div>Asperiores aut dignissimos esse, iure possimus repellendus similique sunt voluptatem!</div>
 					<div>Assumenda illum incidunt ipsam maxime minus molestias neque placeat recusandae.</div>
@@ -53,7 +54,7 @@
             return {
                 title: null,
                 element: null,
-            }
+            };
         },
         props: ['language', 'data'],
         mounted() {
@@ -64,7 +65,7 @@
         },
         methods: {
             closed(event) {
-                this.$router.push({ name: 'Overview', params: { language: language }})
+                this.$router.push({name: 'Overview', params: {language: language}});
             },
             marked: function(input) {
                 return md.render(input);
@@ -77,7 +78,7 @@
                 }
             }
         }
-    }
+    };
 </script>
 
 <style lang="scss">
