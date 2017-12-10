@@ -5,7 +5,7 @@
 			<div class="modal-container" @click.stop v-if="element">
 				<div class="modal-header">
 					<div class="imagewrapper">
-						<img :src="element.image?require('./assets/'+element.image):require('./assets/placeholder.png')">
+						<img :src="element.image?require('./assets/contentimages/'+element.image):require('./assets/contentimages/placeholder.png')">
 					</div>
 					<h1>{{ translate(element.title) }}</h1>
 					<a href="#" class="closeButton"

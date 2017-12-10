@@ -49,7 +49,7 @@
 			<router-link v-for="element in elements" :key="element.id" class="card"
 			             :to="{ name: 'itemModal',params:{id:element.id} }">
 				<div class="imagewrapper">
-					<img :src="element.image?require('./assets/'+element.image):require('./assets/placeholder.png')">
+					<img :src="element.image?require('./assets/contentimages/'+element.image):require('./assets/contentimages/placeholder.png')">
 				</div>
 				<div class="textwrapper">
 					{{ translate(element.title) }}
@@ -81,8 +81,9 @@
 
 <script>
     import * as colors from 'material-colors';
-    import data from 'json-loader!yaml-loader!./data.yaml';
     import Intro from "./intro.vue";
+
+    const data = require('json-loader!yaml-loader!./data.yaml');
 
     export default {
         components: {Intro},
