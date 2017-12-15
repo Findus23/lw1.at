@@ -1,10 +1,10 @@
-import Vue from 'vue'
-import router from './router'
-import App from './App.vue'
+import Vue from 'vue';
+import router from './router';
+import App from './App.vue';
 
-import Icon from 'vue-awesome/components/Icon.vue'
-import 'vue-awesome/icons/refresh'
-import 'vue-awesome/icons/random'
+import Icon from 'vue-awesome/components/Icon.vue';
+import 'vue-awesome/icons/refresh';
+import 'vue-awesome/icons/random';
 
 
 Vue.component('icon', Icon);
@@ -17,7 +17,7 @@ let app = new Vue({
     components: {App},
     methods: {
         gotoOverview(e) {
-            this.$router.back()
+            this.$router.back();
 
         }
     }
@@ -25,6 +25,6 @@ let app = new Vue({
 
 window.addEventListener('keydown', function(e) {
     if (e.keyCode === 27) {
-        app.gotoOverview(e)
+        app.gotoOverview(e);
     }
 });

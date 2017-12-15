@@ -60,7 +60,7 @@ body {
     @include shadow(2);
     transition: box-shadow 0.2s;
   }
-  &:hover {
+  &:hover, &:focus {
     &:before {
       @include shadow(3);
     }
