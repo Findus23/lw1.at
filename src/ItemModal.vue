@@ -2,45 +2,47 @@
 	<!-- some generic modal component, wrapping a CSS modal -->
 	<transition name="modal">
 		<div class="modal-mask" @click="$router.push({ name: 'Overview', params: { language: language }})">
-			<div class="modal-container" @click.stop v-if="element">
-				<div class="modal-header">
-					<div class="imagewrapper">
-						<img :src="element.image?require('./assets/contentimages/'+element.image):require('./assets/contentimages/placeholder.png')">
+			<div class="modal-container" role="dialog" ref="container" tabindex="0" @click.stop>
+				<div v-if="element">
+					<div class="modal-header">
+						<div class="imagewrapper">
+							<img :src="element.image?require('./assets/contentimages/'+element.image):require('./assets/contentimages/placeholder.png')">
+						</div>
+						<h1>{{ translate(element.title) }}</h1>
+						<a href="#" class="closeButton"
+						   @click="$router.push({ name: 'Overview', params: { language: language }})">✖</a>
 					</div>
-					<h1>{{ translate(element.title) }}</h1>
-					<a href="#" class="closeButton"
-					   @click="$router.push({ name: 'Overview', params: { language: language }})">✖</a>
-				</div>
 
-				<div class="modal-body" v-if="element.description">
-					<span v-html="marked(element.description)"></span>
-					<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, odit?</div>
-					<div>Aliquam ea eum exercitationem, laborum pariatur placeat quisquam reiciendis suscipit.</div>
-					<div>
-						Beatae debitis, esse exercitationem impedit maxime necessitatibus officia repellendus
-						voluptatum.
+					<div class="modal-body" v-if="element.description" ref="test">
+						<span v-html="marked(element.description)"></span>
+						<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, odit?</div>
+						<div>Aliquam ea eum exercitationem, laborum pariatur placeat quisquam reiciendis suscipit.</div>
+						<div>
+							Beatae debitis, esse exercitationem impedit maxime necessitatibus officia repellendus
+							voluptatum.
+						</div>
+						<div>Asperiores aut dignissimos esse, iure possimus repellendus similique sunt voluptatem!</div>
+						<div>Assumenda illum incidunt ipsam maxime minus molestias neque placeat recusandae.</div>
+						<div>Culpa iusto natus nisi possimus quia quibusdam suscipit veritatis voluptates.</div>
+						<div>Deleniti, error inventore minima neque officia quibusdam quidem rem velit?</div>
+						<div>A architecto doloribus inventore modi molestiae nostrum numquam placeat saepe!</div>
+						<div>Cupiditate delectus deleniti et incidunt inventore iure minima quas ut?</div>
+						<div>Beatae eligendi excepturi harum iure, laboriosam laudantium tempore totam voluptatum?</div>
+						<div>Deserunt earum fugit, illo in perferendis sequi soluta. Est, non.</div>
+						<div>Atque cum distinctio dolore eaque, mollitia nihil officia voluptas voluptatem.</div>
+						<div>Aliquam doloremque esse illo maxime qui quod repellendus veritatis voluptatum.</div>
+						<div>Autem beatae eligendi itaque maxime, nemo perferendis sapiente sint voluptatum.</div>
+						<div>Aperiam consequuntur corporis cumque dolore ea eius perferendis quod, soluta?</div>
+						<div>A consequuntur exercitationem inventore ipsa nihil qui soluta velit voluptatem.</div>
+						<div>Beatae debitis facere ipsam neque nesciunt quas quis ullam vitae!</div>
+						<div>Consectetur dolore dolorum ducimus magnam natus necessitatibus officia sequi unde!</div>
+						<div>Iste magni natus necessitatibus quasi qui quisquam ratione, repudiandae tempora.</div>
+						<div>Aliquid dolorum eligendi iste iure molestias mollitia numquam quo repellendus.</div>
 					</div>
-					<div>Asperiores aut dignissimos esse, iure possimus repellendus similique sunt voluptatem!</div>
-					<div>Assumenda illum incidunt ipsam maxime minus molestias neque placeat recusandae.</div>
-					<div>Culpa iusto natus nisi possimus quia quibusdam suscipit veritatis voluptates.</div>
-					<div>Deleniti, error inventore minima neque officia quibusdam quidem rem velit?</div>
-					<div>A architecto doloribus inventore modi molestiae nostrum numquam placeat saepe!</div>
-					<div>Cupiditate delectus deleniti et incidunt inventore iure minima quas ut?</div>
-					<div>Beatae eligendi excepturi harum iure, laboriosam laudantium tempore totam voluptatum?</div>
-					<div>Deserunt earum fugit, illo in perferendis sequi soluta. Est, non.</div>
-					<div>Atque cum distinctio dolore eaque, mollitia nihil officia voluptas voluptatem.</div>
-					<div>Aliquam doloremque esse illo maxime qui quod repellendus veritatis voluptatum.</div>
-					<div>Autem beatae eligendi itaque maxime, nemo perferendis sapiente sint voluptatum.</div>
-					<div>Aperiam consequuntur corporis cumque dolore ea eius perferendis quod, soluta?</div>
-					<div>A consequuntur exercitationem inventore ipsa nihil qui soluta velit voluptatem.</div>
-					<div>Beatae debitis facere ipsam neque nesciunt quas quis ullam vitae!</div>
-					<div>Consectetur dolore dolorum ducimus magnam natus necessitatibus officia sequi unde!</div>
-					<div>Iste magni natus necessitatibus quasi qui quisquam ratione, repudiandae tempora.</div>
-					<div>Aliquid dolorum eligendi iste iure molestias mollitia numquam quo repellendus.</div>
-				</div>
 
-				<div class="modal-footer">
-					default footer
+					<div class="modal-footer">
+						default footer
+					</div>
 				</div>
 			</div>
 		</div>
@@ -62,6 +64,7 @@
             this.id = this.$route.params.id;
             this.element = this.data.find(elem => elem.id === this.id);
             document.title = this.translate(this.element.title) + " - lw1.at";
+            this.$refs.container.focus();
         },
         methods: {
             closed(event) {
