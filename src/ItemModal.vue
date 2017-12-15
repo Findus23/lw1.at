@@ -2,7 +2,8 @@
 	<!-- some generic modal component, wrapping a CSS modal -->
 	<transition name="modal">
 		<div class="modal-mask" @click="$router.push({ name: 'Overview', params: { language: language }})">
-			<div class="modal-container" role="dialog" ref="container" tabindex="0" @click.stop>
+			<div class="modal-container" role="dialog" ref="container" tabindex="0" @click.stop
+			     @keyup.escape="$router.push({ name: 'Overview', params: { language: language }})">
 				<div v-if="element">
 					<div class="modal-header">
 						<div class="imagewrapper">
@@ -134,6 +135,9 @@
 		}
 		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 		transition: all .3s ease;
+		&:focus {
+			outline: none;
+		}
 	}
 
 	.modal-header h3 {
