@@ -13,8 +13,33 @@
 						<a href="#" class="closeButton"
 						   @click="$router.push({ name: 'Overview', params: { language: language }})">✖</a>
 					</div>
-
 					<div class="modal-body" v-if="element.description" ref="test">
+						<div class="modal-linkbar">
+							<a v-bind:href="element.url" v-if="element.url" target="_blank">
+								<div class="try-it-out">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="30"
+									     height="30" style="fill: currentColor">
+										<path d="M54.22083 161.88751C75.49125 69.74037 157.61638.879 255.99447-.0344V71.2784c-58.68038.82679-108.44983 38.32148-127.51646 90.6032H54.22378z"></path>
+										<path d="M183.32848 154.61394L93.60991 255.96317-.0104 154.45508"></path>
+									</svg>
+									<span>Try it out</span>
+								</div>
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420">
+									<title>Try out test</title>
+									<path style="stroke: currentColor; fill: none" stroke-width="20"
+									      d="M209,15a195,195 0 1,0 2,0zm1,0v390m195-195H15M59,90a260,260 0 0,0 302,0 m0,240 a260,260 0 0,0-302,0M195,20a250,250 0 0,0 0,382 m30,0 a250,250 0 0,0 0-382"></path>
+								</svg>
+							</a>
+							<a v-bind:href="'https://github.com/'+ element.github" v-if="element.github"
+							   target="_blank">
+								<svg viewBox="0 0 16 16">
+									<title>Source on Github</title>
+									<path fill-rule="evenodd" style="fill: currentColor"
+									      d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+								</svg>
+							</a>
+
+						</div>
 						<span v-html="marked(element.description)"></span>
 						<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, odit?</div>
 						<div>Aliquam ea eum exercitationem, laborum pariatur placeat quisquam reiciendis suscipit.</div>
@@ -176,4 +201,47 @@
 	/*.modal-leave-active .modal-container {*/
 	/*transform: scale(0.8);*/
 	/*}*/
+
+	.modal-linkbar {
+		display: flex;
+		justify-content: space-around;
+		a {
+			position: relative;
+			padding: 16px;
+			> svg {
+				width: 36px;
+				height: 36px;
+				display: block;
+				color: black;
+			}
+			svg, span {
+				transition: .2s;
+			}
+			display: block;
+			&:hover {
+				svg {
+					color: orange;
+				}
+				.try-it-out {
+					color: orange;
+				}
+			}
+			.try-it-out {
+				position: absolute;
+				top: -40px;
+				left: 23px;
+				right: -150px;
+				vertical-align: top;
+				color: black;
+				svg {
+					display: inline-block;
+					position: relative;
+					top: 20px;
+				}
+				span {
+
+				}
+			}
+		}
+	}
 </style>

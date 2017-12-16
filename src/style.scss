@@ -39,6 +39,7 @@ body {
 
 .card {
   background-color: #009688;
+  transition: background-color .2s;
   color: white;
   border-radius: $borderRadius;
   z-index: 3;
@@ -65,28 +66,15 @@ body {
       @include shadow(3);
     }
     color: white;
+    background: darken(#009688, 0.8);
+    img {
+      filter: brightness(0.8);
+    }
   }
-  .imagewrapper {
+  img {
+    transition: filter .2s;
     border-top-left-radius: $borderRadius;
     border-top-right-radius: $borderRadius;
-    width: 100%;
-    height: $imageheight;
-    overflow: hidden;
-    position: relative;
-    img {
-      position: absolute;
-      left: -200%;
-      right: -200%;
-      top: -200%;
-      bottom: -200%;
-      margin: auto;
-      height: auto;
-      width: auto;
-      min-height: $imageheight;
-      min-width: 200px;
-      max-width: initial;
-
-    }
   }
   .textwrapper {
     padding: 10px;
