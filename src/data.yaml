@@ -13,7 +13,8 @@
       So whats more obvious than using it to create products that don't exist yet.
 
       ## Technical Details
-      The pseudo-swedish names are generated with a second-order [Markov chain](https://en.wikipedia.org/wiki/Markov_chain), while the descriptions are shuffeled nouns and adjectives with fix linking words between them.
+      The pseudo-swedish names are generated with a second-order [Markov chain](https://en.wikipedia.org/wiki/Markov_chain),
+      while the descriptions are shuffeled nouns and adjectives with linking words between them.
     de: |
       Ein bekanntes schwedisches Möbelhaus hatte eine Webseite, auf der alle Produkte mit einer kurzen Beschreibung gelistet waren.
       Was liegt also näher als daraus Produkte zu generieren, die es noch nicht gibt.
@@ -22,19 +23,99 @@
       Die pseudo-schwedischen Namen werden mithilfe einer [Markow-Kette](https://de.wikipedia.org/wiki/Markow-Kette) zweiter Ordnung generiert,
       während die Beschreibung aus einer Liste von Nomen und Adjektiven zusammengewürfelt werden.
 - id: pyLanguagetool
-  title:
-    de: Deutsch pyLanguagetool
-    en: Englisch pyLanguagetool
+  title: pyLanguagetool
   tags:
   - python
   date: 2017-01-15
   image: pylanguagetool.png
-  description :  |
-    ### Kleine Überschrift
-    - und
-    - eine
+  url: https://pypi.python.org/pypi/pyLanguagetool/
+  github: Findus23/pylanguagetool
+  description :
+    en: |
+      [LanguageTool](https://languagetool.org/) is an open source proof­reading (spellchecking and grammar checking) service for many languages including English and German
+      which can be run as a server providing an JSON API.
 
-    fsfds
+      pyLanguagetool is an Python library and command line interface for Languagetool
+
+      ## How to use
+      pyLanguagetool can be installed from pip.
+      ```
+      $ pip install pylanguagetool
+      ```
+      Then pyLanguagetool can check text froum various sources and supports HTML, Markdown, reStructuredText and python notebooks:
+      ```
+      $ echo "This is a example" | pylanguagetool
+
+      $ pylanguagetool textfile.txt
+
+      $ pylanguagetool < textfile.txt
+
+      $ pylanguagetool -c # get text from system clipboard
+      ```
+    de: |
+      [LanguageTool](https://languagetool.org/) is ein Open Source Textprüfung für Grammatik, Stil und Rechtschreibung, welche als LibreOffice-Erweiterung oder als Server verwendet werden kann.
+
+      pyLanguagetool ist eine Python library und ein Client für Languagetool.
+
+      ## Verwendung
+      pyLanguagetool can von pip installiert werden.
+      ```
+      $ pip install pylanguagetool
+      ```
+      pyLanguagetool kann Text von vielen verschiedenen Quellen überprüfen und unterstützt unter anderem HTML, Markdown, reStructuredText und Python Notebooks:
+      ```
+      $ echo "This is a example" | pylanguagetool
+
+      $ pylanguagetool textfile.txt
+
+      $ pylanguagetool < textfile.txt
+
+      $ pylanguagetool -c # get text from system clipboard
+      ```
+- id: raumgreifend
+  title: raumgreifend
+  tags:
+  - website
+  - php
+  - scss
+  url: https://www.raumgreifend.org/
+  date: 2016-05-01
+  image: raumgreifend.png
+  image_seperator: true
+  description:
+    en: |
+      Because of an ongoing [art project](https://www.raumgreifend.org/projekte/fluchtwege-programm-wegfuehrung-der-wanderung-am-sa-21-mai/) I have created a new website for the
+      local art club *raumgreifend*.
+
+      ## Technical Details
+      A Content Management System in PHP accessing a MySQL database. The style is based on [a fork](https://github.com/Findus23/milligram) of
+      von [milligram](https://milligram.io/).
+
+    de: |
+      Anlässlich eines [Kunstprojektes](https://www.raumgreifend.org/projekte/fluchtwege-programm-wegfuehrung-der-wanderung-am-sa-21-mai/)
+      habe ich eine neue Webseite für den Kremser Kunstverein *raumgreifend* umgesetzt.
+
+      ## Technisches
+      Ein Content Management System in PHP mithilfe einer MySQL Datenbank. Das Design basiert auf einer [eigenen Variation](https://github.com/Findus23/milligram)
+      von [milligram](https://milligram.io/).
+
+- id: ferienhaus-schiltern
+  title:
+    de: Ferienhaus Schiltern
+    en: Ferienhaus Schiltern (holiday charlet)
+  tags:
+    - website
+    - php
+    - scss
+  url: https://www.ferienhaus-schiltern.at
+  date: 2016-07-01
+  image: ferienhaus-schiltern.png
+  description:
+    en: |
+      Information and pictures of a holiday home in *Schiltern bei Langenlois*.
+    de: |
+      Informationen und Bildergalarie zum *Ferienhaus Schiltern*
+
 - title: John
   id: 25
   tags:

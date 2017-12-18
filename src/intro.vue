@@ -41,6 +41,7 @@
 		display: flex;
 		align-items: start;
 		justify-content: center;
+		margin-bottom: 16px;
 		a {
 			margin: 0 16px;
 			height: 48px;
