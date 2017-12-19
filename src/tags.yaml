@@ -1,0 +1,16 @@
+---
+website:
+  name:
+    en: Website
+    de: Webseite
+  color: amber
+python:
+  name: Python
+php:
+  name: PHP
+scss:
+  name: SCSS
+major:
+  name:
+    en: Major
+    de: Umfangreich

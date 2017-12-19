@@ -16,7 +16,7 @@
 					<div class="modal-body" v-if="element.description" ref="test">
 						<div class="modal-linkbar">
 							<a v-bind:href="element.url" v-if="element.url" target="_blank">
-								<div class="try-it-out">
+								<div class="try-it-out" v-if="element.try">
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="30"
 									     height="30" style="fill: currentColor">
 										<path d="M54.22083 161.88751C75.49125 69.74037 157.61638.879 255.99447-.0344V71.2784c-58.68038.82679-108.44983 38.32148-127.51646 90.6032H54.22378z"></path>

@@ -7,6 +7,7 @@
   image: nonsense.png
   github: Findus23/nonsense
   url: https://nonsense.lw1.at
+  try: true
   description:
     en: |
       A well-known Swedish furniture store had a website listing all their products with a short description.
@@ -29,6 +30,7 @@
   date: 2017-01-15
   image: pylanguagetool.png
   url: https://pypi.python.org/pypi/pyLanguagetool/
+  try: true
   github: Findus23/pylanguagetool
   description :
     en: |

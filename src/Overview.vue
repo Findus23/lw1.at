@@ -32,11 +32,11 @@
 				</a>
 			</div>
 			<div class="col" id="filterwrapper">
-				<button v-for="element in tags"
-				        :class="['button-outline',filters.includes(element)?'active':'','colored']"
-				        @click="tagfilter(element)"
-				        :style="{backgroundColor: getColorByTag(element),borderColor:getColorByTag(element)}">
-					{{element}}
+				<button v-for="(tag, key, index) in tags"
+				        :class="['button-outline',filters.includes(key)?'active':'','colored']"
+				        @click="tagfilter(key)"
+				        :style="{backgroundColor: getColorByName(tag.color),borderColor:getColorByName(tag.color)}">
+					{{translate(tag.name)}}
 				</button>
 				<button class="button-outline" @click="filters=[];search=''">
 					<icon name="refresh"></icon>
@@ -63,7 +63,7 @@
 					<div class="tagwrapper">
 						<div class="tag"
 						     v-for="tag in element.tags"
-						     :style="{backgroundColor: getColorByTag(tag)}">{{tag}}
+						     :style="{backgroundColor: getColorByName(tag)}">{{tag}}
 						</div>
 					</div>
 
@@ -82,20 +82,15 @@
     import Intro from "./intro.vue";
 
     const data = require('json-loader!yaml-loader!./data.yaml');
+    const tags = require('json-loader!yaml-loader!./tags.yaml');
 
     export default {
         components: {Intro},
         name: 'overview',
         data() {
             return {
-                tags: ['a', 'b', 'c', 'python'],
-                tagColors: {
-                    "a": "cyan",
-                    "b": "red",
-                    "c": "indigo",
-                    "python": "amber"
-                },
                 data: data,
+                tags: tags,
                 ascending: true,
                 filters: [],
                 search: "",
@@ -146,10 +141,9 @@
                 }
                 console.log(this.filters);
             },
-            getColorByTag(tag) {
-                let colorname = this.tagColors[tag];
-                if (colors[colorname]) {
-                    return colors[colorname]["500"];
+            getColorByName(color) {
+                if (color && colors[color]) {
+                    return colors[color]["500"];
                 }
                 return "black";
             },
