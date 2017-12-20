@@ -55,7 +55,6 @@
 					<div v-if="element.date">
 						{{ formatDate(element.date) }}
 					</div>
-					<br>
 					<router-link :to="{name: 'itemModal', params: {id: translate(element.title)}}"
 					             style="display: none;">
 						{{translate(element.title)}}
@@ -63,7 +62,7 @@
 					<div class="tagwrapper">
 						<div class="tag"
 						     v-for="tag in element.tags"
-						     :style="{backgroundColor: getColorByName(tag)}">{{tag}}
+						     :style="{backgroundColor: getColorByName(tags[tag].color)}">{{translate(tags[tag].name)}}
 						</div>
 					</div>
 
