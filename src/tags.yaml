@@ -12,6 +12,8 @@ javascript:
   name: JavaScript
 scss:
   name: SCSS
+bash:
+  name: Bash
 major:
   name:
     en: Major
@@ -22,3 +24,9 @@ browserExtension:
     de: Browsererweiterung
 piwik:
   name: Piwik
+unfinished:
+  name:
+    en: unfinished
+    de: unfertig
+design:
+  name: Design

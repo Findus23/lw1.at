@@ -226,9 +226,65 @@
 
       Zusätzlich werden wenn vorhanden Kontaktinformationenen und Live-Öffnungszeiten (mithilfe von [opening_hours.js](https://github.com/opening-hours/opening_hours.js) angezeigt.
 
+- id: hunger
+  title: Hunger API
+  tags:
+    - python
+    - unfinished
+  image: hunger.svg
+  image_seperator: true
+  date: 2017-06-21
+  url: https://hunger.lw1.at/doc/
+  try: true
+  github: Findus23/hunger
+  description:
+    en: |
+      Python script which crawls the websites of some restaurants in Vienna for daily specials and provides them as well stuctured JSON API.
+    de: |
+      Pythonscript, welches die Webseiten einiger Wiener Restaurants nach Mittagsmenus durchsucht und diese in einer strukturierten JSON API ausgibt.
 
+- id: wienerlinienalarm
+  title: Wiener Linien Alarm
+  tags:
+    - design
+  date: 2017-11-15
+  github: Aenadon/WienerLinienAlarm
+  image: wienerlinien.png
+  description:
+    en: Just an icon for a great app of a friend, which shows live-data of the Vienna Public Transport.
+    de: Nur ein App-Icon für eine App eines Freundes, welche Live-Daten der Wiener Linien anzeigt.
 
-## TODO: citybike
+- id: gattinger-wachau
+  title: Weingut Gattinger
+  tags:
+    - website
+    - major
+    - php
+  date: 2015-12-20
+  image: gattinger.png
+  url: https://www.gattinger-wachau.at/
+  description:
+    en: A content management system for a local winery
+    de: Ein Content Management System für ein Wachauer Weingut
+
+- id: piwik-icons
+  title: Piwik-Icons
+  tags:
+    - piwik
+    - bash
+  url: https://piwik.org/
+  github: piwik/piwik-icons
+  date: 2017-11-22
+  image: piwikicons.png
+  description:
+    en: |
+      A collection of more than 1000 icons of nearly every browser, operating system, IT brand, flag, social network and search engine.
+      It is used by Piwik, the leading open source web analytics software. (e.g. in [3.0.1](https://piwik.org/changelog/piwik-3-0-1/) and in [3.0.3](https://piwik.org/changelog/piwik-3-0-3/)
+    de: |
+      Eine Sammlung von über 1000 Icons, die fast alle Browser, Betriebsysteme, IT Marken, Flaggen, Soziale Netzwerke und Suchmaschinen beinhaltet.
+      Sie wird von Piwik, der führenden Opensource Webanalytics-Software, verwendet (siehe z.B. [3.0.1](https://piwik.org/changelog/piwik-3-0-1/) und [3.0.3](https://piwik.org/changelog/piwik-3-0-3/))
+## TODO: citybike, Piwik Checker
+
 
 
 #- title: John
