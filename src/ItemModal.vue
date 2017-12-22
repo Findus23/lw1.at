@@ -7,13 +7,13 @@
 				<div v-if="element">
 					<div class="modal-header">
 						<div class="imagewrapper" :class="element.image_seperator ? 'seperator':''">
-							<img :src="element.image?require('./assets/contentimages/'+element.image):require('./assets/contentimages/placeholder.png')">
+							<img v-if="element.image" :src="require('./assets/contentimages/'+element.image)">
 						</div>
 						<h1>{{ translate(element.title) }}</h1>
 						<a href="#" class="closeButton"
 						   @click="$router.push({ name: 'Overview', params: { language: language }})">✖</a>
 					</div>
-					<div class="modal-body" v-if="element.description" ref="test">
+					<div class="modal-body" ref="test">
 						<div class="modal-linkbar">
 							<a v-bind:href="element.url" v-if="element.url" target="_blank">
 								<div class="try-it-out" v-if="element.try">
@@ -40,11 +40,9 @@
 							</a>
 
 						</div>
-						<div v-html="marked(translate(element.description))"></div>
-					</div>
-
-					<div class="modal-footer">
-						default footer
+						<div v-if="element.description" v-html="marked(translate(element.description))"></div>
+						<iframe v-if="element.iframe"
+						        :src="element.iframe.url" :style="{backgroundColor: element.iframe.color}"></iframe>
 					</div>
 				</div>
 			</div>
@@ -130,7 +128,7 @@
 		margin: 50px auto 0;
 		background-color: #fff;
 		border-radius: 5px;
-		img {
+		.imagewrapper img {
 			width: 100%;
 			border-top-left-radius: 5px;
 			border-top-right-radius: 5px;
@@ -226,5 +224,13 @@
 				}
 			}
 		}
+	}
+
+	iframe {
+		width: 100%;
+		height: 300px;
+		border: none;
+		border-radius: 5px;
+		display: block;
 	}
 </style>

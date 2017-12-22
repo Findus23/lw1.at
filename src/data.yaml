@@ -23,6 +23,10 @@
       ## Technisches
       Die pseudo-schwedischen Namen werden mithilfe einer [Markow-Kette](https://de.wikipedia.org/wiki/Markow-Kette) zweiter Ordnung generiert,
       während die Beschreibung aus einer Liste von Nomen und Adjektiven zusammengewürfelt werden.
+  iframe:
+    url: https://nonsense.lw1.at/
+    color: "#003399"
+
 - id: pyLanguagetool
   title: pyLanguagetool
   tags:
@@ -80,6 +84,7 @@
   - website
   - php
   - scss
+  - major
   url: https://www.raumgreifend.org/
   date: 2016-05-01
   image: raumgreifend.png
@@ -109,6 +114,7 @@
     - website
     - php
     - scss
+    - major
   url: https://www.ferienhaus-schiltern.at
   date: 2016-07-01
   image: ferienhaus-schiltern.png
@@ -117,6 +123,113 @@
       Information and pictures of a holiday home in *Schiltern bei Langenlois*.
     de: |
       Informationen und Bildergalarie zum *Ferienhaus Schiltern*
+- id: maskDetector
+  title: Mask Detector
+  tags:
+    - javascript
+  image: maskdetector.png
+  date: 2017-09-20
+  url: https://chrome.google.com/webstore/detail/mask-detector/kkbhnlbbfpkdbipkjgagfagcbaacmfge
+  try: true
+  github: Findus23/mask-detector
+  description:
+    en: |
+      [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/kkbhnlbbfpkdbipkjgagfagcbaacmfge.svg)](https://chrome.google.com/webstore/detail/piwik-injector/kkbhnlbbfpkdbipkjgagfagcbaacmfge)
+      [![Chrome Web Store](https://img.shields.io/badge/chrome%20web%20store-download%20now-brightgreen.svg)](https://chrome.google.com/webstore/detail/piwik-injector/kkbhnlbbfpkdbipkjgagfagcbaacmfge)
+
+      [![Mozilla Add-on](https://img.shields.io/amo/v/mask-detector.svg)](https://addons.mozilla.org/de/firefox/addon/mask-detector/)
+      [![Mozilla Add-on](https://img.shields.io/badge/mozilla%20addon-download%20now-brightgreen.svg)](https://addons.mozilla.org/de/firefox/addon/mask-detector/)
+
+      Detect and display websites using TYPO3 and the [Mask TYPO3 extension](https://github.com/Gernott/mask).
+
+      Available for [Firefox](https://addons.mozilla.org/de/firefox/addon/mask-detector/) and [Chrome](https://chrome.google.com/webstore/detail/piwik-injector/kkbhnlbbfpkdbipkjgagfagcbaacmfge).
+
+      by [webprofil.at](http://www.webprofil.at/)
+    de: |
+      [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/kkbhnlbbfpkdbipkjgagfagcbaacmfge.svg)](https://chrome.google.com/webstore/detail/piwik-injector/kkbhnlbbfpkdbipkjgagfagcbaacmfge)
+      [![Chrome Web Store](https://img.shields.io/badge/chrome%20web%20store-download%20now-brightgreen.svg)](https://chrome.google.com/webstore/detail/piwik-injector/kkbhnlbbfpkdbipkjgagfagcbaacmfge)
+
+      [![Mozilla Add-on](https://img.shields.io/amo/v/mask-detector.svg)](https://addons.mozilla.org/de/firefox/addon/mask-detector/)
+      [![Mozilla Add-on](https://img.shields.io/badge/mozilla%20addon-download%20now-brightgreen.svg)](https://addons.mozilla.org/de/firefox/addon/mask-detector/)
+
+      Zeigt an, welche Webseiten TYPO3 and die [Mask TYPO3 Erweiterung](https://github.com/Gernott/mask) verwenden.
+
+      Verfügbar für [Firefox](https://addons.mozilla.org/de/firefox/addon/mask-detector/) und [Chrome](https://chrome.google.com/webstore/detail/piwik-injector/kkbhnlbbfpkdbipkjgagfagcbaacmfge).
+
+      von [webprofil.at](http://www.webprofil.at/)
+
+- id: piwik-injector
+  title: Piwik Browser Injector
+  tags:
+    - piwik
+    - javascript
+  image: piwikinjector.png
+  date: 2017-08-27
+  github: Findus23/piwik-injector
+  url: https://chrome.google.com/webstore/detail/piwik-injector/bglodhjbeeolbfpodfacccmnjledmggn
+  try: true
+  description:
+    en: |
+      [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/bglodhjbeeolbfpodfacccmnjledmggn.svg)](https://chrome.google.com/webstore/detail/piwik-injector/bglodhjbeeolbfpodfacccmnjledmggn)
+      [![Chrome Web Store](https://img.shields.io/badge/chrome%20web%20store-download%20now-brightgreen.svg)](https://chrome.google.com/webstore/detail/piwik-injector/bglodhjbeeolbfpodfacccmnjledmggn)
+
+      [![Mozilla Add-on](https://img.shields.io/amo/v/piwik-injector.svg)](https://addons.mozilla.org/de/firefox/addon/piwik-injector/)
+      [![Mozilla Add-on](https://img.shields.io/badge/mozilla%20addon-download%20now-brightgreen.svg)](https://addons.mozilla.org/de/firefox/addon/piwik-injector/)
+
+      Piwik Browser Injector helps you to try out [Piwik](https://piwik.org/), the leading open source web analytics software, in cases where it isn't possible to modify the source of a website or when you just want to quickly see how the visitor data of your website would look like in Piwik.
+
+      This extention is in an early development state and may include backward-incompatible changes in future versions.
+
+      Based on the work of [hromadadan](https://github.com/guzart/customjs) and [xcv58](https://github.com/xcv58/Custom-JavaScript-for-Websites-2)
+      ### Usage:
+      * open the domain, where you want to include the tracking code localy
+      * click on the *Piwik Browser Injector* icon in your toolbar and enter the URL to your piwik instance and the ID of your website
+      * if you want to try out advanced features you can enable the expert mode where you can freely modify the tracking code
+    de: |
+      [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/bglodhjbeeolbfpodfacccmnjledmggn.svg)](https://chrome.google.com/webstore/detail/piwik-injector/bglodhjbeeolbfpodfacccmnjledmggn)
+      [![Chrome Web Store](https://img.shields.io/badge/chrome%20web%20store-download%20now-brightgreen.svg)](https://chrome.google.com/webstore/detail/piwik-injector/bglodhjbeeolbfpodfacccmnjledmggn)
+
+      [![Mozilla Add-on](https://img.shields.io/amo/v/piwik-injector.svg)](https://addons.mozilla.org/de/firefox/addon/piwik-injector/)
+      [![Mozilla Add-on](https://img.shields.io/badge/mozilla%20addon-download%20now-brightgreen.svg)](https://addons.mozilla.org/de/firefox/addon/piwik-injector/)
+
+      Piwik Browser Injector hilft dabei [Piwik](https://piwik.org/), die führende Opensource Webanalytics-Software, auszuprobieren.
+      Er funktioniert auch in Fällen, wo es nicht möglich ist, die Webseite zu bearbeiten, oder wenn man testen möchte, wie ein Webseitenaufruf in Piwik aussehen würde.
+
+      Diese Erweiterung ist in einem frühen Entwicklungszustand und kann möglicherweise in Zukunft inkompatible Änderungen enthalten.
+
+      Basiert auf der Arbeit von [hromadadan](https://github.com/guzart/customjs) und [xcv58](https://github.com/xcv58/Custom-JavaScript-for-Websites-2)
+      ### Verwendung:
+      * öffne die Webseite, in die du den Tracking Code einfügen willst
+      * clicke auf das *Piwik Browser Injector* Icon in der Toolbar und gib die URL zum Piwik-Server und die ID der Webseite ein
+      * wenn du erweiterte Funktionen nutzen willst, aktiviere den Expertenmodus, wo man den Tracking Code frei bearbeiten kann.
+
+- id: schilternkarte
+  title:
+    de: Schiltern Karte
+    en: Schiltern Map
+  image: schilternkarte.png
+  tags:
+    - python
+    - javascript
+  date: 2017-08-20
+  github: Findus23/POI-Schiltern
+  url: https://karte.ferienhaus-schiltern.at/
+  iframe:
+    url: https://karte.ferienhaus-schiltern.at/
+    color: "#ddd"
+  description:
+    en: |
+      A simple map showing points of selected categories on a map. The data is automatically exported from [OpenStreetMap](https://www.openstreetmap.org/)
+      and live opening hours are displayed (with [opening_hours.js](https://github.com/opening-hours/opening_hours.js)).
+    de: |
+      Eine einfache Karte, die Point of Interests in der Nähe von Schiltern bei Langenlois automatisch von  [OpenStreetMap](https://www.openstreetmap.org/) exportiert darstellt.
+
+      Zusätzlich werden wenn vorhanden Kontaktinformationenen und Live-Öffnungszeiten (mithilfe von [opening_hours.js](https://github.com/opening-hours/opening_hours.js) angezeigt.
+
+
+
+## TODO: citybike
+
 
 #- title: John
 #  id: 25

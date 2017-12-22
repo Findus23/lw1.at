@@ -8,9 +8,17 @@ python:
   name: Python
 php:
   name: PHP
+javascript:
+  name: JavaScript
 scss:
   name: SCSS
 major:
   name:
     en: Major
     de: Umfangreich
+browserExtension:
+  name:
+    en: Browser Extension
+    de: Browsererweiterung
+piwik:
+  name: Piwik

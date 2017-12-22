@@ -107,7 +107,7 @@
                     if (vm.sort === "title") {
                         return vm.translate(a.title).localeCompare(vm.translate(b.title));
                     } else {
-                        return new Date(a.date) - new Date(b.date);
+                        return new Date(b.date) - new Date(a.date);
                     }
                 });
             }
