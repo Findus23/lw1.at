@@ -37,10 +37,20 @@ let router = new Router({
 
 router.afterEach((to, from) => {
     if (from.name === "itemModal" && to.name === "Overview") {
+        document.title = "lw1.at";
         setTimeout(function() { // delay before making background scrollable again
             document.body.style.overflow = "";
-            document.title = "lw1.at";
         }, 300);
     }
+    _paq.push(['setCustomUrl', to.path]);
+    _paq.push(['setReferrerUrl', from.path]);
+    _paq.push(['setGenerationTimeMs', 0]);
+    if (to.name!=="itemModal") {
+        _paq.push(['setDocumentTitle', document.title]);
+        _paq.push(['trackPageView']);
+    }
+    _paq.push(['enableLinkTracking']);
+    console.log("Route change");
+
 });
 export default router;

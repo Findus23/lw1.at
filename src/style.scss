@@ -75,6 +75,7 @@ body {
     transition: filter .2s;
     border-top-left-radius: $borderRadius;
     border-top-right-radius: $borderRadius;
+    height: auto;
   }
   .textwrapper {
     padding: 10px;

@@ -65,6 +65,11 @@
             this.id = this.$route.params.id;
             this.element = this.data.find(elem => elem.id === this.id);
             document.title = this.translate(this.element.title) + " - lw1.at";
+            this.$nextTick(function() {
+                _paq.push(['setDocumentTitle', document.title]);
+                _paq.push(['trackPageView']);
+                _paq.push(['enableLinkTracking']);
+            });
             this.$refs.container.focus();
         },
         methods: {

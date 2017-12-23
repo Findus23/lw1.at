@@ -48,7 +48,8 @@
 		<div id="blockwrapper">
 			<router-link v-for="element in elements" :key="element.id" class="card"
 			             :to="{ name: 'itemModal',params:{id:element.id} }">
-				<img :src="element.image?require('./assets/thumbnails/'+element.image):require('./assets/thumbnails/placeholder.png')">
+				<img :src="element.image?require('./assets/thumbnails/'+element.image):require('./assets/thumbnails/placeholder.png')"
+				     width="300" height="150">
 				<div class="textwrapper">
 					{{ translate(element.title) }}
 					<br>
