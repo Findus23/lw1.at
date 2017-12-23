@@ -127,6 +127,7 @@
   title: Mask Detector
   tags:
     - javascript
+    - browserExtension
   image: maskdetector.png
   date: 2017-09-20
   url: https://chrome.google.com/webstore/detail/mask-detector/kkbhnlbbfpkdbipkjgagfagcbaacmfge
