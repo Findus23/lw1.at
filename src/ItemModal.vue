@@ -86,6 +86,13 @@
                     return value;
                 }
             }
+        },
+        head: {
+            title: function() {
+                if (this.element) {
+                    return {inner: this.translate(this.element.title)};
+                }
+            }
         }
     };
 </script>

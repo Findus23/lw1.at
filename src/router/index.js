@@ -37,7 +37,7 @@ let router = new Router({
 
 router.afterEach((to, from) => {
     if (from.name === "itemModal" && to.name === "Overview") {
-        document.title = "lw1.at";
+        document.title = "Lukas Winkler - lw1.at";
         setTimeout(function() { // delay before making background scrollable again
             document.body.style.overflow = "";
         }, 300);

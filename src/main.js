@@ -1,14 +1,12 @@
 import Vue from 'vue';
 import router from './router';
+import VueHead from 'vue-head';
+
 import App from './App.vue';
 
-import Icon from 'vue-awesome/components/Icon.vue';
-import 'vue-awesome/icons/refresh';
-import 'vue-awesome/icons/random';
 import PiwikTracker from './PiwikTracker';
 
-Vue.component('icon', Icon);
-
+Vue.use(VueHead);
 
 let piwik = new PiwikTracker;
 piwik.init();

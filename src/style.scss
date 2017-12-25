@@ -127,7 +127,17 @@ button {
 }
 
 #filterwrapper {
-
+  button {
+    background-color: transparent;
+    border: none;
+    color: darkgray;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-transform: initial;
+    &.active {
+      color: black;
+    }
+  }
 }
 
 .languageSelector {
@@ -135,14 +145,6 @@ button {
   top: 20px;
   right: 20px;
   a {
-    filter: #{"grayscale(100%)"};
-    &.router-link-active, &:hover {
-      filter: none;
-    }
-  }
-
-  svg {
-    width: 50px;
   }
 }
 
