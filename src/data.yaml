@@ -8,6 +8,9 @@
   github: Findus23/nonsense
   url: https://nonsense.lw1.at
   try: true
+  license:
+    id: MIT
+    url: https://github.com/Findus23/nonsense/blob/master/LICENSE
   description:
     en: |
       A well-known Swedish furniture store had a website listing all their products with a short description.
@@ -36,6 +39,9 @@
   url: https://pypi.python.org/pypi/pyLanguagetool/
   try: true
   github: Findus23/pylanguagetool
+  license:
+    id: MIT
+    url: https://github.com/Findus23/pyLanguagetool/blob/master/LICENSE
   description :
     en: |
       [LanguageTool](https://languagetool.org/) is an open source proof­reading (spellchecking and grammar checking) service for many languages including English and German
@@ -133,6 +139,9 @@
   url: https://chrome.google.com/webstore/detail/mask-detector/kkbhnlbbfpkdbipkjgagfagcbaacmfge
   try: true
   github: Findus23/mask-detector
+  license:
+    id: GPL3
+    url: https://github.com/Findus23/mask-detector/blob/master/LICENSE
   description:
     en: |
       [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/kkbhnlbbfpkdbipkjgagfagcbaacmfge.svg)](https://chrome.google.com/webstore/detail/mask-detector/kkbhnlbbfpkdbipkjgagfagcbaacmfge)
@@ -169,6 +178,9 @@
   github: Findus23/piwik-injector
   url: https://chrome.google.com/webstore/detail/piwik-injector/bglodhjbeeolbfpodfacccmnjledmggn
   try: true
+  license:
+    id: MIT
+    url: https://github.com/Findus23/piwik-injector/blob/master/LICENSE
   description:
     en: |
       [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/bglodhjbeeolbfpodfacccmnjledmggn.svg)](https://chrome.google.com/webstore/detail/piwik-injector/bglodhjbeeolbfpodfacccmnjledmggn)
@@ -215,6 +227,9 @@
   date: 2017-08-20
   github: Findus23/POI-Schiltern
   url: https://karte.ferienhaus-schiltern.at/
+  license:
+    id: MIT
+    url: https://github.com/Findus23/POI-Schiltern/blob/master/LICENSE.md
   iframe:
     url: https://karte.ferienhaus-schiltern.at/
     color: "#ddd"
@@ -238,6 +253,9 @@
   url: https://hunger.lw1.at/doc/
   try: true
   github: Findus23/hunger
+  license:
+    id: GPL3
+    url: https://github.com/Findus23/hunger/blob/master/LICENSE
   description:
     en: |
       Python script which crawls the websites of some restaurants in Vienna for daily specials and provides them as well stuctured JSON API.
@@ -251,6 +269,9 @@
   date: 2017-11-15
   github: Aenadon/WienerLinienAlarm
   image: wienerlinien.png
+  license:
+    id: MIT
+    url: https://github.com/Aenadon/WienerLinienAlarm/blob/master/LICENSE
   description:
     en: Just an icon for a great app of a friend, which shows live-data of the Vienna Public Transport.
     de: Nur ein App-Icon für eine App eines Freundes, welche Live-Daten der Wiener Linien anzeigt.
@@ -277,6 +298,9 @@
   github: piwik/piwik-icons
   date: 2017-11-22
   image: piwikicons.png
+  license:
+    id: GPL3
+    url: https://github.com/piwik/piwik-icons/blob/master/gpl-3.0.txt
   description:
     en: |
       A collection of more than 1000 icons of nearly every browser, operating system, IT brand, flag, social network and search engine.
@@ -297,6 +321,9 @@
   github: piwik/github-issues-mirror
   image: github-issues-mirror.png
   image_seperator: true
+  license:
+    id: GPL3
+    url: https://github.com/piwik/github-issues-mirror/blob/master/LICENSE
   description:
     en: |
       Improved the old version and updated it to Bootstrap 4
