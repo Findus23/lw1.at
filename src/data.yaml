@@ -135,27 +135,27 @@
   github: Findus23/mask-detector
   description:
     en: |
-      [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/kkbhnlbbfpkdbipkjgagfagcbaacmfge.svg)](https://chrome.google.com/webstore/detail/piwik-injector/kkbhnlbbfpkdbipkjgagfagcbaacmfge)
-      [![Chrome Web Store](https://img.shields.io/badge/chrome%20web%20store-download%20now-brightgreen.svg)](https://chrome.google.com/webstore/detail/piwik-injector/kkbhnlbbfpkdbipkjgagfagcbaacmfge)
+      [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/kkbhnlbbfpkdbipkjgagfagcbaacmfge.svg)](https://chrome.google.com/webstore/detail/mask-detector/kkbhnlbbfpkdbipkjgagfagcbaacmfge)
+      [![Chrome Web Store](https://img.shields.io/badge/chrome%20web%20store-download%20now-brightgreen.svg)](https://chrome.google.com/webstore/detail/mask-detector/kkbhnlbbfpkdbipkjgagfagcbaacmfge)
 
       [![Mozilla Add-on](https://img.shields.io/amo/v/mask-detector.svg)](https://addons.mozilla.org/de/firefox/addon/mask-detector/)
       [![Mozilla Add-on](https://img.shields.io/badge/mozilla%20addon-download%20now-brightgreen.svg)](https://addons.mozilla.org/de/firefox/addon/mask-detector/)
 
       Detect and display websites using TYPO3 and the [Mask TYPO3 extension](https://github.com/Gernott/mask).
 
-      Available for [Firefox](https://addons.mozilla.org/de/firefox/addon/mask-detector/) and [Chrome](https://chrome.google.com/webstore/detail/piwik-injector/kkbhnlbbfpkdbipkjgagfagcbaacmfge).
+      Available for [Firefox](https://addons.mozilla.org/de/firefox/addon/mask-detector/) and [Chrome](https://chrome.google.com/webstore/detail/mask-detector/kkbhnlbbfpkdbipkjgagfagcbaacmfge).
 
       by [webprofil.at](http://www.webprofil.at/)
     de: |
-      [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/kkbhnlbbfpkdbipkjgagfagcbaacmfge.svg)](https://chrome.google.com/webstore/detail/piwik-injector/kkbhnlbbfpkdbipkjgagfagcbaacmfge)
-      [![Chrome Web Store](https://img.shields.io/badge/chrome%20web%20store-download%20now-brightgreen.svg)](https://chrome.google.com/webstore/detail/piwik-injector/kkbhnlbbfpkdbipkjgagfagcbaacmfge)
+      [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/kkbhnlbbfpkdbipkjgagfagcbaacmfge.svg)](https://chrome.google.com/webstore/detail/mask-detector/kkbhnlbbfpkdbipkjgagfagcbaacmfge)
+      [![Chrome Web Store](https://img.shields.io/badge/chrome%20web%20store-download%20now-brightgreen.svg)](https://chrome.google.com/webstore/detail/mask-detector/kkbhnlbbfpkdbipkjgagfagcbaacmfge)
 
       [![Mozilla Add-on](https://img.shields.io/amo/v/mask-detector.svg)](https://addons.mozilla.org/de/firefox/addon/mask-detector/)
       [![Mozilla Add-on](https://img.shields.io/badge/mozilla%20addon-download%20now-brightgreen.svg)](https://addons.mozilla.org/de/firefox/addon/mask-detector/)
 
       Zeigt an, welche Webseiten TYPO3 and die [Mask TYPO3 Erweiterung](https://github.com/Gernott/mask) verwenden.
 
-      Verfügbar für [Firefox](https://addons.mozilla.org/de/firefox/addon/mask-detector/) und [Chrome](https://chrome.google.com/webstore/detail/piwik-injector/kkbhnlbbfpkdbipkjgagfagcbaacmfge).
+      Verfügbar für [Firefox](https://addons.mozilla.org/de/firefox/addon/mask-detector/) und [Chrome](https://chrome.google.com/webstore/detail/mask-detector/kkbhnlbbfpkdbipkjgagfagcbaacmfge).
 
       von [webprofil.at](http://www.webprofil.at/)
 
@@ -284,7 +284,50 @@
     de: |
       Eine Sammlung von über 1000 Icons, die fast alle Browser, Betriebsysteme, IT Marken, Flaggen, Soziale Netzwerke und Suchmaschinen beinhaltet.
       Sie wird von Piwik, der führenden Opensource Webanalytics-Software, verwendet (siehe z.B. [3.0.1](https://piwik.org/changelog/piwik-3-0-1/) und [3.0.3](https://piwik.org/changelog/piwik-3-0-3/))
-## TODO: citybike, Piwik Checker
+
+- id: github-issues-mirror
+  title: Github Issues Mirror
+  tags:
+    - piwik
+    - php
+    - scss
+  date: 2017-09-20
+  url: https://issues.piwik.org/
+  try: true
+  github: piwik/github-issues-mirror
+  image: github-issues-mirror.png
+  image_seperator: true
+  description:
+    en: |
+      Improved the old version and updated it to Bootstrap 4
+
+      The Github Issues Mirror allows hosting the Github issues to have a backup in case Github is down or for SEO reasons.
+    de: |
+      Verbesserung der alten Version und update zu Bootstrap 4
+
+      Der Github Issues Mirror ermöglicht es Github Issues zu kopieren um ein Backup zu haben oder für besseres SEO.
+
+- id: piwik-developer-documentation
+  title:
+    en: Piwik Developer Documentation
+    de: Piwik Entwicklerdokumentation
+  tags:
+    - piwik
+    - php
+    - scss
+    - javascript
+    - unfinished
+  github: piwik/developer-documentation/pulls/Findus23
+  url: https://issues.lw1.at/
+  try: true
+  image: piwik-developer.png
+  description:
+    en: |
+      hi
+    de: |
+      hi
+
+## TODO: citybike, Piwik Checker, Umweltdatenmessung
 
 
 

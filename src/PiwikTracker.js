@@ -3,6 +3,7 @@ export default class PiwikTracker {
         if (typeof _paq === 'undefined') { // should only occur with hot reloading
             let _paq = _paq || [];
             // _paq.push(["setCookieDomain", ".gattinger-wachau.at"]); //TODO: set
+            _paq.push(['enableHeartBeatTimer']);
             _paq.push(['enableLinkTracking']);
             (function() {
                 let u = "//localhost/piwik/";
@@ -16,7 +17,6 @@ export default class PiwikTracker {
                 s.parentNode.insertBefore(g, s);
             })();
             window._paq = _paq;
-            console.log("init");
         } else {
             console.info("Piwik already initialized");
         }

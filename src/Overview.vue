@@ -7,27 +7,30 @@
 				{{language==="de" ? "English":"Deutsch"}}
 			</router-link>
 		</div>
-		<div class="row">
-			<div class="col" id="sortwrapper">
-				<a @click="sort='date'" v-bind:class="sort==='date'?'active':''">
-					Date
-				</a>
-				<a @click="sort='title'" v-bind:class="sort==='title'?'active':''">
-					Title
-				</a>
-			</div>
-			<div class="col" id="filterwrapper">
-				<button class="button-outline" @click="filters=[];search=''"
-				        :class="filters.length === 0 ? 'active' : ''">
-					All Projects
-				</button>
-				<button v-for="(tag, key, index) in tags"
-				        :class="['button-outline',filters.includes(key)?'active':'']"
-				        @click="tagfilter(key)">
-					{{translate(tag.name)}}
-				</button>
-				<input title="test" v-model="search"/>
-			</div>
+		<div id="sortwrapper">
+			<a @click="sort='date'" v-bind:class="sort==='date'?'active':''">
+				Date
+			</a>
+			<a @click="sort='title'" v-bind:class="sort==='title'?'active':''">
+				Title
+			</a>
+		</div>
+		<div id="filterwrapper">
+			<button class="button-outline" @click="filters=[];search=''"
+			        :class="filters.length === 0 ? 'active' : ''">
+				{{language==="de"?"Alle Projekte":"All Projects"}}
+			</button>
+			<button v-for="(tag, key, index) in tags"
+			        :class="['button-outline',filters.includes(key)?'active':'']"
+			        @click="tagfilter(key)">
+				{{translate(tag.name)}}
+			</button>
+		</div>
+		<div id="searchwrapper">
+			<input title="test" v-model="search" :placeholder="language==='de'?'Suchen...':'Search...'"/>
+		</div>
+		<div v-if="noResults" id="noresults">
+			{{language==="de"?"Keine Ergebnisse":"No results"}}
 		</div>
 		<div id="blockwrapper">
 			<router-link v-for="element in elements" :key="element.id" class="card"
@@ -72,7 +75,8 @@
                 ascending: true,
                 filters: [],
                 search: "",
-                sort: "hi"
+                sort: "date",
+                noResults: false
             };
         },
         props: ["language"],
@@ -82,6 +86,12 @@
                 let filtered = this.data.filter(item => {
                     return vm.filterContains(item) && vm.filterSearch(item);
                 });
+                if (filtered.length === 0) {
+                    filtered = this.data;
+                    this.noResults = true;
+                } else {
+                    this.noResults = false;
+                }
                 return filtered.sort(function(a, b) {
                     if (vm.sort === "title") {
                         return vm.translate(a.title).localeCompare(vm.translate(b.title));
@@ -112,7 +122,8 @@
                 if (this.search === "") {
                     return true;
                 }
-                return this.translate(element.title).toLowerCase().includes(this.search.toLowerCase());
+                return this.translate(element.title).toLowerCase().includes(this.search.toLowerCase()) ||
+                    this.translate(element.description).toLowerCase().includes(this.search.toLowerCase());
             },
             tagfilter: function(element) {
                 if (this.filters.includes(element)) {
@@ -120,7 +131,6 @@
                 } else {
                     this.filters.push(element);
                 }
-                console.log(this.filters);
             },
             translate: function(value) {
                 if (typeof value === "object") {
