@@ -5,7 +5,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div id="app"></div>
+        <div id="app">
+            <noscript>
+                This website needs JavaScript enabled for viewing.
+                If you don't want to enable JavaScript or your browser doesn't support it,
+                you may wan't to read the <a href="https://raw.githubusercontent.com/Findus23/lw1.at/master/src/data.yaml">source file</a>
+                containing all content of this page.
+
+                Diese Webseite benötigt JavaScript für eine korrekte Darstellung.
+                In Browsern, die kein JavaScript unterstützen, kann die <a href="https://raw.githubusercontent.com/Findus23/lw1.at/master/src/data.yaml">Originaldatei</a>,
+                die alle Texte dieser Webseite enthält, angezeigt werden.
+            </noscript>
+        </div>
         <% if (htmlWebpackPlugin.options.devServer) { %>
         <script src="<%= htmlWebpackPlugin.options.devServer %>/webpack-dev-server.js" type="text/javascript"></script>
         <% } %>
