@@ -1,12 +1,12 @@
 <template>
 	<div id="overview">
-		<intro :language="language"></intro>
 		<div class="languageSelector">
 			<router-link :to="{ name: 'Overview', params: { language: otherLanguage }}"
 			             rel="alternate" :hreflang="otherLanguage">
 				{{language==="de" ? "English":"Deutsch"}}
 			</router-link>
 		</div>
+		<intro :language="language"></intro>
 		<div id="sortwrapper">
 			<a @click="sort='date'" v-bind:class="sort==='date'?'active':''">
 				Date
