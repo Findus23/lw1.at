@@ -1,4 +1,5 @@
 @import "variables";
+@import "../node_modules/normalize.css/normalize.css";
 @import "../node_modules/milligram/src/milligram";
 
 #introduction {
@@ -151,6 +152,14 @@ button {
 
 #searchwrapper {
   input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 4px;
+    border: 1px solid #bbb; /* Here */
+    border-radius: $borderRadius;
+    &:focus {
+      border-color: $color-primary;
+    }
     &::placeholder {
       color: #666666;
     }

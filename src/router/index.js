@@ -50,7 +50,6 @@ router.afterEach((to, from) => {
         _paq.push(['trackPageView']);
     }
     _paq.push(['enableLinkTracking']);
-    console.log("Route change");
 
 });
 export default router;

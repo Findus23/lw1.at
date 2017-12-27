@@ -43,7 +43,7 @@
     };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	$liberapay: #f6c915;
 	$bitcoin: #f7931a;
 

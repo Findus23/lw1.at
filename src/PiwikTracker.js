@@ -2,13 +2,12 @@ export default class PiwikTracker {
     init() {
         if (typeof _paq === 'undefined') { // should only occur with hot reloading
             let _paq = _paq || [];
-            // _paq.push(["setCookieDomain", ".gattinger-wachau.at"]); //TODO: set
             _paq.push(['enableHeartBeatTimer']);
-            _paq.push(['enableLinkTracking']);
+            _paq.push(["setDoNotTrack", true]);
             (function() {
-                let u = "//localhost/piwik/";
+                let u = (process.env.NODE_ENV === "production") ? "https://piwik.lw1.at/" : "//localhost/piwik/";
                 _paq.push(['setTrackerUrl', u + 'piwik.php']);
-                _paq.push(['setSiteId', 5]);
+                _paq.push(['setSiteId', (process.env.NODE_ENV === "development") ? 14 : 5]);
                 let d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
                 g.type = 'text/javascript';
                 g.async = true;
