@@ -52,6 +52,7 @@
 				</div>
 			</router-link>
 		</div>
+		<Footer></Footer>
 		<router-view :language="language" :data="data">
 			<!-- here the ItemModal component will be rendered -->
 		</router-view>
@@ -60,13 +61,14 @@
 </template>
 
 <script>
-    import Intro from "./intro.vue";
+    import Intro from "./Intro.vue";
+    import Footer from "./Footer.vue";
 
     const data = require('json-loader!yaml-loader!./data.yaml');
     const tags = require('json-loader!yaml-loader!./tags.yaml');
 
     export default {
-        components: {Intro},
+        components: {Intro, Footer},
         name: 'overview',
         data() {
             return {

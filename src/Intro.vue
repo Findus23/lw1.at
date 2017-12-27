@@ -1,5 +1,5 @@
 <template>
-	<div class="intro">
+	<header class="intro">
 		<h1>Lukas Winkler</h1>
 		<div id="introduction">
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab beatae maiores minima? Dolorum hic optio quis
@@ -33,7 +33,7 @@
 				<span>Bitcoin</span>
 			</a>
 		</div>
-	</div>
+	</header>
 </template>
 
 <script>

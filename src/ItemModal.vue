@@ -22,7 +22,7 @@
 										<path d="M54.22083 161.88751C75.49125 69.74037 157.61638.879 255.99447-.0344V71.2784c-58.68038.82679-108.44983 38.32148-127.51646 90.6032H54.22378z"></path>
 										<path d="M183.32848 154.61394L93.60991 255.96317-.0104 154.45508"></path>
 									</svg>
-									<span>Try it out</span>
+									<span>{{language==="de" ? "Ausprobieren": "Try it out!"}}</span>
 								</div>
 								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420">
 									<title>Website</title>
