@@ -48,7 +48,6 @@ body {
   margin-bottom: 20px;
   width: 100%;
   max-width: 300px;
-  height: 300px;
   cursor: pointer;
   &:before {
     border-radius: $borderRadius;
@@ -73,13 +72,21 @@ body {
     }
   }
   img {
+    display: block;
     transition: filter .2s;
     border-top-left-radius: $borderRadius;
     border-top-right-radius: $borderRadius;
     height: auto;
   }
   .textwrapper {
-    padding: 10px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    > div {
+      padding: 0 10px
+    }
   }
 }
 
