@@ -16,13 +16,13 @@
 			</a>
 		</div>
 		<div id="filterwrapper">
-			<button class="button-outline" @click="filters=[];search=''"
-			        :class="filters.length === 0 ? 'active' : ''">
+			<button class="button-outline" @click="filter=false;search=''"
+			        :class="filter ? '' : 'active'">
 				{{language==="de"?"Alle Projekte":"All Projects"}}
 			</button>
 			<button v-for="(tag, key, index) in tags"
-			        :class="['button-outline',filters.includes(key)?'active':'']"
-			        @click="tagfilter(key)">
+			        :class="['button-outline',(filter === key)?'active':'']"
+			        @click="filter=key">
 				{{translate(tag.name)}}
 			</button>
 		</div>
@@ -73,7 +73,7 @@
                 data: data,
                 tags: tags,
                 ascending: true,
-                filters: [],
+                filter: false,
                 search: "",
                 sort: "date",
                 noResults: false
@@ -106,16 +106,11 @@
         },
         methods: {
             filterContains: function(element) {
-                if (this.filters.length === 0) {
+                if (!this.filter) {
                     return true;
                 }
-                let missing = false;
-                this.filters.forEach(function(selectedtag) {
-                    if (!element.tags.includes(selectedtag)) {
-                        missing = true;
-                    }
-                });
-                return !missing;
+
+                return element.tags.includes(this.filter);
 
             },
             filterSearch: function(element) {
@@ -124,13 +119,6 @@
                 }
                 return this.translate(element.title).toLowerCase().includes(this.search.toLowerCase()) ||
                     this.translate(element.description).toLowerCase().includes(this.search.toLowerCase());
-            },
-            tagfilter: function(element) {
-                if (this.filters.includes(element)) {
-                    this.filters = this.filters.filter(item => item !== element);
-                } else {
-                    this.filters.push(element);
-                }
             },
             translate: function(value) {
                 if (typeof value === "object") {
