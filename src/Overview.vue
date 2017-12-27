@@ -52,7 +52,10 @@
 				</div>
 			</router-link>
 		</div>
-		<Footer></Footer>
+		<Contact></Contact>
+		<router-link :to="{ name: (language==='de' ? 'Impressum':'Imprint')}" style="text-align: center">
+			{{language==="de" ? "Impressum":"Imprint"}}
+		</router-link>
 		<router-view :language="language" :data="data">
 			<!-- here the ItemModal component will be rendered -->
 		</router-view>
@@ -62,13 +65,13 @@
 
 <script>
     import Intro from "./Intro.vue";
-    import Footer from "./Footer.vue";
+    import Contact from "./Contact.vue";
 
     const data = require('json-loader!yaml-loader!./data.yaml');
     const tags = require('json-loader!yaml-loader!./tags.yaml');
 
     export default {
-        components: {Intro, Footer},
+        components: {Intro, Contact},
         name: 'overview',
         data() {
             return {
@@ -136,9 +139,6 @@
                 }
                 return date.toLocaleString(this.language, {month: "long"}) + " " + date.getFullYear();
             }
-        },
-        mounted() {
-            document.title = "Lukas Winkler - lw1.at";
         }
     };
 </script>

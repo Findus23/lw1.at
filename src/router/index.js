@@ -34,7 +34,7 @@ let router = new Router({
         {
             path: '/de/impressum',
             name: 'Impressum',
-            component:Imprint,
+            component: Imprint,
             props: {
                 language: "de"
             }
@@ -42,7 +42,7 @@ let router = new Router({
         {
             path: '/en/imprint',
             name: 'Imprint',
-            component:Imprint,
+            component: Imprint,
             props: {
                 language: "en"
             }
@@ -73,7 +73,16 @@ router.afterEach((to, from) => {
     _paq.push(['setCustomUrl', to.path]);
     _paq.push(['setReferrerUrl', from.path]);
     _paq.push(['setGenerationTimeMs', 0]);
-    if (to.name!=="itemModal") {
+    if (to.name === "Overview") {
+        document.title = "Lukas Winkler - lw1.at";
+        _paq.push(['setDocumentTitle', document.title]);
+        _paq.push(['trackPageView']);
+    } else if (to.name === "Imprint") {
+        document.title = "Imprint - lw1.at";
+        _paq.push(['setDocumentTitle', document.title]);
+        _paq.push(['trackPageView']);
+    } else if (to.name === "Impressum") {
+        document.title = "Impressum - lw1.at";
         _paq.push(['setDocumentTitle', document.title]);
         _paq.push(['trackPageView']);
     }

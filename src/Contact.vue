@@ -10,7 +10,7 @@
 		<a href="mailto:hi@lw1.at" target="_blank">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 114 114">
 				<title>Contact me (hi@lw1.at)</title>
-				<path stroke="#000" stroke-width="7" fill="none" d="m7,20h98v72H7zl44,44q5,4 10,0l44-44M7,92l36-36m26,0 36,36"></path>
+				<path style="stroke: currentColor" stroke-width="7" fill="none" d="m7,20h98v72H7zl44,44q5,4 10,0l44-44M7,92l36-36m26,0 36,36"></path>
 			</svg>
 		</a>
 	</footer>
@@ -18,7 +18,7 @@
 
 <script>
     export default {
-        name: "footer.vue"
+        name: "contact"
     };
 </script>
 
@@ -31,6 +31,7 @@
 			width: 36px;
 			height: 36px;
 			color: black;
+			transition: color .2s;
 		}
 		a:hover svg {
 			color: $color-primary;

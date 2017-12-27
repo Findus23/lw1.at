@@ -4,7 +4,6 @@
 			<router-link :to="{ name: 'Overview', params: { language: language }}">
 				{{language==="de" ? "Zurück zur Hauptseite":"Back to the main page"}}
 			</router-link>
-
 		</div>
 		<div class="languageSelector">
 			<router-link :to="{ name: (language==='de' ? 'Imprint':'Impressum')}" rel="alternate"
@@ -89,10 +88,7 @@
 <script>
     export default {
         name: "imprint",
-        props: ["language"],
-        mounted() {
-            document.title = (this.language === "de" ? "Impressum" : "Imprint") + " - lw1.at";
-        }
+        props: ["language"]
     };
 </script>
 
