@@ -1,13 +1,14 @@
 let path = require('path');
 let webpack = require('webpack');
+let CleanWebpackPlugin = require('clean-webpack-plugin');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
-
+let HtmlWebpackExcludeAssetsPlugin = require('html-webpack-exclude-assets-plugin');
 module.exports = {
-    entry: './src/main.js',
+    entry: {polyfill: "@babel/polyfill", app: './src/main.js'},
     output: {
         path: path.resolve(__dirname, './dist'),
         publicPath: '/',
-        filename: 'build.js?hash=[hash]'
+        filename: '[name]-build-[hash].js'
     },
     module: {
         rules: [
@@ -29,8 +30,24 @@ module.exports = {
             },
             {
                 test: /\.js$/,
-                loader: 'babel-loader',
-                exclude: /node_modules/
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            [
+                                "@babel/preset-env",
+                                {
+                                    "targets": {
+                                        "browsers": [
+                                            ">1% in AT"
+                                        ]
+                                    }
+                                }
+                            ]
+                        ]
+                    }
+                }
             },
             {
                 test: /\.(png|jpg|gif|svg)$/,
@@ -46,7 +63,7 @@ module.exports = {
                         options: {
                             bypassOnDebug: true,
                             mozjpeg: {
-                                enabled:false
+                                enabled: false
                             },
                         },
                     },
@@ -74,7 +91,9 @@ module.exports = {
             title: 'My App',
             template: 'my-index.ejs',
             devServer: process.env.NODE_ENV === 'production' ? '' : 'http://localhost:8081',
+            excludeAssets: [/polyfill.*/]
         }),
+        new HtmlWebpackExcludeAssetsPlugin(),
         new webpack.NamedModulesPlugin()
     ]
 };
@@ -83,6 +102,7 @@ if (process.env.NODE_ENV === 'production') {
     module.exports.devtool = '#source-map';
     // http://vue-loader.vuejs.org/en/workflow/production.html
     module.exports.plugins = (module.exports.plugins || []).concat([
+        new CleanWebpackPlugin("dist"),
         new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: '"production"'
@@ -96,7 +116,6 @@ if (process.env.NODE_ENV === 'production') {
         }),
         new webpack.LoaderOptionsPlugin({
             minimize: true
-        }),
-
+        })
     ]);
 }

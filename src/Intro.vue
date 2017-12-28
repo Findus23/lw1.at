@@ -1,13 +1,15 @@
 <template>
 	<header class="intro">
 		<h1>Lukas Winkler</h1>
-		<div id="introduction">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab beatae maiores minima? Dolorum hic optio quis
-			quisquam, repellendus tempora ut.
-			Accusantium animi consectetur eaque enim fuga in, laudantium minima neque, nesciunt, non porro provident
-			quia quisquam repellat sequi totam velit.
-			Ad aliquid beatae dolorem doloribus eaque eligendi expedita, fugit hic iste labore necessitatibus non
-			praesentium reprehenderit soluta sunt tenetur vel!
+		<div class="introduction" v-if="language==='de'">
+			Hallo,<br>
+			ich bin ein Astronomiestudent aus Niederösterreich und ein Fan von Open Source Software.<br>
+			Im meiner Freizeit schreibe ich mehr oder wenigern nützliche Programme und Webseiten und helfe bei der Entwicklung von <a href="https://piwik.org/">Piwik</a>.
+		</div>
+		<div class="introduction" v-else>
+			Hi,<br>
+			i am an astronomy student from Lower Austria and a Open Source fan.<br>
+			When I have time for it, I write more or less useful programs and websites and help with developing <a href="https://piwik.org/">Piwik</a>.
 		</div>
 		<div class="donate-buttons">
 			<a class="liberapay-btn" href="https://liberapay.com/lw1" target="_blank">
@@ -93,5 +95,8 @@
 
 		}
 	}
-
+	.introduction {
+		text-align: left;
+		margin-bottom: 10px;
+	}
 </style>
