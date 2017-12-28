@@ -142,3 +142,190 @@
         }
     };
 </script>
+
+<style lang="scss">
+	@import "variables";
+	@import "../node_modules/milligram/src/Color";
+	@import "../node_modules/milligram/src/Utility";
+	#introduction {
+		text-align: left;
+		margin-bottom: 2rem;
+	}
+
+	h1 {
+		font-weight: 300;
+		color: black;
+	}
+
+	body {
+		background-color: #ffffff;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5' height='5'%3E%3Crect width='2.5' height='5' fill='white' /%3E%3Crect x='2.5' y='0' width='2.5' height='5' fill='%23f5f5f5' /%3E%3C/svg%3E");
+		font-family: -apple-system, "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", "Roboto", "Liberation Sans", Arial, sans-serif;
+		color: #212121;
+	}
+
+	.container {
+		background-color: white;
+	}
+
+	#app {
+		text-align: center;
+		margin-top: 20px;
+	}
+
+	#blockwrapper {
+		margin: 20px;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+	}
+
+	#root_isotope {
+		margin: 0 auto;
+	}
+
+	.card {
+		background-color: #009688;
+		transition: background-color .2s;
+		color: white;
+		border-radius: $borderRadius;
+		z-index: 3;
+		position: relative;
+		margin-bottom: 20px;
+		width: 100%;
+		max-width: 300px;
+		cursor: pointer;
+		&:before {
+			border-radius: $borderRadius;
+			content: "";
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: -3;
+			@include shadow(2);
+			transition: box-shadow 0.2s;
+		}
+		&:hover, &:focus {
+			&:before {
+				@include shadow(3);
+			}
+			color: white;
+			background: darken(#009688, 0.8);
+			img {
+				filter: brightness(0.8);
+			}
+		}
+		img {
+			display: block;
+			transition: filter .2s;
+			border-top-left-radius: $borderRadius;
+			border-top-right-radius: $borderRadius;
+			height: auto;
+		}
+		.textwrapper {
+			height: 150px;
+			display: flex;
+			flex-direction: column;
+			align-content: center;
+			justify-content: center;
+			> div {
+				padding: 0 10px
+			}
+		}
+	}
+
+	.tag {
+		display: inline-block;
+		padding: .2em .6em .3em;
+		font-size: 70%;
+		font-weight: bold;
+		line-height: 1;
+		color: #ffffff;
+		text-align: center;
+		white-space: nowrap;
+		vertical-align: baseline;
+		border-radius: .25em;
+		margin-left: 2px;
+		margin-right: 2px;
+	}
+
+	button {
+		color: white;
+		&.colored {
+			color: white;
+		}
+		&.active {
+			/*color: darken($color-secondary, 10%);
+			border-color: darken($color-secondary, 10%);
+			background-color: darken(white, 10%) !important;*/
+		}
+		svg {
+			vertical-align: sub;
+			margin-right: 4px;
+		}
+
+	}
+
+	#sortwrapper {
+		//display: flex;
+		display: none;
+		flex-direction: column;
+		padding: 0 5rem 0 3rem;
+		a {
+			color: red;
+			&:active, &:hover, &:focus, &.active {
+				color: black;
+			}
+		}
+	}
+
+	#filterwrapper {
+		button {
+			background-color: transparent;
+			border: none;
+			color: darkgray;
+			padding-left: 10px;
+			padding-right: 10px;
+			text-transform: initial;
+			&.active {
+				color: black;
+			}
+		}
+	}
+
+	#searchwrapper {
+		input {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			padding: 4px;
+			border: 1px solid #bbb; /* Here */
+			border-radius: $borderRadius;
+			&:focus {
+				border-color: $color-primary;
+			}
+			&::placeholder {
+				color: #666666;
+			}
+		}
+	}
+
+	#noresults {
+		font-size: 20px;
+		font-weight: bold;
+	}
+
+	.languageSelector {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		a {
+		}
+	}
+
+	//html { // https://aykevl.nl/2014/09/fix-jumping-scrollbar
+	//  margin-left: calc(100vw - 100%);
+	//  margin-right: 0;
+	//}
+</style>

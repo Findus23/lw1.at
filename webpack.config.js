@@ -2,13 +2,17 @@ let path = require('path');
 let webpack = require('webpack');
 let CleanWebpackPlugin = require('clean-webpack-plugin');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
-let HtmlWebpackExcludeAssetsPlugin = require('html-webpack-exclude-assets-plugin');
+let SriPlugin = require('webpack-subresource-integrity');
+let CompressionPlugin = require('compression-webpack-plugin');
+let ExtractTextPlugin = require("extract-text-webpack-plugin");
+
 module.exports = {
     entry: {polyfill: "@babel/polyfill", app: './src/main.js'},
     output: {
         path: path.resolve(__dirname, './dist'),
         publicPath: '/',
-        filename: '[name]-build-[hash].js'
+        filename: '[name]-build-[hash].js',
+        crossOriginLoading: "anonymous"
     },
     module: {
         rules: [
@@ -16,16 +20,16 @@ module.exports = {
                 test: /\.vue$/,
                 loader: 'vue-loader',
                 options: {
-                    loaders: {
-                        // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
-                        // the "scss" and "sass" values for the lang attribute to the right configs here.
-                        // other preprocessors should work out of the box, no loader config like this necessary.
-                        'scss': 'vue-style-loader!css-loader!sass-loader',
-                        'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
+                    sourceMap: true,
+                    extractCSS: process.env.NODE_ENV === 'production',
+                    cssSourceMap: true,
+                    transformToRequire: {
+                        video: ['src', 'poster'],
+                        source: 'src',
+                        img: 'src',
+                        image: 'xlink:href'
                     },
                     postcss: [require('autoprefixer')()]
-
-                    // other vue-loader options go here
                 }
             },
             {
@@ -72,11 +76,6 @@ module.exports = {
             }
         ]
     },
-    resolve: {
-        alias: {
-            'vue$': 'vue/dist/vue.esm.js',
-        }
-    },
     devServer: {
         historyApiFallback: true,
         noInfo: true,
@@ -92,7 +91,12 @@ module.exports = {
             template: 'my-index.ejs',
             devServer: process.env.NODE_ENV === 'production' ? '' : 'http://localhost:8081',
         }),
-        new webpack.NamedModulesPlugin()
+        new webpack.NamedModulesPlugin(),
+        new SriPlugin({
+            hashFuncNames: ['sha256'],
+            enabled: process.env.NODE_ENV === 'production',
+        }),
+        new webpack.optimize.CommonsChunkPlugin({name: "commons"})
     ]
 };
 
@@ -101,6 +105,11 @@ if (process.env.NODE_ENV === 'production') {
     // http://vue-loader.vuejs.org/en/workflow/production.html
     module.exports.plugins = (module.exports.plugins || []).concat([
         new CleanWebpackPlugin("dist"),
+        new webpack.HashedModuleIdsPlugin({
+            hashFunction: 'sha256',
+            hashDigest: 'hex',
+            hashDigestLength: 20
+        }),
         new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: '"production"'
@@ -114,6 +123,10 @@ if (process.env.NODE_ENV === 'production') {
         }),
         new webpack.LoaderOptionsPlugin({
             minimize: true
-        })
+        }),
+        new ExtractTextPlugin("style.css"),
+        new CompressionPlugin({
+            test: /\.(js|css)/
+        }),
     ]);
 }

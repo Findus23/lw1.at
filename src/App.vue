@@ -11,6 +11,10 @@
     };
 </script>
 
+<style lang="css" src="../node_modules/normalize.css/normalize.css">
+</style>
+
 <style lang="scss">
-	@import "style";
+	@import "variables";
+	@import "../node_modules/milligram/src/milligram";
 </style>

@@ -14,8 +14,7 @@ piwik.init();
 let app = new Vue({
     el: '#app',
     router,
-    template: '<App/>',
-    components: {App},
+    render: h => h(App),
     methods: {
         gotoOverview(e) {
             this.$router.back();
