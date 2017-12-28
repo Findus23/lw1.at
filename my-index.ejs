@@ -19,11 +19,6 @@
                 die alle Texte dieser Webseite enthält, angezeigt werden.
             </noscript>
         </div>
-        <!--[if IE]>
-        <% for (var chunk in htmlWebpackPlugin.files.chunks) { %> <% if ((htmlWebpackPlugin.files.chunks[chunk].entry).match('polyfill')) {%>
-        <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
-        <% } %> <% } %>
-        <![endif]-->
         <% if (htmlWebpackPlugin.options.devServer) { %>
         <script src="<%= htmlWebpackPlugin.options.devServer %>/webpack-dev-server.js" type="text/javascript"></script>
         <% } %>

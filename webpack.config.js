@@ -91,9 +91,7 @@ module.exports = {
             title: 'My App',
             template: 'my-index.ejs',
             devServer: process.env.NODE_ENV === 'production' ? '' : 'http://localhost:8081',
-            excludeAssets: [/polyfill.*/]
         }),
-        new HtmlWebpackExcludeAssetsPlugin(),
         new webpack.NamedModulesPlugin()
     ]
 };
