@@ -147,15 +147,6 @@
 	@import "variables";
 	@import "../node_modules/milligram/src/Color";
 	@import "../node_modules/milligram/src/Utility";
-	#introduction {
-		text-align: left;
-		margin-bottom: 2rem;
-	}
-
-	h1 {
-		font-weight: 300;
-		color: black;
-	}
 
 	body {
 		background-color: #ffffff;
@@ -321,6 +312,9 @@
 		top: 20px;
 		right: 20px;
 		a {
+		}
+		@media screen and (max-width: 480px) {
+			right: 10px;
 		}
 	}
 

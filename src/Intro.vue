@@ -98,5 +98,20 @@
 	.introduction {
 		text-align: left;
 		margin-bottom: 10px;
+		padding: 0 10px;
+	}
+	h1 {
+		font-weight: 300;
+		color: black!important;
+	}
+	@media screen and (max-width: 480px) {
+		h1 {
+			text-align: left;
+			padding: 0 10px;
+
+		}
+		.languageSelector {
+			right: 10px;
+		}
 	}
 </style>
