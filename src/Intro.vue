@@ -8,7 +8,7 @@
 		</div>
 		<div class="introduction" v-else>
 			Hi,<br>
-			i am an astronomy student from Lower Austria and a Open Source fan.<br>
+			I am an astronomy student from Lower Austria and an Open Source fan.<br>
 			When I have time for it, I write more or less useful programs and websites and help with developing <a href="https://piwik.org/">Piwik</a>.
 		</div>
 		<div class="donate-buttons">

@@ -1,8 +1,8 @@
 import Vue from 'vue';
-import Router from 'vue-router';
 import Overview from '../Overview.vue';
 import ItemModal from '../ItemModal.vue';
 import Imprint from '../Imprint.vue';
+import Router from 'vue-router';
 
 Vue.use(Router);
 

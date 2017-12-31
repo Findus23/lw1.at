@@ -7,6 +7,7 @@
 			</router-link>
 		</div>
 		<intro :language="language"></intro>
+		<Contact></Contact>
 		<div id="sortwrapper">
 			<a @click="sort='date'" v-bind:class="sort==='date'?'active':''">
 				Date
@@ -52,7 +53,6 @@
 				</div>
 			</router-link>
 		</div>
-		<Contact></Contact>
 		<router-link :to="{ name: (language==='de' ? 'Impressum':'Imprint')}" style="text-align: center">
 			{{language==="de" ? "Impressum":"Imprint"}}
 		</router-link>
@@ -153,6 +153,9 @@
 		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5' height='5'%3E%3Crect width='2.5' height='5' fill='white' /%3E%3Crect x='2.5' y='0' width='2.5' height='5' fill='%23f5f5f5' /%3E%3C/svg%3E");
 		font-family: -apple-system, "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", "Roboto", "Liberation Sans", Arial, sans-serif;
 		color: #212121;
+	}
+	a svg {
+		fill: initial;
 	}
 
 	.container {

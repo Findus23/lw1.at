@@ -1,9 +1,7 @@
 import Vue from 'vue';
-import router from './router';
 import VueHead from 'vue-head';
-
 import App from './App.vue';
-
+import router from './router/routes';
 import PiwikTracker from './PiwikTracker';
 
 Vue.use(VueHead);
@@ -15,6 +13,7 @@ let app = new Vue({
     el: '#app',
     router,
     render: h => h(App),
+    comments:true,
     methods: {
         gotoOverview(e) {
             this.$router.back();
