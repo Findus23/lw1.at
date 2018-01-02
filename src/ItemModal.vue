@@ -76,9 +76,6 @@
             this.$refs.container.focus();
         },
         methods: {
-            closed(event) {
-                this.$router.push({name: 'Overview', params: {language: language}});
-            },
             marked: function(input) {
                 return md.render(input);
             },
@@ -105,6 +102,7 @@
 
 <style lang="scss">
 	@import "variables";
+
 	.closeButton {
 		position: absolute;
 		font-size: 22px;

@@ -13,11 +13,5 @@ let app = new Vue({
     el: '#app',
     router,
     render: h => h(App),
-    comments:true,
-    methods: {
-        gotoOverview(e) {
-            this.$router.back();
-
-        }
-    }
+    comments: true
 });
