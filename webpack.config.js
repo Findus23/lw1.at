@@ -123,7 +123,7 @@ if (process.env.NODE_ENV === 'production') {
         new webpack.LoaderOptionsPlugin({
             minimize: true
         }),
-        new ExtractTextPlugin("style.css"),
+        new ExtractTextPlugin("style-[hash].css"),
         new CompressionPlugin({
             test: /\.(js|css)/
         }),
