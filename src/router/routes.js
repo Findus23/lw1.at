@@ -70,8 +70,10 @@ router.afterEach((to, from) => {
             document.body.style.overflow = "";
         }, 300);
     }
-    _paq.push(['setCustomUrl', to.path]);
-    _paq.push(['setReferrerUrl', from.path]);
+    _paq.push(['setCustomUrl', to.fullPath]);
+    if (from.matched.length !== 0) {
+        _paq.push(['setReferrerUrl', from.fullPath]);
+    }
     _paq.push(['setGenerationTimeMs', 0]);
     if (to.name === "Overview") {
         document.title = "Lukas Winkler - lw1.at";
