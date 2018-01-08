@@ -73,7 +73,6 @@ router.afterEach((to, from) => {
     _paq.push(['setCustomUrl', to.fullPath]);
     if (from.matched.length !== 0 && from.fullPath !== "/") {
         _paq.push(['setReferrerUrl', from.fullPath]);
-    } else {
     }
     _paq.push(['setGenerationTimeMs', 0]);
     if (to.name === "Overview") {
