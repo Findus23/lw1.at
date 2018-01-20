@@ -28,7 +28,7 @@ let router = new Router({
                 } else if (navigator.language.toLowerCase().includes("en")) {
                     return "en/imprint";
                 }
-                return "en";
+                return "en/imprint";
             }
         },
         {
