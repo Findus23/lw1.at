@@ -22,8 +22,8 @@ browserExtension:
   name:
     en: Browser Extension
     de: Browsererweiterung
-piwik:
-  name: Piwik
+matomo:
+  name: Matomo
 unfinished:
   name:
     en: unfinished

@@ -168,12 +168,12 @@
 
       von [webprofil.at](http://www.webprofil.at/)
 
-- id: piwik-injector
-  title: Piwik Browser Injector
+- id: Matomo-injector
+  title: Matomo Browser Injector
   tags:
-    - piwik
+    - matomo
     - javascript
-  image: piwikinjector.png
+  image: matomoinjector.png
   date: 2017-08-27
   github: Findus23/piwik-injector
   url: https://chrome.google.com/webstore/detail/piwik-injector/bglodhjbeeolbfpodfacccmnjledmggn
@@ -189,14 +189,14 @@
       [![Mozilla Add-on](https://img.shields.io/amo/v/piwik-injector.svg)](https://addons.mozilla.org/de/firefox/addon/piwik-injector/)
       [![Mozilla Add-on](https://img.shields.io/badge/mozilla%20addon-download%20now-brightgreen.svg)](https://addons.mozilla.org/de/firefox/addon/piwik-injector/)
 
-      Piwik Browser Injector helps you to try out [Piwik](https://piwik.org/), the leading open source web analytics software, in cases where it isn't possible to modify the source of a website or when you just want to quickly see how the visitor data of your website would look like in Piwik.
+      Matomo Browser Injector helps you to try out [Matomo](https://piwik.org/), the leading open source web analytics software, in cases where it isn't possible to modify the source of a website or when you just want to quickly see how the visitor data of your website would look like in Piwik.
 
       This extention is in an early development state and may include backward-incompatible changes in future versions.
 
       Based on the work of [hromadadan](https://github.com/guzart/customjs) and [xcv58](https://github.com/xcv58/Custom-JavaScript-for-Websites-2)
       ### Usage:
       * open the domain, where you want to include the tracking code localy
-      * click on the *Piwik Browser Injector* icon in your toolbar and enter the URL to your piwik instance and the ID of your website
+      * click on the *Matomo Browser Injector* icon in your toolbar and enter the URL to your Matomo instance and the ID of your website
       * if you want to try out advanced features you can enable the expert mode where you can freely modify the tracking code
     de: |
       [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/bglodhjbeeolbfpodfacccmnjledmggn.svg)](https://chrome.google.com/webstore/detail/piwik-injector/bglodhjbeeolbfpodfacccmnjledmggn)
@@ -205,15 +205,15 @@
       [![Mozilla Add-on](https://img.shields.io/amo/v/piwik-injector.svg)](https://addons.mozilla.org/de/firefox/addon/piwik-injector/)
       [![Mozilla Add-on](https://img.shields.io/badge/mozilla%20addon-download%20now-brightgreen.svg)](https://addons.mozilla.org/de/firefox/addon/piwik-injector/)
 
-      Piwik Browser Injector hilft dabei [Piwik](https://piwik.org/), die führende Opensource Webanalytics-Software, auszuprobieren.
-      Er funktioniert auch in Fällen, wo es nicht möglich ist, die Webseite zu bearbeiten, oder wenn man testen möchte, wie ein Webseitenaufruf in Piwik aussehen würde.
+      Matomo Browser Injector hilft dabei [Matomo](https://piwik.org/), die führende Opensource Webanalytics-Software, auszuprobieren.
+      Er funktioniert auch in Fällen, wo es nicht möglich ist, die Webseite zu bearbeiten, oder wenn man testen möchte, wie ein Webseitenaufruf in Matomo aussehen würde.
 
       Diese Erweiterung ist in einem frühen Entwicklungszustand und kann möglicherweise in Zukunft inkompatible Änderungen enthalten.
 
       Basiert auf der Arbeit von [hromadadan](https://github.com/guzart/customjs) und [xcv58](https://github.com/xcv58/Custom-JavaScript-for-Websites-2)
       ### Verwendung:
       * öffne die Webseite, in die du den Tracking Code einfügen willst
-      * clicke auf das *Piwik Browser Injector* Icon in der Toolbar und gib die URL zum Piwik-Server und die ID der Webseite ein
+      * clicke auf das *Matomo Browser Injector* Icon in der Toolbar und gib die URL zum Matomo-Server und die ID der Webseite ein
       * wenn du erweiterte Funktionen nutzen willst, aktiviere den Expertenmodus, wo man den Tracking Code frei bearbeiten kann.
 
 - id: schilternkarte
@@ -289,41 +289,41 @@
     en: A content management system for a local winery
     de: Ein Content Management System für ein Wachauer Weingut
 
-- id: piwik-icons
-  title: Piwik-Icons
+- id: matomo-icons
+  title: Matomo-Icons
   tags:
-    - piwik
+    - matomo
     - bash
-  url: https://piwik.org/
-  github: piwik/piwik-icons
+  url: https://matomo.org/
+  github: matomo.org/matomo-icons
   date: 2017-11-22
-  image: piwikicons.png
+  image: matomoicons.png
   license:
     id: GPL3
-    url: https://github.com/piwik/piwik-icons/blob/master/gpl-3.0.txt
+    url: https://github.com/matomo/matomo-icons/blob/master/gpl-3.0.txt
   description:
     en: |
       A collection of more than 1000 icons of nearly every browser, operating system, IT brand, flag, social network and search engine.
-      It is used by Piwik, the leading open source web analytics software. (e.g. in [3.0.1](https://piwik.org/changelog/piwik-3-0-1/) and in [3.0.3](https://piwik.org/changelog/piwik-3-0-3/)
+      It is used by Matomo, the leading open source web analytics software. (e.g. in [3.0.1](https://matomo.org/changelog/piwik-3-0-1/) and in [3.0.3](https://matomo.org/changelog/piwik-3-0-3/)
     de: |
       Eine Sammlung von über 1000 Icons, die fast alle Browser, Betriebsysteme, IT Marken, Flaggen, Soziale Netzwerke und Suchmaschinen beinhaltet.
-      Sie wird von Piwik, der führenden Opensource Webanalytics-Software, verwendet (siehe z.B. [3.0.1](https://piwik.org/changelog/piwik-3-0-1/) und [3.0.3](https://piwik.org/changelog/piwik-3-0-3/))
+      Sie wird von Matomo, der führenden Opensource Webanalytics-Software, verwendet (siehe z.B. [3.0.1](https://matomo.org/changelog/piwik-3-0-1/) und [3.0.3](https://matomo.org/changelog/piwik-3-0-3/))
 
 - id: github-issues-mirror
   title: Github Issues Mirror
   tags:
-    - piwik
+    - matomo
     - php
     - scss
   date: 2017-09-20
-  url: https://issues.piwik.org/
+  url: https://issues.matomo.org/
   try: true
-  github: piwik/github-issues-mirror
+  github: matomo-org/github-issues-mirror
   image: github-issues-mirror.png
   image_seperator: true
   license:
     id: GPL3
-    url: https://github.com/piwik/github-issues-mirror/blob/master/LICENSE
+    url: https://github.com/matomo-org/github-issues-mirror/blob/master/LICENSE
   description:
     en: |
       Improved the old version and updated it to Bootstrap 4
@@ -334,29 +334,29 @@
 
       Der Github Issues Mirror ermöglicht es Github Issues zu kopieren um ein Backup zu haben oder für besseres SEO.
 
-- id: piwik-developer-documentation
+- id: matomo-developer-documentation
   title:
-    en: Piwik Developer Documentation
-    de: Piwik Entwicklerdokumentation
+    en: Matomo Developer Documentation
+    de: Matomo Entwicklerdokumentation
   tags:
-    - piwik
+    - matomo
     - php
     - scss
     - javascript
     - unfinished
-  github: piwik/developer-documentation/pulls/Findus23
+  github: matomo-org/developer-documentation/pulls/Findus23
   url: https://issues.lw1.at/
   try: true
-  image: piwik-developer.png
+  image: matomo-developer.png
   date: 2017-10-20
   description:
     en: |
-      Work in Progress to bring the [current Piwik Developer Documentation](https://developer.piwik.org/) up to date:
+      Work in Progress to bring the [current Matomo Developer Documentation](https://developer.matomo.org/) up to date:
       - upgrade to Slim 3
       - use Bootstrap 4 and SCSS
       - fix search and add full-text-search
     de: |
-      Laufendes Projekt um die [aktuelle Piwik Entwickler-Dokumentation](https://developer.piwik.org/) zu aktualisieren:
+      Laufendes Projekt um die [aktuelle Matomo Entwickler-Dokumentation](https://developer.matomo.org/) zu aktualisieren:
       - Update auf Slim 3
       - verwende Bootstrap 4 und SCSS
       - Reperatur der Suche und eine neue Volltext-Suche
