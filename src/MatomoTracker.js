@@ -1,4 +1,4 @@
-export default class PiwikTracker {
+export default class MatomoTracker {
     init() {
         if (typeof _paq === 'undefined') { // should only occur with hot reloading
             let _paq = _paq || [];
@@ -7,7 +7,7 @@ export default class PiwikTracker {
                 _paq.push(["setDoNotTrack", true]);
             }
             (function() {
-                let u = (process.env.NODE_ENV === "production") ? "https://piwik.lw1.at/" : "//localhost/piwik/";
+                let u = (process.env.NODE_ENV === "production") ? "https://matomo.lw1.at/" : "//localhost/piwik/";
                 _paq.push(['setTrackerUrl', u + 'piwik.php']);
                 _paq.push(['setSiteId', (process.env.NODE_ENV === "production") ? 14 : 5]);
                 let d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
