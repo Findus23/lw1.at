@@ -2,12 +2,12 @@ import Vue from 'vue';
 import VueHead from 'vue-head';
 import App from './App.vue';
 import router from './router/routes';
-import PiwikTracker from './PiwikTracker';
+import MatomoTracker from './MatomoTracker';
 
 Vue.use(VueHead);
 
-let piwik = new PiwikTracker;
-piwik.init();
+let matomo = new MatomoTracker;
+matomo.init();
 
 let app = new Vue({
     el: '#app',
