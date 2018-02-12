@@ -1,6 +1,6 @@
 <template comments>
 	<nav class="contact">
-		<a href="https://github.com/" target="_blank">
+		<a href="https://github.com/Findus23" target="_blank">
 			<svg viewBox="0 0 16 16">
 				<!-- Source: Simplified from https://github.com/logos -->
 				<title>View profile on Github</title>
