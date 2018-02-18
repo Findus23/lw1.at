@@ -46,7 +46,7 @@
 			weitergegeben oder verkauft werden.
 		</p>
 		<p v-else>
-			Like most website operators, gattinger-wachau.at collects non-personally-identifying information of the sort
+			Like most website operators, lw1.at collects non-personally-identifying information of the sort
 			that web browsers and servers typically make available, such as the browser type, language preference,
 			referring site, and the date and time of each visitor request. The purpose in collecting non-personally
 			identifying information is to better understand how the visitors use the website. We are using the
