@@ -67,8 +67,8 @@
     import Intro from "./Intro.vue";
     import Contact from "./Contact.vue";
 
-    const data = require('json-loader!yaml-loader!./data.yaml');
-    const tags = require('json-loader!yaml-loader!./tags.yaml');
+    const data = require('./data.yaml');
+    const tags = require('./tags.yaml');
 
     export default {
         components: {Intro, Contact},

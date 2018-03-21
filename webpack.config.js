@@ -72,6 +72,10 @@ module.exports = {
                         },
                     },
                 ],
+            },
+            {
+                test: /\.yaml$/,
+                loader: 'yml-loader'
             }
         ]
     },
@@ -95,7 +99,6 @@ module.exports = {
             hashFuncNames: ['sha256'],
             enabled: process.env.NODE_ENV === 'production',
         }),
-        new webpack.optimize.CommonsChunkPlugin({name: "commons"})
     ]
 };
 
@@ -112,12 +115,6 @@ if (process.env.NODE_ENV === 'production') {
         new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: '"production"'
-            }
-        }),
-        new webpack.optimize.UglifyJsPlugin({
-            sourceMap: true,
-            compress: {
-                warnings: false
             }
         }),
         new webpack.LoaderOptionsPlugin({
