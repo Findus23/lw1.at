@@ -4,14 +4,13 @@
 		<div class="introduction" v-if="language==='de'">
 			Hallo,<br>
 			ich bin ein Astronomiestudent aus Niederösterreich und ein Fan von Open Source Software.<br>
-			Im meiner Freizeit schreibe ich mehr oder wenigern nützliche Programme und Webseiten und helfe bei der
-			Entwicklung von <a href="https://piwik.org/">Piwik</a>.
+			Im meiner Freizeit schreibe ich mehr oder wenigern nützliche Programme und Webseiten und helfe bei <a href="https://matomo.org/">Matomo</a>.
 		</div>
 		<div class="introduction" v-else>
 			Hi,<br>
 			I am an astronomy student from Lower Austria and an Open Source fan.<br>
-			When I have time for it, I write more or less useful programs and websites and help with developing <a
-				href="https://piwik.org/">Piwik</a>.
+			When I have time for it, I write more or less useful programs and websites and help <a
+				href="https://matomo.org/">Matomo</a>.
 		</div>
 		<div class="donate-buttons">
 			<a class="liberapay-btn" href="https://liberapay.com/lw1" target="_blank">
