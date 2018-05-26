@@ -52,6 +52,7 @@
 				<li>Hauptsprache des Browsers</li>
 				<li>User Agent des Browsers</li>
 				<li>Interaktionen mit Formularen (aber nicht deren Inhalt)</li>
+				<li>Mausbewegungen, Klicks und Scrollen</li>
 			</ul>
 			<h3>Indirekte Datensammlung</h3>
 			<h4>Server Logs</h4>
@@ -174,6 +175,9 @@
 				</li>
 				<li>
 					Interactions with forms (but not the content)
+				</li>
+				<li>
+					Mouse movements, clicks, and scrolls
 				</li>
 			</ul>
 			<h3>Indirect data collection</h3>
