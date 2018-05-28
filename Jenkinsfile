@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('yarn install') {
       steps {
-        sh 'yarn install --pure-lockfile'
+        sh 'yarn install --pure-lockfile --ignore-engines'
       }
     }
     stage('build') {
