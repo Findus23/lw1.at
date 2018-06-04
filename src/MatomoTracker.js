@@ -3,6 +3,7 @@ export default class MatomoTracker {
         if (typeof _paq === 'undefined') { // should only occur with hot reloading
             let _paq = _paq || [];
             _paq.push(['enableHeartBeatTimer']);
+            _paq.push(['HeatmapSessionRecording::disableAutoDetectNewPageView']);
             if (process.env.NODE_ENV === "production") {
                 _paq.push(["setDoNotTrack", true]);
             }
