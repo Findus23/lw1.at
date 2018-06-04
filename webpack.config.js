@@ -6,7 +6,8 @@ let SriPlugin = require('webpack-subresource-integrity');
 let CompressionPlugin = require('compression-webpack-plugin');
 let MiniCssExtractPlugin = require("mini-css-extract-plugin");
 let VueLoaderPlugin = require('vue-loader/lib/plugin');
-
+let PrerenderSPAPlugin = require('prerender-spa-plugin');
+let PuppeteerRenderer = PrerenderSPAPlugin.PuppeteerRenderer;
 
 module.exports = {
     entry: {polyfill: "@babel/polyfill", app: './src/main.js'},
@@ -85,18 +86,25 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [
-                    'vue-style-loader',
+                    process.env.NODE_ENV !== 'production'
+                        ? 'vue-style-loader'
+                        : MiniCssExtractPlugin.loader,
                     'css-loader',
+                    {
+                        loader: "postcss-loader",
+                        options: {
+                            plugins: [require('autoprefixer')()]
+                        }
+                    },
                     'sass-loader'
                 ]
             },
             {
                 test: /\.css$/,
-                // or `ExtractTextWebpackPlugin.extract(...)`
                 use: [
                     process.env.NODE_ENV !== 'production'
                         ? 'vue-style-loader'
-                        : MiniCssExtractPlugin.loader, 
+                        : MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
                         options: {importLoaders: 1}
@@ -151,8 +159,13 @@ if (process.env.NODE_ENV === 'production') {
         }),
         new MiniCssExtractPlugin("style-[hash].css"),
         new CompressionPlugin({
-            test: /\.(js|css)/
+            test: /\.(js|css|html)/
         }),
+        new PrerenderSPAPlugin({
+            staticDir: path.join(__dirname, 'dist'), // The path to the folder where index.html is.
+            routes: require("./routes"), // List of routes to prerender.
+            renderer: new PuppeteerRenderer()
+        })
         // new SriPlugin({
         //     hashFuncNames: ['sha256'],
         // }),

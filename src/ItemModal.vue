@@ -10,8 +10,9 @@
 							<img v-if="element.image" :src="require('./assets/contentimages/'+element.image)">
 						</div>
 						<h1>{{ translate(element.title) }}</h1>
-						<span class="closeButton"
-						      @click="$router.push({ name: 'Overview', params: { language: language }})">✖</span>
+						<router-link class="closeButton" :to="{ name: 'Overview', params: { language: language }}">✖
+						</router-link>
+
 					</div>
 					<div class="modal-body" ref="test">
 						<div class="modal-linkbar">
