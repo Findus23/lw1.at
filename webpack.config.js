@@ -135,11 +135,22 @@ module.exports = {
             devServer: process.env.NODE_ENV === 'production' ? '' : 'http://localhost:8081',
         }),
         new webpack.NamedModulesPlugin(),
+        new SriPlugin({
+            hashFuncNames: ['sha256'],
+            enabled: process.env.NODE_ENV === 'production',
+        }),
+        new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /de|en/),
+
         new VueLoaderPlugin()
     ]
 };
 
 if (process.env.NODE_ENV === 'production') {
+    module.exports.optimization = {
+        splitChunks: {
+            name: "commons"
+        }
+    };
     module.exports.devtool = '#source-map';
     // http://vue-loader.vuejs.org/en/workflow/production.html
     module.exports.plugins = (module.exports.plugins || []).concat([
@@ -162,7 +173,7 @@ if (process.env.NODE_ENV === 'production') {
             test: /\.(js|css|html)/
         }),
         new PrerenderSPAPlugin({
-            staticDir: path.join(__dirname, 'dist'), // The path to the folder where index.html is.
+            staticDir: path.join(__dirname, '../dist'), // The path to the folder where index.html is.
             routes: require("./routes"), // List of routes to prerender.
             renderer: new PuppeteerRenderer({
                 inject: {
