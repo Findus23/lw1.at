@@ -1,6 +1,6 @@
 export default class MatomoTracker {
     init() {
-        if (typeof _paq === 'undefined') { // should only occur with hot reloading
+        if (typeof _paq === 'undefined' && !window.__PRERENDER_INJECTED) { // should only occur with hot reloading
             let _paq = _paq || [];
             _paq.push(['enableHeartBeatTimer']);
             _paq.push(['HeatmapSessionRecording::disableAutoDetectNewPageView']);

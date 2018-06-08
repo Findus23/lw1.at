@@ -164,7 +164,11 @@ if (process.env.NODE_ENV === 'production') {
         new PrerenderSPAPlugin({
             staticDir: path.join(__dirname, 'dist'), // The path to the folder where index.html is.
             routes: require("./routes"), // List of routes to prerender.
-            renderer: new PuppeteerRenderer()
+            renderer: new PuppeteerRenderer({
+                inject: {
+                    prerender: true
+                },
+            })
         })
         // new SriPlugin({
         //     hashFuncNames: ['sha256'],
