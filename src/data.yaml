@@ -250,8 +250,8 @@
   image: hunger.svg
   image_seperator: true
   date: 2017-06-21
-  url: https://hunger.lw1.at/doc/
-  try: true
+#  url: https://hunger.lw1.at/doc/
+#  try: true
   github: Findus23/hunger
   license:
     id: GPL3
@@ -259,8 +259,10 @@
   description:
     en: |
       Python script which crawls the websites of some restaurants in Vienna for daily specials and provides them as well stuctured JSON API.
+      Has unfortunatly been retired since as the website structure changed too frequently.
     de: |
-      Pythonscript, welches die Webseiten einiger Wiener Restaurants nach Mittagsmenus durchsucht und diese in einer strukturierten JSON API ausgibt.
+      Python Script, welches die Webseiten einiger Wiener Restaurants nach Mittagsmenus durchsucht und diese in einer strukturierten JSON API ausgibt.
+      Wurde seitdem deaktiviert, da sich die Webseitenstrukturen zu oft verändert haben.
 
 - id: wienerlinienalarm
   title: Wiener Linien Alarm
