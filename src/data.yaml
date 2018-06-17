@@ -449,6 +449,7 @@
   title: Stackexchange Simulator
   tags:
     - python
+    - major
   image: se-simulator.png
   image_seperator: true
   date: 2018-04-25
