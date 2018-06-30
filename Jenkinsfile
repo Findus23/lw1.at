@@ -12,6 +12,9 @@ pipeline {
       }
     }
     stage('build') {
+      environment {
+        PRERENDER = 'disabled'
+      }
       steps {
         sh 'yarn run build'
       }
