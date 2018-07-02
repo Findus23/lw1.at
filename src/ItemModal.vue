@@ -55,6 +55,8 @@
 <script>
     import LicenseIcons from "./LicenseIcons.vue";
 
+    const regex = /local:\/\/([\w.]*)/gm;
+
     let md = require('markdown-it')();
     export default {
         data() {
@@ -78,6 +80,9 @@
         },
         methods: {
             marked: function(input) {
+                input = input.replace(regex, function(bla, matched) {
+                    return require("./assets/content/" + matched);
+                });
                 return md.render(input);
             },
             translate: function(value) {
