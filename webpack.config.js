@@ -10,7 +10,7 @@ let PrerenderSPAPlugin = require('prerender-spa-plugin');
 let PuppeteerRenderer = PrerenderSPAPlugin.PuppeteerRenderer;
 
 module.exports = {
-    entry: {polyfill: "@babel/polyfill", app: './src/main.js'},
+    entry: {app: './src/main.js'},
     output: {
         path: path.resolve(__dirname, './dist'),
         publicPath: '/',

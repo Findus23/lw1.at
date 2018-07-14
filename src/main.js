@@ -9,9 +9,12 @@ Vue.use(VueHead);
 let matomo = new MatomoTracker;
 matomo.init();
 
-let app = new Vue({
-    el: '#app',
-    router,
-    render: h => h(App),
-    comments: true
-});
+if ((typeof [].find) !== "undefined") { // if the browser doesn't support modern IE 
+    document.getElementById("noscript").style.display = "none";
+    let app = new Vue({
+        el: '#app',
+        router,
+        render: h => h(App),
+        comments: true
+    });
+}

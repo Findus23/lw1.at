@@ -8,7 +8,7 @@
     </head>
     <body>
         <div id="app" class="container">
-            <noscript>
+            <div id="noscript">
                 <div class="introduction">
                     Hi,<br>
                     I am an astronomy student from Lower Austria and an Open Source fan.<br>
@@ -23,9 +23,9 @@
                     <br>
                     <a href="/en/imprint" hreflang="en">Imprint (en)</a>
                     <br>
-                    <small>You are seeing this page because you have disabled JavaScript. I can't promise that everything will display correctly even though most of the website should.</small>
+                    <small>You are seeing this page because you have disabled JavaScript or are using an outdated browser. I can't promise that everything will display correctly even though most of the website should.</small>
                 </footer>
-            </noscript>
+            </div>
         </div>
         <% if (htmlWebpackPlugin.options.devServer) { %>
         <script src="<%= htmlWebpackPlugin.options.devServer %>/webpack-dev-server.js" type="text/javascript"></script>
