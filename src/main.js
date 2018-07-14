@@ -10,7 +10,10 @@ let matomo = new MatomoTracker;
 matomo.init();
 
 if ((typeof [].find) !== "undefined") { // if the browser doesn't support modern IE 
-    document.getElementById("noscript").style.display = "none";
+    var noscript_el = document.getElementById("noscript");
+    if (noscript_el) {
+        noscript_el.style.display = "none";
+    }
     let app = new Vue({
         el: '#app',
         router,
