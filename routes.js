@@ -3,7 +3,7 @@ fs = require('fs');
 
 // Get document, or throw exception on error
 
-routes = ["/de", "/en", "/de/impressum", "/en/imprint"];
+routes = ["/de", "/en", "/de/impressum", "/en/imprint", "/en/lightningtalks"];
 try {
     let doc = yaml.safeLoad(fs.readFileSync('./src/data.yaml', 'utf8'));
     doc.forEach(function(bla) {

@@ -56,6 +56,7 @@
 		<router-link :to="{ name: (language==='de' ? 'Impressum':'Imprint')}" style="text-align: center">
 			{{language==="de" ? "Impressum":"Imprint"}}
 		</router-link>
+		<a :href="require('./assets/gpg.asc')" class="gpg">GPG: 63DB 263B ACE3 68B5 C5F7 9CE4 94AF BE7C 2656 A5B5</a>
 		<router-view :language="language" :data="data">
 			<!-- here the ItemModal component will be rendered -->
 		</router-view>
@@ -154,6 +155,7 @@
 		font-family: -apple-system, "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", "Roboto", "Liberation Sans", Arial, sans-serif;
 		color: #212121;
 	}
+
 	a svg {
 		fill: initial;
 	}
@@ -231,6 +233,7 @@
 	}
 
 	.tag {
+		font-family: monospace, monospace;
 		display: inline-block;
 		padding: .2em .6em .3em;
 		font-size: 70%;
@@ -276,6 +279,7 @@
 	}
 
 	#filterwrapper {
+		font-family: monospace, monospace;
 		button {
 			background-color: transparent;
 			border: none;
@@ -291,6 +295,7 @@
 
 	#searchwrapper {
 		input {
+			font-family: monospace, monospace;
 			-webkit-appearance: none;
 			-moz-appearance: none;
 			padding: 4px;
@@ -319,6 +324,12 @@
 		@media screen and (max-width: 480px) {
 			right: 10px;
 		}
+	}
+	
+	.gpg {
+		display: block;
+		font-family: monospace;
+		font-size: 80%;
 	}
 
 	//html { // https://aykevl.nl/2014/09/fix-jumping-scrollbar
