@@ -42,7 +42,7 @@
 							<license-icons v-if="element.license" :id="element.license.id"
 							               :url="element.license.url"></license-icons>
 						</div>
-						<div v-if="element.description" v-html="marked(translate(element.description))"></div>
+						<div v-if="element.description" v-html="translate(element.description)"></div>
 						<iframe v-if="element.iframe"
 						        :src="element.iframe.url" :style="{backgroundColor: element.iframe.color}"></iframe>
 					</div>
@@ -55,9 +55,6 @@
 <script>
     import LicenseIcons from "./LicenseIcons.vue";
 
-    const regex = /local:\/\/([\w.]*)/gm;
-
-    let md = require('markdown-it')();
     export default {
         data() {
             return {
@@ -79,12 +76,6 @@
             this.$refs.container.focus();
         },
         methods: {
-            marked: function(input) {
-                input = input.replace(regex, function(bla, matched) {
-                    return require("./assets/content/" + matched);
-                });
-                return md.render(input);
-            },
             translate: function(value) {
                 if (typeof value === "object") {
                     return value[this.language];

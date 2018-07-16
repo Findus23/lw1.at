@@ -28,9 +28,9 @@ unfinished:
   name:
     en: unfinished
     de: unfertig
-design:
-  name: Design
 astronomy:
   name:
     en: Astronomy
     de: Astronomie
+events:
+  name: Events

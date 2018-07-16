@@ -81,7 +81,7 @@ module.exports = {
             },
             {
                 test: /\.yaml$/,
-                loader: 'yml-loader'
+                loader: path.resolve('data-loader.js'),
             },
             {
                 test: /\.scss$/,

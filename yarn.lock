@@ -4535,7 +4535,7 @@ js-tokens@^3.0.0, js-tokens@^3.0.2:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
 
-js-yaml@^3.11.0, js-yaml@^3.8.3, js-yaml@^3.9.0:
+js-yaml@^3.11.0, js-yaml@^3.12.0, js-yaml@^3.9.0:
   version "3.12.0"
   resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.12.0.tgz#eaed656ec8344f10f527c6bfa1b6e2244de167d1"
   dependencies:
@@ -8226,10 +8226,3 @@ yauzl@^2.2.1, yauzl@^2.4.2:
   dependencies:
     buffer-crc32 "~0.2.3"
     fd-slicer "~1.1.0"
-
-yml-loader@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/yml-loader/-/yml-loader-2.1.0.tgz#b976b8691b537b6d3dc7d92a9a7d34b90de10870"
-  dependencies:
-    js-yaml "^3.8.3"
-    loader-utils "^1.1.0"
