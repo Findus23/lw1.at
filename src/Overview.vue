@@ -88,9 +88,8 @@
         props: ["language"],
         computed: {
             elements() {
-                let vm = this;
                 let filtered = this.data.filter(item => {
-                    return vm.filterContains(item) && vm.filterSearch(item);
+                    return this.filterContains(item) && this.filterSearch(item);
                 });
                 if (filtered.length === 0) {
                     filtered = this.data;
@@ -98,9 +97,9 @@
                 } else {
                     this.noResults = false;
                 }
-                return filtered.sort(function(a, b) {
-                    if (vm.sort === "title") {
-                        return vm.translate(a.title).localeCompare(vm.translate(b.title));
+                return filtered.sort((a, b) => {
+                    if (this.sort === "title") {
+                        return this.translate(a.title).localeCompare(this.translate(b.title));
                     } else {
                         return new Date(b.date) - new Date(a.date);
                     }
