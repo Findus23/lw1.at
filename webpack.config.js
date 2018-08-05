@@ -149,7 +149,8 @@ if (process.env.NODE_ENV === 'production') {
     module.exports.optimization = {
         splitChunks: {
             name: "commons"
-        }
+        },
+        minimize: true
     };
     module.exports.devtool = '#source-map';
     // http://vue-loader.vuejs.org/en/workflow/production.html
@@ -164,9 +165,6 @@ if (process.env.NODE_ENV === 'production') {
             'process.env': {
                 NODE_ENV: '"production"'
             }
-        }),
-        new webpack.LoaderOptionsPlugin({
-            minimize: true
         }),
         new MiniCssExtractPlugin("style-[hash].css"),
         new CompressionPlugin({

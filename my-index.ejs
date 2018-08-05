@@ -32,7 +32,10 @@
         </div>
         <script>
             if ((typeof [].find) !== "undefined") {
-                document.getElementById("noscript").style.display = "none";
+                let noscript = document.getElementById("noscript");
+                if (noscript) {
+                    noscript.style.display = "none";
+                }
             }
         </script>
         <% if (htmlWebpackPlugin.options.devServer) { %>
