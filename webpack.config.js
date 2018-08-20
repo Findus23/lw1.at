@@ -8,6 +8,7 @@ let MiniCssExtractPlugin = require("mini-css-extract-plugin");
 let VueLoaderPlugin = require('vue-loader/lib/plugin');
 let PrerenderSPAPlugin = require('prerender-spa-plugin');
 let PuppeteerRenderer = PrerenderSPAPlugin.PuppeteerRenderer;
+let LicenseWebpackPlugin = require('license-webpack-plugin').LicenseWebpackPlugin;
 
 module.exports = {
     entry: {app: './src/main.js'},
@@ -141,7 +142,10 @@ module.exports = {
         }),
         new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /de|en/),
 
-        new VueLoaderPlugin()
+        new VueLoaderPlugin(),
+        new LicenseWebpackPlugin({
+            perChunkOutput:false,
+        })
     ]
 };
 
