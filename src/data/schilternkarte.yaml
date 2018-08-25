@@ -1,0 +1,25 @@
+id: schilternkarte
+title:
+  de: Schiltern Karte
+  en: Schiltern Map
+image: schilternkarte.png
+tags:
+- python
+- javascript
+date: 2017-08-20
+github: Findus23/POI-Schiltern
+url: https://karte.ferienhaus-schiltern.at/
+license:
+  id: MIT
+  url: https://github.com/Findus23/POI-Schiltern/blob/master/LICENSE.md
+iframe:
+  url: https://karte.ferienhaus-schiltern.at/
+  color: "#ddd"
+description:
+  en: |
+    A simple map showing points of selected categories on a map. The data is automatically exported from [OpenStreetMap](https://www.openstreetmap.org/)
+    and live opening hours are displayed (with [opening_hours.js](https://github.com/opening-hours/opening_hours.js)).
+  de: |
+    Eine einfache Karte, die Point of Interests in der Nähe von Schiltern bei Langenlois automatisch von  [OpenStreetMap](https://www.openstreetmap.org/) exportiert darstellt.
+
+    Zusätzlich werden wenn vorhanden Kontaktinformationenen und Live-Öffnungszeiten (mithilfe von [opening_hours.js](https://github.com/opening-hours/opening_hours.js) angezeigt.

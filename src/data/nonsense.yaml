@@ -1,0 +1,30 @@
+id: nonsense
+title: nonsense
+tags:
+- python
+date: 2017-12-01
+image: nonsense.png
+github: Findus23/nonsense
+url: https://nonsense.lw1.at
+try: true
+license:
+  id: MIT
+  url: https://github.com/Findus23/nonsense/blob/master/LICENSE
+description:
+  en: |
+    A well-known Swedish furniture store had a website listing all their products with a short description.
+    So whats more obvious than using it to create products that don't exist yet.
+
+    ## Technical Details
+    The pseudo-swedish names are generated with a second-order [Markov chain](https://en.wikipedia.org/wiki/Markov_chain),
+    while the descriptions are shuffeled nouns and adjectives with linking words between them.
+  de: |
+    Ein bekanntes schwedisches Möbelhaus hatte eine Webseite, auf der alle Produkte mit einer kurzen Beschreibung gelistet waren.
+    Was liegt also näher als daraus Produkte zu generieren, die es noch nicht gibt.
+
+    ## Technisches
+    Die pseudo-schwedischen Namen werden mithilfe einer [Markow-Kette](https://de.wikipedia.org/wiki/Markow-Kette) zweiter Ordnung generiert,
+    während die Beschreibung aus einer Liste von Nomen und Adjektiven zusammengewürfelt werden.
+iframe:
+  url: https://nonsense.lw1.at/
+  color: "#003399"

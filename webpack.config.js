@@ -72,10 +72,7 @@ module.exports = {
                     {
                         loader: 'image-webpack-loader',
                         options: {
-                            bypassOnDebug: true,
-                            mozjpeg: {
-                                enabled: false
-                            },
+                            disable: true,
                         },
                     },
                 ],

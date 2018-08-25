@@ -1,0 +1,17 @@
+id: rss2wallabag
+title: rss2wallabag
+tags:
+- python
+image: rss2wallabag.svg
+github: Findus23/rss2wallabag
+date: 2017-02-20
+license:
+  id: MIT
+  url: https://github.com/Findus23/rss2wallabag/blob/master/LICENSE
+description:
+  en: |
+    A simple python script which checks RSS feeds for new articles and imports them into [wallabag](https://wallabag.org/en).
+    Icon sources: [LGPL](https://commons.wikimedia.org/wiki/File:Generic_Feed-icon.svg) and [CC BY-SA 3.0](https://commons.wikimedia.org/wiki/File:Logo-wallabag-svg.svg)
+  de: |
+    Ein einfaches Python script, welches RSS feeds nach neuen Artikeln durchsucht und diese in [wallabag](https://wallabag.org/de) hinzufügt.
+    Bildquellen: [LGPL](https://commons.wikimedia.org/wiki/File:Generic_Feed-icon.svg) und [CC BY-SA 3.0](https://commons.wikimedia.org/wiki/File:Logo-wallabag-svg.svg)

@@ -1,0 +1,12 @@
+id: wienerlinienalarm
+title: Wiener Linien Alarm
+tags: []
+date: 2017-11-15
+github: Aenadon/WienerLinienAlarm
+image: wienerlinien.png
+license:
+  id: MIT
+  url: https://github.com/Aenadon/WienerLinienAlarm/blob/master/LICENSE
+description:
+  en: Just an icon for a great app of a friend, which shows live-data of the Vienna Public Transport.
+  de: Nur ein App-Icon für eine App eines Freundes, welche Live-Daten der Wiener Linien anzeigt.

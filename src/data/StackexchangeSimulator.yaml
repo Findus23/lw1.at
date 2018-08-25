@@ -1,0 +1,45 @@
+id: StackexchangeSimulator
+title: Stackexchange Simulator
+tags:
+- python
+- major
+image: se-simulator.png
+image_seperator: true
+date: 2018-04-25
+github: Findus23/se-simulator
+url: https://se-simulator.lw1.at/
+try: true
+license:
+  id: GPL3
+  url: https://github.com/Findus23/se-simulator/blob/master/LICENSE
+description:
+  en: |
+    You may know [StackOverflow](https://stackoverflow.com/) and [StackExchange](https://stackexchange.com/), a network of Question-and-Answer sites around every imaginable topic. All content generated on the site is licensed under [Creative Commons BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) and can be downloaded as [a complete database dump](https://archive.org/details/stackexchange).
+
+    I wanted to program something that uses a huge amount of data, so this is an ideal source. 
+
+    -----
+
+    Stackexchange Simulator uses Markov Chains based on the database dumps to generate nonsense questions and corresponding answers. Visitors can then vote on them so that the most entertaining ones get on the front page.
+
+    In addition, one can [filter](https://se-simulator.lw1.at/s/unix.stackexchange.com) for sites and there is [a quiz](https://se-simulator.lw1.at/quiz/easy) where one can guess which StackExchange site a question is based on.
+
+    ### Success
+
+    After beeing on the frontpage of [Hackernews](https://news.ycombinator.com/item?id=16947038) for 24 hours and getting [mentioned by Jeff Atwood](https://twitter.com/codinghorror/status/990479352570638337) more than 7500 people have visited the site.
+
+  de: |
+    [StackOverflow](https://stackoverflow.com/) und [StackExchange](https://stackexchange.com/) sind vermutlich jedem ein Begriff. Für jedes denkbare Thema gibt es eine Seite in der Fragen beantwortet werden. Außerdem sind alle Inhalte unter [Creative Commons BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/deed.de) und können als [Datenbank dump](https://archive.org/details/stackexchange).
+
+    Ich wollte etwas programmieren, was mit großen Datenmengen arbeitet, also ist das die ideale Quelle.
+
+    -----
+
+    Stackexchange Simulator verwendet Markov Ketten basierend auf den originalen Fragen von Stackexchange um neue (Nonsense)-Fragen und Antworten zu generieren. Besucher können auch Einträge bewerten, sodass die unterhaltsamsten auf der Startseite auftauchen.
+
+    Außerdem gibt es eine [Filter](https://se-simulator.lw1.at/s/unix.stackexchange.com)-Funktion für Seiten und [ein Quiz](https://se-simulator.lw1.at/quiz/easy), in dem man erraten kann auf welcher Seite eine Frage basiert.
+
+    ### Erfolg
+
+    Nachdem die Webseite für 24 Stunden auf der Frontpage von [Hackernews](https://news.ycombinator.com/item?id=16947038) zu sehen war und von [Jeff Atwood erwähnt wurde](https://twitter.com/codinghorror/status/990479352570638337), haben über 7500 Besucher die Webseite besucht.
+    

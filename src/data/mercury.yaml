@@ -1,0 +1,18 @@
+id: mercury
+title:
+  en: "Mercury: Planetary Simulation"
+  de: "Mercury: Planentensimulation"
+tags:
+- astronomy
+image: mercury.png
+github: Findus23/mercury
+date: 2013-11-7
+description:
+  en: |
+    A first try on using a professional tool to simulate the planetary orbits.
+
+    More information in the [presentation](https://github.com/Findus23/Mercury/raw/master/ausarbeitung/Prasentation.pdf) (German)
+  de: |
+    Ein erster Versuch Planetenbahnen mithilfe eines professionellen Programmes zu simulieren.
+
+    Mehr Informationen in der [Präsentation](https://github.com/Findus23/Mercury/raw/master/ausarbeitung/Prasentation.pdf)

@@ -1,14 +1,17 @@
-yaml = require('js-yaml');
 fs = require('fs');
+const dataPath = "./src/data/";
 
 // Get document, or throw exception on error
 
 routes = ["/de", "/en", "/de/impressum", "/en/imprint", "/en/lightningtalks"];
 try {
-    let doc = yaml.safeLoad(fs.readFileSync('./src/data.yaml', 'utf8'));
-    doc.forEach(function(bla) {
-        routes.push("/de/" + bla["id"]);
-        routes.push("/en/" + bla["id"]);
+    const files = fs.readdirSync(dataPath);
+    files.forEach(function(file) {
+        if (file.includes("yaml")) {
+            const id = file.replace(".yaml", "");
+            routes.push("/de/" + id);
+            routes.push("/en/" + id);
+        }
     });
 } catch (e) {
     console.log(e);

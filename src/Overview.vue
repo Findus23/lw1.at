@@ -45,8 +45,7 @@
 					</div>
 					<div class="tagwrapper">
 						<div class="tag"
-						     v-for="tag in element.tags"
-						     style="background-color: black">{{translate(tags[tag].name)}}
+						     v-for="tag in element.tags">{{translate(tags[tag].name)}}
 						</div>
 					</div>
 
@@ -68,8 +67,9 @@
     import Intro from "./Intro.vue";
     import Contact from "./Contact.vue";
 
-    const data = require('./data.yaml');
-    const tags = require('./tags.yaml');
+    const yaml = require('./tags.yaml');
+    const data = yaml.data;
+    const tags = yaml.tags;
 
     export default {
         components: {Intro, Contact},
@@ -239,6 +239,7 @@
 		font-weight: bold;
 		line-height: 1;
 		color: #ffffff;
+		background-color: black;
 		text-align: center;
 		white-space: nowrap;
 		vertical-align: baseline;
@@ -324,7 +325,7 @@
 			right: 10px;
 		}
 	}
-	
+
 	.gpg {
 		display: block;
 		font-family: monospace;

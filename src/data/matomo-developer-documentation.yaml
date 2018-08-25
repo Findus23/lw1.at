@@ -1,0 +1,26 @@
+id: matomo-developer-documentation
+title:
+  en: Matomo Developer Documentation
+  de: Matomo Entwicklerdokumentation
+tags:
+- matomo
+- php
+- scss
+- javascript
+- unfinished
+github: matomo-org/developer-documentation/pulls/Findus23
+url: https://issues.lw1.at/
+try: true
+image: matomo-developer.png
+date: 2017-10-20
+description:
+  en: |
+    Work in Progress to bring the [current Matomo Developer Documentation](https://developer.matomo.org/) up to date:
+    - upgrade to Slim 3
+    - use Bootstrap 4 and SCSS
+    - fix search and add full-text-search
+  de: |
+    Laufendes Projekt um die [aktuelle Matomo Entwickler-Dokumentation](https://developer.matomo.org/) zu aktualisieren:
+    - Update auf Slim 3
+    - verwende Bootstrap 4 und SCSS
+    - Reperatur der Suche und eine neue Volltext-Suche

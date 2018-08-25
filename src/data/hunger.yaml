@@ -1,0 +1,22 @@
+id: hunger
+title: Hunger API
+tags:
+- python
+- unfinished
+image: hunger.svg
+image_seperator: true
+date: 2017-06-21
+#  url: https://hunger.lw1.at/doc/
+#  try: true
+github: Findus23/hunger
+license:
+  id: GPL3
+  url: https://github.com/Findus23/hunger/blob/master/LICENSE
+description:
+  en: |
+    Python script which crawls the websites of some restaurants in Vienna for daily specials and provides them as well stuctured JSON API.
+    Has unfortunatly been retired since as the website structure changed too frequently.
+  de: |
+    Python Script, welches die Webseiten einiger Wiener Restaurants nach Mittagsmenus durchsucht und diese in einer strukturierten JSON API ausgibt.
+    Wurde seitdem deaktiviert, da sich die Webseitenstrukturen zu oft verändert haben.
+    ![test](local://logo.png)

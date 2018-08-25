@@ -1,0 +1,24 @@
+id: github-issues-mirror
+title: Github Issues Mirror
+tags:
+- matomo
+- php
+- scss
+date: 2017-09-20
+url: https://issues.matomo.org/
+try: true
+github: matomo-org/github-issues-mirror
+image: github-issues-mirror.png
+image_seperator: true
+license:
+  id: GPL3
+  url: https://github.com/matomo-org/github-issues-mirror/blob/master/LICENSE
+description:
+  en: |
+    Improved the old version and updated it to Bootstrap 4
+
+    The Github Issues Mirror allows hosting the Github issues to have a backup in case Github is down or for SEO reasons.
+  de: |
+    Verbesserung der alten Version und update zu Bootstrap 4
+
+    Der Github Issues Mirror ermöglicht es Github Issues zu kopieren um ein Backup zu haben oder für besseres SEO.
