@@ -4425,7 +4425,7 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-license-webpack-plugin@^2.0.0-alpha.6:
+license-webpack-plugin@^2.0.0-alpha.7:
   version "2.0.0-alpha.7"
   resolved "https://registry.yarnpkg.com/license-webpack-plugin/-/license-webpack-plugin-2.0.0-alpha.7.tgz#ca55f8606d375652d902b48ac1b7c5fefb9a82de"
 

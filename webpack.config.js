@@ -142,6 +142,7 @@ module.exports = {
         new VueLoaderPlugin(),
         new LicenseWebpackPlugin({
             perChunkOutput:false,
+            outputFilename: "licenses.txt"
         })
     ]
 };
