@@ -23,6 +23,13 @@
 		</address>
 		<div v-if="language==='de'" class="mainText">
 			<h2>Datenschutzerklärung</h2>
+			<h3>Geltungsbereich</h3>
+			<p>Diese Datenschutzerklärung gilt für <code>lw1.at</code>, alle <code>*.lw1.at</code> Subdomains und die
+				<a href="https://play.google.com/store/apps/details?id=at.lw1.kurzparkzonen.wien">
+					Kurzparkzonen Wien App
+				</a>
+				.
+			</p>
 			<h3>Zweck der Datenverarbeitung</h3>
 			<p>Diese Webseite verwendet <a href="https://matomo.org/">Matomo</a>, eine Open Source, selbstgehostete
 				Software um
@@ -54,6 +61,13 @@
 				<li>Interaktionen mit Formularen (aber nicht deren Inhalt)</li>
 				<li>Mausbewegungen, Klicks und Scrollen</li>
 			</ul>
+			<h3>Sentry</h3>
+			<p>
+				<a href="https://sentry.io/">Sentry</a> ist ein Open Source System zum Protokollierung von
+				Software-Fehlern.
+				Wenn ein Programmfehler auftritt, wird dieser anonymisiert an <code>sentry.lw1.at</code> gesendet. Die
+				Daten werden nicht mit Dritten geteit und nach Behebung des Problems gelöscht.
+			</p>
 			<h3>Indirekte Datensammlung</h3>
 			<h4>Server Logs</h4>
 			<p>Wenn Sie diese Webseite verwenden, wird der Aufruf vom Host der Webseite (ich, Lukas Winkler)
@@ -77,12 +91,13 @@
 			<h3>Empfänger der Daten</h3>
 			<p>Die persönlichen Daten werden gesendet an:</p>
 			<ul>
-				<li>mich, Lukas Winkler (Host und Betreuer der Webseite und des Matomo Servers)</li>
+				<li>mich, Lukas Winkler (Host und Betreuer der Webseite, des Matomo und Sentry Servers)</li>
 				<li>Hetzner Online GmbH (Host des Servers; <a href="https://www.hetzner.de/rechtliches/datenschutz/">Datenschutzerklärung</a>)
 				</li>
 			</ul>
 			<h3>Details zum Transfer in Drittstaaten</h3>
-			<p>Die Daten dieser Webseite und Matomo werden in Deutschland gehostet. Die Daten verlassen nie die EU.</p>
+			<p>Die Daten dieser Webseite, Matomo und Sentry werden in Deutschland (Falkenstein) gehostet. Die Daten
+				verlassen nie die EU.</p>
 			<h3>Rechte der betroffenen Personen</h3>
 			<p>Da Matomo Daten basierend auf legitimen Interesse sammelt, können Sie folgende Rechte ausüben:</p>
 			<ul>
@@ -113,6 +128,14 @@
 		</div>
 		<div v-else class="mainText">
 			<h2>Privacy Policy</h2>
+			<h3>Scope</h3>
+			<p>This Privacy Policy is valid for <code>lw1.at</code>, all <code>*.lw1.at</code> subdomains and the 
+				<a href="https://play.google.com/store/apps/details?id=at.lw1.kurzparkzonen.wien">
+					Kurzparkzonen Wien App
+				</a>
+				.
+			</p>
+
 			<h3>Purpose of the processing</h3>
 			<p>This website is using <a href="https://matomo.org/">Matomo</a>, an Open Source, self-hosted software for
 				collecting anonymous usage statistics for this website.</p>
@@ -180,6 +203,13 @@
 					Mouse movements, clicks, and scrolls
 				</li>
 			</ul>
+			<h3>Sentry</h3>
+			<p>
+				<a href="https://sentry.io/">Sentry</a> is an Open Source system for application monitoring and error reporting.
+				When an application error happens, it will be sent anonymized to <code>sentry.lw1.at</code>
+				Wenn ein Programmfehler auftritt, wird dieser anonymisiert an <code>sentry.lw1.at</code> gesendet. Die
+				Daten werden nicht mit Dritten geteit und nach Behebung des Problems gelöscht.
+			</p>
 			<h3>Indirect data collection</h3>
 			<h4>Server Logs</h4>
 			<p>If you are using this site, the visit is logged by the host of this website (myself, Lukas Winkler). This
@@ -209,14 +239,14 @@
 			<h3>Recipient of the data</h3>
 			<p>The personal data received through Matomo are sent to:</p>
 			<ul>
-				<li>me, Lukas Winkler (host and maintainer of this website and Matomo instance)</li>
+				<li>me, Lukas Winkler (host and maintainer of this website and Matomo and Sentry instance)</li>
 				<li>
 					Hetzner Online GmbH (host of the server;
 					<a href="https://www.hetzner.de/rechtliches/datenschutz/">Privacy Policy</a>)
 				</li>
 			</ul>
 			<h3>Details of transfers to third country and safeguards</h3>
-			<p>Matomo and this website data is hosted in Germany. No data leaves the EU.</p>
+			<p>Matomo and this website data is hosted in Germany (Falkenstein). No data leaves the EU.</p>
 			<h3>Data subject’s rights</h3>
 			<p>As Matomo is processing personal data on legitimate interests, you can exercise the following rights:</p>
 			<ul>
