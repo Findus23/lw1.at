@@ -3,11 +3,12 @@ import VueHead from 'vue-head';
 import App from './App.vue';
 import router from './router/routes';
 import MatomoTracker from './MatomoTracker';
-import {RavenStatic as Raven} from "raven-js";
 
+const Raven = require("raven-js");
+const RavenVue = require("raven-js/plugins/vue");
 Raven
     .config('https://ecdf31be6a0748488b07147a5e864a47@sentry.lw1.at/10')
-    .addPlugin(Raven.Plugins.Vue)
+    .addPlugin(RavenVue)
     .install();
 
 Vue.use(VueHead);
