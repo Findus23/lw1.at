@@ -10,10 +10,10 @@
     "json": "cross-env NODE_ENV=production webpack --mode production --profile --json > stats.json"
   },
   "dependencies": {
-    "@sentry/browser": "^4.0.3",
     "markdown-it": "^8.4.1",
     "milligram": "git+https://github.com/Findus23/milligram.git#0fde381605c1159f39efb5c33c9600331fec4e2e",
     "normalize.css": "^8.0.0",
+    "raven-js": "^3.27.0",
     "vue": "^2.5.13",
     "vue-head": "^2.0.12",
     "vue-router": "^3.0.1"
