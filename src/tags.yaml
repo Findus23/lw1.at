@@ -14,6 +14,8 @@ scss:
   name: SCSS
 bash:
   name: Bash
+latex:
+  name: LaTeX
 major:
   name:
     en: Major
