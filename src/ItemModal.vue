@@ -217,10 +217,10 @@
 			display: block;
 			&:hover {
 				svg {
-					color: orange;
+					color: $color-primary;
 				}
 				.try-it-out {
-					color: orange;
+					color: $color-primary;
 				}
 			}
 			.try-it-out {

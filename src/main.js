@@ -16,7 +16,7 @@ Vue.use(VueHead);
 let matomo = new MatomoTracker;
 matomo.init();
 
-if ((typeof [].find) !== "undefined") { // if the browser doesn't support modern IE 
+if ((typeof [].find) !== "undefined") { // only start vue if the browser supports modern Javascript 
     let app = new Vue({
         el: '#app',
         router,
