@@ -3,6 +3,7 @@ import VueHead from 'vue-head';
 import App from './App.vue';
 import router from './router/routes';
 import MatomoTracker from './MatomoTracker';
+const hljs = require('highlightjs/styles/default.css'); // https://highlightjs.org/
 
 const Raven = require("raven-js");
 const RavenVue = require("raven-js/plugins/vue");

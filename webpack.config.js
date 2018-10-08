@@ -10,6 +10,8 @@ let PrerenderSPAPlugin = require('prerender-spa-plugin');
 let PuppeteerRenderer = PrerenderSPAPlugin.PuppeteerRenderer;
 let LicenseWebpackPlugin = require('license-webpack-plugin').LicenseWebpackPlugin;
 
+const commitHash = require('child_process').execSync('git rev-parse --short HEAD').toString();
+
 module.exports = {
     entry: {app: './src/main.js'},
     output: {
@@ -141,7 +143,7 @@ module.exports = {
 
         new VueLoaderPlugin(),
         new LicenseWebpackPlugin({
-            perChunkOutput:false,
+            perChunkOutput: false,
             outputFilename: "licenses.txt"
         })
     ]
@@ -166,7 +168,8 @@ if (process.env.NODE_ENV === 'production') {
         new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: '"production"'
-            }
+            },
+            "COMMITHASH": commitHash
         }),
         new MiniCssExtractPlugin("style-[hash].css"),
         new CompressionPlugin({

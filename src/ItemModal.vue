@@ -42,6 +42,14 @@
 							<license-icons v-if="element.license" :id="element.license.id"
 							               :url="element.license.url"></license-icons>
 						</div>
+						<div v-if="element.single_language" class="note">
+							<div v-if="element.single_language==='de'">
+								This post hasn't (yet) been translated into English
+							</div>
+							<div v-else>
+								Dieser Post wurde (noch) nicht auf Deutsch übersetzt.
+							</div>
+						</div>
 						<div v-if="element.description" v-html="translate(element.description)"></div>
 						<iframe v-if="element.iframe"
 						        :src="element.iframe.url" :style="{backgroundColor: element.iframe.color}"></iframe>
@@ -248,5 +256,10 @@
 		border: none;
 		border-radius: 5px;
 		display: block;
+	}
+
+	.note {
+		background-color: #fdbc4b;
+		padding: 15px;
 	}
 </style>

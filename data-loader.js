@@ -1,14 +1,27 @@
 const yaml = require('js-yaml');
-const md = require('markdown-it')();
+const hljs = require('highlightjs');
+const md = require('markdown-it')({
+    highlight: function(str, lang) {
+        if (lang && hljs.getLanguage(lang)) {
+            try {
+                return hljs.highlight(lang, str).value;
+            } catch (__) {
+            }
+        }
+        return ''; // use external default escaping
+    }
+});
 const fs = require('fs');
 const path = require('path');
 const loaderUtils = require("loader-utils");
+const renderMath = require("./math");
 const regex = /local:\/\/([\w.]*)/gm;
 const dataPath = "./src/data/";
 
 function markdown2html(input) {
     let html = md.render(input);
-    // console.log(html);
+    html = renderMath(html);
+    console.log(html);
     return html;
 }
 
@@ -30,8 +43,12 @@ module.exports = function(source) {
                 this.emitError(new Error(file.replace(".yaml", "") + " != " + item.id));
             }
             if (item !== "undefined") {
-                item.description.de = markdown2html(item.description.de);
-                item.description.en = markdown2html(item.description.en);
+                if (item.description.de) {
+                    item.description.de = markdown2html(item.description.de);
+                    item.description.en = markdown2html(item.description.en);
+                } else {
+                    item.description = markdown2html(item.description);
+                }
                 data.push(item);
             }
         });

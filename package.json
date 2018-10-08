@@ -10,7 +10,10 @@
     "json": "cross-env NODE_ENV=production webpack --mode production --profile --json > stats.json"
   },
   "dependencies": {
+    "highlightjs": "^9.10.0",
     "markdown-it": "^8.4.1",
+    "mathjax-node-page": "^3.0.1",
+    "mathjax3": "^3.0.0-beta.2",
     "milligram": "git+https://github.com/Findus23/milligram.git#0fde381605c1159f39efb5c33c9600331fec4e2e",
     "normalize.css": "^8.0.0",
     "raven-js": "^3.27.0",
