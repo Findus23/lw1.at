@@ -42,7 +42,7 @@
 							<license-icons v-if="element.license" :id="element.license.id"
 							               :url="element.license.url"></license-icons>
 						</div>
-						<div v-if="element.single_language" class="note">
+						<div v-if="element.single_language && element.single_language!==language" class="note">
 							<div v-if="element.single_language==='de'">
 								This post hasn't (yet) been translated into English
 							</div>

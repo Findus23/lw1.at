@@ -21,7 +21,6 @@ const dataPath = "./src/data/";
 function markdown2html(input) {
     let html = md.render(input);
     html = renderMath(html);
-    console.log(html);
     return html;
 }
 
