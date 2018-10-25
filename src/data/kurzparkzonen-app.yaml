@@ -1,0 +1,22 @@
+id: kurzparkzonen-app
+title:
+  en: "Parking Zones Vienna App"
+  de: "Kurzparkzonen Wien App"
+tags:
+- java
+- app
+image: kurzparkzonen-app.svg
+url: https://play.google.com/store/apps/details?id=at.lw1.kurzparkzonen.wien
+try: true
+github: Findus23/kurzparkzonen-wien
+license:
+  id: GPL3
+  url: https://github.com/Findus23/kurzparkzonen-wien/blob/master/LICENSE
+date: 2018-10-16
+single_language: de
+description: |
+  > nie mehr Parkzonen-Verwirrung in Wien! Jetzt auch auf Android!
+
+  Diese App liefert die [Web-App](/de/kurzparkzonen) direkt aus, wodurch sie schneller und auch offline funktioniert.
+  
+  [Zum Play Store](https://play.google.com/store/apps/details?id=at.lw1.kurzparkzonen.wien)

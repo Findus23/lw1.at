@@ -155,6 +155,10 @@
 		font-weight: normal;
 		color: #212121;
 	}
+	
+	li {
+		margin-bottom: 0.3rem;
+	}
 
 	a svg {
 		fill: initial;

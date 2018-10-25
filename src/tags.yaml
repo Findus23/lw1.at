@@ -36,3 +36,9 @@ astronomy:
     de: Astronomie
 events:
   name: Events
+java:
+  name: Java
+  hidden: true
+app:
+  name: App
+  hidden: true
