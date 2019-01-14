@@ -12,4 +12,4 @@ before_script:
 
 job:
   script:
-  - yarn run build
+  - yarn run build --no-progress
