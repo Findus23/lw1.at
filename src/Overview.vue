@@ -56,6 +56,8 @@
 			{{language==="de" ? "Impressum":"Imprint"}}
 		</router-link>
 		<a :href="require('./assets/gpg.asc')" class="gpg">GPG: 63DB 263B ACE3 68B5 C5F7 9CE4 94AF BE7C 2656 A5B5</a>
+		<img src="https://matomo.lw1.at/index.php?module=ClassicCounter&action=svg&idSite=14" alt="Matomo visit counter"
+		     height="38" aria-hidden="true" id="visitcounter">
 		<router-view :language="language" :data="data">
 			<!-- here the ItemModal component will be rendered -->
 		</router-view>
@@ -155,7 +157,7 @@
 		font-weight: normal;
 		color: #212121;
 	}
-	
+
 	li {
 		margin-bottom: 0.3rem;
 	}
@@ -195,6 +197,7 @@
 		width: 100%;
 		max-width: 300px;
 		cursor: pointer;
+
 		&:before {
 			border-radius: $borderRadius;
 			content: "";
@@ -207,16 +210,20 @@
 			@include shadow(2);
 			transition: box-shadow 0.2s;
 		}
+
 		&:hover, &:focus {
 			&:before {
 				@include shadow(3);
 			}
+
 			color: white;
 			background: darken(#009688, 0.8);
+
 			img {
 				filter: brightness(0.8);
 			}
 		}
+
 		img {
 			display: block;
 			transition: filter .2s;
@@ -224,12 +231,14 @@
 			border-top-right-radius: $borderRadius;
 			height: auto;
 		}
+
 		.textwrapper {
 			height: 150px;
 			display: flex;
 			flex-direction: column;
 			align-content: center;
 			justify-content: center;
+
 			> div {
 				padding: 0 10px
 			}
@@ -255,14 +264,17 @@
 
 	button {
 		color: white;
+
 		&.colored {
 			color: white;
 		}
+
 		&.active {
 			/*color: darken($color-secondary, 10%);
 			border-color: darken($color-secondary, 10%);
 			background-color: darken(white, 10%) !important;*/
 		}
+
 		svg {
 			vertical-align: sub;
 			margin-right: 4px;
@@ -275,8 +287,10 @@
 		display: none;
 		flex-direction: column;
 		padding: 0 5rem 0 3rem;
+
 		a {
 			color: red;
+
 			&:active, &:hover, &:focus, &.active {
 				color: black;
 			}
@@ -285,6 +299,7 @@
 
 	#filterwrapper {
 		font-family: monospace, monospace;
+
 		button {
 			background-color: transparent;
 			border: none;
@@ -292,6 +307,7 @@
 			padding-left: 10px;
 			padding-right: 10px;
 			text-transform: initial;
+
 			&.active {
 				color: black;
 			}
@@ -306,9 +322,11 @@
 			padding: 4px;
 			border: 1px solid #bbb; /* Here */
 			border-radius: $borderRadius;
+
 			&:focus {
 				border-color: $color-primary;
 			}
+
 			&::placeholder {
 				color: #666666;
 			}
@@ -324,8 +342,10 @@
 		position: absolute;
 		top: 20px;
 		right: 20px;
+
 		a {
 		}
+
 		@media screen and (max-width: 480px) {
 			right: 10px;
 		}
@@ -335,6 +355,11 @@
 		display: block;
 		font-family: monospace;
 		font-size: 80%;
+	}
+
+	#visitcounter {
+		height: 35px;
+		width: auto;
 	}
 
 	//html { // https://aykevl.nl/2014/09/fix-jumping-scrollbar
