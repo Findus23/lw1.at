@@ -159,7 +159,7 @@ if (process.env.NODE_ENV === 'production') {
     module.exports.devtool = '#source-map';
     // http://vue-loader.vuejs.org/en/workflow/production.html
     module.exports.plugins = (module.exports.plugins || []).concat([
-        new CleanWebpackPlugin("dist"),
+        new CleanWebpackPlugin(),
         new webpack.HashedModuleIdsPlugin({
             hashFunction: 'sha256',
             hashDigest: 'hex',
@@ -171,7 +171,10 @@ if (process.env.NODE_ENV === 'production') {
             },
             "COMMITHASH": commitHash
         }),
-        new MiniCssExtractPlugin("style-[hash].css"),
+        new MiniCssExtractPlugin({
+            filename: "[name]-[hash].css",
+            chunkFilename: "[id]-[hash].css"
+        }),
         new CompressionPlugin({
             test: /\.(js|css|html)/
         }),
