@@ -188,7 +188,7 @@ if (process.env.NODE_ENV === 'production') {
                 staticDir: path.join(__dirname, 'dist'), // The path to the folder where index.html is.
                 routes: require("./routes"), // List of routes to prerender.
                 renderer: new PuppeteerRenderer({
-                    headless: false,
+                    headless: true,
                     inject: {
                         prerender: true
                     },

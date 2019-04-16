@@ -53,6 +53,31 @@
 						<div v-if="element.description" v-html="translate(element.description)"></div>
 						<iframe v-if="element.iframe"
 						        :src="element.iframe.url" :style="{backgroundColor: element.iframe.color}"></iframe>
+						<button class="readmore" @click="readmore" v-if="!sentReadmore">
+							<template v-if="language==='en'">
+								I want to read more about this project
+							</template>
+							<template v-else>
+								Ich möchte mehr über dieses Projekt lesen.
+							</template>
+						</button>
+						<div v-if="sentReadmore" class="note">
+							<template v-if="language==='en'">
+								Thanks for the feedback!<br>
+								When I get to it, I will try to extend this post.<br>
+								In the meantime you can contact me at
+								<a href="mailto:feedback@lw1.at">feedback@lw1.at</a> if you
+								want to.
+							</template>
+							<template v-else>
+								Danke für das Feedback!<br>
+								Wenn ich dazu komme, werde ich diesen Eintrag ergänzen.<br>
+								In der Zwischenzeit kann man mich auch unter
+								<a href="mailto:feedback@lw1.at">feedback@lw1.at</a>
+								kontaktieren.
+							</template>
+
+						</div>
 					</div>
 				</div>
 			</div>
@@ -68,6 +93,7 @@
             return {
                 title: null,
                 element: null,
+                sentReadmore: false
             };
         },
         props: ['language', 'data'],
@@ -89,6 +115,14 @@
                     return value[this.language];
                 } else {
                     return value;
+                }
+            },
+            readmore: function() {
+                this.sentReadmore = true;
+                if (typeof _paq != "undefined") {
+                    _paq.push(['trackEvent', 'Feedback', 'readmore', this.id]);
+                } else {
+                    console.info("Feedback not sent as Matomo isn't loaded")
                 }
             }
         },
@@ -118,6 +152,7 @@
 		cursor: pointer;
 		transition: color 0.2s;
 		color: $color-primary;
+
 		&:hover {
 			color: darkgrey;
 		}
@@ -152,13 +187,16 @@
 		margin: 50px auto 0;
 		background-color: #fff;
 		border-radius: 5px;
+
 		.imagewrapper img {
 			width: 100%;
 			border-top-left-radius: 5px;
 			border-top-right-radius: 5px;
 		}
+
 		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 		transition: all .3s ease;
+
 		&:focus {
 			outline: none;
 		}
@@ -210,27 +248,34 @@
 	.modal-linkbar {
 		display: flex;
 		justify-content: space-around;
+
 		a {
 			position: relative;
 			padding: 16px;
+
 			> svg {
 				width: 36px;
 				height: 36px;
 				display: block;
 				color: black;
 			}
+
 			svg, span {
 				transition: .2s;
 			}
+
 			display: block;
+
 			&:hover {
 				svg {
 					color: $color-primary;
 				}
+
 				.try-it-out {
 					color: $color-primary;
 				}
 			}
+
 			.try-it-out {
 				position: absolute;
 				top: -40px;
@@ -238,11 +283,13 @@
 				right: -150px;
 				vertical-align: top;
 				color: black;
+
 				svg {
 					display: inline-block;
 					position: relative;
 					top: 20px;
 				}
+
 				span {
 
 				}
