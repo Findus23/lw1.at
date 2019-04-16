@@ -261,5 +261,6 @@
 	.note {
 		background-color: #fdbc4b;
 		padding: 15px;
+		margin-bottom: 15px;
 	}
 </style>

@@ -1,0 +1,13 @@
+id: galaxyformation
+title: Theoretical and numerical models for galaxy formation
+tags:
+  - python
+  - astronomy
+date: 2019-01-15
+image: galaxyformation.png
+single_language: en
+description:
+  In a university seminar about galaxy formation these and more data visualisation where created as weekly exercises in Python from real galaxy simulation data.
+  
+  
+  Created in a team with other students.

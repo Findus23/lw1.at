@@ -1,0 +1,15 @@
+id: paperlibrary
+title: Paper Library
+tags:
+  - python
+  - astronomy
+  - unfinished
+date: 2018-12-20
+image: paperlibrary.svg
+github: Findus23/PaperLibrary
+license:
+  id: GPL3
+  url: https://github.com/Findus23/PaperLibrary/blob/master/LICENSE
+single_language: en
+description:
+  A quick proof of concept of a library system that fetches scientific papers from [ADS](http://adsabs.harvard.edu/) and creates a folder structure of symlinks to browse them by title, authors and keyboard.

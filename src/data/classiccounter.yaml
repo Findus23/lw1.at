@@ -1,0 +1,15 @@
+id: classiccounter
+title: Matomo Classic Counter
+tags:
+  - php
+  - matomo
+date: 2019-03-10
+image: classiccounter.svg
+github: Findus23/plugin-ClassicCounter
+url: https://plugins.matomo.org/ClassicCounter
+license:
+  id: GPL3
+  url: https://github.com/Findus23/plugin-ClassicCounter/blob/master/LICENSE
+single_language: en
+description:
+  No website is complete without an old-school visitor counter. This Matomo plugin generates a (cached) SVG file showing the total number of website visits.

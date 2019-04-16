@@ -1,4 +1,8 @@
 ---
+astronomy:
+  name:
+    en: Astronomy
+    de: Astronomie
 website:
   name:
     en: Website
@@ -30,10 +34,6 @@ unfinished:
   name:
     en: unfinished
     de: unfertig
-astronomy:
-  name:
-    en: Astronomy
-    de: Astronomie
 events:
   name: Events
 java:

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="98" height="48">
+  <defs>
+    <radialGradient xlink:href="#a" id="f" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-2.77439 0 0 1.9697 -970.67 -872.89)" cx="605.71" cy="486.65" fx="605.71" fy="486.65" r="117.14"/>
+    <linearGradient id="a">
+      <stop offset="0"/>
+      <stop offset="1" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient xlink:href="#a" id="e" gradientUnits="userSpaceOnUse" gradientTransform="matrix(2.77439 0 0 1.9697 -2975.06 -872.89)" cx="605.71" cy="486.65" fx="605.71" fy="486.65" r="117.14"/>
+    <linearGradient id="b">
+      <stop offset="0" stop-opacity="0"/>
+      <stop offset=".5"/>
+      <stop offset="1" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient xlink:href="#b" id="d" gradientUnits="userSpaceOnUse" gradientTransform="matrix(2.77439 0 0 1.9697 -2975.6 -872.89)" x1="302.86" y1="366.65" x2="302.86" y2="609.51"/>
+    <linearGradient id="c">
+      <stop offset="0" stop-color="#f8f8f7"/>
+      <stop offset=".6" stop-color="#e8e8e8"/>
+      <stop offset="1" stop-color="#e2e2de"/>
+    </linearGradient>
+    <linearGradient xlink:href="#c" id="g" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.3427 0 0 1.23538 -8.22 -6.58)" x1="20.79" y1="18.38" x2="35.6" y2="39.6"/>
+  </defs>
+  <g color="#000">
+    <path style="marker:none" overflow="visible" d="M-1559.25-150.7h1339.63v478.36h-1339.63z" transform="matrix(.0233 0 0 .01227 69.72 44.42)" opacity=".4" fill="url(#d)"/>
+    <path d="M-219.62-150.68v478.33c142.88.9 345.4-107.17 345.4-239.2 0-132.02-159.44-239.13-345.4-239.13z" style="marker:none" overflow="visible" transform="matrix(.0233 0 0 .01227 69.72 44.42)" opacity=".4" fill="url(#e)"/>
+    <path style="marker:none" d="M-1559.25-150.68v478.33c-142.88.9-345.4-107.17-345.4-239.2 0-132.02 159.43-239.13 345.4-239.13z" overflow="visible" transform="matrix(.0233 0 0 .01227 69.72 44.42)" opacity=".4" fill="url(#f)"/>
+  </g>
+  <rect width="39" height="45" x="29.74" y="1.5" rx=".57" ry=".57" fill="url(#g)" fill-rule="evenodd" stroke="#888a85"/>
+  <path style="marker:none" overflow="visible" d="M34.24 10h27v2h-27zm0 6h25v2h-25zm0 6h22.97v2H34.24zm0 6h27v2h-27zm0 6h17v2h-17z" color="#000" fill="#999" fill-rule="evenodd"/>
+  <rect width="37.03" height="43.02" x="30.74" y="2.5" rx="0" ry="0" fill="none" stroke="#fff"/>
+</svg>
