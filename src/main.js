@@ -26,6 +26,6 @@ if ((typeof [].find) !== "undefined") { // only start vue if the browser support
     });
 }
 
-console.info("Hi, it looks like you are interested in this website works...");
+console.info("Hi, it looks like you are interested in how this website works...");
 console.info("The license of open source libraries used can be found at https://lw1.at/licenses.txt");
 console.info("The whole website is Open Source, so you can find the source here: https://github.com/Findus23/lw1.at");
