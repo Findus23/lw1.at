@@ -8,7 +8,7 @@ require('mathjax3/mathjax3/input/tex/noundefined/NoUndefinedConfiguration.js');
 require('mathjax3/mathjax3/input/tex/newcommand/NewcommandConfiguration.js');
 require('mathjax3/mathjax3/input/tex/boldsymbol/BoldsymbolConfiguration.js');
 require('mathjax3/mathjax3/input/tex/braket/BraketConfiguration.js');
-require('mathjax3/mathjax3/input/tex/mhchem/MhchemConfiguration.js');
+// require('mathjax3/mathjax3/input/tex/mhchem/MhchemConfiguration.js'); // seems to be causing errors since beta 3
 require('mathjax3/mathjax3/input/tex/physics/PhysicsConfiguration.js');
 require('mathjax3/mathjax3/input/tex/verb/VerbConfiguration.js');
 require('mathjax3/mathjax3/input/tex/cancel/CancelConfiguration.js');
