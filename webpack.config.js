@@ -1,6 +1,6 @@
 let path = require('path');
 let webpack = require('webpack');
-let CleanWebpackPlugin = require('clean-webpack-plugin');
+let {CleanWebpackPlugin} = require('clean-webpack-plugin');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 let SriPlugin = require('webpack-subresource-integrity');
 let CompressionPlugin = require('compression-webpack-plugin');
