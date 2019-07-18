@@ -10,9 +10,9 @@
 </template>
 
 <script>
-    export default {
-        name: "LightningTalks"
-    };
+	export default {
+		name: "LightningTalks"
+	};
 </script>
 
 <style>

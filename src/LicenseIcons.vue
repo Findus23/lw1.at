@@ -22,21 +22,23 @@
 </template>
 
 <script>
-    export default {
-        name: "license-icons",
-        props: ["id", "url"]
-    };
+	export default {
+		name: "license-icons",
+		props: ["id", "url"]
+	};
 </script>
 
 <style lang="scss" scoped>
 	svg {
 		color: black;
+
 		path {
 			fill: white;
 			stroke: currentColor;
 			stroke-width: 15.349;
 			stroke-linecap: round;
 		}
+
 		text {
 			font-family: Arial, sans-serif;
 			fill: currentColor;
@@ -46,9 +48,11 @@
 			font-size: 124.104px
 		}
 	}
+
 	.MIT text {
 		font-size: 124.104px;
 	}
+
 	.GPL text {
 		font-size: 109.871px;
 	}

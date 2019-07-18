@@ -56,8 +56,10 @@
 			{{language==="de" ? "Impressum":"Imprint"}}
 		</router-link>
 		<a :href="require('./assets/gpg.asc')" class="gpg">GPG: 63DB 263B ACE3 68B5 C5F7 9CE4 94AF BE7C 2656 A5B5</a>
-		<router-link :to="{ name: 'itemModal',params:{id:'classiccounter'} }"><img src="https://matomo.lw1.at/index.php?module=ClassicCounter&action=svg&idSite=14" alt="Matomo visit counter"
-						height="38" aria-hidden="true" id="visitcounter"></router-link>
+		<router-link :to="{ name: 'itemModal',params:{id:'classiccounter'} }"><img
+				src="https://matomo.lw1.at/index.php?module=ClassicCounter&action=svg&idSite=14"
+				alt="Matomo visit counter"
+				height="38" aria-hidden="true" id="visitcounter"></router-link>
 		<router-view :language="language" :data="data">
 			<!-- here the ItemModal component will be rendered -->
 		</router-view>
@@ -66,83 +68,83 @@
 </template>
 
 <script>
-    import Intro from "./Intro.vue";
-    import Contact from "./Contact.vue";
+	import Intro from "./Intro.vue";
+	import Contact from "./Contact.vue";
 
-    const yaml = require('./tags.yaml');
-    const data = yaml.data;
-    const tags = yaml.tags;
+	const yaml = require('./tags.yaml');
+	const data = yaml.data;
+	const tags = yaml.tags;
 
-    export default {
-        components: {Intro, Contact},
-        name: 'overview',
-        data() {
-            return {
-                data: data,
-                tags: tags,
-                ascending: true,
-                filter: false,
-                search: "",
-                sort: "date",
-                noResults: false
-            };
-        },
-        props: ["language"],
-        computed: {
-            elements() {
-                let filtered = this.data.filter(item => {
-                    return this.filterContains(item) && this.filterSearch(item);
-                });
-                if (filtered.length === 0) {
-                    filtered = this.data;
-                    this.noResults = true;
-                } else {
-                    this.noResults = false;
-                }
-                return filtered.sort((a, b) => {
-                    if (this.sort === "title") {
-                        return this.translate(a.title).localeCompare(this.translate(b.title));
-                    } else {
-                        return new Date(b.date) - new Date(a.date);
-                    }
-                });
-            },
-            otherLanguage() {
-                return this.language === 'de' ? 'en' : 'de';
-            }
-        },
-        methods: {
-            filterContains: function(element) {
-                if (!this.filter) {
-                    return true;
-                }
+	export default {
+		components: {Intro, Contact},
+		name: 'overview',
+		data() {
+			return {
+				data: data,
+				tags: tags,
+				ascending: true,
+				filter: false,
+				search: "",
+				sort: "date",
+				noResults: false
+			};
+		},
+		props: ["language"],
+		computed: {
+			elements() {
+				let filtered = this.data.filter(item => {
+					return this.filterContains(item) && this.filterSearch(item);
+				});
+				if (filtered.length === 0) {
+					filtered = this.data;
+					this.noResults = true;
+				} else {
+					this.noResults = false;
+				}
+				return filtered.sort((a, b) => {
+					if (this.sort === "title") {
+						return this.translate(a.title).localeCompare(this.translate(b.title));
+					} else {
+						return new Date(b.date) - new Date(a.date);
+					}
+				});
+			},
+			otherLanguage() {
+				return this.language === 'de' ? 'en' : 'de';
+			}
+		},
+		methods: {
+			filterContains: function (element) {
+				if (!this.filter) {
+					return true;
+				}
 
-                return element.tags.includes(this.filter);
+				return element.tags.includes(this.filter);
 
-            },
-            filterSearch: function(element) {
-                if (this.search === "") {
-                    return true;
-                }
-                return this.translate(element.title).toLowerCase().includes(this.search.toLowerCase()) ||
-                    this.translate(element.description).toLowerCase().includes(this.search.toLowerCase());
-            },
-            translate: function(value) {
-                if (typeof value === "object") {
-                    return value[this.language];
-                } else {
-                    return value;
-                }
-            },
-            formatDate: function(datestring) {
-                let date = new Date(datestring);
-                if (isNaN(date.getFullYear())) {
-                    return "";
-                }
-                return date.toLocaleString(this.language, {month: "long"}) + " " + date.getFullYear();
-            }
-        }
-    };
+			},
+			filterSearch: function (element) {
+				if (this.search === "") {
+					return true;
+				}
+				return this.translate(element.title).toLowerCase().includes(this.search.toLowerCase()) ||
+					this.translate(element.description).toLowerCase().includes(this.search.toLowerCase());
+			},
+			translate: function (value) {
+				if (typeof value === "object") {
+					return value[this.language];
+				} else {
+					return value;
+				}
+			},
+			formatDate: function (datestring) {
+				let date = new Date(datestring);
+				if (isNaN(date.getFullYear())) {
+					return "";
+				}
+				return date.toLocaleString(this.language, {month: "long"}) + " " + date.getFullYear();
+			}
+		}
+	};
 </script>
 
 <style lang="scss">

@@ -86,57 +86,57 @@
 </template>
 
 <script>
-    import LicenseIcons from "./LicenseIcons.vue";
+	import LicenseIcons from "./LicenseIcons.vue";
 
-    export default {
-        data() {
-            return {
-                title: null,
-                element: null,
-                sentReadmore: false
-            };
-        },
-        props: ['language', 'data'],
-        mounted() {
-            document.body.style.overflow = "hidden";
-            this.id = this.$route.params.id;
-            this.element = this.data.find(elem => elem.id === this.id);
-            document.title = this.translate(this.element.title) + " - lw1.at";
-            this.$nextTick(function() {
-                _paq.push(['setDocumentTitle', document.title]);
-                _paq.push(['trackPageView']);
-                _paq.push(['enableLinkTracking']);
-            });
-            this.$refs.container.focus();
-        },
-        methods: {
-            translate: function(value) {
-                if (typeof value === "object") {
-                    return value[this.language];
-                } else {
-                    return value;
-                }
-            },
-            readmore: function() {
-                this.sentReadmore = true;
-                if (typeof _paq != "undefined") {
-                    _paq.push(['trackEvent', 'Feedback', 'readmore', this.id]);
-                } else {
-                    console.info("Feedback not sent as Matomo isn't loaded")
-                }
-            }
-        },
-        head: {
-            title: function() {
-                if (this.element) {
-                    return {inner: this.translate(this.element.title)};
-                }
-            }
-        },
-        components: {
-            LicenseIcons
-        }
-    };
+	export default {
+		data() {
+			return {
+				title: null,
+				element: null,
+				sentReadmore: false
+			};
+		},
+		props: ['language', 'data'],
+		mounted() {
+			document.body.style.overflow = "hidden";
+			this.id = this.$route.params.id;
+			this.element = this.data.find(elem => elem.id === this.id);
+			document.title = this.translate(this.element.title) + " - lw1.at";
+			this.$nextTick(function () {
+				_paq.push(['setDocumentTitle', document.title]);
+				_paq.push(['trackPageView']);
+				_paq.push(['enableLinkTracking']);
+			});
+			this.$refs.container.focus();
+		},
+		methods: {
+			translate: function (value) {
+				if (typeof value === "object") {
+					return value[this.language];
+				} else {
+					return value;
+				}
+			},
+			readmore: function () {
+				this.sentReadmore = true;
+				if (typeof _paq != "undefined") {
+					_paq.push(['trackEvent', 'Feedback', 'readmore', this.id]);
+				} else {
+					console.info("Feedback not sent as Matomo isn't loaded")
+				}
+			}
+		},
+		head: {
+			title: function () {
+				if (this.element) {
+					return {inner: this.translate(this.element.title)};
+				}
+			}
+		},
+		components: {
+			LicenseIcons
+		}
+	};
 </script>
 
 <style lang="scss">

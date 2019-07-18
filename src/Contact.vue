@@ -99,9 +99,9 @@
 </template>
 
 <script>
-    export default {
-        name: "contact"
-    };
+	export default {
+		name: "contact"
+	};
 </script>
 
 <style lang="scss">
@@ -110,15 +110,18 @@
 	.contact {
 		display: flex;
 		justify-content: space-around;
+
 		svg {
 			width: 36px;
 			height: 36px;
 			color: black;
 			transition: color .2s;
+
 			&.keybase .line {
 				fill: currentColor;
 			}
 		}
+
 		a:hover svg {
 			color: $color-primary;
 		}

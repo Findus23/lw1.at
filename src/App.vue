@@ -5,10 +5,10 @@
 </template>
 
 <script>
-    export default {
-        name: 'app',
-        props: ["language"],
-    };
+	export default {
+		name: 'app',
+		props: ["language"],
+	};
 </script>
 
 <style lang="css" src="../node_modules/normalize.css/normalize.css">

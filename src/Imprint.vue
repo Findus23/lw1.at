@@ -129,7 +129,7 @@
 		<div v-else class="mainText">
 			<h2>Privacy Policy</h2>
 			<h3>Scope</h3>
-			<p>This Privacy Policy is valid for <code>lw1.at</code>, all <code>*.lw1.at</code> subdomains and the 
+			<p>This Privacy Policy is valid for <code>lw1.at</code>, all <code>*.lw1.at</code> subdomains and the
 				<a href="https://play.google.com/store/apps/details?id=at.lw1.kurzparkzonen.wien">
 					Kurzparkzonen Wien App
 				</a>
@@ -205,7 +205,8 @@
 			</ul>
 			<h3>Sentry</h3>
 			<p>
-				<a href="https://sentry.io/">Sentry</a> is an Open Source system for application monitoring and error reporting.
+				<a href="https://sentry.io/">Sentry</a> is an Open Source system for application monitoring and error
+				reporting.
 				When an application error happens, it will be sent anonymized to <code>sentry.lw1.at</code>
 				Wenn ein Programmfehler auftritt, wird dieser anonymisiert an <code>sentry.lw1.at</code> gesendet. Die
 				Daten werden nicht mit Dritten geteit und nach Behebung des Problems gelöscht.
@@ -282,10 +283,10 @@
 </template>
 
 <script>
-    export default {
-        name: "imprint",
-        props: ["language"]
-    };
+	export default {
+		name: "imprint",
+		props: ["language"]
+	};
 </script>
 
 <style lang="scss">
@@ -293,9 +294,11 @@
 		.mainText {
 			text-align: left;
 		}
+
 		h2 {
 			font-size: 3rem;
 		}
+
 		.backButton {
 			position: absolute;
 			top: 20px;

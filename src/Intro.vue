@@ -4,7 +4,8 @@
 		<div class="introduction" v-if="language==='de'">
 			Hallo,<br>
 			ich bin ein Astronomiestudent aus Niederösterreich und ein Fan von Open Source Software.<br>
-			Im meiner Freizeit schreibe ich mehr oder wenigern nützliche Programme und Webseiten und arbeite bei <a href="https://matomo.org/">Matomo</a> mit.
+			Im meiner Freizeit schreibe ich mehr oder wenigern nützliche Programme und Webseiten und arbeite bei <a
+				href="https://matomo.org/">Matomo</a> mit.
 		</div>
 		<div class="introduction" v-else>
 			Hi,<br>
@@ -46,10 +47,10 @@
 </template>
 
 <script>
-    export default {
-        name: "intro",
-        props: ["language"],
-    };
+	export default {
+		name: "intro",
+		props: ["language"],
+	};
 </script>
 
 <style lang="scss">
@@ -62,18 +63,22 @@
 		align-items: start;
 		justify-content: center;
 		margin-bottom: 16px;
+
 		a {
 			margin: 0 16px;
 			height: 32px;
 			display: inline-block;
+
 			img, svg {
 				border-radius: 5px;
 				height: 100%;
 				transition: .2s;
 			}
+
 			&:hover img {
 				filter: brightness(1.3);
 			}
+
 			&:not(.image) {
 				padding: 4px 6px;
 				text-decoration: none;
@@ -89,23 +94,30 @@
 				vertical-align: middle;
 			}
 		}
+
 		.liberapay-btn {
 			background-color: $liberapay;
+
 			&:hover {
 				background-color: lighten($liberapay, 10%);
 			}
 		}
+
 		.bitcoin {
 			background-color: $bitcoin;
+
 			&:hover {
 				background-color: lighten($bitcoin, 10%);
 			}
 		}
+
 		.flattr {
 			background-color: $flattr;
+
 			&:hover {
 				background-color: lighten($flattr, 10%);
 			}
+
 			svg {
 				fill: white;
 				height: 15px;
