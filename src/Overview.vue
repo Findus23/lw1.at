@@ -56,8 +56,8 @@
 			{{language==="de" ? "Impressum":"Imprint"}}
 		</router-link>
 		<a :href="require('./assets/gpg.asc')" class="gpg">GPG: 63DB 263B ACE3 68B5 C5F7 9CE4 94AF BE7C 2656 A5B5</a>
-		<img src="https://matomo.lw1.at/index.php?module=ClassicCounter&action=svg&idSite=14" alt="Matomo visit counter"
-		     height="38" aria-hidden="true" id="visitcounter">
+		<router-link :to="{ name: 'itemModal',params:{id:'classiccounter'} }"><img src="https://matomo.lw1.at/index.php?module=ClassicCounter&action=svg&idSite=14" alt="Matomo visit counter"
+						height="38" aria-hidden="true" id="visitcounter"></router-link>
 		<router-view :language="language" :data="data">
 			<!-- here the ItemModal component will be rendered -->
 		</router-view>
