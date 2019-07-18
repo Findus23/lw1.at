@@ -10,7 +10,6 @@ Vue.use(Router);
 let router = new Router({
     mode: 'history',
     scrollBehavior(to, from, savedPosition) {
-        console.log(to);
         if (to.name === "itemModal" || from.name === "itemModal") {
             return false;
         } else if (savedPosition) {

@@ -3,7 +3,8 @@ import VueHead from 'vue-head';
 import App from './App.vue';
 import router from './router/routes';
 import MatomoTracker from './MatomoTracker';
-const hljs = require('highlightjs/styles/default.css'); // https://highlightjs.org/
+const hljs = require('./highlightjs.scss');
+const style = require('./global_styles.scss');
 
 const Raven = require("raven-js");
 const RavenVue = require("raven-js/plugins/vue");
@@ -17,7 +18,7 @@ Vue.use(VueHead);
 let matomo = new MatomoTracker;
 matomo.init();
 
-if ((typeof [].find) !== "undefined") { // only start vue if the browser supports modern Javascript 
+if ((typeof [].find) !== "undefined") { // only start vue if the browser supports modern Javascript
     let app = new Vue({
         el: '#app',
         router,

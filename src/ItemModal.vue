@@ -186,12 +186,12 @@
 		*/
 		margin: 50px auto 0;
 		background-color: #fff;
-		border-radius: 5px;
+		border-radius: $borderRadius;
 
 		.imagewrapper img {
 			width: 100%;
-			border-top-left-radius: 5px;
-			border-top-right-radius: 5px;
+			border-top-left-radius: $borderRadius;
+			border-top-right-radius: $borderRadius;
 		}
 
 		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -301,12 +301,16 @@
 		width: 100%;
 		height: 300px;
 		border: none;
-		border-radius: 5px;
+		border-radius: $borderRadius;
 		display: block;
 	}
 
 	.note {
-		background-color: #fdbc4b;
+		background-color: $consoleBackground;
+		color:$consoleOrange;
+		font-family: $consoleFont;
+		text-align: center;
+		/*background-color: #fdbc4b;*/
 		padding: 15px;
 		margin-bottom: 15px;
 	}

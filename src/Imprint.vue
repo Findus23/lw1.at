@@ -2,7 +2,7 @@
 	<div id="imprint">
 		<div class="backButton">
 			<router-link :to="{ name: 'Overview', params: { language: language }}">
-				{{language==="de" ? "Zurück zur Hauptseite":"Back to the main page"}}
+				<span class="arrow">←</span> {{language==="de" ? "Zurück zur Hauptseite":"Back to the main page"}}
 			</router-link>
 		</div>
 		<div class="languageSelector">
@@ -299,10 +299,5 @@
 			font-size: 3rem;
 		}
 
-		.backButton {
-			position: absolute;
-			top: 20px;
-			left: 20px;
-		}
 	}
 </style>

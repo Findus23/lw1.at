@@ -112,18 +112,18 @@
 		justify-content: space-around;
 
 		svg {
-			width: 36px;
-			height: 36px;
-			color: black;
+			width: 45px;
+			height: 45px;
+			color: $consoleBackground;
 			transition: color .2s;
-
+			padding: 5px;
 			&.keybase .line {
 				fill: currentColor;
 			}
 		}
 
 		a:hover svg {
-			color: $color-primary;
+			outline:1px solid $consoleBackground;
 		}
 	}
 </style>

@@ -10,8 +10,8 @@
 		<div class="introduction" v-else>
 			Hi,<br>
 			I am an astronomy student from Lower Austria and an Open Source fan.<br>
-			When I have time for it, I write more or less useful programs and websites and contribute to<a
-				href="https://matomo.org/">Matomo</a>.
+			When I have time for it, I write more or less useful programs and websites and contribute to <a
+				href="https://matomo.org/" class="texttt">Matomo</a>.
 		</div>
 		<!--<div class="donate-buttons">
 			<a class="liberapay-btn" href="https://liberapay.com/lw1" target="_blank">
@@ -54,6 +54,7 @@
 </script>
 
 <style lang="scss">
+	@import "variables";
 	$liberapay: #f6c915;
 	$bitcoin: #f7931a;
 	$flattr: #595959;
@@ -133,7 +134,7 @@
 	}
 
 	h1 {
-		font-weight: 300;
+		font-family: $consoleFont;
 		color: black !important;
 	}
 

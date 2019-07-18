@@ -1,0 +1,128 @@
+@import "variables";
+
+body {
+  background-color: $consoleBackground;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Crect width='10' height='5' fill='white' /%3E%3Crect x='0' y='5' width='10' height='5' fill='%23fbfbfb' /%3E%3C/svg%3E");
+  background-attachment: fixed;
+  font-family: -apple-system, "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", "Roboto", "Liberation Sans", Arial, sans-serif;
+  font-weight: normal;
+  color: #212121;
+
+}
+
+html {
+  scrollbar-color: $consoleBackground white;
+  scrollbar-width: auto;
+  //scrollbar-gutter:stable
+}
+
+li {
+  margin-bottom: 0.3rem;
+}
+
+a svg {
+  fill: initial;
+}
+
+.container {
+  background-color: white;
+  border: 1px solid $consoleBackground;
+  @media (max-width: 1120px) {
+	border: none;
+  }
+  padding-top: 2rem;
+}
+
+#app {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#blockwrapper {
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.languageSelector a, .backButton a,.toImprint {
+  &:hover,&:focus {
+    color: $consoleBlue;
+  }
+}
+.languageSelector, .backButton {
+  position: absolute;
+
+  background: $consoleBackground;
+  font-family: $consoleFont;
+
+  a {
+	padding: 5px;
+	color: $consoleText;
+  }
+
+  @media screen and (max-width: 480px) {
+	right: 10px;
+  }
+}
+
+.languageSelector {
+  top: 0;
+  right: 0;
+
+}
+
+.backButton {
+  top: 0;
+  left: 0;
+
+  .arrow {
+	font-weight: bold;
+  }
+}
+
+.toImprint {
+  display: block;
+  max-width: 130px;
+  background: $consoleBackground;
+  font-family: $consoleFont;
+  padding: 5px;
+  color: $consoleText;
+  margin: auto auto 1.5rem;
+}
+
+.texttt {
+  font-family: $consoleFont;
+}
+
+.button,
+button,
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+  background-color: $consoleBackground;
+  font-family: $consoleFont;
+
+  cursor: pointer;
+  display: inline-block;;
+  font-size: 1.1rem;
+  font-weight: 700;
+  height: 3.8rem;
+  letter-spacing: .1rem;
+  line-height: 3.8rem;
+  padding: 0 3.0rem;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  border: none;
+
+  &:focus, &:hover, &:active {
+	outline: $consoleBackground solid 1px;
+	background-color: transparent;
+	color: $consoleBackground;
+  }
+
+  &:active {
+	background-color: #eee;
+  }
+}

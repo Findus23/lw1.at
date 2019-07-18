@@ -31,7 +31,7 @@
 			<input title="test" v-model="search" :placeholder="language==='de'?'Suchen...':'Search...'"/>
 		</div>
 		<div v-if="noResults" id="noresults">
-			{{language==="de"?"Keine Ergebnisse":"No results"}}
+			{{language==="de"?"Keine Ergebnisse":"No results"}}!
 		</div>
 		<div id="blockwrapper">
 			<router-link v-for="element in elements" :key="element.id" class="card"
@@ -52,7 +52,7 @@
 				</div>
 			</router-link>
 		</div>
-		<router-link :to="{ name: (language==='de' ? 'Impressum':'Imprint')}" style="text-align: center">
+		<router-link class="toImprint" :to="{ name: (language==='de' ? 'Impressum':'Imprint')}">
 			{{language==="de" ? "Impressum":"Imprint"}}
 		</router-link>
 		<a :href="require('./assets/gpg.asc')" class="gpg">GPG: 63DB 263B ACE3 68B5 C5F7 9CE4 94AF BE7C 2656 A5B5</a>
@@ -152,46 +152,10 @@
 	@import "../node_modules/milligram/src/Color";
 	@import "../node_modules/milligram/src/Utility";
 
-	body {
-		background-color: #ffffff;
-		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5' height='5'%3E%3Crect width='2.5' height='5' fill='white' /%3E%3Crect x='2.5' y='0' width='2.5' height='5' fill='%23f5f5f5' /%3E%3C/svg%3E");
-		font-family: -apple-system, "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", "Roboto", "Liberation Sans", Arial, sans-serif;
-		font-weight: normal;
-		color: #212121;
-	}
-
-	li {
-		margin-bottom: 0.3rem;
-	}
-
-	a svg {
-		fill: initial;
-	}
-
-	.container {
-		background-color: white;
-	}
-
-	#app {
-		text-align: center;
-		margin-top: 20px;
-	}
-
-	#blockwrapper {
-		margin: 20px;
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-around;
-	}
-
-	#root_isotope {
-		margin: 0 auto;
-	}
-
 	.card {
-		background-color: #009688;
-		transition: background-color .2s;
-		color: white;
+		color: $consoleText;
+		background: $consoleBackground;
+		transition: color .2s;
 		border-radius: $borderRadius;
 		z-index: 3;
 		position: relative;
@@ -209,20 +173,16 @@
 			left: 0;
 			right: 0;
 			z-index: -3;
-			@include shadow(2);
-			transition: box-shadow 0.2s;
+			/*@include shadow(2);*/
+			/*transition: box-shadow 0.2s;*/
 		}
 
 		&:hover, &:focus {
-			&:before {
-				@include shadow(3);
-			}
+			color: $consoleFocus;
 
-			color: white;
-			background: darken(#009688, 0.8);
-
-			img {
-				filter: brightness(0.8);
+			.tag {
+				color: $consoleFocus;
+				border-color: $consoleFocus;
 			}
 		}
 
@@ -248,20 +208,22 @@
 	}
 
 	.tag {
-		font-family: monospace, monospace;
+		font-family: $consoleFont;
 		display: inline-block;
 		padding: .2em .6em .3em;
 		font-size: 70%;
 		font-weight: bold;
 		line-height: 1;
-		color: #ffffff;
-		background-color: black;
+		border: 1px $consoleText solid;
+		color: $consoleText;
+		background-color: $consoleBackground;
 		text-align: center;
 		white-space: nowrap;
 		vertical-align: baseline;
-		border-radius: .25em;
+		border-radius: $borderRadius;
 		margin-left: 2px;
 		margin-right: 2px;
+		transition: color .2s, border-color .2s;
 	}
 
 	button {
@@ -275,6 +237,7 @@
 			/*color: darken($color-secondary, 10%);
 			border-color: darken($color-secondary, 10%);
 			background-color: darken(white, 10%) !important;*/
+			color: $consoleFocus;
 		}
 
 		svg {
@@ -301,57 +264,72 @@
 
 	#filterwrapper {
 		font-family: monospace, monospace;
+		margin-bottom: 2rem;
 
 		button {
 			background-color: transparent;
 			border: none;
-			color: darkgray;
-			padding-left: 10px;
-			padding-right: 10px;
+			color: $consoleBackground;
+			/*padding-left: 10px;*/
+			/*padding-right: 10px;*/
 			text-transform: initial;
+			font-family: $consoleFont;
+			padding: .2em .6em .3em;
+			line-height: 10px;
+			height: 25px;
+			border-radius: $borderRadius;
+			margin-bottom: 0;
 
 			&.active {
-				color: black;
+				color: $consoleWhite;
+				background-color: $consoleBackground;
+			}
+
+			&:focus, &:active, &:hover {
+				outline: 1px solid $consoleBackground;
 			}
 		}
 	}
 
 	#searchwrapper {
+		margin-bottom: 2rem;
+
 		input {
-			font-family: monospace, monospace;
+			font-family: $consoleFont;
 			-webkit-appearance: none;
 			-moz-appearance: none;
 			padding: 4px;
 			border: 1px solid #bbb; /* Here */
+			border: none;
 			border-radius: $borderRadius;
+			margin-bottom: 0;
+			background-color: $consoleBackground;
+			color: $consoleText;
+			max-width: 300px;
+			width: 100%;
 
 			&:focus {
 				border-color: $color-primary;
 			}
 
 			&::placeholder {
-				color: #666666;
+				color: $consoleText;
+				opacity: 1;
+			}
+
+			&::selection {
+				background: $consoleText;
+				color: $consoleBackground;
 			}
 		}
 	}
 
 	#noresults {
+		font-family: $consoleFont;
 		font-size: 20px;
 		font-weight: bold;
 	}
 
-	.languageSelector {
-		position: absolute;
-		top: 20px;
-		right: 20px;
-
-		a {
-		}
-
-		@media screen and (max-width: 480px) {
-			right: 10px;
-		}
-	}
 
 	.gpg {
 		display: block;
