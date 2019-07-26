@@ -4,7 +4,7 @@
 		<div class="introduction" v-if="language==='de'">
 			Hallo,<br>
 			ich bin ein Astronomiestudent aus Niederösterreich und ein Fan von Open Source Software.<br>
-			Im meiner Freizeit schreibe ich mehr oder wenigern nützliche Programme und Webseiten und arbeite bei <a
+			Im meiner Freizeit schreibe ich mehr oder weniger nützliche Programme und Webseiten und arbeite bei <a
 				href="https://matomo.org/">Matomo</a> mit.
 		</div>
 		<div class="introduction" v-else>
