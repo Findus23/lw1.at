@@ -51,8 +51,9 @@
 							</div>
 						</div>
 						<div v-if="element.description" v-html="translate(element.description)"></div>
-						<iframe v-if="element.iframe"
-						        :src="element.iframe.url" :style="{backgroundColor: element.iframe.color}"></iframe>
+						<iframe v-if="element.iframe" :src="element.iframe.url"
+						        :style="{backgroundColor: element.iframe.color}" :sandbox="element.iframe.sandbox"
+						        :allowfullscreen="element.iframe.allowfullscreen"></iframe>
 						<button class="readmore" @click="readmore" v-if="!sentReadmore">
 							<template v-if="language==='en'">
 								I want to read more about this project
@@ -303,11 +304,12 @@
 		border: none;
 		border-radius: $borderRadius;
 		display: block;
+		margin-bottom: 15px;
 	}
 
 	.note {
 		background-color: $consoleBackground;
-		color:$consoleOrange;
+		color: $consoleOrange;
 		font-family: $consoleFont;
 		text-align: center;
 		/*background-color: #fdbc4b;*/
