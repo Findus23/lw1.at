@@ -61,7 +61,7 @@
 
 	.donate-buttons {
 		display: flex;
-		align-items: start;
+		align-items: flex-start;
 		justify-content: center;
 		margin-bottom: 16px;
 
