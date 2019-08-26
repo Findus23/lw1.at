@@ -1,8 +1,9 @@
 import Vue from 'vue';
 import Overview from '../Overview.vue';
 import ItemModal from '../ItemModal.vue';
-import Imprint from '../Imprint.vue';
 import Router from 'vue-router';
+
+const Imprint = () => import(/* webpackChunkName: "imprint" */ '../Imprint.vue');
 
 Vue.use(Router);
 

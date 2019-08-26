@@ -152,6 +152,7 @@ module.exports = {
 if (process.env.NODE_ENV === 'production') {
     module.exports.optimization = {
         splitChunks: {
+            chunks: 'all',
             name: "commons"
         },
         minimize: true
