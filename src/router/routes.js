@@ -2,7 +2,6 @@ import Vue from 'vue';
 import Overview from '../Overview.vue';
 import ItemModal from '../ItemModal.vue';
 import Imprint from '../Imprint.vue';
-import LightningTalks from '../LightningTalks.vue';
 import Router from 'vue-router';
 
 Vue.use(Router);
@@ -53,14 +52,6 @@ let router = new Router({
             path: '/en/imprint',
             name: 'Imprint',
             component: Imprint,
-            props: {
-                language: "en"
-            }
-        },
-        {
-            path: '/en/lightningtalks',
-            name: 'lightningtalks',
-            component: LightningTalks,
             props: {
                 language: "en"
             }
