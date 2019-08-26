@@ -15,8 +15,8 @@ require('mathjax3/mathjax3/input/tex/cancel/CancelConfiguration.js');
 require('mathjax3/mathjax3/input/tex/enclose/EncloseConfiguration.js');
 
 
-const EM_SIZE=14;
-const EX_SIZE=8;
+const EM_SIZE = 14;
+const EX_SIZE = 8;
 
 //
 //  Create DOM adaptor and register it for HTML documents
@@ -32,7 +32,7 @@ const tex = new TeX({
     inlineMath: [['$', '$'], ['\\(', '\\)']],
     packages: ["base", "ams", "noundefined", "newcommand", "boldsymbol", "bracket", "mhchem", "physics", "verb", "cancel", "enclose"]
 });
-const svg = new SVG({exFactor: EX_SIZE / EM_SIZE});
+const svg = new SVG({exFactor: EX_SIZE / EM_SIZE, fontCache: "none"});
 
 module.exports = function renderMath(rawhtml) {
 
@@ -51,5 +51,7 @@ module.exports = function renderMath(rawhtml) {
 //
 //  Output the resulting HTML
 //
-    return adaptor.outerHTML(adaptor.parent(adaptor.body(html.document)));
+    // don't add CSS style block to nodes
+    return adaptor.outerHTML(adaptor.body(html.document));
+    // return adaptor.outerHTML(adaptor.parent(adaptor.body(html.document)));
 };
