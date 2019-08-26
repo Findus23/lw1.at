@@ -143,8 +143,14 @@
 				}
 				return date.toLocaleString(this.language, {month: "long"}) + " " + date.getFullYear();
 			}
-		}
-	};
+		},
+      mounted() {
+		    if (this.language!=="de" || this.language!=="en") {
+		        this.$router.replace("/")
+        }
+		    console.info(this.language)
+      }
+  };
 </script>
 
 <style lang="scss">
@@ -270,11 +276,9 @@
 			background-color: transparent;
 			border: none;
 			color: $consoleBackground;
-			/*padding-left: 10px;*/
-			/*padding-right: 10px;*/
 			text-transform: initial;
 			font-family: $consoleFont;
-			padding: .2em .6em .3em;
+			padding: .2em .6em;
 			line-height: 10px;
 			height: 25px;
 			border-radius: $borderRadius;

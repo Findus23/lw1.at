@@ -102,6 +102,10 @@
 			document.body.style.overflow = "hidden";
 			this.id = this.$route.params.id;
 			this.element = this.data.find(elem => elem.id === this.id);
+			if (!this.element) {
+          this.$router.replace("/");
+          return false;
+      }
 			document.title = this.translate(this.element.title) + " - lw1.at";
 			this.$nextTick(function () {
 				_paq.push(['setDocumentTitle', document.title]);
