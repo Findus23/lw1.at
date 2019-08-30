@@ -1,0 +1,22 @@
+id: bachelorarbeit
+title:
+  de: Bachelorarbeit
+  en: Bachelor's thesis
+tags:
+  - python
+  - astronomy
+  - major
+url: https://lw1.at/r/bachelorarbeit-pdf
+date: 2019-08-30
+image: bachelorarbeit.svg
+single_language: en
+description:
+  en: |
+    ## Interpolated water retention after two-body collisions using Neural Networks and linear interpolation methods
+
+    ### Non-technical summary
+
+    One of the most fundamental questions in Astronomy is: How did water get on the Earth? 
+
+  de: |
+    test
