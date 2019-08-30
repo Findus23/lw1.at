@@ -136,6 +136,10 @@
 	h1 {
 		font-family: $consoleFont;
 		color: black !important;
+		div {
+			font-size: 24px;
+			line-height: 28px;
+		}
 	}
 
 	@media screen and (max-width: 480px) {

@@ -9,7 +9,9 @@
 						<div class="imagewrapper" :class="element.image_seperator ? 'seperator':''">
 							<img v-if="element.image" :src="require('./assets/contentimages/'+element.image)">
 						</div>
-						<h1>{{ translate(element.title) }}</h1>
+						<h1>{{ translate(element.title) }}
+							<div v-if="element.subtitle">{{translate(element.subtitle)}}</div>
+						</h1>
 						<router-link class="closeButton" :to="{ name: 'Overview', params: { language: language }}">✖
 						</router-link>
 
@@ -31,8 +33,17 @@
 									      d="M209,15a195,195 0 1,0 2,0zm1,0v390m195-195H15M59,90a260,260 0 0,0 302,0 m0,240 a260,260 0 0,0-302,0M195,20a250,250 0 0,0 0,382 m30,0 a250,250 0 0,0 0-382"></path>
 								</svg>
 							</a>
+							<a v-bind:href="element.gitlab" v-if="element.gitlab" target="_blank" rel="noopener">
+								<!-- License - http://fontawesome.io/license (SIL OFL 1.1) -->
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54">
+									<title>View source on GitLab</title>
+									<path fill="none" d="M-.2.1h53.8v53.4H-.2z"></path>
+									<path fill="currentColor"
+									      d="M26.6 49.3L2.4 31.7c-.3-.2-.6-.6-.7-1-.1-.4-.1-.8 0-1.2L4.5 21l22.1 28.3zM11.9 3.9L17.4 21H4.5L10 3.9c.1-.4.5-.6.9-.6.6-.1.9.2 1 .6zM17.4 21h18.4l-9.2 28.3L17.4 21zm34.2 8.6c.1.4.1.8 0 1.2-.1.4-.4.7-.7 1L26.6 49.3 48.7 21l2.9 8.6zM48.7 21H35.9l5.5-17.1c.1-.4.5-.6.9-.6.5 0 .8.2.9.6L48.7 21z"></path>
+								</svg>
+							</a>
 							<a v-bind:href="'https://github.com/'+ element.github" v-if="element.github"
-							   target="_blank">
+							   target="_blank" rel="noopener">
 								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
 									<title>View source on Github</title>
 									<path fill-rule="evenodd" style="fill: currentColor"
@@ -210,6 +221,9 @@
 	.modal-header h3 {
 		margin-top: 0;
 		color: #42b983;
+	}
+	h1 {
+		margin: 0 5px;
 	}
 
 	.modal-body {
