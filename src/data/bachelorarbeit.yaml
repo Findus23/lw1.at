@@ -11,7 +11,7 @@ date: 2019-08-30
 image: bachelorarbeit.svg
 gitlab: https://git.lw1.at/lw1/bachelorarbeit-code
 iframe:
-  url: https://video.lw1.at/videos/embed/15108d24-2e82-473c-8a20-8e8e08de788e
+  url: https://video.lw1.at/videos/embed/15108d24-2e82-473c-8a20-8e8e08de788e?loop=1
   allowfullscreen: True
   sandbox: allow-same-origin allow-scripts
   color: black
