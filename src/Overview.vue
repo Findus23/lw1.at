@@ -36,8 +36,10 @@
 		<div id="blockwrapper">
 			<router-link v-for="element in elements" :key="element.id" class="card"
 			             :to="{ name: 'itemModal',params:{id:element.id} }">
-				<img :src="element.image?require('./assets/thumbnails/'+element.image):require('./assets/thumbnails/placeholder.png')"
-				     width="300" height="150">
+				<div class="imgwrapper">
+					<img :src="element.image?require('./assets/thumbnails/'+element.image):require('./assets/thumbnails/placeholder.png')"
+				     width="300" height="150" v-if="isOverviewPage()">
+				</div>
 				<div class="textwrapper">
 					<div>{{ translate(element.title) }}</div>
 					<div v-if="element.date">
@@ -142,15 +144,18 @@
 					return "";
 				}
 				return date.toLocaleString(this.language, {month: "long"}) + " " + date.getFullYear();
+			},
+			isOverviewPage: function () {
+				console.log(this.$router.currentRoute.name === "Overview");
+				return this.$router.currentRoute.name === "Overview"
 			}
 		},
-      mounted() {
-		    if (this.language!=="de" || this.language!=="en") {
-		        this.$router.replace("/")
-        }
-		    console.info(this.language)
-      }
-  };
+		mounted() {
+			if (this.language !== "de" && this.language !== "en") {
+				this.$router.replace("/")
+			}
+		}
+	};
 </script>
 
 <style lang="scss">
@@ -198,6 +203,10 @@
 			border-top-left-radius: $borderRadius;
 			border-top-right-radius: $borderRadius;
 			height: auto;
+		}
+
+		.imgwrapper {
+			height: 150px;
 		}
 
 		.textwrapper {

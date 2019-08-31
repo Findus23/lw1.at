@@ -7,7 +7,7 @@
 				<div v-if="element">
 					<div class="modal-header">
 						<div class="imagewrapper" :class="element.image_seperator ? 'seperator':''">
-							<img v-if="element.image" :src="require('./assets/contentimages/'+element.image)">
+							<img v-if="element.image" :src="require('./assets/contentimages/'+element.image)" height="600" width="1200">
 						</div>
 						<h1>{{ translate(element.title) }}
 							<div v-if="element.subtitle">{{translate(element.subtitle)}}</div>
@@ -114,9 +114,9 @@
 			this.id = this.$route.params.id;
 			this.element = this.data.find(elem => elem.id === this.id);
 			if (!this.element) {
-          this.$router.replace("/");
-          return false;
-      }
+				this.$router.replace("/");
+				return false;
+			}
 			document.title = this.translate(this.element.title) + " - lw1.at";
 			this.$nextTick(function () {
 				_paq.push(['setDocumentTitle', document.title]);
@@ -222,6 +222,7 @@
 		margin-top: 0;
 		color: #42b983;
 	}
+
 	h1 {
 		margin: 0 5px;
 	}

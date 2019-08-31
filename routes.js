@@ -3,7 +3,7 @@ const dataPath = "./src/data/";
 
 // Get document, or throw exception on error
 
-routes = ["/de", "/en", "/de/impressum", "/en/imprint", "/en/lightningtalks"];
+routes = ["/de", "/en", "/de/impressum", "/en/imprint"];
 try {
     const files = fs.readdirSync(dataPath);
     files.forEach(function(file) {
