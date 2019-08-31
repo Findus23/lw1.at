@@ -7,16 +7,16 @@ date: 2018-06-30
 image: numba.png
 single_language: en
 description: |
-  >This is an extended answer to an test question that made me test out the results afterwards.  
+  >This is an extended answer to a test question that made me test out the results afterwards.
 
   [Numba](https://numba.pydata.org/) is an JIT compiler for a subset of Python and Numpy that allows boosting the execution of some phython functions.
-  
+
   To try out how much performance improvement is possible, I compared a simple mathematical function with the same function, but prepended with the `@njit` decorator, that instructs numpy to compile the function the first time it has been executed.
 
   Afterwards I run the function with $n=10^3$ to $n=10^8$, record the timing and plot it with [Matplotlib](https://matplotlib.org/).
-  
+
   As one can see above with $n=100$ the compiled function (orange) is 100 times slower than a normal execution (blue) because the compilation on the first function call takes about $0.1s$. But if we ignore the time of the first compilation (because the function is already compiled), then the JIT-compiled function (green) is always 100 times faster than a normal python function.
-  
+
   ```python
   from time import time
 

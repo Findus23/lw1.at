@@ -1,5 +1,5 @@
 id: github-issues-mirror
-title: Github Issues Mirror
+title: GitHub Issues Mirror
 tags:
 - matomo
 - php
@@ -17,8 +17,8 @@ description:
   en: |
     Improved the old version and updated it to Bootstrap 4
 
-    The Github Issues Mirror allows hosting the Github issues to have a backup in case Github is down or for SEO reasons.
+    The GitHub Issues Mirror allows hosting the Github issues to have a backup in case Github is down or for SEO reasons.
   de: |
     Verbesserung der alten Version und update zu Bootstrap 4
 
-    Der Github Issues Mirror ermöglicht es Github Issues zu kopieren um ein Backup zu haben oder für besseres SEO.
+    Der GitHub Issues Mirror ermöglicht es Github Issues zu kopieren, um ein Backup zu haben oder für besseres SEO.

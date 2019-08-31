@@ -44,5 +44,5 @@ description:
     Basiert auf der Arbeit von [hromadadan](https://github.com/guzart/customjs) und [xcv58](https://github.com/xcv58/Custom-JavaScript-for-Websites-2)
     ### Verwendung:
     * öffne die Webseite, in die du den Tracking Code einfügen willst
-    * clicke auf das *Matomo Browser Injector* Icon in der Toolbar und gib die URL zum Matomo-Server und die ID der Webseite ein
+    * klicke auf das *Matomo Browser Injector* Icon in der Toolbar und gib die URL zum Matomo-Server und die ID der Webseite ein
     * wenn du erweiterte Funktionen nutzen willst, aktiviere den Expertenmodus, wo man den Tracking Code frei bearbeiten kann.

@@ -15,7 +15,7 @@ description :
     [LanguageTool](https://languagetool.org/) is an open source proof­reading (spellchecking and grammar checking) service for many languages including English and German
     which can be run as a server providing an JSON API.
 
-    pyLanguagetool is an Python library and command line interface for Languagetool
+    pyLanguagetool is an Python library and command line interface for LanguageTool
 
     ## How to use
     pyLanguagetool can be installed from pip.
@@ -33,12 +33,12 @@ description :
     $ pylanguagetool -c # get text from system clipboard
     ```
   de: |
-    [LanguageTool](https://languagetool.org/) is ein Open Source Textprüfung für Grammatik, Stil und Rechtschreibung, welche als LibreOffice-Erweiterung oder als Server verwendet werden kann.
+    [LanguageTool](https://languagetool.org/) ist ein Open Source Textprüfung für Grammatik, Stil und Rechtschreibung, welche als LibreOffice-Erweiterung oder als Server verwendet werden kann.
 
-    pyLanguagetool ist eine Python library und ein Client für Languagetool.
+    pyLanguagetool ist eine Python library und ein Client für LanguageTool.
 
     ## Verwendung
-    pyLanguagetool can von pip installiert werden.
+    pyLanguagetool kann mithilfe von pip installiert werden.
     ```
     $ pip install pylanguagetool
     ```
