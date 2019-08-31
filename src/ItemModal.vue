@@ -7,16 +7,17 @@
 				<div v-if="element">
 					<div class="modal-header">
 						<div class="imagewrapper" :class="element.image_seperator ? 'seperator':''">
-							<img v-if="element.image" :src="require('./assets/contentimages/'+element.image)" height="600" width="1200">
+							<img v-if="element.image" :src="require('./assets/contentimages/'+element.image)"
+							     height="600" width="1200">
 						</div>
-						<h1>{{ translate(element.title) }}
-							<div v-if="element.subtitle">{{translate(element.subtitle)}}</div>
-						</h1>
 						<router-link class="closeButton" :to="{ name: 'Overview', params: { language: language }}">✖
 						</router-link>
 
 					</div>
 					<div class="modal-body" ref="test">
+						<h1>{{ translate(element.title) }}
+							<div v-if="element.subtitle">{{translate(element.subtitle)}}</div>
+						</h1>
 						<div class="modal-linkbar">
 							<a v-bind:href="element.url" v-if="element.url" target="_blank">
 								<div class="try-it-out" v-if="element.try">
@@ -98,61 +99,61 @@
 </template>
 
 <script>
-	import LicenseIcons from "./LicenseIcons.vue";
+    import LicenseIcons from "./LicenseIcons.vue";
 
-	export default {
-		data() {
-			return {
-				title: null,
-				element: null,
-				sentReadmore: false
-			};
-		},
-		props: ['language', 'data'],
-		mounted() {
-			document.body.style.overflow = "hidden";
-			this.id = this.$route.params.id;
-			this.element = this.data.find(elem => elem.id === this.id);
-			if (!this.element) {
-				this.$router.replace("/");
-				return false;
-			}
-			document.title = this.translate(this.element.title) + " - lw1.at";
-			this.$nextTick(function () {
-				_paq.push(['setDocumentTitle', document.title]);
-				_paq.push(['trackPageView']);
-				_paq.push(['enableLinkTracking']);
-			});
-			this.$refs.container.focus();
-		},
-		methods: {
-			translate: function (value) {
-				if (typeof value === "object") {
-					return value[this.language];
-				} else {
-					return value;
-				}
-			},
-			readmore: function () {
-				this.sentReadmore = true;
-				if (typeof _paq != "undefined") {
-					_paq.push(['trackEvent', 'Feedback', 'readmore', this.id]);
-				} else {
-					console.info("Feedback not sent as Matomo isn't loaded")
-				}
-			}
-		},
-		head: {
-			title: function () {
-				if (this.element) {
-					return {inner: this.translate(this.element.title)};
-				}
-			}
-		},
-		components: {
-			LicenseIcons
-		}
-	};
+    export default {
+        data() {
+            return {
+                title: null,
+                element: null,
+                sentReadmore: false
+            };
+        },
+        props: ['language', 'data'],
+        mounted() {
+            document.body.style.overflow = "hidden";
+            this.id = this.$route.params.id;
+            this.element = this.data.find(elem => elem.id === this.id);
+            if (!this.element) {
+                this.$router.replace("/");
+                return false;
+            }
+            document.title = this.translate(this.element.title) + " - lw1.at";
+            this.$nextTick(function () {
+                _paq.push(['setDocumentTitle', document.title]);
+                _paq.push(['trackPageView']);
+                _paq.push(['enableLinkTracking']);
+            });
+            this.$refs.container.focus();
+        },
+        methods: {
+            translate: function (value) {
+                if (typeof value === "object") {
+                    return value[this.language];
+                } else {
+                    return value;
+                }
+            },
+            readmore: function () {
+                this.sentReadmore = true;
+                if (typeof _paq != "undefined") {
+                    _paq.push(['trackEvent', 'Feedback', 'readmore', this.id]);
+                } else {
+                    console.info("Feedback not sent as Matomo isn't loaded")
+                }
+            }
+        },
+        head: {
+            title: function () {
+                if (this.element) {
+                    return {inner: this.translate(this.element.title)};
+                }
+            }
+        },
+        components: {
+            LicenseIcons
+        }
+    };
 </script>
 
 <style lang="scss">
@@ -204,14 +205,26 @@
 		background-color: #fff;
 		border-radius: $borderRadius;
 
-		.imagewrapper img {
-			width: 100%;
-			border-top-left-radius: $borderRadius;
-			border-top-right-radius: $borderRadius;
+		.imagewrapper {
+			padding-bottom: 50%;
+
+			&.seperator {
+				border-bottom: solid 1px #ddd;
+			}
+
+			img {
+				display: block;
+				width: 100%;
+				border-top-left-radius: $borderRadius;
+				border-top-right-radius: $borderRadius;
+				height: auto;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
 		}
 
 		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-		transition: all .3s ease;
 
 		&:focus {
 			outline: none;
@@ -258,12 +271,6 @@
 	/*.modal-leave-active .modal-container {*/
 	/*transform: scale(0.8);*/
 	/*}*/
-
-	.imagewrapper {
-		&.seperator {
-			border-bottom: solid 1px #ddd;
-		}
-	}
 
 	.modal-linkbar {
 		display: flex;

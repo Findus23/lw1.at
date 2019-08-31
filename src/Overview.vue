@@ -146,7 +146,6 @@
 				return date.toLocaleString(this.language, {month: "long"}) + " " + date.getFullYear();
 			},
 			isOverviewPage: function () {
-				console.log(this.$router.currentRoute.name === "Overview");
 				return this.$router.currentRoute.name === "Overview"
 			}
 		},
