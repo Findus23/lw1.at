@@ -7,6 +7,7 @@ const files = fs.readdirSync(dataPath);
 
 let en_markdown = "";
 let de_markdown = "";
+let titles = [];
 
 files.forEach(file => {
 	if (!file.includes("yaml")) {
@@ -24,8 +25,17 @@ files.forEach(file => {
 			en_markdown += item.description + "\n\n";
 		}
 	}
+	if (item.title.de) {
+		titles.push(item.title.de);
+		titles.push(item.title.en);
+	} else {
+		titles.push(item.title);
+	}
 
 	fs.writeFileSync("spellcheck_de.md", de_markdown);
 
 	fs.writeFileSync("spellcheck_en.md", en_markdown);
+
+	fs.writeFileSync("spellcheck_title.md", titles.join("\n"));
+
 });
