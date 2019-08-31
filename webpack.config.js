@@ -68,14 +68,12 @@ module.exports = {
                     {
                         loader: 'file-loader',
                         options: {
-                            // name: '[name].[ext]?hash=[hash]'
+                            name: '[folder]/[name].[ext]?hash=[contenthash]'
                         }
                     },
                     {
                         loader: 'image-webpack-loader',
-                        options: {
-                            disable: true,
-                        },
+                        options: {},
                     },
                 ],
             },
