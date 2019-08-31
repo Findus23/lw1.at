@@ -73,7 +73,11 @@ module.exports = {
                     },
                     {
                         loader: 'image-webpack-loader',
-                        options: {},
+                        options: {
+                            svgo: {
+                                enabled: false
+                            }
+                        },
                     },
                 ],
             },
