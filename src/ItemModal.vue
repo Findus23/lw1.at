@@ -7,8 +7,8 @@
 				<div v-if="element">
 					<div class="modal-header">
 						<div class="imagewrapper" :class="element.image_seperator ? 'seperator':''">
-							<img v-if="element.image" :src="require('./assets/contentimages/'+element.image)"
-							     height="600" width="1200">
+							<HashImage :img="require('./assets/contentimages/'+element.image)"
+							           v-if="element.image"></HashImage>
 						</div>
 						<router-link class="closeButton" :to="{ name: 'Overview', params: { language: language }}">✖
 						</router-link>
@@ -100,6 +100,7 @@
 
 <script>
     import LicenseIcons from "./LicenseIcons.vue";
+    import HashImage from "./HashImage.vue";
 
     export default {
         data() {
@@ -119,7 +120,7 @@
                 return false;
             }
             document.title = this.translate(this.element.title) + " - lw1.at";
-            this.$nextTick(function () {
+            this.$nextTick(function() {
                 _paq.push(['setDocumentTitle', document.title]);
                 _paq.push(['trackPageView']);
                 _paq.push(['enableLinkTracking']);
@@ -127,30 +128,31 @@
             this.$refs.container.focus();
         },
         methods: {
-            translate: function (value) {
+            translate: function(value) {
                 if (typeof value === "object") {
                     return value[this.language];
                 } else {
                     return value;
                 }
             },
-            readmore: function () {
+            readmore: function() {
                 this.sentReadmore = true;
                 if (typeof _paq != "undefined") {
                     _paq.push(['trackEvent', 'Feedback', 'readmore', this.id]);
                 } else {
-                    console.info("Feedback not sent as Matomo isn't loaded")
+                    console.info("Feedback not sent as Matomo isn't loaded");
                 }
             }
         },
         head: {
-            title: function () {
+            title: function() {
                 if (this.element) {
                     return {inner: this.translate(this.element.title)};
                 }
             }
         },
         components: {
+            HashImage,
             LicenseIcons
         }
     };
@@ -221,6 +223,8 @@
 				position: absolute;
 				left: 0;
 				top: 0;
+				z-index: 1100;
+				background: white;
 			}
 		}
 

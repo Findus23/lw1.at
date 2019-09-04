@@ -63,8 +63,22 @@ module.exports = {
                 }
             },
             {
-                test: /\.(png|jpg|gif|svg|asc)$/,
+                test: /\.(asc)$/,
                 use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[folder]/[name].[ext]?hash=[contenthash]'
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.(png|jpg|gif|svg)$/,
+                use: [
+                    {
+                        loader:path.resolve('image-loader.js')
+                    },
                     {
                         loader: 'file-loader',
                         options: {

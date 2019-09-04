@@ -37,8 +37,8 @@
 			<router-link v-for="element in elements" :key="element.id" class="card"
 			             :to="{ name: 'itemModal',params:{id:element.id} }">
 				<div class="imgwrapper">
-					<img :src="element.image?require('./assets/thumbnails/'+element.image):require('./assets/thumbnails/placeholder.png')"
-				     width="300" height="150" v-if="isOverviewPage()">
+					<HashImage :img="element.image?require('./assets/thumbnails/'+element.image):require('./assets/thumbnails/placeholder.png')"
+					      :small="true" v-if="isOverviewPage()"></HashImage>
 				</div>
 				<div class="textwrapper">
 					<div>{{ translate(element.title) }}</div>
@@ -72,13 +72,14 @@
 <script>
 	import Intro from "./Intro.vue";
 	import Contact from "./Contact.vue";
+	import HashImage from "./HashImage.vue";
 
 	const yaml = require('./tags.yaml');
 	const data = yaml.data;
 	const tags = yaml.tags;
 
 	export default {
-		components: {Intro, Contact},
+		components: {Intro, Contact,HashImage},
 		name: 'overview',
 		data() {
 			return {
@@ -202,6 +203,9 @@
 			border-top-left-radius: $borderRadius;
 			border-top-right-radius: $borderRadius;
 			height: auto;
+			z-index: 5;
+			position: relative;
+			background: $consoleBackground
 		}
 
 		.imgwrapper {
