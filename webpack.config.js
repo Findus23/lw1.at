@@ -190,7 +190,7 @@ if (process.env.NODE_ENV === 'production') {
         }),
         new MiniCssExtractPlugin({
             filename: "[name]-[hash].css",
-            chunkFilename: "[id]-[hash].css"
+            chunkFilename: "[name]-[hash].css"
         }),
         new CompressionPlugin({
             test: /\.(js|css|html)/
