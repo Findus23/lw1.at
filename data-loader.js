@@ -65,8 +65,7 @@ module.exports = function(source) {
         // console.log(datastring);
         return "module.exports =" + datastring;
 
-    }
-    catch (err) {
+    } catch (err) {
         this.emitError(err);
         return false;
     }

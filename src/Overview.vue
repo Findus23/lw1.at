@@ -8,14 +8,6 @@
 		</div>
 		<intro :language="language"></intro>
 		<Contact></Contact>
-		<div id="sortwrapper">
-			<a @click="sort='date'" v-bind:class="sort==='date'?'active':''">
-				Date
-			</a>
-			<a @click="sort='title'" v-bind:class="sort==='title'?'active':''">
-				Title
-			</a>
-		</div>
 		<div id="filterwrapper">
 			<button class="button-outline" @click="filter=false;search=''"
 			        :class="filter ? '' : 'active'">
@@ -76,6 +68,10 @@
     import HashImage from "./HashImage.vue";
 
     const yaml = require('./tags.yaml');
+    yaml.data.forEach((part, index, array) => {
+        part.dateObj = new Date(part.date);
+        array[index] = part;
+    });
     const data = yaml.data;
     const tags = yaml.tags;
 
@@ -86,10 +82,8 @@
             return {
                 data: data,
                 tags: tags,
-                ascending: true,
                 filter: false,
                 search: "",
-                sort: "date",
                 noResults: false
             };
         },
@@ -106,11 +100,7 @@
                     this.noResults = false;
                 }
                 return filtered.sort((a, b) => {
-                    if (this.sort === "title") {
-                        return this.translate(a.title).localeCompare(this.translate(b.title));
-                    } else {
-                        return new Date(b.date) - new Date(a.date);
-                    }
+                    return b.dateObj - a.dateObj;
                 });
             },
             otherLanguage() {
@@ -122,9 +112,7 @@
                 if (!this.filter) {
                     return true;
                 }
-
                 return element.tags.includes(this.filter);
-
             },
             filterSearch: function(element) {
                 if (this.search === "") {
@@ -264,21 +252,6 @@
 			margin-right: 4px;
 		}
 
-	}
-
-	#sortwrapper {
-		//display: flex;
-		display: none;
-		flex-direction: column;
-		padding: 0 5rem 0 3rem;
-
-		a {
-			color: red;
-
-			&:active, &:hover, &:focus, &.active {
-				color: black;
-			}
-		}
 	}
 
 	#filterwrapper {
