@@ -63,7 +63,7 @@
 				      d="M8.9 8v321.5H32v7.7H0V.4h32V8zM98 110v16.2h.5a42.5 42.5 0 0 1 36.7-19.5c7.6 0 14.5 1.5 20.8 4.4 6.2 3 11 8.2 14.2 15.6a51 51 0 0 1 14.6-14c6-4 13.3-6 21.7-6 6.3 0 12.2.8 17.7 2.3a34.2 34.2 0 0 1 23 20.8 54.2 54.2 0 0 1 3.2 19.9V230h-33V162c0-4-.1-7.8-.5-11.4-.3-3.5-1.1-6.6-2.5-9.3a15.5 15.5 0 0 0-6.2-6.3 22.3 22.3 0 0 0-11-2.3c-4.6 0-8.4 1-11.3 2.7a19.4 19.4 0 0 0-6.7 7 28 28 0 0 0-3.3 9.7c-.5 3.7-.8 7.3-.8 11v67h-33v-67.4c0-3.6 0-7-.2-10.6-.2-3.5-.8-6.7-2-9.6-1.1-3-3-5.3-5.8-7.1a24.6 24.6 0 0 0-18.1-1.6c-2.6.7-5 2-7.4 4a23 23 0 0 0-6.2 8.3 34 34 0 0 0-2.6 14.3V230h-33V110zM307.6 329.1V7.7h-23.1V0h32v336.8h-32v-7.7z"></path>
 			</svg>
 		</a>
-		<a href="https://nextcloud.com/federation/#Lukas@cloud.lw1.at" target="_blank" ref="noopener">
+		<a href="https://nextcloud.com/sharing/#Lukas@cloud.lw1.at" target="_blank" ref="noopener">
 			<!-- License: GPL3.0  https://commons.wikimedia.org/wiki/File:Nextcloud_Logo.svg -->
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 113.89204 53" width="113.89202" height="52">
 				<title>share file via nextcloud</title>

@@ -35,6 +35,7 @@ unfinished:
     de: unfertig
 events:
   name: Events
+  hidden: true
 java:
   name: Java
   hidden: true

@@ -13,7 +13,7 @@
 			        :class="filter ? '' : 'active'">
 				{{language==="de"?"Alle Projekte":"All Projects"}}
 			</button>
-			<button v-for="(tag, key, index) in tags"
+			<button v-for="(tag, key, index) in filterTags"
 			        :class="['button-outline',(filter === key)?'active':'']"
 			        @click="filter=key">
 				{{translate(tag.name)}}
@@ -102,6 +102,14 @@
                 return filtered.sort((a, b) => {
                     return b.dateObj - a.dateObj;
                 });
+            },
+            filterTags() {
+                return  Object.keys(this.tags).reduce((filtered, key) => {
+                    if (!this.tags[key].hidden) {
+                        filtered[key] = this.tags[key];
+                    }
+                    return filtered;
+                }, {});
             },
             otherLanguage() {
                 return this.language === 'de' ? 'en' : 'de';
