@@ -37,8 +37,9 @@
 			<router-link v-for="element in elements" :key="element.id" class="card"
 			             :to="{ name: 'itemModal',params:{id:element.id} }">
 				<div class="imgwrapper">
-					<HashImage :img="element.image?require('./assets/thumbnails/'+element.image):require('./assets/thumbnails/placeholder.png')"
-					      :small="true" v-if="isOverviewPage()"></HashImage>
+					<HashImage
+							:img="element.image?require('./assets/thumbnails/'+element.image):require('./assets/thumbnails/placeholder.png')"
+							:small="true" v-if="isOverviewPage()"></HashImage>
 				</div>
 				<div class="textwrapper">
 					<div>{{ translate(element.title) }}</div>
@@ -70,92 +71,92 @@
 </template>
 
 <script>
-	import Intro from "./Intro.vue";
-	import Contact from "./Contact.vue";
-	import HashImage from "./HashImage.vue";
+    import Intro from "./Intro.vue";
+    import Contact from "./Contact.vue";
+    import HashImage from "./HashImage.vue";
 
-	const yaml = require('./tags.yaml');
-	const data = yaml.data;
-	const tags = yaml.tags;
+    const yaml = require('./tags.yaml');
+    const data = yaml.data;
+    const tags = yaml.tags;
 
-	export default {
-		components: {Intro, Contact,HashImage},
-		name: 'overview',
-		data() {
-			return {
-				data: data,
-				tags: tags,
-				ascending: true,
-				filter: false,
-				search: "",
-				sort: "date",
-				noResults: false
-			};
-		},
-		props: ["language"],
-		computed: {
-			elements() {
-				let filtered = this.data.filter(item => {
-					return this.filterContains(item) && this.filterSearch(item);
-				});
-				if (filtered.length === 0) {
-					filtered = this.data;
-					this.noResults = true;
-				} else {
-					this.noResults = false;
-				}
-				return filtered.sort((a, b) => {
-					if (this.sort === "title") {
-						return this.translate(a.title).localeCompare(this.translate(b.title));
-					} else {
-						return new Date(b.date) - new Date(a.date);
-					}
-				});
-			},
-			otherLanguage() {
-				return this.language === 'de' ? 'en' : 'de';
-			}
-		},
-		methods: {
-			filterContains: function (element) {
-				if (!this.filter) {
-					return true;
-				}
+    export default {
+        components: {Intro, Contact, HashImage},
+        name: 'overview',
+        data() {
+            return {
+                data: data,
+                tags: tags,
+                ascending: true,
+                filter: false,
+                search: "",
+                sort: "date",
+                noResults: false
+            };
+        },
+        props: ["language"],
+        computed: {
+            elements() {
+                let filtered = this.data.filter(item => {
+                    return this.filterContains(item) && this.filterSearch(item);
+                });
+                if (filtered.length === 0) {
+                    filtered = this.data;
+                    this.noResults = true;
+                } else {
+                    this.noResults = false;
+                }
+                return filtered.sort((a, b) => {
+                    if (this.sort === "title") {
+                        return this.translate(a.title).localeCompare(this.translate(b.title));
+                    } else {
+                        return new Date(b.date) - new Date(a.date);
+                    }
+                });
+            },
+            otherLanguage() {
+                return this.language === 'de' ? 'en' : 'de';
+            }
+        },
+        methods: {
+            filterContains: function(element) {
+                if (!this.filter) {
+                    return true;
+                }
 
-				return element.tags.includes(this.filter);
+                return element.tags.includes(this.filter);
 
-			},
-			filterSearch: function (element) {
-				if (this.search === "") {
-					return true;
-				}
-				return this.translate(element.title).toLowerCase().includes(this.search.toLowerCase()) ||
-					this.translate(element.description).toLowerCase().includes(this.search.toLowerCase());
-			},
-			translate: function (value) {
-				if (typeof value === "object") {
-					return value[this.language];
-				} else {
-					return value;
-				}
-			},
-			formatDate: function (datestring) {
-				let date = new Date(datestring);
-				if (isNaN(date.getFullYear())) {
-					return "";
-				}
-				return date.toLocaleString(this.language, {month: "long"}) + " " + date.getFullYear();
-			},
-			isOverviewPage: function () {
-				return this.$router.currentRoute.name === "Overview"
-			}
-		},
-		mounted() {
-			if (this.language !== "de" && this.language !== "en") {
-				this.$router.replace("/")
-			}
-		}
-	};
+            },
+            filterSearch: function(element) {
+                if (this.search === "") {
+                    return true;
+                }
+                return this.translate(element.title).toLowerCase().includes(this.search.toLowerCase()) ||
+                    this.translate(element.description).toLowerCase().includes(this.search.toLowerCase());
+            },
+            translate: function(value) {
+                if (typeof value === "object") {
+                    return value[this.language];
+                } else {
+                    return value;
+                }
+            },
+            formatDate: function(datestring) {
+                let date = new Date(datestring);
+                if (isNaN(date.getFullYear())) {
+                    return "";
+                }
+                return date.toLocaleString(this.language, {month: "long"}) + " " + date.getFullYear();
+            },
+            isOverviewPage: function() {
+                return this.$router.currentRoute.name === "Overview";
+            }
+        },
+        mounted() {
+            if (this.language !== "de" && this.language !== "en") {
+                this.$router.replace("/");
+            }
+        }
+    };
 </script>
 
 <style lang="scss">
