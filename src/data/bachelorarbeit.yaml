@@ -19,9 +19,6 @@ subtitle:
   Interpolated water retention after two-body collisions using Neural Networks and linear interpolation methods
 description:
   en: |
-
-    ### Non-technical summary
-
     One of the most fundamental questions in Astronomy is: How did water get on the Earth? To get a bit closer to the answer large simulations of early solar systems have been conducted. In these water is transferred in the solar system via collisions of protoplanets.
     But most of these simulations assume that whenever two planets with water collide they instantly merge into a perfect new planet with the total water and rock mass (*perfect merging assumption*).
 
@@ -35,8 +32,6 @@ description:
 
 
   de: |
-    ### Nicht-technische Zusammenfassung
-
     Eine der fundamentalsten Fragen in der Astronomie lautet: Wie kam das Wasser auf die Erde? Um der Antwort etwas näher zu kommen, wurden große Simulationen des frühen Sonnensystems durchgeführt. In diesen bewegst sich Wasser durch Kollisionen von Protoplaneten durch das Sonnensystem.
     Aber die meisten Simulationen nehmen an, dass immer wenn zwei Planeten mit Wasser kollidieren, diese sofort zu einem neuen Planeten mit dem gesamten Wasser und Gestein werden (*perfect merging assumption*).
 
