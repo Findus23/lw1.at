@@ -18,7 +18,7 @@
 						<h1>{{ translate(element.title) }}
 							<div v-if="element.subtitle">{{translate(element.subtitle)}}</div>
 						</h1>
-						<div class="modal-linkbar">
+						<div :class="{'modal-linkbar':true, try:element.try}">
 							<a v-bind:href="element.url" v-if="element.url" target="_blank">
 								<div class="try-it-out" v-if="element.try">
 									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="30"
@@ -171,6 +171,7 @@
 		cursor: pointer;
 		transition: color 0.2s;
 		color: $color-primary;
+		z-index: 2000;
 
 		&:hover {
 			color: darkgrey;
@@ -279,7 +280,9 @@
 	.modal-linkbar {
 		display: flex;
 		justify-content: space-around;
-
+		&.try {
+			margin-top: 40px;
+		}
 		a {
 			position: relative;
 			padding: 16px;

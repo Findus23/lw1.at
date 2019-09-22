@@ -1,0 +1,38 @@
+id: umweltdatenmessung
+title:
+  de: Umweltdatenmessung mit dem Raspberry Pi
+  en: Measuring Environmental Data with the Raspberry Pi
+tags:
+  - bash
+  - python
+  - major
+date: 2014-06-18
+image: umweltdatenmessung.svg
+url: https://vwa.lw1.at/
+try: true
+github: Findus23/Umweltdatenmessung
+description:
+  de: |
+    In 2014 habe ich in einem mehrmonatigen Projekt versucht möglichst viele Sensoren (Temperatur, Luftfeuchtigkeit, Luftdruck, Luftqualität) an einem Raspberry Pi, der im Klassenzimmer hängt, anzuschließen. Die Daten werden abgespeichert und live auf [dem Display](https://vwa.lw1.at/images/display.jpg) und einer Webseite angezeigt. Außerdem können historische Daten angezeigt werden.
+
+    Eine Kopie dieser Seite mit mehr Details ist immer noch unter [vwa.lw1.at](https://vwa.lw1.at/) zu finden.
+
+    Im Juni 2014 präsentierte ich das Projekt vor einer Jury im Finale des [computer creative wettbewerbs`14 der OCG](http://blog.ocg.at/2014/06/ccw14-final/) und gewann den ersten Preis in der Sekundarstufe II.
+
+    Am 6. Oktober 2014 hatte ich die Möglichkeit mein Projekt der Arbeitsgruppe Bildung, Wissenschaft und Forschung am 3. IKT-Konvent präsentieren.
+
+    In den darauffolgenden Monaten schrieb ich [meine Vorwissenschaftliche Arbeit](https://github.com/Findus23/VWA/raw/master/main.pdf), die 2015 zum ersten Mal ein Teil der Österreichischen Zentralmatura war, über das Projekt.
+
+  en: |
+    In 2014 in a project lasting many months I tried to connect as many sensors (temperature, humidity, air pressure, air quality) as possible to a Raspberry Pi hanging in the class room. The data is saved and displayed live on [a display]((https://vwa.lw1.at/images/display.jpg)) and a website. The website also shows historical data.
+
+    A copy of this site with more details on the project can still be foun on [vwa.lw1.at](https://vwa.lw1.at/).
+
+    In July 2014 I presented the project in front of a jury in the final of the [*computer creative contest*](http://blog.ocg.at/2014/06/ccw14-final/) by the Austrian Computer Society and won the first place in my age group.
+
+    On October 6. 2014 I had the chance to give a presentation in front of a workgroup at the *IKT-Konvent*, the annual meeting of all Austrian ISPs.
+
+    In the following months I wrote [my *Vorwissenschaftliche Arbeit*](https://github.com/Findus23/VWA/raw/master/main.pdf) ("pre-scientific thesis"), which was 2015 for the first time a part of the Austrian high school finals.
+
+
+

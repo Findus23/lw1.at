@@ -42,3 +42,6 @@ java:
 app:
   name: App
   hidden: true
+design:
+  name: Design
+  hidden: true
