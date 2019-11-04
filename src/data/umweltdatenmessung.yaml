@@ -24,7 +24,7 @@ description:
     In den darauffolgenden Monaten schrieb ich [meine Vorwissenschaftliche Arbeit](https://github.com/Findus23/VWA/raw/master/main.pdf), die 2015 zum ersten Mal ein Teil der Österreichischen Zentralmatura war, über das Projekt.
 
   en: |
-    In 2014 in a project lasting many months I tried to connect as many sensors (temperature, humidity, air pressure, air quality) as possible to a Raspberry Pi hanging in the class room. The data is saved and displayed live on [a display]((https://vwa.lw1.at/images/display.jpg)) and a website. The website also shows historical data.
+    In 2014 in a project lasting many months I tried to connect as many sensors (temperature, humidity, air pressure, air quality) as possible to a Raspberry Pi hanging in the class room. The data is saved and displayed live on [a display](https://vwa.lw1.at/images/display.jpg) and a website. The website also shows historical data.
 
     A copy of this site with more details on the project can still be foun on [vwa.lw1.at](https://vwa.lw1.at/).
 
