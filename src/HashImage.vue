@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<canvas ref="myCanvas"></canvas>
-		<img :width="width" :height="height" :src="img.path">
+		<img :width="width" :height="height" :src="absolutePath">
 	</div>
 </template>
 
@@ -29,6 +29,9 @@
             },
             width() {
                 return this.small ? 300 : 1200;
+            },
+            absolutePath() {
+                return "/" + this.img.path;
             }
         }
     };

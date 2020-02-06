@@ -6,11 +6,11 @@ module.exports = function(source) {
     const loaderCallback = this.async();
 
     const options = loaderUtils.getOptions(this) || {};
-    if (this.request.includes("skip=true")) {
-        loaderCallback(null, source);
-        return true;
-    }
-    const path = source.split(" = ")[1].slice(0, -1);
+    // if (this.requests.includes("skip=true")) {
+    //     loaderCallback(null, source);
+    //     return true;
+    // }
+    const path = source.split(" + ")[1].slice(0, -1);
     // console.warn("\n\n");
     // console.warn(path);
 

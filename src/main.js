@@ -9,7 +9,7 @@ const style = require('./global_styles.scss');
 const Raven = require("raven-js");
 const RavenVue = require("raven-js/plugins/vue");
 Raven
-    .config('https://ecdf31be6a0748488b07147a5e864a47@sentry.lw1.at/10')
+    .config('https://c10d5f4a5b714efdbcaceaaedf22a75d@sentry.lw1.at/11')
     .addPlugin(RavenVue)
     .install();
 
