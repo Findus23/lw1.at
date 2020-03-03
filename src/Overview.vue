@@ -50,7 +50,7 @@
 		<router-link class="toImprint" :to="{ name: (language==='de' ? 'Impressum':'Imprint')}">
 			{{language==="de" ? "Impressum":"Imprint"}}
 		</router-link>
-		<a :href="require('./assets/gpg.asc')" class="gpg">GPG: 63DB 263B ACE3 68B5 C5F7 9CE4 94AF BE7C 2656 A5B5</a>
+		<a :href="require('./assets/gpg.asc').default" class="gpg">GPG: 63DB 263B ACE3 68B5 C5F7 9CE4 94AF BE7C 2656 A5B5</a>
 		<router-link :to="{ name: 'itemModal',params:{id:'classiccounter'} }"><img
 				src="https://matomo.lw1.at/index.php?module=ClassicCounter&action=svg&idSite=14"
 				alt="Matomo visit counter"
