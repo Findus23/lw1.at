@@ -1,5 +1,5 @@
 const yaml = require('js-yaml');
-const hljs = require('highlightjs');
+const hljs = require('highlight.js');
 const md = require('markdown-it')({
     highlight: function(str, lang) {
         if (lang && hljs.getLanguage(lang)) {
