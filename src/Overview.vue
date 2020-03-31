@@ -7,7 +7,7 @@
 			</router-link>
 		</div>
 		<intro :language="language"></intro>
-		<Contact></Contact>
+		<Contact :language="language"></Contact>
 		<div id="filterwrapper">
 			<button class="button-outline" @click="filter=false;search=''"
 			        :class="filter ? '' : 'active'">

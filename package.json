@@ -10,6 +10,7 @@
     "json": "cross-env NODE_ENV=production webpack --mode production --profile --json > stats.json"
   },
   "dependencies": {
+    "balloon-css": "^1.0.4",
     "highlight.js": "^9.10.0",
     "markdown-it": "^10.0.0",
     "mathjax-node-page": "^3.0.1",
