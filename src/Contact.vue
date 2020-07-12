@@ -1,6 +1,6 @@
 <template comments>
 	<nav class="contact">
-		<a rel="me" href="https://github.com/Findus23" target="_blank" :aria-label="githubText"
+		<a rel="me noopener" href="https://github.com/Findus23" target="_blank" :aria-label="githubText"
 		   data-balloon-pos="up">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
 				<!-- Source: Simplified from https://github.com/logos -->
@@ -42,7 +42,7 @@
 		<!--				</g>-->
 		<!--			</svg>-->
 		<!--		</a>-->
-		<a rel="me" href="https://mastodon.lw1.at/@lukas" target="_blank" :aria-label="mastodonText"
+		<a rel="me noopener" href="https://mastodon.lw1.at/@lukas" target="_blank" :aria-label="mastodonText"
 		   data-balloon-pos="up">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216.4144 232.00976">
 				<title>{{mastodonText}}</title>
@@ -52,7 +52,7 @@
 				      d="M177.50984 80.077v60.94125h-24.14375v-59.15c0-12.46875-5.24625-18.7975-15.74-18.7975-11.6025 0-17.4175 7.5075-17.4175 22.3525v32.37625H96.20734V85.42325c0-14.845-5.81625-22.3525-17.41875-22.3525-10.49375 0-15.74 6.32875-15.74 18.7975v59.15H38.90484V80.077c0-12.455 3.17125-22.3525 9.54125-29.675 6.56875-7.3225 15.17125-11.07625 25.85-11.07625 12.355 0 21.71125 4.74875 27.8975 14.2475l6.01375 10.08125 6.015-10.08125c6.185-9.49875 15.54125-14.2475 27.8975-14.2475 10.6775 0 19.28 3.75375 25.85 11.07625 6.36875 7.3225 9.54 17.22 9.54 29.675"></path>
 			</svg>
 		</a>
-		<a rel="me" href="https://twitter.com/lw1_at" target="_blank" :aria-label="twitterText"
+		<a rel="me noopener" href="https://twitter.com/lw1_at" target="_blank" :aria-label="twitterText"
 		   data-balloon-pos="up">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1625.36">
 				<title>{{twitterText}}</title>
@@ -60,7 +60,7 @@
 				      style="fill:currentColor"></path>
 			</svg>
 		</a>
-		<a href="https://matrix.to/#/@lukas:lw1.at" target="_blank" :aria-label="matrixText"
+		<a href="https://matrix.to/#/@lukas:lw1.at" target="_blank" rel="me noopener" :aria-label="matrixText"
 		   data-balloon-pos="up">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 316.5 337.2">
 				<title>{{matrixText}}</title>
@@ -68,7 +68,7 @@
 				      d="M8.9 8v321.5H32v7.7H0V.4h32V8zM98 110v16.2h.5a42.5 42.5 0 0 1 36.7-19.5c7.6 0 14.5 1.5 20.8 4.4 6.2 3 11 8.2 14.2 15.6a51 51 0 0 1 14.6-14c6-4 13.3-6 21.7-6 6.3 0 12.2.8 17.7 2.3a34.2 34.2 0 0 1 23 20.8 54.2 54.2 0 0 1 3.2 19.9V230h-33V162c0-4-.1-7.8-.5-11.4-.3-3.5-1.1-6.6-2.5-9.3a15.5 15.5 0 0 0-6.2-6.3 22.3 22.3 0 0 0-11-2.3c-4.6 0-8.4 1-11.3 2.7a19.4 19.4 0 0 0-6.7 7 28 28 0 0 0-3.3 9.7c-.5 3.7-.8 7.3-.8 11v67h-33v-67.4c0-3.6 0-7-.2-10.6-.2-3.5-.8-6.7-2-9.6-1.1-3-3-5.3-5.8-7.1a24.6 24.6 0 0 0-18.1-1.6c-2.6.7-5 2-7.4 4a23 23 0 0 0-6.2 8.3 34 34 0 0 0-2.6 14.3V230h-33V110zM307.6 329.1V7.7h-23.1V0h32v336.8h-32v-7.7z"></path>
 			</svg>
 		</a>
-		<a href="https://nextcloud.com/sharing/#Lukas@cloud.lw1.at" target="_blank" ref="noopener"
+		<a href="https://nextcloud.com/sharing/#Lukas@cloud.lw1.at" target="_blank" rel="me noopener"
 		   :aria-label="nextcloudText" data-balloon-pos="up">
 			<!-- License: GPL3.0  https://commons.wikimedia.org/wiki/File:Nextcloud_Logo.svg -->
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 113.89204 53" width="113.89202" height="52">
@@ -77,7 +77,7 @@
 				      d="M57.0328 0C45.22755 0 35.22162 8.00318 32.12045 18.84659c-2.69524-5.75151-8.53592-9.78093-15.26337-9.78093C7.60525 9.06566 0 16.67091 0 25.92274c0 9.25182 7.60525 16.86054 16.85708 16.86054 6.72745 0 12.56813-4.03188 15.26337-9.78439 3.10117 10.84422 13.1071 18.85006 24.91235 18.85006 11.71795 0 21.67286-7.8851 24.85334-18.60701 2.74505 5.62192 8.51344 9.54134 15.14533 9.54134 9.25183 0 16.86055-7.60872 16.86055-16.86054 0-9.25183-7.60872-16.85708-16.86055-16.85708-6.63189 0-12.40028 3.91696-15.14533 9.53788C78.70566 7.88246 68.75075 0 57.0328 0zm0 9.8955c8.91163 0 16.03073 7.11564 16.03073 16.02724s-7.1191 16.03071-16.03073 16.03071c-8.91158 0-16.02722-7.11911-16.02722-16.03071S48.12122 9.8955 57.0328 9.8955zm-40.17572 9.06567c3.90437 0 6.96504 3.05718 6.96504 6.96157 0 3.90438-3.06067 6.96504-6.96504 6.96504-3.90439 0-6.96158-3.06066-6.96158-6.96504 0-3.90439 3.05719-6.96157 6.96158-6.96157zm80.17439 0c3.9044 0 6.96504 3.05718 6.96504 6.96157 0 3.90438-3.06066 6.96504-6.96504 6.96504-3.90437 0-6.96156-3.06066-6.96156-6.96504 0-3.90439 3.05721-6.96157 6.96156-6.96157z"></path>
 			</svg>
 		</a>
-		<a rel="me" href="https://video.lw1.at/accounts/lukas/videos" target="_blank"
+		<a rel="me noopener" href="https://video.lw1.at/accounts/lukas/videos" target="_blank"
 		   :aria-label="peertubeText" data-balloon-pos="up">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="2799 -911 16 22" width="16" height="22">
 				<title>{{peertubeText}}</title>
@@ -85,7 +85,7 @@
 				<path d="M2807-894.7v-10.6l-8 5.3z" fill="transparent"></path>
 			</svg>
 		</a>
-		<a rel="me" href="https://git.lw1.at/lw1" target="_blank" :aria-label="gitlabText" data-balloon-pos="up">
+		<a rel="me noopener" href="https://git.lw1.at/lw1" target="_blank" :aria-label="gitlabText" data-balloon-pos="up">
 			<!-- License - http://fontawesome.io/license (SIL OFL 1.1) -->
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54">
 				<title>{{gitlabText}}</title>
@@ -94,7 +94,7 @@
 				      d="M26.6 49.3L2.4 31.7c-.3-.2-.6-.6-.7-1-.1-.4-.1-.8 0-1.2L4.5 21l22.1 28.3zM11.9 3.9L17.4 21H4.5L10 3.9c.1-.4.5-.6.9-.6.6-.1.9.2 1 .6zM17.4 21h18.4l-9.2 28.3L17.4 21zm34.2 8.6c.1.4.1.8 0 1.2-.1.4-.4.7-.7 1L26.6 49.3 48.7 21l2.9 8.6zM48.7 21H35.9l5.5-17.1c.1-.4.5-.6.9-.6.5 0 .8.2.9.6L48.7 21z"></path>
 			</svg>
 		</a>
-		<a href="https://guides.lw1.at/" target="_blank" :aria-label="guidesText" data-balloon-pos="up">
+		<a me noopener href="https://guides.lw1.at/" target="_blank" :aria-label="guidesText" data-balloon-pos="up">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230.39711 218.6199">
 				<!-- From https://www.bookstackapp.com/ -->
 				<title>{{guidesText}}</title>
@@ -112,7 +112,7 @@
 				</g>
 			</svg>
 		</a>
-		<a href="mailto:hi@lw1.at" target="_blank" :aria-label="emailText" data-balloon-pos="up">
+		<a rel="me noopener" href="mailto:hi@lw1.at" target="_blank" :aria-label="emailText" data-balloon-pos="up">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 114 114">
 				<title>{{emailText}}</title>
 				<path style="stroke: currentColor" stroke-width="7" fill="none"
