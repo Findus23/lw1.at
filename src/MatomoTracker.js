@@ -4,10 +4,11 @@ export default class MatomoTracker {
             let _paq = _paq || [];
             _paq.push(['setRequestMethod', 'POST']);
             _paq.push(['enableHeartBeatTimer']);
-            _paq.push(['HeatmapSessionRecording::disableAutoDetectNewPageView']);
+
             if (process.env.NODE_ENV === "production") {
                 _paq.push(["setDoNotTrack", true]);
             }
+            _paq.push(['disableCookies']);
             (function() {
                 let u = (process.env.NODE_ENV === "production") ? "https://matomo.lw1.at/" : "//localhost/piwik/";
                 _paq.push(['setTrackerUrl', u + ((process.env.NODE_ENV === "production") ? 'statistics.php' : 'piwik.php')]);
