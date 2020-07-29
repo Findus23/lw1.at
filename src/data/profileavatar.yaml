@@ -1,0 +1,25 @@
+id: profileavatar
+title: Matomo Profile Avatar
+tags:
+  - php
+  - matomo
+url: https://plugins.matomo.org/ProfileAvatar
+try: true
+date: 2020-05-20
+image: profileavatar.png
+github: Findus23/plugin-ProfileAvatar
+single_language: en
+license:
+  id: GPL3
+  url: https://github.com/Findus23/plugin-ProfileAvatar/blob/master/LICENSE
+
+description: |
+  > Are you tired of always seeing the same placeholder profile picture in the Vistitor Profile?
+
+  This [Matomo](https://matomo.org/) plugin creates randomly generated user avatars based on the visitorID inspired by classical identicons:
+
+  - Cat Avatar (based on [cat-avatar-generator](https://framagit.org/Deevad/cat-avatar-generator/) by [David Revoy](https://www.davidrevoy.com/))
+  - Bird Avatar (the same with birds)
+  - MonsterID (based on [MonsterID](https://www.splitbrain.org/projects/monsterid) by Andreas Gohr)
+  - Identicon (based on [indenticon.js](https://github.com/stewartlord/identicon.js) by Stewart Lord)
+  - Blockies (based on [blockies](https://github.com/download13/blockies) by Erin Dachtler)
