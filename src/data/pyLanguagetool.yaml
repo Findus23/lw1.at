@@ -32,6 +32,8 @@ description :
 
     $ pylanguagetool -c # get text from system clipboard
     ```
+
+    More information can be found on the website of the project: [pylanguagetool.lw1.at](https://pylanguagetool.lw1.at/)
   de: |
     [LanguageTool](https://languagetool.org/) ist ein Open Source Textprüfung für Grammatik, Stil und Rechtschreibung, welche als LibreOffice-Erweiterung oder als Server verwendet werden kann.
 
@@ -52,3 +54,5 @@ description :
 
     $ pylanguagetool -c # get text from system clipboard
     ```
+
+    Mehr Informationen findet man auf der Webseite zu dem Projekt: [pylanguagetool.lw1.at](https://pylanguagetool.lw1.at/)
