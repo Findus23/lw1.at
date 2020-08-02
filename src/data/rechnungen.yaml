@@ -7,7 +7,7 @@ tags:
 - latex
 image: rechnungen.png
 image_seperator: true
-github: Findus23/rechnungen
+github: Findus23/invoices
 license:
   id: GPL3
   url: https://github.com/Findus23/rechnungen/blob/master/LICENSE
