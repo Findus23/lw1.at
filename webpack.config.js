@@ -105,11 +105,18 @@ module.exports = {
                     process.env.NODE_ENV !== 'production'
                         ? 'vue-style-loader'
                         : MiniCssExtractPlugin.loader,
-                    'css-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            esModule:false
+                        }
+                    },
                     {
                         loader: "postcss-loader",
                         options: {
-                            plugins: [require('autoprefixer')()]
+                            postcssOptions: {
+                                plugins: [require('autoprefixer')()]
+                            }
                         }
                     },
                     'sass-loader'
@@ -123,12 +130,17 @@ module.exports = {
                         : MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
-                        options: {importLoaders: 1}
+                        options: {
+                            importLoaders: 1,
+                            esModule:false
+                        }
                     },
                     {
                         loader: "postcss-loader",
                         options: {
-                            plugins: [require('autoprefixer')()]
+                            postcssOptions: {
+                                plugins: [require('autoprefixer')()]
+                            }
                         }
                     },
                 ]
@@ -143,14 +155,20 @@ module.exports = {
     performance: {
         hints: false
     },
+    optimization: {
+        namedModules: true
+    },
     devtool: 'source-map',
     plugins: [
         new HtmlWebpackPlugin({
             title: 'My App',
             template: 'my-index.ejs',
-            devServer: process.env.NODE_ENV === 'production' ? '' : 'http://localhost:8081',
+            // devServer: process.env.NODE_ENV === 'production' ? '' : 'http://localhost:8081',
         }),
-        new webpack.NamedModulesPlugin(),
+        new MiniCssExtractPlugin({
+            filename: "[name]-[hash].css",
+            chunkFilename: "[name]-[hash].css"
+        }),
         new SriPlugin({
             hashFuncNames: ['sha256'],
             enabled: process.env.NODE_ENV === 'production',
@@ -187,10 +205,6 @@ if (process.env.NODE_ENV === 'production') {
                 NODE_ENV: '"production"'
             },
             "COMMITHASH": commitHash
-        }),
-        new MiniCssExtractPlugin({
-            filename: "[name]-[hash].css",
-            chunkFilename: "[name]-[hash].css"
         }),
         new CompressionPlugin({
             test: /\.(js|css|html)/
