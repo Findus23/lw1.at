@@ -6,12 +6,12 @@ import MatomoTracker from './MatomoTracker';
 const hljs = require('./highlightjs.scss');
 const style = require('./global_styles.scss');
 
-const Raven = require("raven-js");
-const RavenVue = require("raven-js/plugins/vue");
-Raven
-    .config('https://c10d5f4a5b714efdbcaceaaedf22a75d@sentry.lw1.at/11')
-    .addPlugin(RavenVue)
-    .install();
+// const Raven = require("raven-js");
+// const RavenVue = require("raven-js/plugins/vue");
+// Raven
+//     .config('https://c10d5f4a5b714efdbcaceaaedf22a75d@sentry.lw1.at/11')
+//     .addPlugin(RavenVue)
+//     .install();
 
 Vue.use(VueHead);
 
