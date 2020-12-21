@@ -16,110 +16,114 @@
 	</header>
 </template>
 
-<script>
-	export default {
-		name: "intro",
-		props: ["language"],
-	};
+<script lang="ts">
+import Vue from "vue";
+
+export default Vue.extend({
+    name: "intro",
+    props: ["language"],
+});
 </script>
 
 <style lang="scss">
-	@import "variables";
-	$liberapay: #f6c915;
-	$bitcoin: #f7931a;
-	$flattr: #595959;
+@import "variables";
 
-	.donate-buttons {
-		display: flex;
-		align-items: flex-start;
-		justify-content: center;
-		margin-bottom: 16px;
+$liberapay: #f6c915;
+$bitcoin: #f7931a;
+$flattr: #595959;
 
-		a {
-			margin: 0 16px;
-			height: 32px;
-			display: inline-block;
+.donate-buttons {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 16px;
 
-			img, svg {
-				border-radius: 5px;
-				height: 100%;
-				transition: .2s;
-			}
+  a {
+	margin: 0 16px;
+	height: 32px;
+	display: inline-block;
 
-			&:hover img {
-				filter: brightness(1.3);
-			}
-
-			&:not(.image) {
-				padding: 4px 6px;
-				text-decoration: none;
-				transition: .2s;
-				border-radius: 4px;
-				display: inline-block;
-				color: white;
-				font-size: 12px;
-				font-weight: 700;
-			}
-
-			svg, span {
-				vertical-align: middle;
-			}
-		}
-
-		.liberapay-btn {
-			background-color: $liberapay;
-
-			&:hover {
-				background-color: lighten($liberapay, 10%);
-			}
-		}
-
-		.bitcoin {
-			background-color: $bitcoin;
-
-			&:hover {
-				background-color: lighten($bitcoin, 10%);
-			}
-		}
-
-		.flattr {
-			background-color: $flattr;
-
-			&:hover {
-				background-color: lighten($flattr, 10%);
-			}
-
-			svg {
-				fill: white;
-				height: 15px;
-				margin-top: 2px;
-			}
-		}
+	img, svg {
+	  border-radius: 5px;
+	  height: 100%;
+	  transition: .2s;
 	}
 
-	.introduction {
-		text-align: left;
-		margin-bottom: 10px;
-		padding: 0 10px;
+	&:hover img {
+	  filter: brightness(1.3);
 	}
 
-	h1 {
-		font-family: $consoleFont;
-		color: black !important;
-		div {
-			font-size: 24px;
-			line-height: 28px;
-		}
+	&:not(.image) {
+	  padding: 4px 6px;
+	  text-decoration: none;
+	  transition: .2s;
+	  border-radius: 4px;
+	  display: inline-block;
+	  color: white;
+	  font-size: 12px;
+	  font-weight: 700;
 	}
 
-	@media screen and (max-width: 480px) {
-		h1 {
-			text-align: left;
-			padding: 0 10px;
-
-		}
-		.languageSelector {
-			right: 10px;
-		}
+	svg, span {
+	  vertical-align: middle;
 	}
+  }
+
+  .liberapay-btn {
+	background-color: $liberapay;
+
+	&:hover {
+	  background-color: lighten($liberapay, 10%);
+	}
+  }
+
+  .bitcoin {
+	background-color: $bitcoin;
+
+	&:hover {
+	  background-color: lighten($bitcoin, 10%);
+	}
+  }
+
+  .flattr {
+	background-color: $flattr;
+
+	&:hover {
+	  background-color: lighten($flattr, 10%);
+	}
+
+	svg {
+	  fill: white;
+	  height: 15px;
+	  margin-top: 2px;
+	}
+  }
+}
+
+.introduction {
+  text-align: left;
+  margin-bottom: 10px;
+  padding: 0 10px;
+}
+
+h1 {
+  font-family: $consoleFont;
+  color: black !important;
+
+  div {
+	font-size: 24px;
+	line-height: 28px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+	text-align: left;
+	padding: 0 10px;
+
+  }
+  .languageSelector {
+	right: 10px;
+  }
+}
 </style>

@@ -16,7 +16,7 @@
 					</div>
 					<div class="modal-body" ref="test">
 						<h1>{{ translate(element.title) }}
-							<div v-if="element.subtitle">{{translate(element.subtitle)}}</div>
+							<div v-if="element.subtitle">{{ translate(element.subtitle) }}</div>
 						</h1>
 						<div :class="{'modal-linkbar':true, try:element.try}">
 							<a v-bind:href="element.url" v-if="element.url" target="_blank">
@@ -26,7 +26,7 @@
 										<path d="M54.22083 161.88751C75.49125 69.74037 157.61638.879 255.99447-.0344V71.2784c-58.68038.82679-108.44983 38.32148-127.51646 90.6032H54.22378z"></path>
 										<path d="M183.32848 154.61394L93.60991 255.96317-.0104 154.45508"></path>
 									</svg>
-									<span>{{language==="de" ? "Ausprobieren": "Try it out!"}}</span>
+									<span>{{ language === "de" ? "Ausprobieren" : "Try it out!" }}</span>
 								</div>
 								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420">
 									<title>Website</title>
@@ -98,255 +98,268 @@
 	</transition>
 </template>
 
-<script>
-    import LicenseIcons from "./LicenseIcons.vue";
-    import HashImage from "./HashImage.vue";
+<script lang="ts">
+import LicenseIcons from "./LicenseIcons.vue";
+import HashImage from "./HashImage.vue";
+import Vue, {PropType} from "vue";
+import {Article, Language, translatableString} from "./types";
 
-    export default {
-        data() {
-            return {
-                title: null,
-                element: null,
-                sentReadmore: false
-            };
-        },
-        props: ['language', 'data'],
-        mounted() {
-            document.body.style.overflow = "hidden";
-            this.id = this.$route.params.id;
-            this.element = this.data.find(elem => elem.id === this.id);
-            if (!this.element) {
-                this.$router.replace("/");
-                return false;
-            }
-            document.title = this.translate(this.element.title) + " - lw1.at";
-            this.$nextTick(function() {
-                _paq.push(['setDocumentTitle', document.title]);
-                _paq.push(['trackPageView']);
-                _paq.push(['enableLinkTracking']);
-            });
-            this.$refs.container.focus();
-        },
-        methods: {
-            translate: function(value) {
-                if (typeof value === "object") {
-                    return value[this.language];
-                } else {
-                    return value;
-                }
-            },
-            readmore: function() {
-                this.sentReadmore = true;
-                if (typeof _paq != "undefined") {
-                    _paq.push(['trackEvent', 'Feedback', 'readmore', this.id]);
-                } else {
-                    console.info("Feedback not sent as Matomo isn't loaded");
-                }
-            }
-        },
-        head: {
-            title: function() {
-                if (this.element) {
-                    return {inner: this.translate(this.element.title)};
-                }
-            }
-        },
-        components: {
-            HashImage,
-            LicenseIcons
+export default Vue.extend({
+    data() {
+        return {
+            title: "",
+            element: undefined as Article | undefined,
+            sentReadmore: false as boolean,
+            id: ""
+        };
+    },
+    props: {
+        language: String as PropType<Language>,
+        data: Array as PropType<Article[]>
+    },
+
+    mounted() {
+        document.body.style.overflow = "hidden";
+        this.id = this.$route.params.id;
+
+        this.element = this.data.find(elem => elem.id === this.id);
+        if (!this.element) {
+            this.$router.replace("/");
+            return false;
         }
-    };
+        document.title = this.translate(this.element.title) + " - lw1.at";
+
+        this.$nextTick(function () {
+            const _paq = window._paq;
+            _paq.push(['setDocumentTitle', document.title]);
+            _paq.push(['trackPageView']);
+            _paq.push(['enableLinkTracking']);
+        });
+		const container=this.$refs.container as HTMLDivElement;
+		container.focus();
+    },
+    methods: {
+        translate: function (value: translatableString): string {
+            if (typeof value === "object") {
+                return value[this.language];
+            } else {
+                return value;
+            }
+        },
+        readmore: function (): void {
+            this.sentReadmore = true;
+            if (typeof window._paq != "undefined") {
+                window._paq.push(['trackEvent', 'Feedback', 'readmore', this.id]);
+            } else {
+                console.info("Feedback not sent as Matomo isn't loaded");
+            }
+        }
+    },
+    // head: {
+    //     title: function (): string {
+    //         if (this.element) {
+    //             return {inner: this.translate(this.element.title)};
+    //         }
+    //     }
+    // },
+    components: {
+        HashImage,
+        LicenseIcons
+    }
+});
 </script>
 
 <style lang="scss">
-	@import "variables";
+@import "variables";
 
-	.closeButton {
-		position: absolute;
-		font-size: 22px;
-		line-height: 22px;
-		top: 10px;
-		right: 10px;
-		padding: 10px;
-		cursor: pointer;
-		transition: color 0.2s;
+.closeButton {
+  position: absolute;
+  font-size: 22px;
+  line-height: 22px;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition: color 0.2s;
+  color: $color-primary;
+  z-index: 2000;
+
+  &:hover {
+	color: darkgrey;
+  }
+}
+
+.modal-mask {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 20px;
+  @media (max-width: 40.0rem) {
+	padding: 0 10px;
+  }
+  z-index: 1000;
+  transition: opacity .3s ease;
+}
+
+.modal-container {
+  position: relative;
+  max-width: 1000px;
+  /*
+  @media (max-width: 40.0rem) {
+    width: 100%;
+    padding: 20px;
+  }
+*/
+  margin: 50px auto 0;
+  background-color: #fff;
+  border-radius: $borderRadius;
+
+  .imagewrapper {
+	padding-bottom: 50%;
+
+	&.seperator {
+	  border-bottom: solid 1px #ddd;
+	}
+
+	img {
+	  display: block;
+	  width: 100%;
+	  border-top-left-radius: $borderRadius;
+	  border-top-right-radius: $borderRadius;
+	  height: auto;
+	  position: absolute;
+	  left: 0;
+	  top: 0;
+	  z-index: 1100;
+	  background: white;
+	}
+  }
+
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+  &:focus {
+	outline: none;
+  }
+}
+
+.modal-header h3 {
+  margin-top: 0;
+  color: #42b983;
+}
+
+h1 {
+  margin: 0 5px;
+}
+
+.modal-body {
+  padding: 20px 30px;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.modal-default-button {
+  float: right;
+}
+
+/*
+* The following styles are auto-applied to elements with
+* transition="modal" when their visibility is toggled
+* by Vue.js.
+*
+* You can easily play with the modal transition by editing
+* these styles.
+*/
+
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+/*.modal-enter .modal-container,*/
+/*.modal-leave-active .modal-container {*/
+/*transform: scale(0.8);*/
+/*}*/
+
+.modal-linkbar {
+  display: flex;
+  justify-content: space-around;
+
+  &.try {
+	margin-top: 40px;
+  }
+
+  a {
+	position: relative;
+	padding: 16px;
+
+	> svg {
+	  width: 36px;
+	  height: 36px;
+	  display: block;
+	  color: black;
+	}
+
+	svg, span {
+	  transition: .2s;
+	}
+
+	display: block;
+
+	&:hover {
+	  svg {
 		color: $color-primary;
-		z-index: 2000;
+	  }
 
-		&:hover {
-			color: darkgrey;
-		}
+	  .try-it-out {
+		color: $color-primary;
+	  }
 	}
 
-	.modal-mask {
-		background-color: rgba(0, 0, 0, 0.5);
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		overflow: auto;
-		-webkit-overflow-scrolling: touch;
-		padding: 0 20px;
-		@media (max-width: 40.0rem) {
-			padding: 0 10px;
-		}
-		z-index: 1000;
-		transition: opacity .3s ease;
-	}
+	.try-it-out {
+	  position: absolute;
+	  top: -40px;
+	  left: 23px;
+	  right: -150px;
+	  vertical-align: top;
+	  color: black;
 
-	.modal-container {
+	  svg {
+		display: inline-block;
 		position: relative;
-		max-width: 1000px;
-		/*
-				@media (max-width: 40.0rem) {
-					width: 100%;
-					padding: 20px;
-				}
-		*/
-		margin: 50px auto 0;
-		background-color: #fff;
-		border-radius: $borderRadius;
+		top: 20px;
+	  }
 
-		.imagewrapper {
-			padding-bottom: 50%;
+	  span {
 
-			&.seperator {
-				border-bottom: solid 1px #ddd;
-			}
-
-			img {
-				display: block;
-				width: 100%;
-				border-top-left-radius: $borderRadius;
-				border-top-right-radius: $borderRadius;
-				height: auto;
-				position: absolute;
-				left: 0;
-				top: 0;
-				z-index: 1100;
-				background: white;
-			}
-		}
-
-		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-
-		&:focus {
-			outline: none;
-		}
+	  }
 	}
+  }
+}
 
-	.modal-header h3 {
-		margin-top: 0;
-		color: #42b983;
-	}
+iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+  border-radius: $borderRadius;
+  display: block;
+  margin-bottom: 15px;
+}
 
-	h1 {
-		margin: 0 5px;
-	}
-
-	.modal-body {
-		padding: 20px 30px;
-		margin: 20px 0;
-		text-align: left;
-	}
-
-	.modal-default-button {
-		float: right;
-	}
-
-	/*
-	 * The following styles are auto-applied to elements with
-	 * transition="modal" when their visibility is toggled
-	 * by Vue.js.
-	 *
-	 * You can easily play with the modal transition by editing
-	 * these styles.
-	 */
-
-	.modal-enter {
-		opacity: 0;
-	}
-
-	.modal-leave-active {
-		opacity: 0;
-	}
-
-	/*.modal-enter .modal-container,*/
-	/*.modal-leave-active .modal-container {*/
-	/*transform: scale(0.8);*/
-	/*}*/
-
-	.modal-linkbar {
-		display: flex;
-		justify-content: space-around;
-		&.try {
-			margin-top: 40px;
-		}
-		a {
-			position: relative;
-			padding: 16px;
-
-			> svg {
-				width: 36px;
-				height: 36px;
-				display: block;
-				color: black;
-			}
-
-			svg, span {
-				transition: .2s;
-			}
-
-			display: block;
-
-			&:hover {
-				svg {
-					color: $color-primary;
-				}
-
-				.try-it-out {
-					color: $color-primary;
-				}
-			}
-
-			.try-it-out {
-				position: absolute;
-				top: -40px;
-				left: 23px;
-				right: -150px;
-				vertical-align: top;
-				color: black;
-
-				svg {
-					display: inline-block;
-					position: relative;
-					top: 20px;
-				}
-
-				span {
-
-				}
-			}
-		}
-	}
-
-	iframe {
-		width: 100%;
-		height: 400px;
-		border: none;
-		border-radius: $borderRadius;
-		display: block;
-		margin-bottom: 15px;
-	}
-
-	.note {
-		background-color: $consoleBackground;
-		color: $consoleOrange;
-		font-family: $consoleFont;
-		text-align: center;
-		/*background-color: #fdbc4b;*/
-		padding: 15px;
-		margin-bottom: 15px;
-	}
+.note {
+  background-color: $consoleBackground;
+  color: $consoleOrange;
+  font-family: $consoleFont;
+  text-align: center;
+  /*background-color: #fdbc4b;*/
+  padding: 15px;
+  margin-bottom: 15px;
+}
 </style>

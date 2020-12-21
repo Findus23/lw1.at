@@ -21,39 +21,41 @@
 	</a>
 </template>
 
-<script>
-	export default {
-		name: "license-icons",
-		props: ["id", "url"]
-	};
+<script lang="ts">
+import Vue from "vue";
+
+export default Vue.extend({
+    name: "license-icons",
+    props: ["id", "url"]
+});
 </script>
 
 <style lang="scss" scoped>
-	svg {
-		color: black;
+svg {
+  color: black;
 
-		path {
-			fill: white;
-			stroke: currentColor;
-			stroke-width: 15.349;
-			stroke-linecap: round;
-		}
+  path {
+	fill: white;
+	stroke: currentColor;
+	stroke-width: 15.349;
+	stroke-linecap: round;
+  }
 
-		text {
-			font-family: Arial, sans-serif;
-			fill: currentColor;
-			text-align: start;
-			line-height: 125%;
-			font-weight: 700;
-			font-size: 124.104px
-		}
-	}
+  text {
+	font-family: Arial, sans-serif;
+	fill: currentColor;
+	text-align: start;
+	line-height: 125%;
+	font-weight: 700;
+	font-size: 124.104px
+  }
+}
 
-	.MIT text {
-		font-size: 124.104px;
-	}
+.MIT text {
+  font-size: 124.104px;
+}
 
-	.GPL text {
-		font-size: 109.871px;
-	}
+.GPL text {
+  font-size: 109.871px;
+}
 </style>

@@ -2,13 +2,13 @@
 	<div id="imprint">
 		<div class="backButton">
 			<router-link :to="{ name: 'Overview', params: { language: language }}">
-				<span class="arrow">←</span> {{language==="de" ? "Zurück zur Hauptseite":"Back to the main page"}}
+				<span class="arrow">←</span> {{ language === "de" ? "Zurück zur Hauptseite" : "Back to the main page" }}
 			</router-link>
 		</div>
 		<div class="languageSelector">
 			<router-link :to="{ name: (language==='de' ? 'Imprint':'Impressum')}" rel="alternate"
 			             :hreflang="language==='de' ? 'en':'de'">
-				{{language==="de" ? "English":"Deutsch"}}
+				{{ language === "de" ? "English" : "Deutsch" }}
 			</router-link>
 		</div>
 		<h1 v-if="language==='de'">Impressum</h1>
@@ -282,22 +282,27 @@
 	</div>
 </template>
 
-<script>
-	export default {
-		name: "imprint",
-		props: ["language"]
-	};
+<script lang="ts">
+import Vue, {PropType} from "vue";
+import {Language} from "./types";
+
+export default Vue.extend({
+    name: "imprint",
+    props: {
+        language: String as PropType<Language>
+    },
+});
 </script>
 
 <style lang="scss">
-	#imprint {
-		.mainText {
-			text-align: left;
-		}
+#imprint {
+  .mainText {
+	text-align: left;
+  }
 
-		h2 {
-			font-size: 3rem;
-		}
+  h2 {
+	font-size: 3rem;
+  }
 
-	}
+}
 </style>

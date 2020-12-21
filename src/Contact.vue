@@ -85,7 +85,8 @@
 				<path d="M2807-894.7v-10.6l-8 5.3z" fill="transparent"></path>
 			</svg>
 		</a>
-		<a rel="me noopener" href="https://git.lw1.at/lw1" target="_blank" :aria-label="gitlabText" data-balloon-pos="up">
+		<a rel="me noopener" href="https://git.lw1.at/lw1" target="_blank" :aria-label="gitlabText"
+		   data-balloon-pos="up">
 			<!-- License - http://fontawesome.io/license (SIL OFL 1.1) -->
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54">
 				<title>{{gitlabText}}</title>
@@ -123,69 +124,74 @@
 	</nav>
 </template>
 
-<script>
-    export default {
-        name: "contact",
-        props: ["language"],
-        computed: {
-            english() {
-                return this.language === "en"
-            },
-            githubText() {
-                return this.english ? "view my code on GitHub" : "Schau meinen Code auf GitHub an"
-            },
-            keybaseText() {
-                return this.english ? "View Profile on Keybase.io" : "Profil auf Keybase.io"
-            },
-            mastodonText() {
-                return this.english ? "Follow me on Mastodon" : "Folg mir bei Mastodon"
-            },
-            twitterText() {
-                return this.english ? "Follow me on Twitter" : "Folg mir bei Twitter"
-            },
-            matrixText() {
-                return this.english ? "Contact me via matrix.org (riot.im)" : "Kontaktiere mich über matrix.org (riot.im)"
-            },
-            nextcloudText() {
-                return this.english ? "share files with me via Nextcloud" : "Teile Dateien mit mir über Nextcloud"
-            },
-            peertubeText() {
-                return this.english ? "view my videos on PeerTube" : "Schaue meine Videos auf PeerTube an"
-            },
-            gitlabText() {
-                return this.english ? "view my code on GitLab" : "Schaue meinen Code auf GitLab an"
-            },
-            guidesText() {
-                return this.english ? "view my guides" : "Lies meine Anleitungen"
-            },
-            emailText() {
-                return this.english ? "write me an E-Mail (hi@lw1.at)" : "Schreib mir eine E-Mail (hi@lw1.at)"
-            },
+<script lang="ts">
+import Vue, {PropType} from "vue";
+import {Language} from "./types";
+
+export default Vue.extend({
+    name: "contact",
+    props: {
+        language: String as PropType<Language>
+    },
+    computed: {
+        english(): boolean {
+            return this.language === "en";
         },
-    };
+        githubText(): string {
+            return this.english ? "view my code on GitHub" : "Schau meinen Code auf GitHub an";
+        },
+        keybaseText(): string {
+            return this.english ? "View Profile on Keybase.io" : "Profil auf Keybase.io";
+        },
+        mastodonText(): string {
+            return this.english ? "Follow me on Mastodon" : "Folg mir bei Mastodon";
+        },
+        twitterText(): string {
+            return this.english ? "Follow me on Twitter" : "Folg mir bei Twitter";
+        },
+        matrixText(): string {
+            return this.english ? "Contact me via matrix.org (riot.im)" : "Kontaktiere mich über matrix.org (riot.im)";
+        },
+        nextcloudText(): string {
+            return this.english ? "share files with me via Nextcloud" : "Teile Dateien mit mir über Nextcloud";
+        },
+        peertubeText(): string {
+            return this.english ? "view my videos on PeerTube" : "Schaue meine Videos auf PeerTube an";
+        },
+        gitlabText(): string {
+            return this.english ? "view my code on GitLab" : "Schaue meinen Code auf GitLab an";
+        },
+        guidesText(): string {
+            return this.english ? "view my guides" : "Lies meine Anleitungen";
+        },
+        emailText(): string {
+            return this.english ? "write me an E-Mail (hi@lw1.at)" : "Schreib mir eine E-Mail (hi@lw1.at)";
+        },
+    },
+});
 </script>
 
 <style lang="scss">
-	@import "variables";
+@import "variables";
 
-	.contact {
-		display: flex;
-		justify-content: space-around;
+.contact {
+  display: flex;
+  justify-content: space-around;
 
-		svg {
-			width: 45px;
-			height: 45px;
-			color: $consoleBackground;
-			transition: color .2s;
-			padding: 5px;
+  svg {
+	width: 45px;
+	height: 45px;
+	color: $consoleBackground;
+	transition: color .2s;
+	padding: 5px;
 
-			&.keybase .line {
-				fill: currentColor;
-			}
-		}
-
-		a:hover svg {
-			outline: 1px solid $consoleBackground;
-		}
+	&.keybase .line {
+	  fill: currentColor;
 	}
+  }
+
+  a:hover svg {
+	outline: 1px solid $consoleBackground;
+  }
+}
 </style>

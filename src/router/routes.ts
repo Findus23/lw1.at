@@ -7,11 +7,11 @@ const Imprint = () => import(/* webpackChunkName: "imprint" */ '../Imprint.vue')
 
 Vue.use(Router);
 
-let router = new Router({
+const router = new Router({
     mode: 'history',
     scrollBehavior(to, from, savedPosition) {
         if (to.name === "itemModal" || from.name === "itemModal") {
-            return false;
+            return;
         } else if (savedPosition) {
             return savedPosition;
         } else {
@@ -21,7 +21,7 @@ let router = new Router({
     routes: [
         {
             path: '/',
-            redirect: function() {
+            redirect: function () {
                 if (navigator.language.toLowerCase().includes("de")) {
                     return "de";
                 } else if (navigator.language.toLowerCase().includes("en")) {
@@ -32,7 +32,7 @@ let router = new Router({
         },
         {
             path: '/i/',
-            redirect: function() {
+            redirect: function () {
                 if (navigator.language.toLowerCase().includes("de")) {
                     return "de/impressum";
                 } else if (navigator.language.toLowerCase().includes("en")) {
@@ -72,11 +72,11 @@ let router = new Router({
         }
     ]
 });
-
+const _paq = window._paq || []; 
 router.afterEach((to, from) => {
     if (from.name === "itemModal" && to.name === "Overview") {
         document.title = "Lukas Winkler - lw1.at";
-        setTimeout(function() { // delay before making background scrollable again
+        setTimeout(function () { // delay before making background scrollable again
             document.body.style.overflow = "";
         }, 300);
     }

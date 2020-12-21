@@ -6,11 +6,12 @@ import {VueLoaderPlugin} from "vue-loader";
 
 const commitHash = require('child_process').execSync('git rev-parse --short HEAD').toString();
 
-let production = process.env.NODE_ENV === "production"
+const production = process.env.NODE_ENV === "production";
 
 const config: webpack.Configuration = {
-    entry: "./src/main.js",
+    entry: "./src/main.ts",
     output: {
+        publicPath: '/',
         filename: "[name].[contenthash].js",
         chunkFilename: "[name].[contenthash].js",
         path: path.resolve(__dirname, "dist"),
@@ -38,6 +39,20 @@ const config: webpack.Configuration = {
     module: {
         rules: [
             {
+                test: /\.(ts|tsx|vue)$/,
+                enforce: 'pre',
+                use: [
+                    {
+                        options: {
+                            eslintPath: require.resolve('eslint'),
+
+                        },
+                        loader: require.resolve('eslint-loader'),
+                    },
+                ],
+                exclude: /node_modules/,
+            },
+            {
                 test: /\.vue$/,
                 loader: 'vue-loader',
                 options: {
@@ -53,8 +68,9 @@ const config: webpack.Configuration = {
             },
             {
                 test: /\.tsx?$/,
-                use: "ts-loader",
-                exclude: /node_modules/
+                loader: 'ts-loader',
+                exclude: /node_modules/,
+                options: {appendTsSuffixTo: [/\.vue$/]}
             },
             {
                 test: /\.js$/,
@@ -89,7 +105,7 @@ const config: webpack.Configuration = {
                     {
                         loader: 'css-loader',
                         options: {
-                            esModule:false
+                            esModule: false
                         }
                     },
                     {
@@ -113,7 +129,7 @@ const config: webpack.Configuration = {
                         loader: 'css-loader',
                         options: {
                             importLoaders: 1,
-                            esModule:false
+                            esModule: false
                         }
                     },
                     {

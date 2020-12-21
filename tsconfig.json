@@ -8,7 +8,7 @@
     "moduleResolution": "node",
     "lib": [
       "dom",
-      "es5"
+      "es7"
     ],
     // "lib": [],                             /* Specify library files to be included in the compilation. */
     // "allowJs": true,                       /* Allow javascript files to be compiled. */
