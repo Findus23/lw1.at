@@ -24,10 +24,10 @@ const config: webpack.Configuration = merge(common, {
     },
     devtool: "source-map",
     plugins: [
-        new SriPlugin({
-            hashFuncNames: ["sha256"],
-            enabled: true
-        }),
+        // new SriPlugin({
+            // hashFuncNames: ["sha256"],
+            // enabled: true
+        // }),
         new LicenseWebpackPlugin({
             // perChunkOutput: false
             licenseTextOverrides: {
