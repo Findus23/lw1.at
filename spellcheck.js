@@ -14,7 +14,7 @@ files.forEach(file => {
 		return;
 	}
 	const content = fs.readFileSync(dataPath + file);
-	let item = yaml.safeLoad(content);
+	let item = yaml.load(content);
 	if (item.description.de) {
 		de_markdown += item.description.de + "\n\n";
 		en_markdown += item.description.en + "\n\n";

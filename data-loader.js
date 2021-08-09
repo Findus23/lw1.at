@@ -1,10 +1,10 @@
 const yaml = require('js-yaml');
 const hljs = require('highlight.js');
 const md = require('markdown-it')({
-    highlight: function(str, lang) {
+    highlight: function (str, lang) {
         if (lang && hljs.getLanguage(lang)) {
             try {
-                return hljs.highlight(lang, str).value;
+                return hljs.highlight(str, {language: lang}).value;
             } catch (__) {
             }
         }
@@ -24,9 +24,9 @@ function markdown2html(input) {
     return html;
 }
 
-module.exports = function(source) {
+module.exports = function (source) {
     try {
-        const tags = yaml.safeLoad(source);
+        const tags = yaml.load(source);
 
         this.cacheable && this.cacheable();
         this.addContextDependency(path.resolve(dataPath));
@@ -37,7 +37,7 @@ module.exports = function(source) {
                 return;
             }
             const content = fs.readFileSync(dataPath + file);
-            let item = yaml.safeLoad(content);
+            let item = yaml.load(content);
             if (item.id !== file.replace(".yaml", "")) {
                 this.emitError(new Error(file.replace(".yaml", "") + " != " + item.id));
             }

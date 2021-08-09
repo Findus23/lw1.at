@@ -8,8 +8,8 @@ cache:
   - node_modules/
 
 before_script:
-  - yarn install --pure-lockfile --ignore-engines
+  - npm ci
 
 job:
   script:
-  - yarn run build 
+  - npm run build
