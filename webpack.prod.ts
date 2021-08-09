@@ -3,7 +3,7 @@ import merge from "webpack-merge";
 import common from './webpack.common';
 import {LicenseWebpackPlugin} from "license-webpack-plugin";
 // @ts-ignore
-import PrerenderSPAPlugin from 'prerender-spa-plugin';
+import PrerenderSPAPlugin from 'prerender-spa-plugin-next';
 import CompressionPlugin from 'compression-webpack-plugin';
 import {CleanWebpackPlugin} from "clean-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
@@ -41,13 +41,14 @@ if (process.env.PRERENDER !== 'disabled') {
     plugins.push(new PrerenderSPAPlugin({
             staticDir: path.join(__dirname, 'dist'), // The path to the folder where index.html is.
             routes: require("./routes"), // List of routes to prerender.
-            renderer: new PuppeteerRenderer({
+            renderer: PuppeteerRenderer,
+            rendererOptions: {
                 headless: true,
                 inject: {
                     prerender: true
                 },
                 maxConcurrentRoutes: 4,
-            }),
+            }
         })
     );
 }
