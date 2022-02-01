@@ -8,8 +8,6 @@ const config = merge(common, {
     devtool: "eval-cheap-source-map",
     devServer: {
         historyApiFallback: true,
-        noInfo: true,
-        overlay: true
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin()

@@ -62,22 +62,12 @@
 				      d="M26.6 49.3L2.4 31.7c-.3-.2-.6-.6-.7-1-.1-.4-.1-.8 0-1.2L4.5 21l22.1 28.3zM11.9 3.9L17.4 21H4.5L10 3.9c.1-.4.5-.6.9-.6.6-.1.9.2 1 .6zM17.4 21h18.4l-9.2 28.3L17.4 21zm34.2 8.6c.1.4.1.8 0 1.2-.1.4-.4.7-.7 1L26.6 49.3 48.7 21l2.9 8.6zM48.7 21H35.9l5.5-17.1c.1-.4.5-.6.9-.6.5 0 .8.2.9.6L48.7 21z"></path>
 			</svg>
 		</a>
-		<a me noopener href="https://guides.lw1.at/" target="_blank" :aria-label="guidesText" data-balloon-pos="up">
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230.39711 218.6199">
-				<!-- From https://www.bookstackapp.com/ -->
+		<a rel="me noopener" href="https://guides.lw1.at/" target="_blank" :aria-label="guidesText" data-balloon-pos="up">
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal-text" viewBox="0 0 16 16">
 				<title>{{guidesText}}</title>
-				<g id="layer1" stroke-linejoin="round" fill-rule="evenodd" transform="translate(-245.27 -58.434)"
-				   stroke="currentColor" stroke-width="13" fill="white">
-					<g stroke-linecap="round">
-						<path d="m343.79 238.6 128.88-74.409-92.058-53.15-128.88 74.409z"></path>
-						<path d="m251.73 185.45v21.26l92.058 53.15 128.88-74.409v-21.26"></path>
-						<path d="m343.79 274.03-92.058-53.15s-7.5-16.918 0-28.346l92.058 53.15 128.88-74.409v28.346l-128.88 74.409"></path>
-						<path d="m343.79 188.99 128.88-74.41-92.06-53.146-128.88 74.406z"></path>
-						<path d="m343.79 188.99 128.88-74.409 0.00001 28.346-128.88 74.409-92.058-53.15s-6.0714-17.632 0-28.346z"></path>
-						<path d="m343.79 245.69-92.058-53.15s-7.5-16.918 0-28.346l92.058 53.15 128.88-74.409-0.00001 28.346-128.88 74.409"></path>
-					</g>
-					<path d="m402.09 73.836-55.234 31.89 21.48 1.7716 3.0686 12.402 55.235-31.89z"></path>
-				</g>
+				<path fill="currentColor" d="M5 10.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
+				<path fill="currentColor" d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/>
+				<path fill="currentColor" d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/>
 			</svg>
 		</a>
 		<a rel="me noopener" href="mailto:hi@lw1.at" target="_blank" :aria-label="emailText" data-balloon-pos="up">
@@ -158,7 +148,8 @@ export default Vue.extend({
   }
 
   a:hover svg {
-	outline: 1px solid $consoleBackground;
+    color: $consoleFocus;
+	outline: 1px solid $consoleFocus;
   }
 }
 </style>

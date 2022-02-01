@@ -3,6 +3,7 @@ import * as webpack from 'webpack';
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import {VueLoaderPlugin} from "vue-loader";
+import {default as ESLintPlugin} from "eslint-webpack-plugin";
 
 const commitHash = require('child_process').execSync('git rev-parse --short HEAD').toString();
 
@@ -15,7 +16,8 @@ const config: webpack.Configuration = {
         filename: "[name].[contenthash].js",
         chunkFilename: "[name].[contenthash].js",
         path: path.resolve(__dirname, "dist"),
-        crossOriginLoading: "anonymous"
+        crossOriginLoading: "anonymous",
+        assetModuleFilename:'[folder]/[name].[ext]?hash=[contenthash]'
     },
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".json"]
@@ -24,6 +26,7 @@ const config: webpack.Configuration = {
         new HtmlWebpackPlugin({
             template: "my-index.ejs",
         }),
+        new ESLintPlugin(),
         // new webpack.IgnorePlugin(/^jquery/),
         new webpack.DefinePlugin({
             "process.env": {
@@ -38,20 +41,6 @@ const config: webpack.Configuration = {
     ],
     module: {
         rules: [
-            {
-                test: /\.(ts|tsx|vue)$/,
-                enforce: 'pre',
-                use: [
-                    {
-                        options: {
-                            eslintPath: require.resolve('eslint'),
-
-                        },
-                        loader: require.resolve('eslint-loader'),
-                    },
-                ],
-                exclude: /node_modules/,
-            },
             {
                 test: /\.vue$/,
                 loader: 'vue-loader',
@@ -72,7 +61,7 @@ const config: webpack.Configuration = {
                 exclude: /node_modules/,
                 options: {
                     appendTsSuffixTo: [/\.vue$/],
-                    transpileOnly:true
+                    transpileOnly: true
                 }
             },
             {
