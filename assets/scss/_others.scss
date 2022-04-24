@@ -1,0 +1,23 @@
+
+
+
+li {
+  margin-bottom: 0.3rem;
+}
+
+a svg {
+  fill: initial;
+}
+
+
+.toImprint {
+  display: inline-block;
+}
+
+
+[aria-label][data-balloon-pos] {
+  &::after {
+    font-family: unset !important;
+    background: $consoleBackground !important;
+  }
+}

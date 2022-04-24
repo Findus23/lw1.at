@@ -1,0 +1,18 @@
+@import "variables";
+
+body {
+  background-color: white;
+  background-repeat: repeat;
+  background-image: url("../background.png");
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  background-size: 512px*2;
+  background-attachment: fixed;
+  margin: 0;
+
+  > * {
+    image-rendering: initial;
+  }
+}
+

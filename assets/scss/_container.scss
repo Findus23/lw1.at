@@ -1,0 +1,16 @@
+@import "variables";
+
+.container {
+  max-width: 1000px;
+  position: relative;
+  width: 100%;
+  background-color: white;
+  border: 1px solid $consoleBackground;
+  text-align: center;
+  margin: 20px auto 0;
+
+  @media (max-width: 1000px) {
+    border: none;
+    margin-top: 0;
+  }
+}

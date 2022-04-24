@@ -1,8 +1,7 @@
 from dataclasses import dataclass
 
-from slugify import slugify
-
 from lw1.types import Language
+from lw1.utils import custom_slugify
 
 
 @dataclass
@@ -18,5 +17,5 @@ class Tag:
         else:
             return self.name_en
 
-    def slug_in_lang(self,lang:Language):
-        return slugify(self.name_in_lang(lang))
+    def slug_in_lang(self, lang: Language):
+        return custom_slugify(self.name_in_lang(lang))

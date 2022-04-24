@@ -2,6 +2,10 @@ $color-primary: #303f9f;
 $borderRadius: 0px;
 $imageheight: 150px;
 
+$textColor: #212121;
+
+$linkColor: #303f9f;
+
 $consoleBackground: #31363B;
 $consoleWhite: #EFF0F1;
 $consoleOrange: #FDBC4B;
@@ -9,10 +13,14 @@ $consoleBlue: #3DAEE9;
 $consoleGreen: #16A085;
 $consoleRed: #963830;
 
+$gray: #cacacc;
+
+
 $consoleFocus: $consoleBlue;
 $consoleText: $consoleWhite;
 $consoleFont: "Fira Code Retina", monospace, monospace;
 
+$fontFamily: -apple-system, "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", "Liberation Sans", "Roboto", Arial, sans-serif;
 
 @mixin dark() {
   @media (prefers-color-scheme: dark) {

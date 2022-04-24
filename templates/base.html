@@ -2,31 +2,40 @@
 <html lang="{{ lang }}">
 <head>
     <meta charset="UTF-8">
+    <meta name="generator" content="https://github.com/Findus23/lw1.at/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="modulepreload" href="/{{ entrypoints[js_entry_point] }}">
     <link rel="stylesheet" href="/{{ entrypoints["assets/scss/main.scss"] }}">
     {% block additionalCSS %}
     {% endblock %}
+    {% block alternateLangTags %}
+        <link rel="alternate" hreflang="{{ lang }}" href="https://lw1.at{{ url }}"/>
+        <link rel="alternate" hreflang="{{ otherlang }}" href="https://lw1.at{{ otherlang_url }}"/>
+    {% endblock %}
+    {% block additionalHead %}
+    {% endblock %}
     <title>{% block title %}{% endblock %} - lw1.at</title>
 </head>
-<body>
+<body data-debug="{{ debug }}">
 <div id="app" class="container">
-    {% if type!="home" %}
-        <div class="backButton">
-            <a href="/{{ lang }}/">
+    <div class="topbuttons">
+        {% if type!="home" %}
+            <a href="/{{ lang }}" class="backButton btn">
                 <span class="arrow">←</span> {% trans %}Back to the main page{% endtrans %}
             </a>
-        </div>
-    {% endif %}
-    {% if otherlang_url is defined %}
-        <div class="languageSelector">
-            <a href="{{ otherlang_url }}">{% if lang=="de" %}English{% else %}Deutsch{% endif %}</a>
-        </div>
-    {% endif %}
+        {% endif %}
+        {% if otherlang_url is defined %}
+            <a href="{{ otherlang_url }}" class="languageSelector btn">
+                {% if lang=="de" %}English{% else %}Deutsch{% endif %}
+            </a>
+        {% endif %}
+
+    </div>
     {% block content %}
 
     {% endblock %}
 
 </div>
-<script type="module" async  src="/{{ entrypoints[js_entry_point] }}"></script>
+<script type="module" async src="/{{ entrypoints[js_entry_point] }}"></script>
 </body>
 </html>

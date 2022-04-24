@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-04-24 13:10+0200\n"
+"POT-Creation-Date: 2022-04-24 19:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.1\n"
 
-#: templates/base.html:16
+#: templates/base.html:24
 msgid "Back to the main page"
 msgstr ""
 
@@ -57,39 +57,39 @@ msgstr ""
 msgid "Write me an E-Mail (hi@lw1.at)"
 msgstr ""
 
-#: templates/home.html:10
+#: templates/home.html:11
 msgid "imprint"
 msgstr ""
 
-#: templates/home.html:10 templates/imprint.html:3 templates/imprint.html:7
+#: templates/home.html:11 templates/imprint.html:3 templates/imprint.html:9
 msgid "Imprint"
 msgstr ""
 
-#: templates/imprint.html:8
+#: templates/imprint.html:10
 msgid "Responsible for the content"
 msgstr ""
 
-#: templates/overview.html:2
+#: templates/overview.html:3
 msgid "All Projects"
 msgstr ""
 
-#: templates/overview.html:7
+#: templates/overview.html:14
 msgid "Search&hellip;"
 msgstr ""
 
-#: templates/page.html:108
+#: templates/page.html:128
 msgid "I want to read more about this project"
 msgstr ""
 
-#: templates/page.html:111
+#: templates/page.html:131
 msgid "Thanks for the feedback!"
 msgstr ""
 
-#: templates/page.html:112
+#: templates/page.html:132
 msgid "When I get to it, I will try to extend this post."
 msgstr ""
 
-#: templates/page.html:113
+#: templates/page.html:133
 msgid ""
 "In the meantime you can contact me at\n"
 "                    <a "

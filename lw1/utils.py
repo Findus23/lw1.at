@@ -1,6 +1,8 @@
 import hashlib
 from pathlib import Path
 
+from slugify import slugify
+
 BUF_SIZE = 65536
 
 
@@ -21,3 +23,9 @@ def hash_file(path: Path) -> str:
 
 def short_hash(input: str) -> str:
     return long_hash(input)[:5]
+
+
+def custom_slugify(title: str) -> str:
+    for delete in ["'"]:
+        title = title.replace(delete, "")
+    return slugify(title)

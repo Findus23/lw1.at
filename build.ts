@@ -14,7 +14,8 @@ const commonOption: BuildOptions = {
     loader: {
         ".ttf": "file",
         ".woff": "file",
-        ".woff2": "file"
+        ".woff2": "file",
+        ".png": "base64"
     },
     entryNames: "[name]"
 }
@@ -23,7 +24,7 @@ const commonOption: BuildOptions = {
 switch (process.argv[2]) {
     case "build":
         commonOption.metafile = true
-        commonOption.entryNames = "[dir]/[name]-[hash]"
+        commonOption.entryNames = "[name]-[hash]"
         build(commonOption).then(result => {
             fs.writeFileSync(commonOption.outdir + "/meta.json", JSON.stringify(result.metafile))
         })

@@ -1,6 +1,7 @@
 import {decode} from "blurhash";
 import {initFeedback} from "./feedback";
 import {initSearch} from "./search";
+import {initMatomo} from "./matomo";
 
 const width = 32;
 const height = width / 2;
@@ -39,3 +40,4 @@ if (canvasList.length > 5) {
 
 initFeedback()
 initSearch()
+initMatomo()

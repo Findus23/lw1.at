@@ -1,31 +1,22 @@
 @import "variables";
-@import "../node_modules/milligram/src/Color";
-@import "../node_modules/milligram/src/Utility";
+
+#blockwrapper {
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
 .card {
   color: $consoleText;
   background: $consoleBackground;
   transition: color .2s;
-  border-radius: $borderRadius;
   z-index: 3;
   position: relative;
   margin-bottom: 20px;
   width: 100%;
   max-width: 300px;
   cursor: pointer;
-
-  &:before {
-    border-radius: $borderRadius;
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: -3;
-    /*@include shadow(2);*/
-    /*transition: box-shadow 0.2s;*/
-  }
 
   &:hover, &:focus {
     color: $consoleFocus;
@@ -36,16 +27,9 @@
     }
   }
 
-  .imgwrapper {
-    background: $consoleBackground
-
-  }
 
   img {
     display: block;
-    transition: filter .2s;
-    border-top-left-radius: $borderRadius;
-    border-top-right-radius: $borderRadius;
     height: auto;
     z-index: 5;
     position: relative;
@@ -53,6 +37,7 @@
 
   .imgwrapper {
     height: 150px;
+    width: 300px;
   }
 
   .textwrapper {
@@ -69,47 +54,26 @@
 }
 
 .tag {
-  font-family: $consoleFont;
   display: inline-block;
-  padding: .2em .6em .3em;
-  font-size: 70%;
-  font-weight: bold;
-  line-height: 1;
   border: 1px $consoleText solid;
-  color: $consoleText;
-  background-color: $consoleBackground;
   text-align: center;
-  white-space: nowrap;
-  vertical-align: baseline;
   border-radius: $borderRadius;
-  margin-left: 2px;
-  margin-right: 2px;
-  transition: color .2s, border-color .2s;
+  margin: 0 2px;
 }
 
-button {
-  color: white;
+.tag, #filterwrapper > a {
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 1;
+  padding: .3em .6em .3em;
 
-  &.colored {
-    color: white;
-  }
+}
 
-  &.active {
-    /*color: darken($color-secondary, 10%);
-border-color: darken($color-secondary, 10%);
-background-color: darken(white, 10%) !important;*/
-    color: $consoleFocus;
-  }
-
-  svg {
-    vertical-align: sub;
-    margin-right: 4px;
-  }
-
+#filterwrapper, #searchwrapper, .contact {
+  margin: 0 2rem;
 }
 
 #filterwrapper {
-  font-family: monospace, monospace;
   margin-bottom: 2rem;
   display: flex;
   flex-wrap: wrap;
@@ -118,21 +82,16 @@ background-color: darken(white, 10%) !important;*/
   a {
     display: block;
     color: $consoleBackground;
-    //text-transform: initial;
-    font-family: $consoleFont;
-    font-size: 1.2rem;
-    padding: .2em .6em;
-    //line-height: 10px;
-    //height: 25px;
-    font-weight: 700;
-    letter-spacing: .1rem;
+    background: white;
 
     &.active {
-      color: $consoleWhite;
+      color: $consoleWhite !important;
+      outline: none !important;
       background-color: $consoleBackground;
     }
 
     &:focus, &:active, &:hover {
+      color: $consoleBackground;
       outline: 1px solid $consoleBackground;
     }
   }
@@ -145,36 +104,38 @@ background-color: darken(white, 10%) !important;*/
     font-family: $consoleFont;
     -webkit-appearance: none;
     -moz-appearance: none;
-    padding: 4px;
-    border: 1px solid #bbb; /* Here */
-    border: none;
+    padding: .5rem;
+    border: 1px solid $consoleBackground;
     border-radius: $borderRadius;
     margin-bottom: 0;
-    background-color: $consoleBackground;
-    color: $consoleText;
+    background-color: white;
+    color: $consoleBackground;
     max-width: 300px;
     width: 100%;
+    transition: border-color .2s, color .2s;
 
     &:focus {
-      border-color: $color-primary;
+      border-color: $consoleBlue;
+      outline: none;
+
+      &::placeholder {
+        color: $consoleBlue;
+        opacity: .5;
+      }
+
     }
 
     &::placeholder {
-      color: $consoleText;
+      color: $consoleBackground;
+      transition: color .2s;
       opacity: 1;
     }
 
     &::selection {
-      background: $consoleText;
-      color: $consoleBackground;
+      background: $consoleBackground;
+      color: $consoleWhite;
     }
   }
-}
-
-#noresults {
-  font-family: $consoleFont;
-  font-size: 20px;
-  font-weight: bold;
 }
 
 

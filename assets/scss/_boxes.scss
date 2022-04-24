@@ -1,0 +1,19 @@
+@import "variables";
+
+.note {
+  background-color: $consoleBackground;
+  color: $consoleOrange;
+  font-family: $consoleFont;
+  text-align: center;
+  /*background-color: #fdbc4b;*/
+  padding: 15px;
+  margin-bottom: 15px;
+
+  a {
+    color: $consoleBlue;
+
+    &:hover, &:focus, &:active {
+      text-decoration: underline;
+    }
+  }
+}

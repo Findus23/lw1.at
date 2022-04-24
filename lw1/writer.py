@@ -6,7 +6,7 @@ from lw1.paths import output_dir
 
 class Writer:
     def write(self, url: Path, html: str):
-        output_url = output_dir / url
+        output_url = output_dir / url.relative_to("/")
         print(url)
         output_url.mkdir(exist_ok=True, parents=True)
         index_file = output_url / "index.html"

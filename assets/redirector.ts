@@ -17,7 +17,7 @@ export function redirect(): void {
         return
 
     }
-    l.replace(l.pathname + defaultLanguage() + "/")
+    l.replace("/" + defaultLanguage() + l.pathname)
 }
 
-// redirect()
+redirect()

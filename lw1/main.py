@@ -4,11 +4,14 @@ from babel.support import Translations
 
 from lw1.generators import PostsGenerator, HomepageGenerator, ImprintGenerator, LangRedirectGenerator
 from lw1.loader import PostLoader, TagsLoader, AssetsLoader
+from lw1.paths import output_dir
 from lw1.settings import LANGUAGES
+from lw1.sitemap import Sitemap
 from lw1.writer import Writer
 
 
 def main(debug=False):
+    sitemap = Sitemap()
     start = perf_counter_ns()
     posts = PostLoader.load_posts()
     tags = TagsLoader.load_tags()
@@ -25,8 +28,14 @@ def main(debug=False):
             LangRedirectGenerator
         ]
         for cls in generators:
-            g = cls(posts=posts, tags=tags, lang=lang, context=context, translations=translations)
+            g = cls(
+                posts=posts, tags=tags,
+                lang=lang, context=context,
+                translations=translations,
+                sitemap=sitemap
+            )
             g.generate(writer)
+    sitemap.dump(output_dir / "sitemap.xml")
     end = perf_counter_ns()
     print(f"{(end - start) / 1000 / 1000:.2f} ms")
 

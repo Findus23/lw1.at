@@ -1,4 +1,6 @@
-all: extract update compile
+babel: extract update compile
+
+publish: rmpublic esbuild build upload
 
 
 extract:
@@ -10,5 +12,15 @@ update:
 compile:
 	pybabel compile  -d translations --statistics
 
-publish:
-	rsync -aPz public/* lw1.at:/var/www/beta.lw1.at/
+upload:
+	rsync -aPz --delete-after public/* lw1.at:/var/www/beta.lw1.at/
+
+esbuild:
+	npm run build
+
+build:
+	/home/lukas/.virtualenvs/lw1/bin/python lw1/main.py
+
+rmpublic:
+	rm -r public/
+	mkdir public/

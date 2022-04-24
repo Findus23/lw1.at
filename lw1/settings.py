@@ -9,3 +9,4 @@ FALLBACK_LANGUAGES: Dict[Language, Language] = {
     "de": "en"
 }
 
+DOMAIN = "https://lw1.at"

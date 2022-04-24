@@ -8,9 +8,29 @@
     {% endif %}
 {% endblock %}
 
+{% block alternateLangTags %}
+    <link rel="alternate" hreflang="{{ lang }}" href="{{ post.absolute_url_with_domain }}">
+    <link rel="alternate" hreflang="{{ post.other_lang_post.lang }}"
+          href="{{ post.other_lang_post.absolute_url_with_domain }}">
+{% endblock %}
+
+{% block additionalHead %}
+    {% if post.description %}
+        <meta name="description" content="{{ post.description }}">
+        <meta property="og:description" content="{{ post.description }}">
+    {% endif %}
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@lw1_at">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="{{ lang }}">
+    <meta property="og:site_name" content="lw1.at">
+    <meta property="og:url" content="{{ post.absolute_url_with_domain }}">
+    <meta property="og:title" content="{{ post.title }}">
+    <meta property="og:image" content="https://lw1.at{{ post.content_img.public_url }}">
+{% endblock %}
 
 {% block content %}
-    <div{% if post.single_language %} lang="{{ post.single_language }}"{% endif %}>
+    <article{% if post.single_language %} lang="{{ post.single_language }}"{% endif %}>
         <div class="modal-header">
             <div class="imagewrapper{% if post.image_separator %} separator{% endif %}">
                 <canvas data-blurhash="{{ post.content_img.blurhash }}" width="32" height="16"></canvas>
@@ -104,6 +124,12 @@
                 </div>
             {% endif %}
             {{ post.html }}
+            {% if post.iframe %}
+                <iframe src="{{ post.iframe.url }}"
+                        style="background-color: {{ post.iframe.color }}"
+                        {% if post.iframe.sandbox %}sandbox="{{ post.iframe.sandbox }}"{% endif %}
+                        {% if post.iframe.allowfullscreen %}allowfullscreen{% endif %}></iframe>
+            {% endif %}
             <button id="readmore" data-id="{{ post.id }}">
                 {% trans %}I want to read more about this project{% endtrans %}
             </button>
@@ -115,5 +141,5 @@
                     want to.{% endtrans %}
             </div>
         </div>
-    </div>
+    </article>
 {% endblock %}
