@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block additionalCSS %}
+    {% if post.contains_math %}
+        <link rel="stylesheet" href="/{{ entrypoints["assets/katex.css"] }}">
+    {% endif %}
+{% endblock %}
+
+
+{% block content %}
+    <div{% if post.single_language %} lang="{{ post.single_language }}"{% endif %}>
+        <div class="modal-header">
+            <div class="imagewrapper{% if post.image_separator %} separator{% endif %}">
+                <canvas data-blurhash="{{ post.content_img.blurhash }}" width="32" height="16"></canvas>
+                <img src="{{ post.content_img.public_url }}" width="1200" height="600">
+            </div>
+        </div>
+        <div class="modal-body">
+            <h1>
+                {{ post.title }}
+                {% if post.subtitle %}
+                    <div>{{ post.subtitle }}</div>
+                {% endif %}
+            </h1>
+            <div class="modal-linkbar {% if post.tryout %}try{% endif %}">
+                {% if post.url %}
+                    <a href="{{ post.url }}" target="_blank">
+                        {% if post.tryout %}
+                            <div class="try-it-out">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="30"
+                                     height="30" style="fill: currentColor">
+                                    <path d="M54.22083 161.88751C75.49125 69.74037 157.61638.879 255.99447-.0344V71.2784c-58.68038.82679-108.44983 38.32148-127.51646 90.6032H54.22378z"></path>
+                                    <path d="M183.32848 154.61394L93.60991 255.96317-.0104 154.45508"></path>
+                                </svg>
+                                <span>Try it out!</span>
+                            </div>
+                        {% endif %}
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420">
+                            <title>Website</title>
+                            <path style="stroke: currentColor; fill: none" stroke-width="20"
+                                  d="M209,15a195,195 0 1,0 2,0zm1,0v390m195-195H15M59,90a260,260 0 0,0 302,0 m0,240 a260,260 0 0,0-302,0M195,20a250,250 0 0,0 0,382 m30,0 a250,250 0 0,0 0-382"></path>
+                        </svg>
+                    </a>
+                {% endif %}
+                {% if post.gitlab %}
+                    <a href="{{ post.gitlab }}" target="_blank" rel="noopener">
+                        <!-- License - http://fontawesome.io/license (SIL OFL 1.1) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54 54">
+                            <title>View source on GitLab</title>
+                            <path fill="none" d="M-.2.1h53.8v53.4H-.2z"></path>
+                            <path fill="currentColor"
+                                  d="M26.6 49.3L2.4 31.7c-.3-.2-.6-.6-.7-1-.1-.4-.1-.8 0-1.2L4.5 21l22.1 28.3zM11.9 3.9L17.4 21H4.5L10 3.9c.1-.4.5-.6.9-.6.6-.1.9.2 1 .6zM17.4 21h18.4l-9.2 28.3L17.4 21zm34.2 8.6c.1.4.1.8 0 1.2-.1.4-.4.7-.7 1L26.6 49.3 48.7 21l2.9 8.6zM48.7 21H35.9l5.5-17.1c.1-.4.5-.6.9-.6.5 0 .8.2.9.6L48.7 21z"></path>
+                        </svg>
+                    </a>
+                {% endif %}
+                {% if post.github %}
+                    <a href="{{ post.githuburl }}"
+                       target="_blank" rel="noopener">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                            <title>View source on Github</title>
+                            <path fill-rule="evenodd" style="fill: currentColor"
+                                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+                        </svg>
+                    </a>
+                {% endif %}
+                {% if post.license %}
+                    <a href="{{ post.license.url }}" class="license">
+                        {% if post.license.id=="MIT" %}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256"
+                                 class="MIT">
+                                <title>MIT License</title>
+                                <path d="M245.467 134.782a113.137 109.096 0 1 1 0-.002"
+                                      transform="matrix(1.05723 0 0 1.09302 -12.041 -18.814)"></path>
+                                <text x="34.41" y="869.061" transform="matrix(.8908 0 0 1.12258 0 -796.362)">
+                                    MIT
+                                </text>
+                            </svg>
+                        {% endif %}
+                        {% if post.license.id=="GPL3" %}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256"
+                                 viewBox="0 0 256 256" class="GPL">
+                                <title>GNU General Public License v3.0</title>
+                                <path d="M245.467 134.782a113.137 109.096 0 1 1 0-.002"
+                                      transform="matrix(1.05723 0 0 1.09302 -12.041 -18.814)"></path>
+                                <text x="32" y="860" transform="matrix(.8908 0 0 1.12258 0 -796.362)">
+                                    GPL
+                                </text>
+                            </svg>
+
+                        {% endif %}
+
+                    </a>
+                {% endif %}
+            </div>
+            {% if post.single_language and post.single_language!=post.lang %}
+                <div class="note">
+                    {% if post.single_language=="de" %}
+                        This post hasn't (yet) been translated into English
+                    {% else %}
+                        Dieser Post wurde (noch) nicht auf Deutsch übersetzt.
+                    {% endif %}
+                </div>
+            {% endif %}
+            {{ post.html }}
+            <button id="readmore" data-id="{{ post.id }}">
+                {% trans %}I want to read more about this project{% endtrans %}
+            </button>
+            <div id="sentReadmore" class="note" style="display: none">
+                {% trans %}Thanks for the feedback!{% endtrans %}<br>
+                {% trans %}When I get to it, I will try to extend this post.{% endtrans %}<br>
+                {% trans %}In the meantime you can contact me at
+                    <a href="mailto:feedback@lw1.at">feedback@lw1.at</a> if you
+                    want to.{% endtrans %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,1 @@
+Ein einfacher [Mandelbrot](https://de.wikipedia.org/wiki/Mandelbrot-Menge) Generator

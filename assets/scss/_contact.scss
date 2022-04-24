@@ -1,0 +1,21 @@
+.contact {
+  display: flex;
+  justify-content: space-around;
+
+  svg {
+	width: 45px;
+	height: 45px;
+	color: $consoleBackground;
+	transition: color .2s;
+	padding: 5px;
+
+	&.keybase .line {
+	  fill: currentColor;
+	}
+  }
+
+  a:hover svg {
+    color: $consoleFocus;
+	outline: 1px solid $consoleFocus;
+  }
+}

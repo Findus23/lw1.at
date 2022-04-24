@@ -6,3 +6,6 @@ yarn-error.log
 .idea/
 stats.json
 spellcheck*.md
+public
+*.mo
+cache/

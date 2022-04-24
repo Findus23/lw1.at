@@ -1,0 +1,103 @@
+# German translations for PROJECT.
+# Copyright (C) 2022 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2022-04-24 13:10+0200\n"
+"PO-Revision-Date: 2022-04-24 13:10+0200\n"
+"Last-Translator: Lukas Winkler <translations@lw1.at>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.1\n"
+
+#: templates/base.html:16
+msgid "Back to the main page"
+msgstr "Zurück zur Hauptseite"
+
+#: templates/contact.html:3
+msgid "View my code on GitHub"
+msgstr "Schau meinen Code auf GitHub an"
+
+#: templates/contact.html:11 templates/contact.html:13
+msgid "Follow me on Mastodon"
+msgstr "Folg mir bei Mastodon"
+
+#: templates/contact.html:21
+msgid "Follow me on Twitter"
+msgstr "Folg mir auf Twitter"
+
+#: templates/contact.html:28
+msgid "Contact me via matrix.org (element.io)"
+msgstr "Kontaktiere mich über matrix.org (element.io)"
+
+#: templates/contact.html:35
+msgid "Share files with me via Nextcloud"
+msgstr "Teile Dateien mit mir über Nextcloud"
+
+#: templates/contact.html:43
+msgid "View my videos on PeerTube"
+msgstr "Schaue meine Videos auf PeerTube an"
+
+#: templates/contact.html:50
+msgid "View my code on GitLab"
+msgstr "Schaue meinen Code auf GitLab an"
+
+#: templates/contact.html:59
+msgid "View my guides"
+msgstr "Lies meine Anleitungen"
+
+#: templates/contact.html:71
+msgid "Write me an E-Mail (hi@lw1.at)"
+msgstr "Schreib mir eine E-Mail (hi@lw1.at)"
+
+#: templates/home.html:10
+msgid "imprint"
+msgstr "impressum"
+
+#: templates/home.html:10 templates/imprint.html:3 templates/imprint.html:7
+msgid "Imprint"
+msgstr "Impressum"
+
+#: templates/imprint.html:8
+msgid "Responsible for the content"
+msgstr "Für den Inhalt verantwortlich"
+
+#: templates/overview.html:2
+msgid "All Projects"
+msgstr "Alle Projekte"
+
+#: templates/overview.html:7
+msgid "Search&hellip;"
+msgstr "Suchen&hellip;"
+
+#: templates/page.html:108
+msgid "I want to read more about this project"
+msgstr "Ich möchte mehr über dieses Projekt lesen"
+
+#: templates/page.html:111
+msgid "Thanks for the feedback!"
+msgstr "Danke für das Feedback!"
+
+#: templates/page.html:112
+msgid "When I get to it, I will try to extend this post."
+msgstr "Wenn ich dazu komme, werde ich diesen Eintrag ergänzen."
+
+#: templates/page.html:113
+msgid ""
+"In the meantime you can contact me at\n"
+"                    <a "
+"href=\"mailto:feedback@lw1.at\">feedback@lw1.at</a> if you\n"
+"                    want to."
+msgstr ""
+"In der Zwischenzeit kann man mich auch unter\n"
+"<a href=\"mailto:feedback@lw1.at\">feedback@lw1.at</a>\n"
+"kontaktieren."
+

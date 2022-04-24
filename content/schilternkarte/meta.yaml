@@ -1,0 +1,17 @@
+id: schilternkarte
+tags:
+  - python
+  - javascript
+date: 2017-08-20
+github: Findus23/POI-Schiltern
+url: https://karte.ferienhaus-schiltern.at/
+license:
+  id: MIT
+  url: https://github.com/Findus23/POI-Schiltern/blob/master/LICENSE.md
+iframe:
+  url: https://karte.ferienhaus-schiltern.at/
+  color: "#ddd"
+de:
+  title: Schiltern Karte
+en:
+  title: Schiltern Map

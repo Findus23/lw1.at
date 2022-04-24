@@ -1,0 +1,12 @@
+id: paraview-video
+title: Visualizing SPH collisions with paraview
+tags:
+  - astronomy
+date: 2019-07-25
+url: https://video.lw1.at/videos/watch/470a188e-e6d0-4531-9ba3-43361564df27
+iframe:
+  url: https://video.lw1.at/videos/embed/470a188e-e6d0-4531-9ba3-43361564df27
+  allowfullscreen: True
+  sandbox: allow-same-origin allow-scripts
+  color: black
+single_language: en

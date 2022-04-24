@@ -1,0 +1,14 @@
+id: github-issues-mirror
+title: GitHub Issues Mirror
+tags:
+- matomo
+- php
+- scss
+date: 2017-09-20
+url: https://issues.matomo.org/
+tryout: true
+github: matomo-org/github-issues-mirror
+image_separator: true
+license:
+  id: GPL3
+  url: https://github.com/matomo-org/github-issues-mirror/blob/master/LICENSE

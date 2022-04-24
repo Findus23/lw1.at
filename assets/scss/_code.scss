@@ -1,0 +1,13 @@
+pre {
+  border: none;
+  padding: 0;
+  font-family: monospace, monospace;
+
+  code {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    background: $consoleBackground;
+    color: $consoleText;
+  }
+}

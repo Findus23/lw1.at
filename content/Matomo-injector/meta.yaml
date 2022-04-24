@@ -1,0 +1,13 @@
+id: Matomo-injector
+title: Matomo Browser Injector
+tags:
+- matomo
+- javascript
+- browserExtension
+date: 2017-08-27
+github: Findus23/piwik-injector
+url: https://chrome.google.com/webstore/detail/piwik-injector/bglodhjbeeolbfpodfacccmnjledmggn
+#tryout: true
+license:
+  id: MIT
+  url: https://github.com/Findus23/piwik-injector/blob/master/LICENSE

@@ -1,0 +1,13 @@
+id: StackexchangeSimulator
+title: Stackexchange Simulator
+tags:
+- python
+- major
+image_separator: true
+date: 2018-04-25
+github: Findus23/se-simulator
+url: https://se-simulator.lw1.at/
+tryout: true
+license:
+  id: GPL3
+  url: https://github.com/Findus23/se-simulator/blob/master/LICENSE

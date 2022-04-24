@@ -1,0 +1,11 @@
+id: matomo-icons
+title: Matomo-Icons
+tags:
+  - matomo
+  - bash
+url: https://matomo.org/
+github: matomo.org/matomo-icons
+date: 2017-11-22
+license:
+  id: GPL3
+  url: https://github.com/matomo/matomo-icons/blob/master/gpl-3.0.txt

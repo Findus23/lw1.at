@@ -1,0 +1,24 @@
+$color-primary: #303f9f;
+$borderRadius: 0px;
+$imageheight: 150px;
+
+$consoleBackground: #31363B;
+$consoleWhite: #EFF0F1;
+$consoleOrange: #FDBC4B;
+$consoleBlue: #3DAEE9;
+$consoleGreen: #16A085;
+$consoleRed: #963830;
+
+$consoleFocus: $consoleBlue;
+$consoleText: $consoleWhite;
+$consoleFont: "Fira Code Retina", monospace, monospace;
+
+
+@mixin dark() {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
+
+$hintDefaultColor: $consoleBlue;
+$hintFontFamily: $consoleFont;

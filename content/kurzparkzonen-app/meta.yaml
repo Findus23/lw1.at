@@ -1,0 +1,16 @@
+id: kurzparkzonen-app
+tags:
+- java
+- app
+url: https://play.google.com/store/apps/details?id=at.lw1.kurzparkzonen.wien
+tryout: true
+github: Findus23/kurzparkzonen-wien
+license:
+  id: GPL3
+  url: https://github.com/Findus23/kurzparkzonen-wien/blob/master/LICENSE
+date: 2018-10-16
+single_language: de
+de:
+  title: "Kurzparkzonen Wien App"
+en:
+  title: "Parking Zones Vienna App"

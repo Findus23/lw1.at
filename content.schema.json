@@ -1,0 +1,199 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+    {
+      "id": "acronomy",
+      "title": "Acronomy",
+      "tags": [
+        "python",
+        "astronomy",
+        "unfinished"
+      ],
+      "url": "https://acronomy.lw1.at/",
+      "tryout": true,
+      "date": "2020-07-29",
+      "github": "Findus23/acronomy",
+      "single_language": "en",
+      "license": {
+        "id": "GPL3",
+        "url": "https://github.com/Findus23/acronomy/blob/master/LICENSE"
+      },
+      "en": {
+        "title": "Acronomy"
+      },
+      "de": {
+        "title": "Acronomy"
+      }
+    }
+  ],
+  "properties": {
+    "id": {
+      "$id": "#/properties/id",
+      "type": "string",
+      "title": "The id schema",
+      "default": "",
+      "examples": [
+        "acronomy"
+      ]
+    },
+    "title": {
+      "$id": "#/properties/title",
+      "type": "string",
+      "title": "The title schema",
+      "default": "",
+      "examples": [
+        "Acronomy"
+      ]
+    },
+    "subtitle": {
+      "$id": "#/properties/subtitle",
+      "type": "string",
+      "title": "The subtitle schema",
+      "default": ""
+    },
+    "image_separator": {
+      "$id": "#/properties/image_separator",
+      "type": "boolean",
+      "default": false
+    },
+    "tags": {
+      "$id": "#/properties/tags",
+      "type": "array",
+      "title": "The tags schema",
+      "default": [],
+      "examples": [
+        [
+          "python",
+          "astronomy"
+        ]
+      ],
+      "additionalItems": true,
+      "items": {
+        "$id": "#/properties/tags/items",
+        "type": "string"
+      }
+    },
+    "url": {
+      "$id": "#/properties/url",
+      "type": "string",
+      "title": "The url schema",
+      "default": "",
+      "examples": [
+        "https://acronomy.lw1.at/"
+      ]
+    },
+    "tryout": {
+      "$id": "#/properties/try",
+      "type": "boolean",
+      "title": "The try schema",
+      "default": false,
+      "examples": [
+        true
+      ]
+    },
+    "date": {
+      "$id": "#/properties/date",
+      "type": "string",
+      "title": "The date schema",
+      "default": "",
+      "examples": [
+        "2020-07-29"
+      ]
+    },
+    "github": {
+      "$id": "#/properties/github",
+      "type": "string",
+      "title": "The github schema",
+      "default": "",
+      "examples": [
+        "Findus23/acronomy"
+      ]
+    },
+    "single_language": {
+      "$id": "#/properties/single_language",
+      "type": "string",
+      "title": "The single_language schema",
+      "default": "",
+      "examples": [
+        "en"
+      ]
+    },
+    "license": {
+      "$id": "#/properties/license",
+      "type": "object",
+      "title": "The license schema",
+      "default": {},
+      "examples": [
+        {
+          "id": "GPL3",
+          "url": "https://github.com/Findus23/acronomy/blob/master/LICENSE"
+        }
+      ],
+      "required": [
+        "id",
+        "url"
+      ],
+      "properties": {
+        "id": {
+          "$id": "#/properties/license/properties/id",
+          "type": "string",
+          "title": "The id schema",
+          "default": "",
+          "examples": [
+            "GPL3"
+          ]
+        },
+        "url": {
+          "$id": "#/properties/license/properties/url",
+          "type": "string",
+          "title": "The url schema",
+          "default": "",
+          "examples": [
+            "https://github.com/Findus23/acronomy/blob/master/LICENSE"
+          ]
+        }
+      }
+    },
+    "iframe": {
+      "$id": "#/properties/iframe",
+      "type": "object",
+      "title": "The iFrame schema",
+      "default": {},
+      "required": [
+        "url",
+        "color"
+      ],
+      "properties": {
+        "color": {
+          "$id": "#/properties/iframe/properties/color",
+          "type": "string",
+          "title": "The color schema",
+          "default": "",
+        },
+        "url": {
+          "$id": "#/properties/iframe/properties/url",
+          "type": "string",
+          "title": "The url schema",
+          "default": ""
+        }
+      }
+    },
+
+    "en": {
+      "$id": "#/properties/en",
+      "type": "object",
+      "$ref": "#",
+      "required": []
+    },
+    "de": {
+      "$id": "#/properties/de",
+      "type": "object",
+      "$ref": "#"
+    }
+  }
+}

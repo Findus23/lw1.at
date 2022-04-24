@@ -1,0 +1,13 @@
+id: hunger
+title: Hunger API
+tags:
+- python
+- unfinished
+image_separator: true
+date: 2017-06-21
+#  url: https://hunger.lw1.at/doc/
+#  try: true
+github: Findus23/hunger
+license:
+  id: GPL3
+  url: https://github.com/Findus23/hunger/blob/master/LICENSE

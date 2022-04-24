@@ -1,0 +1,13 @@
+id: umweltdatenmessung
+tags:
+  - bash
+  - python
+  - major
+date: 2014-06-18
+url: https://vwa.lw1.at/
+tryout: true
+github: Findus23/Umweltdatenmessung
+de:
+  title: Umweltdatenmessung mit dem Raspberry Pi
+en:
+  title: Measuring Environmental Data with the Raspberry Pi

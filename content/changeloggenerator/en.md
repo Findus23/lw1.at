@@ -1,0 +1,1 @@
+A reimplementation of [the Matomo changelog generator](https://github.com/matomo-org/github-changelog-generator/) written in Python that fetches a list of GitHub issues closed since the last release and uses it to generate a changelog as HTML, Markdown or Debian Changelog

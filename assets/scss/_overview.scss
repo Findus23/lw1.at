@@ -1,0 +1,191 @@
+@import "variables";
+@import "../node_modules/milligram/src/Color";
+@import "../node_modules/milligram/src/Utility";
+
+.card {
+  color: $consoleText;
+  background: $consoleBackground;
+  transition: color .2s;
+  border-radius: $borderRadius;
+  z-index: 3;
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 300px;
+  cursor: pointer;
+
+  &:before {
+    border-radius: $borderRadius;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -3;
+    /*@include shadow(2);*/
+    /*transition: box-shadow 0.2s;*/
+  }
+
+  &:hover, &:focus {
+    color: $consoleFocus;
+
+    .tag {
+      color: $consoleFocus;
+      border-color: $consoleFocus;
+    }
+  }
+
+  .imgwrapper {
+    background: $consoleBackground
+
+  }
+
+  img {
+    display: block;
+    transition: filter .2s;
+    border-top-left-radius: $borderRadius;
+    border-top-right-radius: $borderRadius;
+    height: auto;
+    z-index: 5;
+    position: relative;
+  }
+
+  .imgwrapper {
+    height: 150px;
+  }
+
+  .textwrapper {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+
+    > div {
+      padding: 0 10px
+    }
+  }
+}
+
+.tag {
+  font-family: $consoleFont;
+  display: inline-block;
+  padding: .2em .6em .3em;
+  font-size: 70%;
+  font-weight: bold;
+  line-height: 1;
+  border: 1px $consoleText solid;
+  color: $consoleText;
+  background-color: $consoleBackground;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: $borderRadius;
+  margin-left: 2px;
+  margin-right: 2px;
+  transition: color .2s, border-color .2s;
+}
+
+button {
+  color: white;
+
+  &.colored {
+    color: white;
+  }
+
+  &.active {
+    /*color: darken($color-secondary, 10%);
+border-color: darken($color-secondary, 10%);
+background-color: darken(white, 10%) !important;*/
+    color: $consoleFocus;
+  }
+
+  svg {
+    vertical-align: sub;
+    margin-right: 4px;
+  }
+
+}
+
+#filterwrapper {
+  font-family: monospace, monospace;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  a {
+    display: block;
+    color: $consoleBackground;
+    //text-transform: initial;
+    font-family: $consoleFont;
+    font-size: 1.2rem;
+    padding: .2em .6em;
+    //line-height: 10px;
+    //height: 25px;
+    font-weight: 700;
+    letter-spacing: .1rem;
+
+    &.active {
+      color: $consoleWhite;
+      background-color: $consoleBackground;
+    }
+
+    &:focus, &:active, &:hover {
+      outline: 1px solid $consoleBackground;
+    }
+  }
+}
+
+#searchwrapper {
+  margin-bottom: 2rem;
+
+  input {
+    font-family: $consoleFont;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 4px;
+    border: 1px solid #bbb; /* Here */
+    border: none;
+    border-radius: $borderRadius;
+    margin-bottom: 0;
+    background-color: $consoleBackground;
+    color: $consoleText;
+    max-width: 300px;
+    width: 100%;
+
+    &:focus {
+      border-color: $color-primary;
+    }
+
+    &::placeholder {
+      color: $consoleText;
+      opacity: 1;
+    }
+
+    &::selection {
+      background: $consoleText;
+      color: $consoleBackground;
+    }
+  }
+}
+
+#noresults {
+  font-family: $consoleFont;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.gpg {
+  display: block;
+  font-family: monospace;
+  font-size: 80%;
+}
+
+#visitcounter {
+  height: 35px;
+  width: auto;
+}
+

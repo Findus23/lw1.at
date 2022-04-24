@@ -1,0 +1,99 @@
+# Translations template for PROJECT.
+# Copyright (C) 2022 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2022-04-24 13:10+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.1\n"
+
+#: templates/base.html:16
+msgid "Back to the main page"
+msgstr ""
+
+#: templates/contact.html:3
+msgid "View my code on GitHub"
+msgstr ""
+
+#: templates/contact.html:11 templates/contact.html:13
+msgid "Follow me on Mastodon"
+msgstr ""
+
+#: templates/contact.html:21
+msgid "Follow me on Twitter"
+msgstr ""
+
+#: templates/contact.html:28
+msgid "Contact me via matrix.org (element.io)"
+msgstr ""
+
+#: templates/contact.html:35
+msgid "Share files with me via Nextcloud"
+msgstr ""
+
+#: templates/contact.html:43
+msgid "View my videos on PeerTube"
+msgstr ""
+
+#: templates/contact.html:50
+msgid "View my code on GitLab"
+msgstr ""
+
+#: templates/contact.html:59
+msgid "View my guides"
+msgstr ""
+
+#: templates/contact.html:71
+msgid "Write me an E-Mail (hi@lw1.at)"
+msgstr ""
+
+#: templates/home.html:10
+msgid "imprint"
+msgstr ""
+
+#: templates/home.html:10 templates/imprint.html:3 templates/imprint.html:7
+msgid "Imprint"
+msgstr ""
+
+#: templates/imprint.html:8
+msgid "Responsible for the content"
+msgstr ""
+
+#: templates/overview.html:2
+msgid "All Projects"
+msgstr ""
+
+#: templates/overview.html:7
+msgid "Search&hellip;"
+msgstr ""
+
+#: templates/page.html:108
+msgid "I want to read more about this project"
+msgstr ""
+
+#: templates/page.html:111
+msgid "Thanks for the feedback!"
+msgstr ""
+
+#: templates/page.html:112
+msgid "When I get to it, I will try to extend this post."
+msgstr ""
+
+#: templates/page.html:113
+msgid ""
+"In the meantime you can contact me at\n"
+"                    <a "
+"href=\"mailto:feedback@lw1.at\">feedback@lw1.at</a> if you\n"
+"                    want to."
+msgstr ""
+

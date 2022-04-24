@@ -1,0 +1,14 @@
+id: nonsense
+title: nonsense
+tags:
+- python
+date: 2017-12-01
+github: Findus23/nonsense
+url: https://nonsense.lw1.at
+tryout: true
+license:
+  id: MIT
+  url: https://github.com/Findus23/nonsense/blob/master/LICENSE
+iframe:
+  url: https://nonsense.lw1.at/
+  color: "#003399"

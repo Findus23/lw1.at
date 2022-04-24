@@ -1,0 +1,16 @@
+id: kurzparkzonen
+tags:
+  - javascript
+  - website
+url: https://kurzparkzonen-wien.lw1.at/
+tryout: true
+github: Findus23/kurzparkzonen-wien
+license:
+  id: GPL3
+  url: https://github.com/Findus23/kurzparkzonen-wien/blob/master/LICENSE
+date: 2018-10-15
+single_language: de
+en:
+  title: "Parking Zones Vienna"
+de:
+  title: "Kurzparkzonen Wien"

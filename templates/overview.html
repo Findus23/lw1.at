@@ -1,0 +1,39 @@
+<div id="filterwrapper">
+    <a href="/{{ lang }}/" {% if current=="all" %}class="active"{% endif %}>
+        {% trans %}All Projects{% endtrans %}
+    </a>
+    {% for tag in tags.values() %}
+        {% if not tag.hidden %}
+            <a href="/{{ lang }}/t/{{ tag.slug_in_lang(lang) }}" {% if current==tag.id %}class="active"{% endif %}>
+                {{ tag.name_in_lang(lang) }}
+            </a>
+        {% endif %}
+    {% endfor %}
+</div>
+<div id="searchwrapper">
+    <input id="search" title="test" placeholder="{% trans %}Search&hellip;{% endtrans %}"/>
+</div>
+<div id="blockwrapper">
+    {% for post in posts %}
+        <a href="{{ post.absolute_url }}" class="card" data-title="{{ post.title.lower() }}">
+            <div class="imgwrapper">
+                <canvas data-blurhash="{{ post.thumbnail_img.blurhash }}" width="32" height="16"></canvas>
+                <img src="{{ post.thumbnail_img.public_url }}" width="1200" height="600" loading="lazy">
+            </div>
+            <div class="textwrapper">
+                <div>{{ post.title }}</div>
+                {% if post.date %}
+                    <div>{{ post.date }}</div>
+                {% endif %}
+                <div class="tagwrapper">
+                    {% for tag in post.tags %}
+                        <div class="tag">
+                            {{ tags[tag].name_in_lang(lang) }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </a>
+    {% endfor %}
+
+</div>

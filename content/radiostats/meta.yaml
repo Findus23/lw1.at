@@ -1,0 +1,13 @@
+id: radiostats
+title: RadioStats
+tags:
+- python
+- javascript
+image_separator: true
+date: 2018-02-10
+github: Findus23/RadioStats
+url: https://radiostats.lw1.at/
+tryout: true
+license:
+  id: GPL3
+  url: https://github.com/Findus23/RadioStats/blob/master/LICENSE

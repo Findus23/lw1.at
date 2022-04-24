@@ -1,0 +1,1 @@
+A simple [Mandelbrot](https://en.wikipedia.org/wiki/Mandelbrot_set) generator

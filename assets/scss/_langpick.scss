@@ -1,0 +1,17 @@
+.languagePicker {
+  display: flex;
+  justify-content: space-around;
+  min-height: 70vh;
+  align-items: center;
+
+  a {
+    display: block;
+    background: $consoleBackground;
+    color: $consoleText;
+    padding: 2rem;
+
+    &:active, &:focus, &:hover {
+      color: $consoleBlue;
+    }
+  }
+}

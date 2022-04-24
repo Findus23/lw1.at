@@ -1,0 +1,12 @@
+id: paperlibrary
+title: Paper Library
+tags:
+  - python
+  - astronomy
+  - unfinished
+date: 2018-12-20
+github: Findus23/PaperLibrary
+license:
+  id: GPL3
+  url: https://github.com/Findus23/PaperLibrary/blob/master/LICENSE
+single_language: en

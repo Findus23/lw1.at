@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Lukas Winkler{% endblock %}
+
+{% block content %}
+
+    {% include "intro.html" %}
+    {% include "contact.html" %}
+    {% include "overview.html" %}
+    <a href="/{{ lang }}/{% trans %}imprint{% endtrans %}/" class="toImprint">{% trans %}Imprint{% endtrans %}</a>
+    <a href="https://keyoxide.org/63DB263BACE368B5C5F79CE494AFBE7C2656A5B5" class="gpg" target="_blank"
+       rel="noopener">
+        GPG: 63DB 263B ACE3 68B5 C5F7 9CE4 94AF BE7C 2656 A5B5
+    </a>
+{#    {% if not debug %}#}
+{#        <img src="https://matomo.lw1.at/index.php?module=ClassicCounter&action=svg&idSite=14"#}
+{#             alt="Matomo visit counter" loading="lazy"#}
+{#             height="38" aria-hidden="true" id="visitcounter">#}
+{#    {% endif %}#}
+
+{% endblock %}

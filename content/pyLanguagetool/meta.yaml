@@ -1,0 +1,11 @@
+id: pyLanguagetool
+title: pyLanguagetool
+tags:
+- python
+date: 2017-01-15
+url: https://pylanguagetool.lw1.at/
+tryout: true
+github: Findus23/pylanguagetool
+license:
+  id: MIT
+  url: https://github.com/Findus23/pyLanguagetool/blob/master/LICENSE

@@ -1,0 +1,12 @@
+id: changeloggenerator
+title: GitHub Changelog Generator
+tags:
+  - python
+  - matomo
+  - unfinished
+date: 2019-02-14
+github: Findus23/new-github-changelog-generator
+#license:
+#  id: GPL3
+#  url: https://github.com/Findus23/PaperLibrary/blob/master/LICENSE
+single_language: en

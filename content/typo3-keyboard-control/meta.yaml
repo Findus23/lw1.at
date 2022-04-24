@@ -1,0 +1,12 @@
+id: typo3-keyboard-control
+title: TYPO3 Keyboard Control
+tags:
+- javascript
+- browserExtension
+date: 2018-09-15
+url: https://addons.mozilla.org/de/firefox/addon/typo3-keyboard-control/
+tryout: true
+github: Findus23/typo3-keyboard
+license:
+  id: GPL3
+  url: https://github.com/Findus23/typo3-keyboard/blob/master/LICENSE

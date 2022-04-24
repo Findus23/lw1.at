@@ -1,0 +1,10 @@
+id: rss2wallabag
+title: rss2wallabag
+tags:
+- python
+github: Findus23/rss2wallabag
+image_separator: true
+date: 2017-02-20
+license:
+  id: MIT
+  url: https://github.com/Findus23/rss2wallabag/blob/master/LICENSE

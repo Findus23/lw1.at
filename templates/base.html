@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/{{ entrypoints["assets/scss/main.scss"] }}">
+    {% block additionalCSS %}
+    {% endblock %}
+    <title>{% block title %}{% endblock %} - lw1.at</title>
+</head>
+<body>
+<div id="app" class="container">
+    {% if type!="home" %}
+        <div class="backButton">
+            <a href="/{{ lang }}/">
+                <span class="arrow">←</span> {% trans %}Back to the main page{% endtrans %}
+            </a>
+        </div>
+    {% endif %}
+    {% if otherlang_url is defined %}
+        <div class="languageSelector">
+            <a href="{{ otherlang_url }}">{% if lang=="de" %}English{% else %}Deutsch{% endif %}</a>
+        </div>
+    {% endif %}
+    {% block content %}
+
+    {% endblock %}
+
+</div>
+<script type="module" async  src="/{{ entrypoints[js_entry_point] }}"></script>
+</body>
+</html>

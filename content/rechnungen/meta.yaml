@@ -1,0 +1,14 @@
+id: rechnungen
+tags:
+- python
+- latex
+image_separator: true
+github: Findus23/invoices
+license:
+  id: GPL3
+  url: https://github.com/Findus23/rechnungen/blob/master/LICENSE
+date: 2018-03-10
+de:
+  title: "Rechnungsgenerator"
+en:
+  title: "Invoice Generator"

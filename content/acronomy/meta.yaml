@@ -1,0 +1,19 @@
+id: acronomy
+title: sdf
+tags:
+  - python
+  - astronomy
+  - unfinished
+url: https://acronomy.lw1.at/
+tryout: true
+date: 2020-07-29
+github: Findus23/acronomy
+single_language: en
+license:
+  id: GPL3
+  url: https://github.com/Findus23/acronomy/blob/master/LICENSE
+
+en:
+  title: Acronomy
+de:
+  title: Acronomy

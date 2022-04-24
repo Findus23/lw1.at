@@ -1,0 +1,14 @@
+id: profileavatar
+title: Matomo Profile Avatar
+tags:
+  - php
+  - matomo
+url: https://plugins.matomo.org/ProfileAvatar
+tryout: true
+date: 2020-05-20
+github: Findus23/plugin-ProfileAvatar
+single_language: en
+license:
+  id: GPL3
+  url: https://github.com/Findus23/plugin-ProfileAvatar/blob/master/LICENSE
+
