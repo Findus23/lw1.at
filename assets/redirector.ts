@@ -1,4 +1,6 @@
-export function defaultLanguage(): string {
+import type {Language} from "./types";
+
+export function defaultLanguage(): Language {
     const lang = navigator.language.toLowerCase()
     if (lang.includes("de")) {
         return "de"

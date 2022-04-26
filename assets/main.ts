@@ -8,10 +8,13 @@ const height = width / 2;
 
 function drawBlurhash(canvasEl: HTMLCanvasElement) {
     const hash = canvasEl.getAttribute("data-blurhash")
+    if (!hash) {
+        return
+    }
 
     const pixels = decode(hash, width, height);
 
-    const ctx = canvasEl.getContext("2d");
+    const ctx = canvasEl.getContext("2d")!;
     const imageData = new ImageData(pixels, width, height);
     // ctx.scale(10, 10);
     ctx.putImageData(imageData, 0, 0);
@@ -20,7 +23,7 @@ function drawBlurhash(canvasEl: HTMLCanvasElement) {
 }
 
 
-const canvasList = Array.from(document.querySelectorAll("canvas[data-blurhash]"))
+const canvasList: HTMLCanvasElement[] = Array.from(document.querySelectorAll("canvas[data-blurhash]"))
 canvasList.slice(0, 5)
     .forEach(drawBlurhash)
 

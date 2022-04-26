@@ -5,17 +5,19 @@ import {BrowserFeatures} from "matomo-lite-tracker/src/browserfeatures"
 import {enableLinkTracking} from "matomo-lite-tracker/src/linktracking"
 import {isDoNotTrackEnabled} from "matomo-lite-tracker/src/util"
 
+export let matomo: MatomoLiteTracker | undefined
 
 export function initMatomo(): void {
-    if (isDebug|| isDoNotTrackEnabled()) {
+    if (isDebug || isDoNotTrackEnabled()) {
         return
     }
-    const matomo = new MatomoLiteTracker("https://matomo.lw1.at", 14)
-    matomo.performanceMetric = new PerformanceMetric()
+    const m = new MatomoLiteTracker("https://matomo.lw1.at", 14)
+    m.performanceMetric = new PerformanceMetric()
 
-    matomo.browserFeatures = new BrowserFeatures()
+    m.browserFeatures = new BrowserFeatures()
 
-    enableLinkTracking(matomo, [])
-    matomo.trackPageview()
+    enableLinkTracking(m, [])
+    m.trackPageview()
+    matomo = m
 }
 
