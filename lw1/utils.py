@@ -29,3 +29,5 @@ def custom_slugify(title: str) -> str:
     for delete in ["'"]:
         title = title.replace(delete, "")
     return slugify(title)
+
+

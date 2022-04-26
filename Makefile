@@ -13,7 +13,7 @@ compile:
 	pybabel compile  -d translations --statistics
 
 upload:
-	rsync -aPz --delete-after public/* lw1.at:/var/www/beta.lw1.at/
+	rsync -aPz --delete --delete-after public lw1.at:/var/www/lw1.at/
 
 esbuild:
 	npm run build

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-04-24 19:06+0200\n"
+"POT-Creation-Date: 2022-04-26 15:58+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -77,19 +77,19 @@ msgstr ""
 msgid "Search&hellip;"
 msgstr ""
 
-#: templates/page.html:128
+#: templates/page.html:134
 msgid "I want to read more about this project"
 msgstr ""
 
-#: templates/page.html:131
+#: templates/page.html:137
 msgid "Thanks for the feedback!"
 msgstr ""
 
-#: templates/page.html:132
+#: templates/page.html:138
 msgid "When I get to it, I will try to extend this post."
 msgstr ""
 
-#: templates/page.html:133
+#: templates/page.html:139
 msgid ""
 "In the meantime you can contact me at\n"
 "                    <a "

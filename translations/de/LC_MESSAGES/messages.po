@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-04-24 19:06+0200\n"
+"POT-Creation-Date: 2022-04-26 15:58+0200\n"
 "PO-Revision-Date: 2022-04-24 13:10+0200\n"
 "Last-Translator: Lukas Winkler <translations@lw1.at>\n"
 "Language: de\n"
@@ -78,19 +78,19 @@ msgstr "Alle Projekte"
 msgid "Search&hellip;"
 msgstr "Suchen&hellip;"
 
-#: templates/page.html:128
+#: templates/page.html:134
 msgid "I want to read more about this project"
 msgstr "Ich möchte mehr über dieses Projekt lesen"
 
-#: templates/page.html:131
+#: templates/page.html:137
 msgid "Thanks for the feedback!"
 msgstr "Danke für das Feedback!"
 
-#: templates/page.html:132
+#: templates/page.html:138
 msgid "When I get to it, I will try to extend this post."
 msgstr "Wenn ich dazu komme, werde ich diesen Eintrag ergänzen."
 
-#: templates/page.html:133
+#: templates/page.html:139
 msgid ""
 "In the meantime you can contact me at\n"
 "                    <a "

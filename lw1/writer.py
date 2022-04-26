@@ -5,12 +5,15 @@ from lw1.paths import output_dir
 
 
 class Writer:
-    def write(self, url: Path, html: str):
+    def write(self, url: Path, html: str, direct=False):
         output_url = output_dir / url.relative_to("/")
         print(url)
-        output_url.mkdir(exist_ok=True, parents=True)
-        index_file = output_url / "index.html"
-        with index_file.open("w") as f:
+        if not direct:
+            output_url.mkdir(exist_ok=True, parents=True)
+            output_file = output_url / "index.html"
+        else:
+            output_file = output_url
+        with output_file.open("w") as f:
             f.write(html)
 
     def writeImage(self, url: Path, image: Image):

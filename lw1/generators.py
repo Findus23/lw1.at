@@ -129,3 +129,41 @@ class LangRedirectGenerator(Generator):
             paths.add(root / post.slug)
         for url in paths:
             writer.write(url, html)
+
+
+class SimpleSiteGenerator(Generator):
+    template_name = "simple.html"
+    filename: str
+    title: str
+    content: str
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+    def generate(self, writer: Writer) -> None:
+        self.context["title"], self.context["content"] = self.title, self.content
+        url = Path("/") / self.filename
+        self.context["url"] = url
+        self.context["lanf"] = "en"
+        self.context["otherlang"] = "de"
+        self.context["otherlang_url"] = Path("/de")
+        html = self.template.render(**self.context)
+        writer.write(url, html)
+
+
+class NotFoundGenerator(SimpleSiteGenerator):
+    filename = "404.html"
+    title = "Page not Found"
+    content = "The page you are looking for doesn't seem to exist."
+
+
+class PermissionDeniedGenerator(SimpleSiteGenerator):
+    filename = "403.html"
+    title = "Permission Denied"
+    content = "The page you are looking for doesn't seem to be public."
+
+
+class ServerErrorGenerator(SimpleSiteGenerator):
+    filename = "50x.html"
+    title = "Server Error"
+    content = "The seems to be an issue with the webserver at the moment. Please try again later."

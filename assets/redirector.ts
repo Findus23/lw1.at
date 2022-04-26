@@ -15,7 +15,7 @@ export function redirect(): void {
     const currentPath = l.pathname
     const lang = defaultLanguage()
     if (currentPath.startsWith("/i")) {
-        l.replace("/" + lang + "/" + imprintName[lang] + "/")
+        l.replace("/" + lang + "/" + imprintName[lang])
         return
 
     }
