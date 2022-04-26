@@ -3,6 +3,7 @@
     "blurhash": "^1.1.5",
     "hint.css": "^2.7.0",
     "katex": "^0.15.3",
+    "matomo-lite-tracker": "github:Findus23/MatomoLiteTracker",
     "milligram": "git+https://github.com/Findus23/milligram.git#0fde381605c1159f39efb5c33c9600331fec4e2e",
     "modern-normalize": "^1.1.0",
     "sanitize.css": "^13.0.0",
