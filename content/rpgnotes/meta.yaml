@@ -1,0 +1,13 @@
+id: rpgnotes
+title: RPGnotes
+tags:
+- python
+- website
+github: Findus23/RPGnotes
+url: https://rpgnotes.lw1.at/
+tryout: true
+license:
+  id: GPL3
+  url: https://github.com/Findus23/RPGnotes/blob/main/LICENSE
+date: 2022-07-01
+single_language: en

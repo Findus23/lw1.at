@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-04-26 15:58+0200\n"
+"POT-Creation-Date: 2022-07-11 23:03+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.10.1\n"
+"Generated-By: Babel 2.10.3\n"
 
 #: templates/base.html:24
 msgid "Back to the main page"
@@ -57,11 +57,12 @@ msgstr ""
 msgid "Write me an E-Mail (hi@lw1.at)"
 msgstr ""
 
-#: templates/home.html:11
+#: templates/home.html:11 templates/simple.html:10
 msgid "imprint"
 msgstr ""
 
 #: templates/home.html:11 templates/imprint.html:3 templates/imprint.html:9
+#: templates/simple.html:10
 msgid "Imprint"
 msgstr ""
 

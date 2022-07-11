@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-04-26 15:58+0200\n"
+"POT-Creation-Date: 2022-07-11 23:03+0200\n"
 "PO-Revision-Date: 2022-04-24 13:10+0200\n"
 "Last-Translator: Lukas Winkler <translations@lw1.at>\n"
 "Language: de\n"
@@ -16,7 +16,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.10.1\n"
+"Generated-By: Babel 2.10.3\n"
 
 #: templates/base.html:24
 msgid "Back to the main page"
@@ -58,11 +58,12 @@ msgstr "Lies meine Anleitungen"
 msgid "Write me an E-Mail (hi@lw1.at)"
 msgstr "Schreib mir eine E-Mail (hi@lw1.at)"
 
-#: templates/home.html:11
+#: templates/home.html:11 templates/simple.html:10
 msgid "imprint"
 msgstr "impressum"
 
 #: templates/home.html:11 templates/imprint.html:3 templates/imprint.html:9
+#: templates/simple.html:10
 msgid "Imprint"
 msgstr "Impressum"
 

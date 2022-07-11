@@ -53,7 +53,7 @@ def get_by_extension(file: Path) -> Path:
         print(ext_file)
         if ext_file.exists():
             return ext_file
-    raise FileNotFoundError()
+    raise FileNotFoundError(file)
 
 
 def shorten_filename(path: Path) -> Path:
