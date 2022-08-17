@@ -10,7 +10,7 @@ from lw1.paths import content_dir, output_dir
 from lw1.post import Post
 from lw1.settings import LANGUAGES, FALLBACK_LANGUAGES
 from lw1.tag import Tag
-from lw1.types import Language
+from lw1.utils import Language
 
 
 class PostLoader():

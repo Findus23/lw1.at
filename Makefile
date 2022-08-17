@@ -19,7 +19,7 @@ esbuild:
 	npm run build
 
 build:
-	/home/lukas/.virtualenvs/lw1/bin/python lw1/main.py
+	/home/lukas/.virtualenvs/lw1/bin/python -m lw1.main
 
 rmpublic:
 	rm -r public/

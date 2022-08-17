@@ -1,7 +1,6 @@
 from dataclasses import dataclass
 
-from lw1.types import Language
-from lw1.utils import custom_slugify
+from lw1.utils import custom_slugify,Language
 
 
 @dataclass

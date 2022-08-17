@@ -9,7 +9,7 @@ from lw1.post import Post
 from lw1.settings import FALLBACK_LANGUAGES
 from lw1.sitemap import Sitemap
 from lw1.tag import Tag
-from lw1.types import Language
+from lw1.utils import Language
 from lw1.writer import Writer
 
 env = Environment(

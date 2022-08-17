@@ -1,10 +1,11 @@
 import hashlib
 from pathlib import Path
+from typing import Literal
 
 from slugify import slugify
 
 BUF_SIZE = 65536
-
+Language = Literal["de", "en"]
 
 def long_hash(input: str) -> str:
     return hashlib.sha256(input.encode('utf-8')).hexdigest()

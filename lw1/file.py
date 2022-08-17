@@ -17,7 +17,7 @@ def logged_run(cmd: List[str]):
 
 
 def optimize_png(file: Path) -> None:
-    logged_run(["optipng", "-o", "9", str(file)])
+    logged_run(["oxipng", "-o", "max", str(file)])
 
 
 def replace_transparency_png(file: Path, bg_color: str) -> None:

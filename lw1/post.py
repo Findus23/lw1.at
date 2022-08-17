@@ -8,8 +8,7 @@ from typing import Dict, List
 from lw1.file import Image
 from lw1.settings import DOMAIN
 from lw1.tomarkdown import markdown2html
-from lw1.types import Language
-from lw1.utils import custom_slugify
+from lw1.utils import custom_slugify, Language
 
 
 @dataclass
