@@ -33,6 +33,7 @@ unfinished:
   name:
     en: unfinished
     de: unfertig
+  hidden: true
 events:
   name: Events
   hidden: true
@@ -49,3 +50,7 @@ conference:
   name:
     de: Konferenz
     en: Conference
+map:
+  name:
+    de: Karte
+    en: Map

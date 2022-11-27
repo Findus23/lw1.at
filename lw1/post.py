@@ -1,9 +1,12 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from datetime import datetime
 from functools import cached_property
 from pathlib import Path
 from typing import Dict, List
+
+from babel import dates
 
 from lw1.file import Image
 from lw1.settings import DOMAIN
@@ -29,7 +32,7 @@ class iFrame:
 class Post:
     title: str
     tags: List[str]
-    date: str
+    date: datetime
     markdown: str
     content_img: Image
     thumbnail_img: Image
@@ -79,6 +82,10 @@ class Post:
 
     def __str__(self):
         return f"Post({self.id}, {self.lang})"
+
+    @property
+    def date_year_month(self):
+        return dates.format_date(self.date, 'MMMM yyyy', locale=self.lang)
 
     @property
     def contains_math(self):

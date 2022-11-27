@@ -23,7 +23,7 @@
             <div class="textwrapper">
                 <div>{{ post.title }}</div>
                 {% if post.date %}
-                    <div>{{ post.date }}</div>
+                    <div>{{ post.date_year_month }}</div>
                 {% endif %}
                 <div class="tagwrapper">
                     {% for tag in post.tags %}

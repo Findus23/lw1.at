@@ -1,0 +1,16 @@
+id: rainbowroad
+title: Rainbow Road
+tags:
+- website
+- map
+- javascript
+date: 2022-08-20
+github: Findus23/RainbowRoad
+url: https://rainbowroad.lw1.at/
+tryout: true
+iframe:
+  url: https://rainbowroad.lw1.at/
+  color: white
+license:
+  id: GPL3
+  url: https://github.com/Findus23/RainbowRoad/blob/main/LICENSE

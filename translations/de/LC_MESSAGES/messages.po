@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-07-11 23:03+0200\n"
+"POT-Creation-Date: 2022-11-27 14:35+0100\n"
 "PO-Revision-Date: 2022-04-24 13:10+0200\n"
 "Last-Translator: Lukas Winkler <translations@lw1.at>\n"
 "Language: de\n"
@@ -16,7 +16,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.10.3\n"
+"Generated-By: Babel 2.11.0\n"
 
 #: templates/base.html:24
 msgid "Back to the main page"
@@ -31,30 +31,26 @@ msgid "Follow me on Mastodon"
 msgstr "Folg mir bei Mastodon"
 
 #: templates/contact.html:21
-msgid "Follow me on Twitter"
-msgstr "Folg mir auf Twitter"
-
-#: templates/contact.html:28
 msgid "Contact me via matrix.org (element.io)"
 msgstr "Kontaktiere mich über matrix.org (element.io)"
 
-#: templates/contact.html:35
+#: templates/contact.html:28
 msgid "Share files with me via Nextcloud"
 msgstr "Teile Dateien mit mir über Nextcloud"
 
-#: templates/contact.html:43
+#: templates/contact.html:36
 msgid "View my videos on PeerTube"
 msgstr "Schaue meine Videos auf PeerTube an"
 
-#: templates/contact.html:50
+#: templates/contact.html:43
 msgid "View my code on GitLab"
 msgstr "Schaue meinen Code auf GitLab an"
 
-#: templates/contact.html:59
+#: templates/contact.html:52
 msgid "View my guides"
 msgstr "Lies meine Anleitungen"
 
-#: templates/contact.html:71
+#: templates/contact.html:64
 msgid "Write me an E-Mail (hi@lw1.at)"
 msgstr "Schreib mir eine E-Mail (hi@lw1.at)"
 
@@ -101,4 +97,7 @@ msgstr ""
 "In der Zwischenzeit kann man mich auch unter\n"
 "<a href=\"mailto:feedback@lw1.at\">feedback@lw1.at</a>\n"
 "kontaktieren."
+
+#~ msgid "Follow me on Twitter"
+#~ msgstr "Folg mir auf Twitter"
 

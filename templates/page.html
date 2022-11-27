@@ -30,7 +30,7 @@
 {% endblock %}
 
 {% block content %}
-    <article{% if post.single_language %} lang="{{ post.single_language }}"{% endif %}>
+    <article{% if post.single_language %} lang="{{ post.single_language }}"{% endif %} id="post-{{ post.id }}">
         <div class="modal-header">
             <div class="imagewrapper{% if post.image_separator %} separator{% endif %}">
                 <canvas data-blurhash="{{ post.content_img.blurhash }}" width="32" height="16"></canvas>
@@ -109,6 +109,17 @@
                                 </text>
                             </svg>
 
+                        {% endif %}
+                        {% if post.license.id=="BSD-3-Clause" %}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256"
+                                 viewBox="0 0 256 256" class="BSD">
+                                <title>BSD 3-Clause License</title>
+                                <path d="M245.467 134.782a113.137 109.096 0 1 1 0-.002"
+                                      transform="matrix(1.05723 0 0 1.09302 -12.041 -18.814)"></path>
+                                <text x="32" y="860" transform="matrix(.8 0 0 1.12258 0 -796.362)">
+                                    BSD
+                                </text>
+                            </svg>
                         {% endif %}
 
                     </a>

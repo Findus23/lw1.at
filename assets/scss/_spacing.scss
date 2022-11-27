@@ -18,6 +18,10 @@ ol {
   margin-bottom: 1.5rem
 }
 
+p + ul {
+    margin-top: -1rem;
+}
+
 .simplePageHeading {
   padding-top: 2rem;
 }

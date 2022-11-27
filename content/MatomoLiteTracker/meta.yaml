@@ -1,0 +1,11 @@
+id: matomo-lite-tracker
+title: MatomoLiteTracker
+tags:
+  - matomo
+  - javascript
+date: 2022-04-26
+github: Findus23/MatomoLiteTracker
+single_language: en
+license:
+  id: BSD-3-Clause
+  url: https://github.com/Findus23/MatomoLiteTracker/blob/main/LICENSE
