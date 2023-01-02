@@ -10,6 +10,7 @@ const commonOption: BuildOptions = {
     sourcemap: true,
     minify: true,
     outdir: "public/assets",
+// @ts-ignore https://github.com/glromeo/esbuild-sass-plugin/issues/109
     plugins: [sassPlugin()],
     loader: {
         ".ttf": "file",

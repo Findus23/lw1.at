@@ -7,6 +7,7 @@ from slugify import slugify
 BUF_SIZE = 65536
 Language = Literal["de", "en"]
 
+
 def long_hash(input: str) -> str:
     return hashlib.sha256(input.encode('utf-8')).hexdigest()
 
@@ -30,5 +31,3 @@ def custom_slugify(title: str) -> str:
     for delete in ["'"]:
         title = title.replace(delete, "")
     return slugify(title)
-
-

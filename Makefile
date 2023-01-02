@@ -21,6 +21,9 @@ esbuild:
 build:
 	/home/lukas/.virtualenvs/lw1/bin/python -m lw1.main
 
+watch:
+	/home/lukas/.virtualenvs/lw1/bin/python -m lw1.watch
+
 rmpublic:
 	rm -r public/
 	mkdir public/

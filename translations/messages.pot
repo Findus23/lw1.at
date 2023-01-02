@@ -1,14 +1,14 @@
 # Translations template for PROJECT.
-# Copyright (C) 2022 ORGANIZATION
+# Copyright (C) 2023 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-11-27 14:35+0100\n"
+"POT-Creation-Date: 2023-01-02 20:57+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,19 +74,19 @@ msgstr ""
 msgid "Search&hellip;"
 msgstr ""
 
-#: templates/page.html:134
+#: templates/page.html:145
 msgid "I want to read more about this project"
 msgstr ""
 
-#: templates/page.html:137
+#: templates/page.html:148
 msgid "Thanks for the feedback!"
 msgstr ""
 
-#: templates/page.html:138
+#: templates/page.html:149
 msgid "When I get to it, I will try to extend this post."
 msgstr ""
 
-#: templates/page.html:139
+#: templates/page.html:150
 msgid ""
 "In the meantime you can contact me at\n"
 "                    <a "

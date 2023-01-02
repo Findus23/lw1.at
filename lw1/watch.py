@@ -19,7 +19,7 @@ def callback(changes: Set[FileChange]):
 def reload_modules():
     for module in list(sys.modules.values()):
         try:
-            if "lw1.at" in inspect.getfile(module):
+            if "lw1.at" in inspect.getfile(module) and module.__name__ != "__main__":
                 reload(module)
         except (TypeError, ModuleNotFoundError):
             continue

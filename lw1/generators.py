@@ -144,7 +144,7 @@ class SimpleSiteGenerator(Generator):
         self.context["title"], self.context["content"] = self.title, self.content
         url = Path("/") / self.filename
         self.context["url"] = url
-        self.context["lanf"] = "en"
+        self.context["lang"] = "en"
         self.context["otherlang"] = "de"
         self.context["otherlang_url"] = Path("/de")
         html = self.template.render(**self.context)
