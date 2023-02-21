@@ -1,5 +1,5 @@
 import {sassPlugin} from 'esbuild-sass-plugin'
-import {build, BuildOptions, serve} from "esbuild";
+import {build, BuildOptions, context} from "esbuild";
 import * as fs from "fs";
 
 
@@ -33,13 +33,15 @@ switch (process.argv[2]) {
     case "serve":
         commonOption.minify = false
         commonOption
-        serve({
-            port: 1234,
-            servedir: "public"
-        }, commonOption).catch((e) => {
-            console.error(e)
-            process.exit(1)
-        }).then(data => console.log(data))
+        context(commonOption).then(ctx => {
+            ctx.serve({
+                port: 1234,
+                servedir: "public"
+            }).catch((e) => {
+                console.error(e)
+                process.exit(1)
+            }).then(data => console.log(data))
+        })
         break
     default:
         console.log(process.argv)

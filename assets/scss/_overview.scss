@@ -1,7 +1,6 @@
 @import "variables";
 
 #blockwrapper {
-  margin: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -67,10 +66,6 @@
   line-height: 1;
   padding: .3em .6em .3em;
 
-}
-
-#filterwrapper, #searchwrapper, .contact {
-  margin: 0 2rem;
 }
 
 #filterwrapper {

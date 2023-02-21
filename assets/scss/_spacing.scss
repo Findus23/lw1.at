@@ -1,3 +1,18 @@
+#filterwrapper, #searchwrapper, .contact,.introduction,#imprint {
+  margin: 0 2rem;
+}
+
+#blockwrapper{
+  margin: 2rem;
+}
+
+.gpg{
+  @media (max-width: 1000px) {
+    padding-bottom: 2rem;
+  }
+}
+
+
 .button,
 button,
 input,
@@ -19,7 +34,7 @@ ol {
 }
 
 p + ul {
-    margin-top: -1rem;
+  margin-top: -1rem;
 }
 
 .simplePageHeading {
