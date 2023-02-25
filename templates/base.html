@@ -12,6 +12,8 @@
         <link rel="alternate" hreflang="{{ lang }}" href="https://lw1.at{{ url }}"/>
         <link rel="alternate" hreflang="{{ otherlang }}" href="https://lw1.at{{ otherlang_url }}"/>
     {% endblock %}
+    <link rel="alternate" type="application/feed+json" href="https://lw1.at/{{ lang }}/postfeed.json">
+    <link rel="alternate" type="application/rss+xml" href="https://lw1.at/{{ lang }}/postfeed.xml">
     {% block additionalHead %}
     {% endblock %}
     <title>{% block title %}{% endblock %} - lw1.at</title>

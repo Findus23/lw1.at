@@ -6,7 +6,7 @@ from lw1.cache import cache
 from lw1.utils import long_hash
 
 
-def markdown2html(md: str) -> str:
+def markdown2html(md: str) -> Markup:
     key = "md" + long_hash(md)
     cached = cache.get(key)
     if cached:

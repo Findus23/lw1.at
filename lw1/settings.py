@@ -10,3 +10,5 @@ FALLBACK_LANGUAGES: Dict[Language, Language] = {
 }
 
 DOMAIN = "https://lw1.at"
+
+GENERATOR_URL = "https://github.com/Findus23/lw1.at/"

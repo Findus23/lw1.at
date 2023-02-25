@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Dict, List
 
 from babel import dates
+from markupsafe import Markup
 
 from lw1.file import Image
 from lw1.settings import DOMAIN
@@ -69,7 +70,7 @@ class Post:
         return "https://github.com/" + self.github
 
     @property
-    def html(self) -> str:
+    def html(self) -> Markup:
         return markdown2html(self.markdown)
 
     @property
