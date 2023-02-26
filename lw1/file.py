@@ -2,7 +2,7 @@ import shutil
 from functools import cached_property
 from pathlib import Path
 from subprocess import run
-from typing import List
+from typing import List, Optional
 
 import blurhash
 
@@ -71,11 +71,11 @@ def logged_move(source: Path, target: Path):
 
 
 class File:
-    def __init__(self, source_file: Path, type: str = None):
+    def __init__(self, source_file: Path, type: Optional[Path] = None):
         self.source_file = source_file
         self.type = type
-        self.public_url = None
-        self.target_file = None
+        self.public_url:Optional[str] = None
+        self.target_file:Optional[str] = None
 
     @property
     def modtime(self) -> float:

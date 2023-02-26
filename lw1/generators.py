@@ -1,3 +1,4 @@
+from abc import ABC, abstractmethod
 from pathlib import Path
 from typing import List, Dict
 
@@ -21,7 +22,7 @@ env = Environment(
 )
 
 
-class Generator:
+class Generator(ABC):
     template_name = "base.html"
     js_entry_point = "assets/main.ts"
     type = ""
@@ -39,6 +40,10 @@ class Generator:
         env.install_gettext_translations(translations)
 
         self.template = env.get_template(self.template_name)
+
+    @abstractmethod
+    def generate(self, writer: Writer) -> None:
+        pass
 
 
 class PostsGenerator(Generator):
