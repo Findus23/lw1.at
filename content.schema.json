@@ -173,7 +173,7 @@
           "$id": "#/properties/iframe/properties/color",
           "type": "string",
           "title": "The color schema",
-          "default": "",
+          "default": ""
         },
         "url": {
           "$id": "#/properties/iframe/properties/url",
