@@ -1,0 +1,15 @@
+id: cr-search
+title: Critical Role Search
+subtitle: Find your favourite Critical Role quote!
+tags:
+  - website
+  - python
+  - unfinished
+date: 2020-09-01
+github: Findus23/cr-search
+url: https://cr-search.lw1.at/
+tryout: true
+license:
+  id: GPL3
+  url: https://github.com/Findus23/cr-search/blob/master/LICENSE
+single_language: en

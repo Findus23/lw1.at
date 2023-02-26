@@ -16,6 +16,7 @@ def markdown2html(md: str) -> Markup:
         extensions=[
             "codehilite",
             "fenced_code",
+            "tables",
             markdown_katex.KatexExtension(insert_fonts_css=False),
         ]
     )
