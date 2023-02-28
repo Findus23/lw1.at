@@ -1,13 +1,13 @@
 [*Critical Role*](https://critrole.com/) is an online series on Twitch and YouTube where a group of voice actors
 plays [Dungeons & Dragons](https://en.wikipedia.org/wiki/Dungeons_%26_Dragons). With over 300 episodes and more than
 1400 hours of gameplay there is a huge amount of existing content which makes looking up a quote and finding the
-corresponding part of the video where it occured. Thankfully [volunteers](https://crtranscript.tumblr.com/) transcribed
+corresponding part of the video where it occurred. Thankfully [volunteers](https://crtranscript.tumblr.com/) transcribed
 the first 169 episodes and since then official subtitles are provided by the *Critical Role* team. This means that all
 together we got a dataset of nearly 12 million words we can search through.
 
 My Critical Role Search can do this efficiently while respecting the user-specified episode limit to avoid showing
-spoilers. Lines of dialoge are color-coded for every player and more context or a video-player at this exact timestamp
-can be displayed for every search result. In addition, the seach field can auto-complete every phrase
+spoilers. Lines of dialogue are color-coded for every player and more context or a video-player at this exact timestamp
+can be displayed for every search result. In addition, the search field can auto-complete every phrase
 
 See also:
 
@@ -21,7 +21,7 @@ by [Stuart Langridge](https://www.kryogenix.org/) that I found just after publis
 ## Technical Details
 
 I wanted to make sure that the search feels as instant as possible. So both search and auto-complete should return
-results for a smaller number of episodes in around 50ms and still load resonably fast (less than 1 second) even when
+results for a smaller number of episodes in around 50ms and still load reasonably fast (less than 1 second) even when
 searching through all 100+ episodes of one campaign. After loading the subtitles from YouTube, a large part of the
 complexity of the project is [transforming](https://github.com/Findus23/cr-search/blob/master/import.py) the lines of
 subtitles into full sentences assigned to the corresponding speakers (while keeping the timestamps intact). The
