@@ -6,16 +6,19 @@ import * as fs from "fs";
 const commonOption: BuildOptions = {
     entryPoints: ['assets/main.ts', 'assets/redirector.ts', "assets/scss/main.scss", 'assets/katex.css'],
     target: "esnext",
+    format: "esm",
     bundle: true,
     sourcemap: true,
     minify: true,
     outdir: "public/assets",
+    splitting: true,
 // @ts-ignore https://github.com/glromeo/esbuild-sass-plugin/issues/109
     plugins: [sassPlugin()],
     loader: {
         ".ttf": "file",
         ".woff": "file",
         ".woff2": "file",
+        ".svg": "text",
         ".png": "base64"
     },
     entryNames: "[name]"
