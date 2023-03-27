@@ -33,7 +33,7 @@
     <article{% if post.single_language %} lang="{{ post.single_language }}"{% endif %} id="post-{{ post.id }}">
         <div class="modal-header">
             <div class="imagewrapper{% if post.image_separator %} separator{% endif %}">
-                <canvas data-blurhash="{{ post.content_img.blurhash }}" width="32" height="16"></canvas>
+                <canvas data-thumbhash="{{ post.content_img.thumbhash }}" width="32" height="16"></canvas>
                 <img src="{{ post.content_img.public_url }}" width="1200" height="600">
             </div>
         </div>

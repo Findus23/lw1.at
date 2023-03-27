@@ -10,8 +10,6 @@ class Sitemap:
     def __init__(self):
         ElementTree.register_namespace("", "http://www.sitemaps.org/schemas/sitemap/0.9")
         self.root = ElementTree.Element("{http://www.sitemaps.org/schemas/sitemap/0.9}urlset")
-        # self.root.attrib["xmlns"] = ""
-        # self.root.attrib["{http://www.sitemaps.org/schemas/sitemap/0.9}xhtml"] = "http://www.w3.org/1999/xhtml"
 
     def add_page(self, context: Dict) -> None:
         cur_url = f"https://lw1.at{context['url']}"

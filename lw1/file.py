@@ -4,7 +4,8 @@ from pathlib import Path
 from subprocess import run
 from typing import List, Optional
 
-import blurhash
+from PIL import Image as PILImage
+from thumbhash_python import ThumbhashEncoder
 
 from lw1.cache import cache
 from lw1.paths import cache_dir, output_dir
@@ -74,8 +75,8 @@ class File:
     def __init__(self, source_file: Path, type: Optional[Path] = None):
         self.source_file = source_file
         self.type = type
-        self.public_url:Optional[str] = None
-        self.target_file:Optional[str] = None
+        self.public_url: Optional[str] = None
+        self.target_file: Optional[str] = None
 
     @property
     def modtime(self) -> float:
@@ -85,7 +86,7 @@ class File:
     def hashkey(self) -> str:
         hash_data = [str(a) for a in [self.modtime, self.source_file, self.type]]
         return f"{self.source_file.parent.name}-{short_hash(''.join(hash_data))}" \
-               + self.source_file.suffix
+            + self.source_file.suffix
 
     def postprocess(self, file: Path):
         ...
@@ -118,8 +119,8 @@ class Image(File):
         return cls(file, type)
 
     @property
-    def blurhash(self):
-        k = "blurhash-" + self.hashkey
+    def thumbhash(self):
+        k = "thumbhash-" + self.hashkey
         cached = cache.get(k)
         if cached:
             return cached
@@ -129,9 +130,12 @@ class Image(File):
             svg2png(hash_file, tmpfile)
             hash_file = tmpfile
         with hash_file.open("rb") as f:
-            bh = blurhash.encode(f, x_components=6, y_components=3)
-        cache.set(k, bh)
-        return bh
+            img = PILImage.open(f)
+            img.thumbnail((100, 100))
+            thumbhash = ThumbhashEncoder(img)
+            b64 = thumbhash.to_base64().decode()
+        cache.set(k, b64)
+        return b64
 
     def postprocess(self, file: Path):
         bg_color = "#31363b" if self.type == "thumbnail" else "white"

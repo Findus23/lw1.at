@@ -27,7 +27,7 @@ for article in import_dir.glob("data/*.yaml"):
             description = meta["description"][lang]
         except TypeError:
             description = meta["description"]
-            file = target_dir / f"??.md"
+            file = target_dir / "??.md"
         file.write_text(description)
     content_img = import_dir / "assets" / "contentimages" / meta["image"]
     shutil.copy(content_img, (target_dir / "image").with_suffix(content_img.suffix))

@@ -7,6 +7,7 @@
     "milligram": "git+https://github.com/Findus23/milligram.git#0fde381605c1159f39efb5c33c9600331fec4e2e",
     "modern-normalize": "^1.1.0",
     "sanitize.css": "^13.0.0",
+    "thumbhash": "^0.1.1",
     "ts-node": "^10.7.0"
   },
   "devDependencies": {

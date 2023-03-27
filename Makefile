@@ -1,6 +1,6 @@
 babel: extract update compile
 
-publish: rmpublic esbuild build upload
+publish: rmpublic ruff esbuild build upload
 
 
 extract:
@@ -27,3 +27,6 @@ watch:
 rmpublic:
 	rm -r public/
 	mkdir public/
+
+ruff:
+	ruff check .

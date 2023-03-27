@@ -37,5 +37,5 @@ if __name__ == '__main__':
         reload_modules()
         try:
             main(debug=True)
-        except Exception as e:
+        except Exception:
             traceback.print_exc()

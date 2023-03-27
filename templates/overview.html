@@ -17,7 +17,7 @@
     {% for post in posts %}
         <a href="{{ post.absolute_url }}" class="card" data-title="{{ post.title.lower() }}">
             <div class="imgwrapper">
-                <canvas data-blurhash="{{ post.thumbnail_img.blurhash }}" width="32" height="16"></canvas>
+                <canvas data-thumbhash="{{ post.thumbnail_img.thumbhash }}" width="32" height="16"></canvas>
                 <img src="{{ post.thumbnail_img.public_url }}" width="1200" height="600" loading="lazy">
             </div>
             <div class="textwrapper">

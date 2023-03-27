@@ -1,9 +1,9 @@
 import {initFeedback} from "./feedback";
 import {initSearch} from "./search";
 import {initMatomo} from "./matomo";
-import {initBlurhash} from "./blurhash";
+import {initThumbhash} from "./thumbhash";
 
-initBlurhash()
+initThumbhash()
 initFeedback()
 initSearch()
 initMatomo()

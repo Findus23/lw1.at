@@ -93,7 +93,7 @@ class Leaf {
         this.div.className = "leaf"
         this.div.innerHTML = leafImage.src
         this.svg = this.div.firstElementChild! as HTMLElement
-        this.svg.style.width=`${leafImage.width*.5}px`
+        this.svg.style.width = `${leafImage.width * .5}px`
         const fill = this.svg.querySelector(".fill")! as SVGPathElement
         fill.style.fill = sample(colors)!
         document.body.appendChild(this.div)
@@ -134,14 +134,21 @@ export function addLeaf() {
     const leafImage = sample(leafs)!
     const l = new Leaf(leafImage)
     l.animate()
-    l.div.addEventListener("click", () => isSlow = false)
+    l.div.addEventListener("click", () => {
+        const wasSlow = isSlow
+        isSlow = false;
+        if (wasSlow) {
+            clearTimeout(to)
+            addLeaf()
+        }
+    })
     let timeout
     if (isSlow) {
         timeout = 3000 + Math.random() * 10000
     } else {
         timeout = Math.random() * 500
     }
-    setTimeout(addLeaf, timeout)
+    const to = setTimeout(addLeaf, timeout)
 }
 
 
