@@ -11,7 +11,7 @@ class Sitemap:
         ElementTree.register_namespace("", "http://www.sitemaps.org/schemas/sitemap/0.9")
         self.root = ElementTree.Element("{http://www.sitemaps.org/schemas/sitemap/0.9}urlset")
 
-    def add_page(self, context: Dict) -> None:
+    def add_page(self, context: dict) -> None:
         cur_url = f"https://lw1.at{context['url']}"
         lang = context["lang"]
         otherlang_url = f"https://lw1.at{context['otherlang_url']}"

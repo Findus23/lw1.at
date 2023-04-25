@@ -4,7 +4,6 @@ from dataclasses import dataclass
 from datetime import datetime
 from functools import cached_property
 from pathlib import Path
-from typing import Dict, List
 
 from babel import dates
 from markupsafe import Markup
@@ -32,7 +31,7 @@ class iFrame:
 @dataclass
 class Post:
     title: str
-    tags: List[str]
+    tags: list[str]
     date: datetime
     markdown: str
     content_img: Image
@@ -52,7 +51,7 @@ class Post:
     other_lang_post: Post = None
 
     @classmethod
-    def from_meta(cls, meta: Dict):
+    def from_meta(cls, meta: dict):
         if "license" in meta:
             meta["license"] = License(**meta["license"])
         if "iframe" in meta:

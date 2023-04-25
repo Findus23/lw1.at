@@ -15,7 +15,7 @@ from lw1.utils import Language
 
 class PostLoader():
     @staticmethod
-    def load_posts() -> List[Post]:
+    def load_posts() -> list[Post]:
         posts = []
         for post_dir in content_dir.glob("*"):
             if not post_dir.is_dir():
@@ -32,7 +32,7 @@ class PostLoader():
                     all_meta[lang]["markdown"] = (post_dir / f"{lang}.md").read_text()
                 except FileNotFoundError:
                     continue
-            postgroup: List[Post] = []
+            postgroup: list[Post] = []
             for lang in LANGUAGES:
                 fallback_lang = FALLBACK_LANGUAGES[lang]
                 data = all_meta | all_meta[fallback_lang] | all_meta[lang]
@@ -56,7 +56,7 @@ class PostLoader():
 
 class TagsLoader():
     @staticmethod
-    def load_tags() -> Dict[str, Tag]:
+    def load_tags() -> dict[str, Tag]:
         tags = {}
         with (content_dir / "tags.yaml").open() as f:
             tag_data = yaml.load(f, Loader=CSafeLoader)
@@ -75,7 +75,7 @@ class TagsLoader():
 
 class AssetsLoader():
     @staticmethod
-    def load_entrypoints(debug=False) -> Dict[str, str]:
+    def load_entrypoints(debug=False) -> dict[str, str]:
         if debug:
             return {
                 "assets/main.ts": "assets/main.js",

@@ -12,7 +12,7 @@ from lw1.paths import cache_dir, output_dir
 from lw1.utils import short_hash, hash_file
 
 
-def logged_run(cmd: List[str]):
+def logged_run(cmd: list[str]):
     print(cmd)
     run(cmd, check=True)
 
@@ -72,11 +72,11 @@ def logged_move(source: Path, target: Path):
 
 
 class File:
-    def __init__(self, source_file: Path, type: Optional[Path] = None):
+    def __init__(self, source_file: Path, type: Path | None = None):
         self.source_file = source_file
         self.type = type
-        self.public_url: Optional[str] = None
-        self.target_file: Optional[str] = None
+        self.public_url: str | None = None
+        self.target_file: str | None = None
 
     @property
     def modtime(self) -> float:

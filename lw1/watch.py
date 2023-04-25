@@ -10,7 +10,7 @@ from watchfiles.main import FileChange, watch
 from lw1.main import main
 
 
-def callback(changes: Set[FileChange]):
+def callback(changes: set[FileChange]):
     print("changed:")
     for change, file in changes:
         print("-", file.split("../")[-1])

@@ -2,9 +2,9 @@ from typing import List, Dict
 
 from lw1.utils import Language
 
-LANGUAGES: List[Language] = ["en", "de"]
+LANGUAGES: list[Language] = ["en", "de"]
 
-FALLBACK_LANGUAGES: Dict[Language, Language] = {
+FALLBACK_LANGUAGES: dict[Language, Language] = {
     "en": "de",
     "de": "en"
 }

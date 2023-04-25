@@ -27,7 +27,7 @@ class Generator(ABC):
     js_entry_point = "assets/main.ts"
     type = ""
 
-    def __init__(self, translations: Translations, context: Dict, posts: List[Post], tags: Dict[str, Tag],
+    def __init__(self, translations: Translations, context: dict, posts: list[Post], tags: dict[str, Tag],
                  lang: Language, sitemap: Sitemap):
         self.posts = posts
         self.tags = tags
