@@ -1,6 +1,5 @@
 import json
 from itertools import permutations
-from typing import List, Dict
 
 import yaml
 from yaml import CSafeLoader

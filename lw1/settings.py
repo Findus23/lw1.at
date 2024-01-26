@@ -1,5 +1,3 @@
-from typing import List, Dict
-
 from lw1.utils import Language
 
 LANGUAGES: list[Language] = ["en", "de"]

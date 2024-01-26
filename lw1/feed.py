@@ -56,6 +56,6 @@ class RSSFeed:
         SubElement(item_el, "title").text = item["title"]
         SubElement(item_el, "link").text = post.absolute_url_with_domain
         SubElement(item_el, "guid", {"isPermaLink": "true"}).text = post.absolute_url_with_domain
-        SubElement(item_el, "pubdate").text = post.date.strftime("%a, %d %b %Y %H:%M:%S %z")
+        SubElement(item_el, "pubDate").text = post.date.strftime("%a, %d %b %Y %H:%M:%S %z")
         SubElement(item_el, "description").text = item["content_html"]
         SubElement(item_el, "author").text = "Lukas Winkler"

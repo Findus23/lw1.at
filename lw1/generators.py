@@ -1,6 +1,5 @@
 from abc import ABC, abstractmethod
 from pathlib import Path
-from typing import List, Dict
 
 from babel.support import Translations
 from jinja2 import Environment, FileSystemLoader, select_autoescape, StrictUndefined, FileSystemBytecodeCache

@@ -12,13 +12,10 @@ function drawThumbhash(canvasEl: HTMLCanvasElement) {
     }
     const hashBin = base64ToBinary(hash)
 
-    // const pixels = decode(hash, width, height);
     const image = thumbHashToRGBA(hashBin)
-    console.log(image.w, image.h)
 
     const ctx = canvasEl.getContext("2d")!;
     const imageData = new ImageData(new Uint8ClampedArray(image.rgba), image.w, image.h);
-    // ctx.scale(10, 10);
     ctx.putImageData(imageData, 0, 0);
     ctx.drawImage(canvasEl, 0, 0);
 }

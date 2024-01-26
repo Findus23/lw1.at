@@ -2,7 +2,6 @@ import shutil
 from functools import cached_property
 from pathlib import Path
 from subprocess import run
-from typing import List, Optional
 
 from PIL import Image as PILImage
 from thumbhash_python import ThumbhashEncoder

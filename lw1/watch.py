@@ -2,7 +2,6 @@ import inspect
 import sys
 import traceback
 from importlib import reload
-from typing import Set
 
 from watchfiles import DefaultFilter
 from watchfiles.main import FileChange, watch
