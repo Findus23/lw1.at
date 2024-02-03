@@ -46,6 +46,10 @@
     align-content: center;
     justify-content: center;
 
+    .title{
+      text-wrap: balance;
+    }
+
     > div {
       padding: 0 10px
     }

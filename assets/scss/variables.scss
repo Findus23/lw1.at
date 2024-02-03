@@ -20,7 +20,7 @@ $consoleFocus: $consoleBlue;
 $consoleText: $consoleWhite;
 $consoleFont: "Fira Code Retina", monospace, monospace;
 
-$fontFamily: -apple-system, "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", "Liberation Sans", "Roboto", Arial, sans-serif;
+$fontFamily: system-ui, -apple-system, "Helvetica Neue", "Inter", "Noto Sans", "Liberation Sans", "Roboto", Arial, sans-serif;
 
 @mixin dark() {
   @media (prefers-color-scheme: dark) {
