@@ -16,9 +16,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.11.0\n"
+"Generated-By: Babel 2.14.0\n"
 
-#: templates/base.html:24
+#: templates/base.html:26
 msgid "Back to the main page"
 msgstr "Zurück zur Hauptseite"
 
@@ -50,7 +50,7 @@ msgstr "Schaue meinen Code auf GitLab an"
 msgid "View my guides"
 msgstr "Lies meine Anleitungen"
 
-#: templates/contact.html:64
+#: templates/contact.html:74
 msgid "Write me an E-Mail (hi@lw1.at)"
 msgstr "Schreib mir eine E-Mail (hi@lw1.at)"
 

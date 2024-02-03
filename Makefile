@@ -7,7 +7,7 @@ extract:
 	pybabel extract -F mapping.ini -o translations/messages.pot templates/*
 
 update:
-	pybabel update -i translations/messages.pot -d translations
+	pybabel update -i translations/messages.pot -d translations --ignore-pot-creation-date
 
 compile:
 	pybabel compile  -d translations --statistics
