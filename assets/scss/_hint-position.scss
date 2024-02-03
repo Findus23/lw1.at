@@ -5,75 +5,69 @@
  * Copyright (c) 2021 Kushagra Gour
  */
 
-@mixin vertical-positioned-tooltip($propertyY, $transitionDirection, $xDirection:0) {
-	&:before {
-		// bring arrow inside so that it animates to normal position when shown.
-		// HACK: +1px to avoid the 1 px white space between arrow and body during transition.
-		margin-#{$propertyY}: -2 * $hintArrowBorderWidth + 1px;
-	}
+@mixin vertical-positioned-tooltip($propertyY, $transitionDirection, $xDirection: 0) {
+  &:before {
+    // bring arrow inside so that it animates to normal position when shown.
+    // HACK: +1px to avoid the 1 px white space between arrow and body during transition.
+    margin-#{$propertyY}: -1 * $hintArrowBorderWidth + 0.5px;
+    transform: rotate(var(--rotation));
+  }
 
-	&:before, &:after {
-		#{$propertyY}: 100%;
-		left: 50%; // get top-left corner in center
-	}
+  &:before, &:after {
+    #{$propertyY}: 100%;
+    left: 50%; // get top-left corner in center
+  }
 
-	&:before {
-		left: calc(50% - #{$hintArrowBorderWidth}); // get arrow center aligned with content
-	}
+  &:before {
+    left: calc(50% - #{$hintArrowBorderWidth}); // get arrow center aligned with content
+  }
 
-	$translateX: -50%;
-	@if $xDirection == -1 {
-		$translateX: -100%;
-	} @else if $xDirection == 1 {
-		$translateX: 0;
-	}
+  $translateX: -50%;
+  @if $xDirection == -1 {
+    $translateX: -100%;
+  } @else if $xDirection == 1 {
+    $translateX: 0;
+  }
 
-	&:after {
-		@include vendor('transform', translateX($translateX));
-	}
+  &:after {
+    transform: translateX($translateX);
+  }
 
-	&:after {
-		@if $xDirection != 0 {
-			// bring back the tooltip by some offset so that arrow doesn't stick at end
-			margin-left: -$xDirection * $hintArrowOffsetX;
-		}
-	}
+  &:after {
+    @if $xDirection != 0 {
+      // bring back the tooltip by some offset so that arrow doesn't stick at end
+      margin-left: -$xDirection * $hintArrowOffsetX;
+    }
+  }
 
-	&:hover {
-		@include set-margin('translateY', $transitionDirection, $translateX);
-	}
+  &:hover {
+    @include set-margin("translateY", $transitionDirection, $translateX);
+  }
 }
 
 @mixin horizontal-positioned-tooltip($propertyX, $transitionDirection) {
-	&:before {
-		// bring arrow inside so that it animates to normal position when shown
-		// HACK: +1px to avoid the 1 px white space between arrow and body during transition.
-		margin-#{$propertyX}: -2 * $hintArrowBorderWidth + 1px;
-		// bring back to center vertically
-		margin-bottom: -1 * $hintArrowBorderWidth;
-	}
+  &:before {
+    // bring arrow inside so that it animates to normal position when shown
+    // HACK: +1px to avoid the 1 px white space between arrow and body during transition.
+    margin-#{$propertyX}: -1 * $hintArrowBorderWidth + 0.5px;
+    // bring back to center vertically
+    margin-bottom: -1 * $hintArrowBorderWidth;
+    transform: rotate(var(--rotation));
+  }
 
-	&:after {
-		// bring back to center
-		margin-bottom: -1 * floor($hintTooltipHeight / 2);
-	}
+  &:after {
+    // bring back to center
+    margin-bottom: calc(-1 * $hintTooltipHeight / 2);
+  }
 
-	&:before, &:after {
-		#{$propertyX}: 100%;
-		bottom: 50%;
-	}
+  &:before, &:after {
+    #{$propertyX}: 100%;
+    bottom: 50%;
+  }
 
-	&:hover {
-		@include set-margin('translateX', $transitionDirection);
-	}
-}
-
-
-/**
- * set default color for tooltip arrows
- */
-.hint--bottom:before {
-  border-bottom-color: $hintDefaultColor;
+  &:hover {
+    @include set-margin("translateX", $transitionDirection);
+  }
 }
 
 
@@ -81,5 +75,6 @@
  * bottom tooltip
  */
 .#{$hintPrefix}bottom {
-	@include vertical-positioned-tooltip('top', 1);
+  --rotation: -45deg;
+  @include vertical-positioned-tooltip("top", 1);
 }
