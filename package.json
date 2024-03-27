@@ -11,8 +11,8 @@
     "ts-node": "^10.7.0"
   },
   "devDependencies": {
-    "esbuild": "^0.19.12",
-    "esbuild-sass-plugin": "^2.10.0",
+    "esbuild": "^0.20.2",
+    "esbuild-sass-plugin": "^3.2.0",
     "typescript": "^5.1.6"
   },
   "type": "module",
