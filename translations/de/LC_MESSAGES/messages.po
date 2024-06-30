@@ -43,14 +43,14 @@ msgid "View my videos on PeerTube"
 msgstr "Schaue meine Videos auf PeerTube an"
 
 #: templates/contact.html:43
-msgid "View my code on GitLab"
-msgstr "Schaue meinen Code auf GitLab an"
+msgid "View my code on Forgejo"
+msgstr "Schau meinen Code auf Forgejo an"
 
-#: templates/contact.html:52
+#: templates/contact.html:56
 msgid "View my guides"
 msgstr "Lies meine Anleitungen"
 
-#: templates/contact.html:74
+#: templates/contact.html:78
 msgid "Write me an E-Mail (hi@lw1.at)"
 msgstr "Schreib mir eine E-Mail (hi@lw1.at)"
 
