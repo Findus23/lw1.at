@@ -1,9 +1,5 @@
 <header class="intro">
-    {% if lang=="en" %}
-        <h1 aria-label="he/him" class="hint--bottom">Lukas Winkler</h1>
-    {% else %}
-        <h1>Lukas Winkler</h1>
-    {% endif %}
+    <h1 aria-label="{% trans %}he/him{% endtrans %}" class="hint--bottom">Lukas Winkler</h1>
     {% if lang=="de" %}
         <div class="introduction">
             Hallo,<br>
