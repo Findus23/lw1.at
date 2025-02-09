@@ -1,26 +1,26 @@
-@import "variables";
+@use "variables";
 
 
 .btn, button, .tag, #filterwrapper > a,
 input[type='button'],
 input[type='reset'],
 input[type='submit'] {
-  background: $consoleBackground;
-  font-family: $consoleFont;
+  background: variables.$consoleBackground;
+  font-family: variables.$consoleFont;
   padding: .5rem;
-  color: $consoleText;
+  color: variables.$consoleText;
   margin: auto auto 1.5rem;
   line-height: initial;
   border: none;
 
   &:focus, &:hover, &:active {
-    outline: $consoleBackground solid 1px;
+    outline: variables.$consoleBackground solid 1px;
     background-color: white;
-    color: $textColor;
+    color: variables.$textColor;
   }
 
   &:active {
-    color: $consoleBlue;
+    color: variables.$consoleBlue;
   }
 }
 

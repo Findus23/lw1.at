@@ -1,3 +1,5 @@
+@use "variables";
+
 pre {
   border: none;
   padding: 0;
@@ -7,7 +9,7 @@ pre {
     display: block;
     overflow-x: auto;
     padding: 0.5em;
-    background: $consoleBackground;
-    color: $consoleText;
+    background: variables.$consoleBackground;
+    color: variables.$consoleText;
   }
 }

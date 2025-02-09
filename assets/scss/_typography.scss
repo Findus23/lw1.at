@@ -1,4 +1,4 @@
-@import "variables";
+@use "variables";
 
 
 html {
@@ -6,10 +6,10 @@ html {
 }
 
 body {
-  color: $textColor;
+  color: variables.$textColor;
   font-size: 1.8em;
   font-weight: normal;
-  font-family: $fontFamily;
+  font-family: variables.$fontFamily;
   line-height: 1.6;
 }
 
@@ -67,7 +67,7 @@ h6 {
 
 
 .texttt {
-  font-family: $consoleFont;
+  font-family: variables.$consoleFont;
 }
 
 pre {
@@ -75,7 +75,7 @@ pre {
 }
 
 blockquote {
-  border-left: .3rem solid $gray;
+  border-left: .3rem solid variables.$gray;
   margin-left: 0;
   margin-right: 0;
   padding: 1rem 1.5rem;
@@ -86,7 +86,7 @@ blockquote {
 }
 
 a {
-  color: $linkColor;
+  color: variables.$linkColor;
   text-decoration: none;
 
 }

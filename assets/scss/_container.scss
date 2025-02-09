@@ -1,11 +1,11 @@
-@import "variables";
+@use "variables";
 
 .container {
   max-width: 1000px;
   position: relative;
   width: 100%;
   background-color: white;
-  border: 1px solid $consoleBackground;
+  border: 1px solid variables.$consoleBackground;
   text-align: center;
   margin: 2rem auto 2rem;
 

@@ -1,4 +1,4 @@
-
+@use "variables";
 
 
 li {
@@ -18,6 +18,6 @@ a svg {
 [aria-label][data-balloon-pos] {
   &::after {
     font-family: unset !important;
-    background: $consoleBackground !important;
+    background: variables.$consoleBackground !important;
   }
 }

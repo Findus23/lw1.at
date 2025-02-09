@@ -1,4 +1,4 @@
-@import "variables";
+@use "variables";
 
 .intro {
   padding-top: 2rem;
@@ -10,7 +10,7 @@
 }
 
 h1 {
-  font-family: $consoleFont;
+  font-family: variables.$consoleFont;
   color: black !important;
   cursor: initial !important;
 

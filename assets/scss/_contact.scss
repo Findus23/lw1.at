@@ -1,3 +1,5 @@
+@use "variables";
+
 .contact {
   display: flex;
   justify-content: space-around;
@@ -6,7 +8,7 @@
   svg {
     width: 45px;
     height: 45px;
-    color: $consoleBackground;
+    color: variables.$consoleBackground;
     transition: color .2s;
     padding: 5px;
 
@@ -16,7 +18,7 @@
   }
 
   a:hover svg {
-    color: $consoleFocus;
-    outline: 1px solid $consoleFocus;
+    color: variables.$consoleFocus;
+    outline: 1px solid variables.$consoleFocus;
   }
 }

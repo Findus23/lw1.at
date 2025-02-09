@@ -1,4 +1,4 @@
-@import "variables";
+@use "variables";
 
 #blockwrapper {
   display: flex;
@@ -7,8 +7,8 @@
 }
 
 .card {
-  color: $consoleText;
-  background: $consoleBackground;
+  color: variables.$consoleText;
+  background: variables.$consoleBackground;
   transition: color .2s;
   z-index: 3;
   position: relative;
@@ -18,11 +18,11 @@
   cursor: pointer;
 
   &:hover, &:focus {
-    color: $consoleFocus;
+    color: variables.$consoleFocus;
 
     .tag {
-      color: $consoleFocus;
-      border-color: $consoleFocus;
+      color: variables.$consoleFocus;
+      border-color: variables.$consoleFocus;
     }
   }
 
@@ -58,9 +58,9 @@
 
 .tag {
   display: inline-block;
-  border: 1px $consoleText solid;
+  border: 1px variables.$consoleText solid;
   text-align: center;
-  border-radius: $borderRadius;
+  border-radius: variables.$borderRadius;
   margin: 0 2px;
 }
 
@@ -80,18 +80,18 @@
 
   a {
     display: block;
-    color: $consoleBackground;
+    color: variables.$consoleBackground;
     background: white;
 
     &.active {
-      color: $consoleWhite !important;
+      color: variables.$consoleWhite !important;
       outline: none !important;
-      background-color: $consoleBackground;
+      background-color: variables.$consoleBackground;
     }
 
     &:focus, &:active, &:hover {
-      color: $consoleBackground;
-      outline: 1px solid $consoleBackground;
+      color: variables.$consoleBackground;
+      outline: 1px solid variables.$consoleBackground;
     }
   }
 }
@@ -100,39 +100,39 @@
   margin-bottom: 2rem;
 
   input {
-    font-family: $consoleFont;
+    font-family: variables.$consoleFont;
     -webkit-appearance: none;
     -moz-appearance: none;
     padding: .5rem;
-    border: 1px solid $consoleBackground;
-    border-radius: $borderRadius;
+    border: 1px solid variables.$consoleBackground;
+    border-radius: variables.$borderRadius;
     margin-bottom: 0;
     background-color: white;
-    color: $consoleBackground;
+    color: variables.$consoleBackground;
     max-width: 300px;
     width: 100%;
     transition: border-color .2s, color .2s;
 
     &:focus {
-      border-color: $consoleBlue;
+      border-color: variables.$consoleBlue;
       outline: none;
 
       &::placeholder {
-        color: $consoleBlue;
+        color: variables.$consoleBlue;
         opacity: .5;
       }
 
     }
 
     &::placeholder {
-      color: $consoleBackground;
+      color: variables.$consoleBackground;
       transition: color .2s;
       opacity: 1;
     }
 
     &::selection {
-      background: $consoleBackground;
-      color: $consoleWhite;
+      background: variables.$consoleBackground;
+      color: variables.$consoleWhite;
     }
   }
 }

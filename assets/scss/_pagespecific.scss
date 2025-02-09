@@ -1,6 +1,8 @@
+@use "variables";
+
 #post-rainbowroad {
   h1, em {
-    font-family: Gilbert-Color, $consoleFont;
+    font-family: Gilbert-Color, variables.$consoleFont;
     font-weight: 700;
     font-style: normal;
 

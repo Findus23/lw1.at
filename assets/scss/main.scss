@@ -1,34 +1,33 @@
-@import "variables";
+@use "variables";
+
+@use "../../node_modules/modern-normalize/modern-normalize";
+
+@use "fonts";
+
+@use "btn";
+@use "base";
+@use "typography";
+@use "boxes";
+@use "spacing";
+@use "images";
+
+@use "container";
+@use "cornerbuttons";
+@use "post";
+@use "intro";
+@use "contact";
+@use "overview";
+@use "code";
+@use "highlight";
+@use "license";
+@use "imprint";
+@use "langpick";
+@use "others";
+
+@use "pagespecific";
+@use "leaf";
 
 @import "hint.css/src/hint-variables";
 @import "hint.css/src/hint-mixins";
 @import "hint.css/src/hint-core";
 @import "hint-position";
-
-@import "../../node_modules/modern-normalize/modern-normalize";
-@import "variables";
-
-@import "fonts";
-
-@import "btn";
-@import "base";
-@import "typography";
-@import "boxes";
-@import "spacing";
-@import "images";
-
-@import "container";
-@import "cornerbuttons";
-@import "post";
-@import "intro";
-@import "contact";
-@import "overview";
-@import "code";
-@import "highlight";
-@import "license";
-@import "imprint";
-@import "langpick";
-@import "others";
-
-@import "pagespecific";
-@import "leaf";

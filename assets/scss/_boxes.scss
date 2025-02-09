@@ -1,16 +1,16 @@
-@import "variables";
+@use "variables";
 
 .note {
-  background-color: $consoleBackground;
-  color: $consoleOrange;
-  font-family: $consoleFont;
+  background-color: variables.$consoleBackground;
+  color: variables.$consoleOrange;
+  font-family: variables.$consoleFont;
   text-align: center;
   /*background-color: #fdbc4b;*/
   padding: 15px;
   margin-bottom: 15px;
 
   a {
-    color: $consoleBlue;
+    color: variables.$consoleBlue;
 
     &:hover, &:focus, &:active {
       text-decoration: underline;
