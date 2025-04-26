@@ -1,23 +1,30 @@
 {
   "dependencies": {
-    "blurhash": "^2.0.4",
+    "blurhash": "^2.0.5",
     "hint.css": "^3.0.0",
-    "katex": "^0.16.3",
+    "katex": "^0.16.22",
     "matomo-lite-tracker": "github:Findus23/MatomoLiteTracker",
-    "milligram": "git+https://github.com/Findus23/milligram.git#0fde381605c1159f39efb5c33c9600331fec4e2e",
+    "milligram": "github:Findus23/milligram#0fde381605c1159f39efb5c33c9600331fec4e2e",
     "modern-normalize": "^3.0.1",
     "sanitize.css": "^13.0.0",
     "thumbhash": "^0.1.1",
-    "ts-node": "^10.7.0"
+    "ts-node": "^10.9.2"
   },
   "devDependencies": {
-    "esbuild": "^0.25.0",
-    "esbuild-sass-plugin": "^3.2.0",
-    "typescript": "^5.7.3"
+    "esbuild": "^0.25.3",
+    "esbuild-sass-plugin": "^3.3.1",
+    "typescript": "^5.8.3"
   },
   "type": "module",
   "scripts": {
     "dev": "node --loader ts-node/esm build.js serve",
     "build": "node --loader ts-node/esm build.js build"
-  }
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "esbuild"
+    ]
+  },
+  "packageManager": "pnpm@10.9.0+sha256.ea53ab747ac8b7921de63b42eab1adf021e1fe6ded05f62f00885cc33a46118d"
 }
