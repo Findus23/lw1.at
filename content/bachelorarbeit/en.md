@@ -7,4 +7,4 @@ In 1375 simulation runs the parameters of the collisions (masses, impact angle, 
 To generalize how much water remains in a collision with arbitrary collision parameters, multiple interpolation methods are compared.
 Two linear interpolation methods using the [`scipy`](https://www.scipy.org/) Python library take the closest values and try to estimate an intermediate value. For comparison a simple Neural Network was trained using Keras and Tensorflow to predict the water fraction.
 
-You can find more details in the [thesis (PDF)](https://lw1.at/r/bachelorarbeit-pdf) and the code in the [git repository](https://git.lw1.at/lw1/bachelorarbeit-code).
+You can find more details in the [thesis (PDF)](https://lw1.at/r/bachelorarbeit-pdf) and the code in the [git repository](https://github.com/Findus23/collision-analysis-and-interpolation).

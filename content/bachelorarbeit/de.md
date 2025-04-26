@@ -7,4 +7,4 @@ In 1375 Simulationsdurchläufen wurden die Parameter der Kollision (Masse, Kolli
 Um den verbleibenden Wasseranteil auf Kollisionen mit beliebigen Parametern verallgemeinern zu können, werden verschiedene Methoden verglichen.
  Zwei lineare Interplolationsmethoden mithilfe der [`scipy`](https://www.scipy.org/) Python Library nehmen die nähesten Werte und versuchen einen Wert dazwischen zu berechnen. Zum Vergleich wurde ein Neuronales Netzwerk mithilfe von Keras und Tensorflow trainiert, welches es ermöglicht den Wasseranteil nach der Kollision vorherzusagen.
 
-Mehr Informationen gibt es im der [Bachelorarbeit (PDF)](https://lw1.at/r/bachelorarbeit-pdf) und der Programmcode ist [im git Repository](https://git.lw1.at/lw1/bachelorarbeit-code) zu finden.
+Mehr Informationen gibt es im der [Bachelorarbeit (PDF)](https://lw1.at/r/bachelorarbeit-pdf) und der Programmcode ist [im git Repository](https://github.com/Findus23/collision-analysis-and-interpolation) zu finden.
