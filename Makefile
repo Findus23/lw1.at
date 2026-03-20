@@ -1,6 +1,6 @@
 babel: extract update compile
 
-publish: rmpublic ruff esbuild build upload
+publish: rmpublic ruff esbuild build copy upload
 
 
 extract:
@@ -17,6 +17,9 @@ upload:
 
 esbuild:
 	npm run build
+
+copy:
+	rsync -aP ./assets/static ./public/assets/
 
 build:
 	/home/lukas/.virtualenvs/lw1/bin/python -m lw1.main

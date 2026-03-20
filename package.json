@@ -2,7 +2,7 @@
   "dependencies": {
     "blurhash": "^2.0.5",
     "hint.css": "^3.0.0",
-    "katex": "^0.16.22",
+    "katex": "^0.16.40",
     "matomo-lite-tracker": "github:Findus23/MatomoLiteTracker",
     "milligram": "github:Findus23/milligram#0fde381605c1159f39efb5c33c9600331fec4e2e",
     "modern-normalize": "^3.0.1",
@@ -11,20 +11,20 @@
     "ts-node": "^10.9.2"
   },
   "devDependencies": {
-    "esbuild": "^0.25.3",
-    "esbuild-sass-plugin": "^3.3.1",
-    "typescript": "^5.8.3"
+    "esbuild": "^0.27.4",
+    "esbuild-sass-plugin": "^3.7.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
   },
   "type": "module",
   "scripts": {
-    "dev": "node --loader ts-node/esm build.js serve",
-    "build": "node --loader ts-node/esm build.js build"
+    "dev": "tsx build.ts serve",
+    "build": "tsx build.ts build"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
       "@parcel/watcher",
       "esbuild"
     ]
-  },
-  "packageManager": "pnpm@10.9.0+sha256.ea53ab747ac8b7921de63b42eab1adf021e1fe6ded05f62f00885cc33a46118d"
+  }
 }

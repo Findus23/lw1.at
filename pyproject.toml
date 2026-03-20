@@ -47,3 +47,19 @@ build-backend = "uv_build"
 
 [tool.ruff]
 line-length = 110
+
+[tool.ruff.lint]
+extend-select = ["E711"]
+select = [
+    "E101", # checks about indentation and whitespace about operators
+    "E112",
+    "E113",
+    "E115",
+    "E117",
+    "E225",
+    "E227",
+    "E228",
+    "YTT", # old python-like code
+    "W", # trailing whitespace and whitespace in empty lines
+    "UP"
+]

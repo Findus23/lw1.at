@@ -12,7 +12,7 @@ from lw1.tag import Tag
 from lw1.utils import Language
 
 
-class PostLoader():
+class PostLoader:
     @staticmethod
     def load_posts() -> list[Post]:
         posts = []
@@ -53,7 +53,7 @@ class PostLoader():
         return posts
 
 
-class TagsLoader():
+class TagsLoader:
     @staticmethod
     def load_tags() -> dict[str, Tag]:
         tags = {}
@@ -72,7 +72,7 @@ class TagsLoader():
         return tags
 
 
-class AssetsLoader():
+class AssetsLoader:
     @staticmethod
     def load_entrypoints(debug=False) -> dict[str, str]:
         if debug:
